@@ -30,7 +30,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.3, ease }}
               className="mb-2 text-base tracking-[0.4em] text-foreground/70 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-lg"
             >
-              ヘッドスパ専門店
+              福岡市の完全個室ヘッドスパ
             </motion.p>
 
             <motion.p
@@ -49,7 +49,7 @@ export function Hero() {
               className="mb-10 text-lg tracking-[0.3em] text-gold-light/90 sm:text-xl"
               style={{ WebkitTextStroke: "1px black", paintOrder: "stroke fill" }}
             >
-              {'贅沢を日常に'}
+              {'日常から解放される、静寂のひととき'}
             </motion.p>
 
             <motion.h1
@@ -58,8 +58,8 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.7, ease }}
               className="flex flex-col items-center gap-2 text-center text-base leading-[2.2] tracking-[0.2em] text-foreground/90 sm:text-lg"
             >
-              <span>完全個室・1日3名様限定の</span>
-              <span>ヘッドスパ専門店</span>
+              <span>福岡市で選ばれる完全個室・1日3名限定</span>
+              <span>本物志向のためのヘッドスパ専門店</span>
             </motion.h1>
           </div>
         </div>
