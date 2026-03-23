@@ -40,9 +40,15 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.45, ease }}
               className="mb-3 text-2xl tracking-[0.3em] text-gold-light/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-3xl"
             >
-              <motion.p className="mb-3 text-2xl tracking-[0.4em] text-gold-light">
-  ヘッドスパ専門店ゆう 本店
+              <motion.p className="mb-3 text-2xl tracking-[0.2em] text-gold-light">
+  ヘッドスパ専門店ゆう
 </motion.p>
+
+              <motion.div className="mb-4 flex flex-col items-center gap-1 text-xs text-white/70 tracking-[0.2em] text-center">
+  <span>創業6年・リピート多数</span>
+  <span>ヘッドスパ歴15年以上のスパニスト</span>
+  <span>育毛・カラー施術にも対応</span>
+</motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -51,7 +57,7 @@ export function Hero() {
               className="mb-10 text-lg tracking-[0.3em] text-gold-light/90 sm:text-xl"
               style={{ WebkitTextStroke: "1px black", paintOrder: "stroke fill" }}
             >
-             <motion.p className="mb-6 text-base text-gold-light text-center leading-relaxed">
+         <motion.p className="mb-6 text-base text-gold-light text-center leading-relaxed">
   日常から解放される、静寂と癒しのひととき
 </motion.p>
 
