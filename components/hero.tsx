@@ -46,8 +46,8 @@ export function Hero() {
 
               <motion.div className="mb-4 flex flex-col items-center gap-1 text-xs text-white/70 tracking-[0.2em] text-center">
   <span>創業6年・リピート多数</span>
-  <span>ヘッドスパ歴15年以上のスパニスト</span>
-  <span>育毛・カラー施術にも対応</span>
+<span>ヘッドスパ歴15年以上</span>
+<span>育毛・頭皮改善・カラー施術対応</span>
 </motion.div>
 
             <motion.p
