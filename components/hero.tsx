@@ -30,8 +30,9 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.3, ease }}
               className="mb-2 text-base tracking-[0.4em] text-foreground/70 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-lg"
             >
-              福岡市の完全個室ヘッドスパ
-            </motion.p>
+              <motion.p className="mb-2 text-sm text-white/80 tracking-[0.2em]">
+  福岡市の完全個室ヘッドスパ
+</motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
