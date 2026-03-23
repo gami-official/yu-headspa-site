@@ -41,7 +41,7 @@ export function Hero() {
               className="mb-3 text-2xl tracking-[0.3em] text-gold-light/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-3xl"
             >
               <motion.p className="mb-3 text-2xl tracking-[0.4em] text-gold-light">
-  ヘッドスパ専門店 本店
+  ヘッドスパ専門店ゆう 本店
 </motion.p>
 
             <motion.p
