@@ -51,7 +51,7 @@ export function Hero() {
               className="mb-10 text-lg tracking-[0.3em] text-gold-light/90 sm:text-xl"
               style={{ WebkitTextStroke: "1px black", paintOrder: "stroke fill" }}
             >
-              <motion.p className="mb-6 text-base text-gold-light text-center leading-relaxed">
+             <motion.p className="mb-6 text-base text-gold-light text-center leading-relaxed">
   日常から解放される、静寂と癒しのひととき
 </motion.p>
 
@@ -61,7 +61,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.7, ease }}
               className="flex flex-col items-center gap-2 text-center text-base leading-[2.2] tracking-[0.2em] text-foreground/90 sm:text-lg"
             >
-            <div className="flex flex-col items-center gap-1 text-xs text-white/80 text-center leading-relaxed">
+           <div className="flex flex-col items-center gap-1 text-xs text-white/80 text-center leading-relaxed">
   <span>福岡市で選ばれる完全個室</span>
   <span>1日3名限定の特別な空間</span>
   <span>本物志向のためのヘッドスパ専門店</span>
