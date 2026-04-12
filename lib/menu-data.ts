@@ -18,7 +18,7 @@ export type Menu = {
 export const menus: Menu[] = [
   {
     id: "relaxation",
-    tab: "リラクゼーション",
+    tab: "リラクゼーションヘッドスパ",
     enTitle: "Relaxation Head Spa",
     image: "/images/relaxation-bg.png",
     descriptionParagraphs: [
@@ -48,7 +48,7 @@ export const menus: Menu[] = [
   },
   {
     id: "scalp",
-    tab: "育毛×ヘッドスパ",
+    tab: "育毛ヘッドスパ",
     enTitle: "Scalp Care Head Spa",
     image: "/images/menu-scalp.jpg",
     descriptionParagraphs: [
@@ -94,7 +94,7 @@ export const menus: Menu[] = [
   },
   {
     id: "color",
-    tab: "ヘアカラー×ヘッドスパ",
+    tab: "ヘアカラーヘッドスパ",
     enTitle: "Hair Color Head Spa",
     image: "/images/menu-color.jpg",
     descriptionParagraphs: [
