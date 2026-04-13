@@ -62,19 +62,19 @@ export const menus: Menu[] = [
     items: [
       {
         name: "Scalp Care | Level 3",
-        detail: "ヒト臍帯由来Premium",
+        detail: "高濃度ヒト幹細胞ケア Premium",
         duration: "90min",
         price: "¥35,000",
       },
       {
         name: "Scalp Care | Level 2",
-        detail: "ヒト臍帯由来Base",
+        detail: "高濃度ヒト幹細胞ケア Standard",
         duration: "90min",
         price: "¥21,000",
       },
       {
         name: "Scalp Care | Level 1",
-        detail: "ヒト臍帯由来Light",
+        detail: "高濃度ヒト幹細胞ケア Light",
         duration: "90min",
         price: "¥18,000",
       },
@@ -109,7 +109,7 @@ export const menus: Menu[] = [
     items: [
       {
         name: "Hair Color Head Spa + Scalp Care",
-        detail: "ヒト臍帯由来Base使用",
+        detail: "高濃度ヒト幹細胞ケア Light",
         duration: "90min",
         price: "¥26,000",
       },
