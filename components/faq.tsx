@@ -22,35 +22,27 @@ const faqs = [
   },
   {
     q: "トータルでどのくらい時間がかかりますか？",
-    a: "ご来店からお帰りまで、全体で約2時間を目安としております。初めての方も、ゆとりを持ってご来店ください。",
+    a: "ご来店からお帰りまで、全体で約2時間を目安としております。",
   },
   {
     q: "2人同時に施術を受けることはできますか？",
-    a: "当店はお一人様ずつのご案内です。完全個室で、お一人おひとりに寄り添いながら丁寧に施術を行っております。",
+    a: "当店はお一人様ずつのご案内です。完全個室で丁寧に施術を行っております。",
   },
   {
     q: "スタイリング剤はつけて来ても大丈夫ですか？",
-    a: "はい、大丈夫です。ウエットスパが中心のため、スタイリング剤をつけた状態でも問題なく施術を受けていただけます。",
+    a: "はい、大丈夫です。ウエットスパが中心のため問題ございません。",
   },
   {
     q: "ロング料金はありますか？",
-    a: "当店ではロング料金はいただいておりません。髪の長さに関わらず、安心してご利用いただけます。",
-  },
-  {
-    q: "ヒト幹細胞上清液はどのタイミングで使いますか？",
-    a: "当店では必ずシャンプー後、清潔な頭皮に直接塗布しております。より整った状態の頭皮へ使用することで、ケアの質を高めています。",
+    a: "当店ではロング料金はいただいておりません。",
   },
   {
     q: "ヒト幹細胞上清液は安全ですか？",
-    a: "安心の国内製造製品を使用しております。厳しい品質管理のもとで製造された、安全性に配慮された製品を採用しています。",
+    a: "国内製造の製品を使用しており、品質管理されたものを採用しております。",
   },
   {
     q: "髪の毛は生えてきますか？",
-    a: "育毛には個人差があります。ただ、当店では頭皮環境の変化を実感されるお客様が多く、継続的なケアによって手応えを感じていただいております。",
-  },
-  {
-    q: "カラーやパーマの次の日にヘッドスパはできますか？",
-    a: "カラーやパーマの施術後は、1週間ほど間隔を空けていただくことをおすすめしております。頭皮と髪への負担に配慮したご案内です。",
+    a: "育毛には個人差がありますが、頭皮環境の変化を実感される方が多くいらっしゃいます。",
   },
 ]
 
@@ -59,111 +51,75 @@ export function Faq() {
     <section id="faq" className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-4xl px-5 lg:px-10">
         <FadeIn>
-          <div className="mb-10 flex flex-col items-center text-center">
-            <p className="mb-3 text-[11px] tracking-[0.45em] text-gold/70">
+          <div className="mb-10 text-center">
+            <p className="text-[11px] tracking-[0.45em] text-gold/70">
               FAQ
             </p>
-            <h2 className="text-xl tracking-[0.18em] text-foreground sm:text-2xl">
+            <h2 className="mt-3 text-xl tracking-[0.18em] text-foreground sm:text-2xl">
               初めての方によくあるご質問
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              育毛ヘッドスパやヘアカラーヘッドスパをご検討中の方から、
-              特に多くいただくご質問をまとめました。
-            </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.05}>
           <div className="mb-8 grid gap-3 sm:grid-cols-3">
             <div className="rounded-2xl border border-gold/20 bg-card px-4 py-4 text-center">
-              <p className="text-[10px] tracking-[0.25em] text-gold/70">RESERVATION</p>
-              <p className="mt-2 text-xs leading-6 text-foreground/75">
-                完全予約制
-                <br />
-                1日3名様限定
-              </p>
+              <p className="text-[10px] text-gold/70">完全予約制</p>
+              <p className="text-xs mt-2">1日3名限定</p>
             </div>
 
             <div className="rounded-2xl border border-gold/20 bg-card px-4 py-4 text-center">
-              <p className="text-[10px] tracking-[0.25em] text-gold/70">ACCESS</p>
-              <p className="mt-2 text-xs leading-6 text-foreground/75">
-                駐車場2台分あり
-                <br />
-                お車でも安心
-              </p>
+              <p className="text-[10px] text-gold/70">駐車場あり</p>
+              <p className="text-xs mt-2">2台分完備</p>
             </div>
 
             <div className="rounded-2xl border border-gold/20 bg-card px-4 py-4 text-center">
-              <p className="text-[10px] tracking-[0.25em] text-gold/70">TIME</p>
-              <p className="mt-2 text-xs leading-6 text-foreground/75">
-                ご来店からお帰りまで
-                <br />
-                約2時間目安
-              </p>
+              <p className="text-[10px] text-gold/70">施術時間</p>
+              <p className="text-xs mt-2">約2時間</p>
             </div>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="rounded-2xl border border-border/30 bg-card/40 px-4 py-2 sm:px-6">
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="border-border/30"
-                >
-                  <AccordionTrigger className="flex min-h-[44px] items-center py-5 text-left text-sm tracking-[0.03em] text-foreground/85 hover:text-gold hover:no-underline md:py-6 lg:text-[15px]">
-                    <span className="flex items-start gap-3">
-                      <span className="shrink-0 text-[11px] tracking-[0.18em] text-gold/60">
-                        Q.
-                      </span>
-                      <span>{faq.q}</span>
-                    </span>
-                  </AccordionTrigger>
-
-                  <AccordionContent className="pb-6 pl-6 pr-2 text-xs leading-[2.1] tracking-[0.02em] text-muted-foreground md:pl-7 lg:text-[13px]">
-                    <div className="flex gap-2">
-                      <span className="shrink-0 text-[11px] tracking-[0.18em] text-gold/40">
-                        A.
-                      </span>
-                      <span>{faq.a}</span>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+          <Accordion type="single" collapsible>
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>
+                  Q. {faq.q}
+                </AccordionTrigger>
+                <AccordionContent>
+                  A. {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </FadeIn>
 
+        {/* 🔥 最重要CTA */}
         <FadeIn delay={0.2}>
-          <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center lg:px-10">
-            <p className="text-[10px] tracking-[0.35em] text-gold/70">
-              RESERVE & CONSULT
-            </p>
-            <h3 className="mt-3 text-lg tracking-[0.15em] text-foreground sm:text-xl">
-              メニュー選びに迷う方もご安心ください
-            </h3>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              育毛ヘッドスパとヘアカラーヘッドスパのどちらが合うか分からない場合も、
-              ご予約前にLINEでご相談いただけます。
+          <div className="mt-12 text-center">
+            <p className="text-sm text-muted-foreground">
+              抜け毛・薄毛・分け目が気になり始めた今が、
+              最も変化しやすいタイミングです。
             </p>
 
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <p className="mt-2 text-xs text-foreground/50">
+              ※1日3名限定のため、早めのご予約をおすすめしています
+            </p>
+
+            <div className="mt-6 flex flex-col items-center gap-3">
               <a
                 href={COUBIC_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background transition hover:opacity-90"
+                className="bg-gold px-6 py-3 text-black rounded-full"
               >
-                予約する
+                初回のご予約はこちら
               </a>
 
               <a
                 href={LINE_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-foreground/20 px-6 py-3 text-sm tracking-[0.12em] text-foreground transition hover:border-gold/50 hover:text-gold"
+                className="text-sm text-foreground/70"
               >
                 LINEで相談する
               </a>
