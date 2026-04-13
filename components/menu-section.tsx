@@ -34,7 +34,7 @@ function getBadge(menu: (typeof menus)[number]) {
   const text = `${menu.id} ${menu.tab}`.toLowerCase()
 
   if (text.includes("scalp") || text.includes("育毛")) return "人気No.1"
-  if (text.includes("color") || text.includes("カラー")) return "高単価メニュー"
+  if (text.includes("color") || text.includes("カラー")) return "プレミアムケア"
   return "リラックス"
 }
 
