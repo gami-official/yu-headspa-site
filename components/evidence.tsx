@@ -40,7 +40,6 @@ export function Evidence() {
     touchEndX.current = e.changedTouches[0].clientX
     const diff = touchStartX.current - touchEndX.current
     const threshold = 50
-
     if (diff > threshold) next()
     else if (diff < -threshold) prev()
   }
@@ -53,9 +52,11 @@ export function Evidence() {
             <p className="text-[11px] tracking-[0.4em] text-gold/70">
               RESULTS
             </p>
-            <h2 className="mt-3 text-xl tracking-[0.15em] text-foreground sm:text-2xl">
+
+            <h2 className="mt-3 text-xl tracking-[0.14em] text-foreground sm:text-2xl leading-relaxed">
               抜け毛・薄毛に悩む方へ
             </h2>
+
             <p className="mt-4 text-sm leading-7 text-muted-foreground">
               頭皮環境を整えることで、髪は変わります。
               あなたも変化を実感される方の一人かもしれません。
@@ -63,8 +64,9 @@ export function Evidence() {
           </div>
         </FadeIn>
 
+        {/* 🔥 共感追加 */}
         <FadeIn delay={0.08}>
-          <p className="mb-4 text-center text-xs leading-6 tracking-[0.06em] text-foreground/65">
+          <p className="mb-4 text-center text-xs leading-6 text-foreground/65">
             分け目・ボリューム・抜け毛で悩まれていたお客様の変化です
           </p>
         </FadeIn>
@@ -87,49 +89,22 @@ export function Evidence() {
                       alt={slide.alt}
                       fill
                       className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 448px"
                     />
                   </div>
                 ))}
               </div>
             </div>
-
-            {slides.length > 1 && (
-              <>
-                <button
-                  onClick={prev}
-                  className="absolute left-0 top-1/2 flex h-10 w-10 -translate-x-3 -translate-y-1/2 items-center justify-center rounded-full border border-gold/30 bg-black/75 text-white transition hover:border-gold hover:bg-gold hover:text-black"
-                  aria-label="前へ"
-                >
-                  ‹
-                </button>
-                <button
-                  onClick={next}
-                  className="absolute right-0 top-1/2 flex h-10 w-10 translate-x-3 -translate-y-1/2 items-center justify-center rounded-full border border-gold/30 bg-black/75 text-white transition hover:border-gold hover:bg-gold hover:text-black"
-                  aria-label="次へ"
-                >
-                  ›
-                </button>
-              </>
-            )}
           </div>
-
-          {slides.length > 1 && (
-            <div className="mt-5 flex justify-center gap-2">
-              {slides.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    i === current ? "w-6 bg-gold" : "w-1.5 bg-white/30"
-                  }`}
-                  aria-label={`実績スライド ${i + 1}`}
-                />
-              ))}
-            </div>
-          )}
         </FadeIn>
 
+        {/* 🔥 追加（超重要） */}
+        <FadeIn delay={0.15}>
+          <p className="mt-5 text-center text-xs text-foreground/60">
+            初回は頭皮状態を確認しながら最適な施術をご提案します
+          </p>
+        </FadeIn>
+
+        {/* CTA */}
         <FadeIn delay={0.2}>
           <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center">
             <p className="text-sm leading-7 text-muted-foreground">
@@ -137,7 +112,7 @@ export function Evidence() {
               最も変化しやすいタイミングです。
             </p>
 
-            <p className="mt-3 text-xs leading-6 tracking-[0.05em] text-foreground/55">
+            <p className="mt-3 text-xs text-foreground/55">
               ※1日3名限定のため、早めのご予約をおすすめしています
             </p>
 
@@ -145,8 +120,7 @@ export function Evidence() {
               <a
                 href={COUBIC_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-center text-sm tracking-[0.15em] text-black transition hover:opacity-90"
+                className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm text-black"
               >
                 初回のご予約はこちら
               </a>
@@ -154,8 +128,7 @@ export function Evidence() {
               <a
                 href={LINE_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-foreground/70 transition hover:text-gold"
+                className="text-sm text-foreground/70 hover:text-gold"
               >
                 LINEで相談する
               </a>
@@ -165,8 +138,7 @@ export function Evidence() {
               <a
                 href={FRANCHISE_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] text-foreground/40 underline transition hover:text-gold"
+                className="text-[11px] text-foreground/40 underline"
               >
                 この技術を学びたい方はこちら
               </a>
