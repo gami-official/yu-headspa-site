@@ -7,13 +7,15 @@ import Image from "next/image"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
+const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
 const navLinks = [
+  { label: "育毛ヘッドスパ", href: "#ikumou" },
+  { label: "カラー×ヘッドスパ", href: "#color" },
   { label: "当店について", href: "#about" },
-  { label: "メニュー", href: "#menu" },
   { label: "アクセス", href: "#access" },
   { label: "よくある質問", href: "#faq" },
-  { label: "会員様限定オンラインストア", href: "https://headspayu.stores.jp/", external: true },
+  { label: "フランチャイズ募集", href: FRANCHISE_URL, external: true },
 ]
 
 export function Header() {
@@ -27,11 +29,7 @@ export function Header() {
   }, [])
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
-    }
+    document.body.style.overflow = isMenuOpen ? "hidden" : ""
     return () => {
       document.body.style.overflow = ""
     }
@@ -42,173 +40,135 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
           isScrolled
-            ? "bg-background/95 backdrop-blur-md py-3 shadow-2xl shadow-black/30"
+            ? "bg-black/80 backdrop-blur-md py-3 shadow-2xl"
             : "bg-transparent py-4"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
-          {/* Left: Hamburger menu */}
+          {/* Left */}
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="text-foreground/80 transition-colors hover:text-gold"
-            aria-label="メニューを開く"
+            className="text-white/80 hover:text-[#d6b36a]"
           >
             <Menu className="h-5 w-5" />
           </button>
 
-          {/* Center: 空き状況 / LINE ボタン */}
-          <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] sm:text-[10px]">
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault()
-                window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
-              }}
-              className="inline-flex items-center justify-center rounded-full border border-foreground/40 bg-background/80 px-3 py-1.5 text-foreground/80 shadow-sm transition-all hover:border-gold hover:text-gold hover:shadow-md"
+          {/* Center CTA */}
+          <div className="flex items-center gap-2 text-[11px] tracking-[0.15em]">
+            <a
+              href={COUBIC_URL}
+              target="_blank"
+              className="rounded-full border border-[#d6b36a] bg-[#d6b36a] px-4 py-2 text-black font-medium transition hover:bg-transparent hover:text-[#d6b36a]"
             >
-              空き状況を見る
-            </button>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault()
-                window.open(LINE_URL, "_blank", "noopener,noreferrer")
-              }}
-              className="inline-flex items-center justify-center rounded-full border border-foreground/40 bg-background/80 px-3 py-1.5 text-foreground/80 shadow-sm transition-all hover:border-gold hover:text-gold hover:shadow-md"
+              予約する
+            </a>
+            <a
+              href={LINE_URL}
+              target="_blank"
+              className="rounded-full border border-white/40 px-4 py-2 text-white/80 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
             >
-              LINEで相談
-            </button>
+              LINE相談
+            </a>
           </div>
 
-          {/* Right: Logo */}
+          {/* Right Logo */}
           <div className="relative h-8 w-8 overflow-hidden rounded-full">
             <Image
               src="/images/logo.png"
               alt="ゆう"
               fill
               className="object-contain"
-              sizes="32px"
             />
           </div>
         </div>
       </header>
 
-      {/* Fullscreen overlay menu */}
+      {/* Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="fixed inset-0 z-[60] bg-background/[0.98] backdrop-blur-xl"
+            className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl"
           >
             <div className="flex h-full flex-col items-center justify-center">
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute right-5 top-5 text-foreground/60 transition-colors hover:text-gold"
-                aria-label="メニューを閉じる"
+                className="absolute right-5 top-5 text-white/60 hover:text-[#d6b36a]"
               >
                 <X className="h-6 w-6" />
               </button>
 
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-                className="mb-12 flex flex-col items-center"
-              >
-                <span className="text-[10px] tracking-[0.4em] text-foreground/40 sm:text-xs">
+              {/* Logo */}
+              <div className="mb-12 text-center">
+                <p className="text-[10px] tracking-[0.4em] text-white/40">
                   ヘッドスパ専門店
-                </span>
-                <span className="mt-1 text-base tracking-[0.3em] text-gold-light/80 sm:text-lg">
+                </p>
+                <p className="mt-1 text-lg tracking-[0.3em] text-[#d6b36a]">
                   ゆう
-                </span>
-              </motion.div>
+                </p>
+              </div>
 
-              <nav className="flex flex-col items-center gap-7">
+              {/* Nav */}
+              <nav className="flex flex-col items-center gap-6">
                 {navLinks.map((link, i) => (
                   <motion.a
-                    key={link.href}
+                    key={link.label}
                     href={link.href}
                     onClick={(e) => {
                       e.preventDefault()
                       setIsMenuOpen(false)
+
                       if (link.external) {
-                        window.open(link.href, "_blank", "noopener,noreferrer")
+                        window.open(link.href, "_blank")
                         return
                       }
-                      const targetId = link.href.replace("#", "")
-                      setTimeout(() => {
-                        const el = document.getElementById(targetId)
-                        if (el) {
-                          window.history.pushState(null, "", link.href)
+
+                      const el = document.querySelector(link.href)
+                      if (el) {
+                        setTimeout(() => {
                           el.scrollIntoView({ behavior: "smooth" })
-                        }
-                      }, 400)
+                        }, 300)
+                      }
                     }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.15 + i * 0.06, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="text-sm tracking-[0.25em] text-foreground/80 transition-colors hover:text-gold"
+                    transition={{ delay: i * 0.08 }}
+                    className="text-sm tracking-[0.25em] text-white/80 hover:text-[#d6b36a]"
                   >
                     {link.label}
                   </motion.a>
                 ))}
               </nav>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-                className="mt-14 flex flex-col items-center gap-3"
-              >
+              {/* CTA */}
+              <div className="mt-14 flex flex-col items-center gap-4">
                 <a
-                  href="https://coubic.com/yuheadspa/services"
+                  href={COUBIC_URL}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    setIsMenuOpen(false)
-                    window.open("https://coubic.com/yuheadspa/services", "_blank", "noopener,noreferrer")
-                  }}
-                  className="border border-gold bg-gold px-12 py-3.5 text-xs tracking-[0.2em] text-background transition-all duration-300 hover:bg-transparent hover:text-gold"
+                  className="bg-[#d6b36a] px-12 py-3 text-black tracking-[0.2em] hover:bg-transparent hover:text-[#d6b36a] border border-[#d6b36a]"
                 >
-                  御予約はこちら
+                  ご予約はこちら
                 </a>
-                <span className="text-[9px] tracking-[0.15em] text-foreground/30">
-                  24時間ネット予約受付中
-                </span>
-                <div className="mt-3 flex flex-wrap items-center justify-center gap-4 text-[10px] tracking-[0.12em] text-foreground/60">
-                  <a
-                    href={COUBIC_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      setIsMenuOpen(false)
-                      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
-                    }}
-                    className="transition-colors hover:text-gold"
-                  >
-                    空き状況を見る
-                  </a>
-                  <span className="text-foreground/30">｜</span>
-                  <a
-                    href={LINE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      setIsMenuOpen(false)
-                      window.open(LINE_URL, "_blank", "noopener,noreferrer")
-                    }}
-                    className="transition-colors hover:text-gold"
-                  >
-                    LINEで相談
-                  </a>
-                </div>
-              </motion.div>
+
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  className="text-sm text-white/70 hover:text-[#d6b36a]"
+                >
+                  LINEで相談する
+                </a>
+
+                {/* フランチャイズ導線 */}
+                <a
+                  href={FRANCHISE_URL}
+                  target="_blank"
+                  className="mt-6 text-[11px] text-white/40 underline hover:text-[#d6b36a]"
+                >
+                  技術を学びたい方はこちら
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
