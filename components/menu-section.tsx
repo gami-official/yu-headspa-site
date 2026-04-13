@@ -25,7 +25,7 @@ function getCatch(menu: (typeof menus)[number]) {
     return "抜け毛・薄毛・分け目・ボリューム不足が気になる方へ"
 
   if (text.includes("color") || text.includes("カラー"))
-    return "白髪染め・ダメージ・頭皮負担が気になる方へ"
+    return "福岡でも希少な、頭皮ケアとカラーを同時に叶える特別メニュー"
 
   return "深いリラックスと疲労ケアを求める方へ"
 }
@@ -34,8 +34,8 @@ function getBadge(menu: (typeof menus)[number]) {
   const text = `${menu.id} ${menu.tab}`.toLowerCase()
 
   if (text.includes("scalp") || text.includes("育毛")) return "人気No.1"
-  if (text.includes("color") || text.includes("カラー")) return "プレミアムケア"
-  return "リラックス"
+  if (text.includes("color") || text.includes("カラー")) return "PREMIUM CARE"
+  return "RELAXATION"
 }
 
 export function MenuSection() {
@@ -82,7 +82,7 @@ export function MenuSection() {
                             src={menu.image}
                             alt={menu.tab}
                             fill
-                            className="object-cover"
+                            className="object-cover brightness-90"
                           />
                         </div>
                       )}
@@ -110,19 +110,22 @@ export function MenuSection() {
                           </p>
                         </div>
 
+                        {/* 🔥 ここ改善 */}
                         <div className="mt-4 border-t pt-4">
                           {menu.items.map((item) => (
-                            <div
-                              key={item.name}
-                              className="flex justify-between py-1"
-                            >
+                            <div key={item.name} className="flex justify-between py-1">
                               <span className="text-[12px] text-foreground/70">
                                 {item.name}
                               </span>
 
-                              <span className="text-sm text-gold">
-                                {item.price}
-                              </span>
+                              <div className="flex items-baseline gap-2">
+                                <span className="text-[11px] text-muted-foreground">
+                                  {item.duration}
+                                </span>
+                                <span className="text-sm text-gold">
+                                  {item.price}
+                                </span>
+                              </div>
                             </div>
                           ))}
                         </div>
@@ -139,11 +142,8 @@ export function MenuSection() {
         <FadeIn delay={0.2}>
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center">
             <p className="text-sm text-muted-foreground">
-              どのメニューを選べばいいか迷う方へ
-            </p>
-
-            <p className="mt-2 text-sm text-muted-foreground">
-              初回は頭皮状態を確認しながら最適な施術をご提案します
+              抜け毛・薄毛・分け目が気になり始めた今が、
+              最も変化しやすいタイミングです
             </p>
 
             <p className="mt-2 text-xs text-foreground/50">
