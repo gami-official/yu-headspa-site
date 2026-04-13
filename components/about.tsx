@@ -25,15 +25,16 @@ export function About() {
           </div>
         </FadeIn>
 
-        {/* 👇ここ変更 */}
         <FadeIn>
           <div className="mb-10 flex flex-col items-center text-center">
             <p className="mb-3 text-[11px] tracking-[0.45em] text-gold/70">
               ABOUT
             </p>
-            <h2 className="text-xl tracking-[0.18em] text-foreground sm:text-2xl">
+
+            <h2 className="text-xl tracking-[0.16em] text-foreground sm:text-2xl leading-relaxed">
               福岡市で希少な本格育毛ヘッドスパ
             </h2>
+
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
               抜け毛・薄毛・分け目・ボリューム不足にお悩みの方へ。
               頭皮環境から整えることで、髪本来の美しさを引き出します。
@@ -43,6 +44,7 @@ export function About() {
 
         <FadeIn delay={0.1}>
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+            {/* 画像 */}
             <div>
               <div className="relative mx-auto aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border/30">
                 <Image
@@ -65,20 +67,27 @@ export function About() {
               </div>
             </div>
 
+            {/* テキスト */}
             <div className="text-center lg:text-left">
-              <p className="text-sm leading-8 tracking-[0.05em] text-foreground/75 lg:text-[15px]">
+              <p className="text-sm leading-8 tracking-[0.04em] text-foreground/75 lg:text-[15px]">
                 福岡市西区豊浜の完全個室ヘッドスパ専門店。
                 ヘッドスパ歴15年以上の技術で、育毛・頭皮改善・ヘアカラーヘッドスパまで、
                 お悩みに合わせて丁寧にご提案いたします。
               </p>
 
-              <p className="mt-5 text-sm leading-8 tracking-[0.05em] text-foreground/75 lg:text-[15px]">
+              <p className="mt-5 text-sm leading-8 tracking-[0.04em] text-foreground/75 lg:text-[15px]">
                 1日3名様限定・完全予約制だからこそ、
                 流れ作業ではなく、お一人おひとりの状態に向き合い、
                 頭皮環境から整える本格的なケアをご提供します。
               </p>
 
-              {/* 👇希少性ブロック（追加） */}
+              {/* 🔥 共感追加 */}
+              <p className="mt-5 text-sm leading-7 text-muted-foreground">
+                「まだ大丈夫」と思っている今が、
+                最も変化しやすいタイミングです。
+              </p>
+
+              {/* 希少性 */}
               <div className="mt-6 rounded-2xl border border-gold/20 bg-card px-5 py-5">
                 <p className="text-[10px] tracking-[0.3em] text-gold/70">
                   SPECIAL VALUE
@@ -89,6 +98,7 @@ export function About() {
                 </p>
               </div>
 
+              {/* メニュー導線 */}
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-gold/20 bg-card px-5 py-5">
                   <p className="text-[10px] tracking-[0.25em] text-gold/70">
@@ -117,6 +127,7 @@ export function About() {
                 </div>
               </div>
 
+              {/* バッジ */}
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-[11px] tracking-[0.12em] text-foreground/60 lg:justify-start">
                 <span className="rounded-full border border-border/30 px-4 py-2">
                   完全個室
@@ -135,7 +146,7 @@ export function About() {
           </div>
         </FadeIn>
 
-        {/* CTAはそのまま活かす */}
+        {/* CTA */}
         <FadeIn delay={0.2}>
           <div
             id="reservation"
@@ -144,9 +155,14 @@ export function About() {
             <p className="text-[10px] tracking-[0.35em] text-gold/70">
               RESERVATION
             </p>
+
             <h3 className="mt-3 text-lg tracking-[0.15em] text-foreground sm:text-xl">
               初めての方も安心してご予約ください
             </h3>
+
+            <p className="mt-4 text-sm text-muted-foreground">
+              ※1日3名限定のため、早めのご予約をおすすめしています
+            </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
@@ -154,7 +170,7 @@ export function About() {
                 target="_blank"
                 className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background"
               >
-                予約する
+                初回のご予約はこちら
               </a>
 
               <a
