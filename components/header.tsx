@@ -38,33 +38,32 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-700 ${
           isScrolled
-            ? "bg-black/80 backdrop-blur-md py-3 shadow-2xl"
+            ? "bg-black/80 py-3 shadow-2xl backdrop-blur-md"
             : "bg-transparent py-4"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
-          {/* Left */}
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-5">
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="text-white/80 hover:text-[#d6b36a]"
+            className="shrink-0 text-white/80 transition hover:text-[#d6b36a]"
+            aria-label="メニューを開く"
           >
             <Menu className="h-5 w-5" />
           </button>
 
-          {/* Center CTA（最重要） */}
-          <div className="flex flex-col items-center gap-1 text-[11px] tracking-[0.15em]">
-            <p className="text-[9px] text-white/50 tracking-[0.2em]">
+          <div className="mx-3 flex flex-col items-center gap-1 text-[10px] tracking-[0.12em] sm:text-[11px]">
+            <p className="text-[9px] tracking-[0.18em] text-white/50">
               1日3名限定
             </p>
 
-            <div className="flex gap-2">
+            <div className="flex items-center gap-2">
               <a
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#d6b36a] bg-[#d6b36a] px-4 py-2 text-black font-medium transition hover:bg-transparent hover:text-[#d6b36a]"
+                className="rounded-full border border-[#d6b36a] bg-[#d6b36a] px-3 py-2 text-[12px] font-medium text-black transition hover:bg-transparent hover:text-[#d6b36a] sm:px-4 sm:text-sm"
               >
                 育毛ヘッドスパ予約
               </a>
@@ -73,26 +72,25 @@ export function Header() {
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/40 px-4 py-2 text-white/80 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+                className="rounded-full border border-white/40 px-3 py-2 text-[12px] text-white/80 transition hover:border-[#d6b36a] hover:text-[#d6b36a] sm:px-4 sm:text-sm"
               >
                 LINE相談
               </a>
             </div>
           </div>
 
-          {/* Right Logo */}
-          <div className="relative h-8 w-8 overflow-hidden rounded-full">
+          <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full">
             <Image
               src="/images/logo.png"
               alt="ゆう"
               fill
               className="object-contain"
+              sizes="32px"
             />
           </div>
         </div>
       </header>
 
-      {/* Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -101,15 +99,15 @@ export function Header() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl"
           >
-            <div className="flex h-full flex-col items-center justify-center">
+            <div className="flex h-full flex-col items-center justify-center px-6">
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute right-5 top-5 text-white/60 hover:text-[#d6b36a]"
+                className="absolute right-5 top-5 text-white/60 transition hover:text-[#d6b36a]"
+                aria-label="メニューを閉じる"
               >
                 <X className="h-6 w-6" />
               </button>
 
-              {/* Logo */}
               <div className="mb-12 text-center">
                 <p className="text-[10px] tracking-[0.4em] text-white/40">
                   ヘッドスパ専門店
@@ -119,7 +117,6 @@ export function Header() {
                 </p>
               </div>
 
-              {/* Nav */}
               <nav className="flex flex-col items-center gap-6">
                 {navLinks.map((link, i) => (
                   <motion.a
@@ -130,7 +127,7 @@ export function Header() {
                       setIsMenuOpen(false)
 
                       if (link.external) {
-                        window.open(link.href, "_blank")
+                        window.open(link.href, "_blank", "noopener,noreferrer")
                         return
                       }
 
@@ -144,24 +141,21 @@ export function Header() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.08 }}
-                    className="text-sm tracking-[0.25em] text-white/80 hover:text-[#d6b36a]"
+                    className="text-sm tracking-[0.25em] text-white/80 transition hover:text-[#d6b36a]"
                   >
                     {link.label}
                   </motion.a>
                 ))}
               </nav>
 
-              {/* CTA */}
               <div className="mt-14 flex flex-col items-center gap-4">
-                <p className="text-[10px] text-white/50">
-                  1日3名限定
-                </p>
+                <p className="text-[10px] text-white/50">1日3名限定</p>
 
                 <a
                   href={COUBIC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#d6b36a] px-12 py-3 text-black tracking-[0.2em] hover:bg-transparent hover:text-[#d6b36a] border border-[#d6b36a]"
+                  className="border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-center text-sm tracking-[0.18em] text-black transition hover:bg-transparent hover:text-[#d6b36a] sm:px-12"
                 >
                   育毛ヘッドスパ予約はこちら
                 </a>
@@ -170,7 +164,7 @@ export function Header() {
                   href={LINE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/70 hover:text-[#d6b36a]"
+                  className="text-sm text-white/70 transition hover:text-[#d6b36a]"
                 >
                   LINEで相談する
                 </a>
@@ -179,7 +173,7 @@ export function Header() {
                   href={FRANCHISE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 text-[11px] text-white/40 underline hover:text-[#d6b36a]"
+                  className="mt-6 text-[11px] text-white/40 underline transition hover:text-[#d6b36a]"
                 >
                   技術を学びたい方はこちら
                 </a>
