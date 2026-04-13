@@ -53,22 +53,31 @@ export function Header() {
             <Menu className="h-5 w-5" />
           </button>
 
-          {/* Center CTA */}
-          <div className="flex items-center gap-2 text-[11px] tracking-[0.15em]">
-            <a
-              href={COUBIC_URL}
-              target="_blank"
-              className="rounded-full border border-[#d6b36a] bg-[#d6b36a] px-4 py-2 text-black font-medium transition hover:bg-transparent hover:text-[#d6b36a]"
-            >
-              予約する
-            </a>
-            <a
-              href={LINE_URL}
-              target="_blank"
-              className="rounded-full border border-white/40 px-4 py-2 text-white/80 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
-            >
-              LINE相談
-            </a>
+          {/* Center CTA（最重要） */}
+          <div className="flex flex-col items-center gap-1 text-[11px] tracking-[0.15em]">
+            <p className="text-[9px] text-white/50 tracking-[0.2em]">
+              1日3名限定
+            </p>
+
+            <div className="flex gap-2">
+              <a
+                href={COUBIC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-[#d6b36a] bg-[#d6b36a] px-4 py-2 text-black font-medium transition hover:bg-transparent hover:text-[#d6b36a]"
+              >
+                育毛ヘッドスパ予約
+              </a>
+
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-white/40 px-4 py-2 text-white/80 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+              >
+                LINE相談
+              </a>
+            </div>
           </div>
 
           {/* Right Logo */}
@@ -144,26 +153,32 @@ export function Header() {
 
               {/* CTA */}
               <div className="mt-14 flex flex-col items-center gap-4">
+                <p className="text-[10px] text-white/50">
+                  1日3名限定
+                </p>
+
                 <a
                   href={COUBIC_URL}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-[#d6b36a] px-12 py-3 text-black tracking-[0.2em] hover:bg-transparent hover:text-[#d6b36a] border border-[#d6b36a]"
                 >
-                  ご予約はこちら
+                  育毛ヘッドスパ予約はこちら
                 </a>
 
                 <a
                   href={LINE_URL}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-white/70 hover:text-[#d6b36a]"
                 >
                   LINEで相談する
                 </a>
 
-                {/* フランチャイズ導線 */}
                 <a
                   href={FRANCHISE_URL}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-6 text-[11px] text-white/40 underline hover:text-[#d6b36a]"
                 >
                   技術を学びたい方はこちら
