@@ -21,11 +21,13 @@ function isScalpMenu(menu: (typeof menus)[number]) {
 function getCatch(menu: (typeof menus)[number]) {
   const text = `${menu.id} ${menu.tab}`.toLowerCase()
 
-  if (text.includes("scalp") || text.includes("育毛"))
+  if (text.includes("scalp") || text.includes("育毛")) {
     return "抜け毛・薄毛・分け目・ボリューム不足が気になる方へ"
+  }
 
-  if (text.includes("color") || text.includes("カラー"))
+  if (text.includes("color") || text.includes("カラー")) {
     return "福岡でも希少な、頭皮ケアとカラーを同時に叶える特別メニュー"
+  }
 
   return "深いリラックスと疲労ケアを求める方へ"
 }
@@ -50,7 +52,7 @@ export function MenuSection() {
               MENU
             </span>
 
-            <h2 className="text-xl tracking-[0.18em] text-foreground sm:text-2xl leading-relaxed">
+            <h2 className="text-xl leading-relaxed tracking-[0.18em] text-foreground sm:text-2xl">
               抜け毛・薄毛・頭皮悩みから選ぶ専門メニュー
             </h2>
 
@@ -83,6 +85,7 @@ export function MenuSection() {
                             alt={menu.tab}
                             fill
                             className="object-cover brightness-90"
+                            sizes="(max-width: 640px) 100vw, 288px"
                           />
                         </div>
                       )}
@@ -97,7 +100,7 @@ export function MenuSection() {
                             {getCatch(menu)}
                           </p>
 
-                          <h3 className="text-lg tracking-[0.1em] leading-relaxed text-foreground">
+                          <h3 className="text-lg leading-relaxed tracking-[0.1em] text-foreground">
                             {menu.tab}
                           </h3>
 
@@ -110,21 +113,29 @@ export function MenuSection() {
                           </p>
                         </div>
 
-                        {/* 🔥 ここ改善 */}
                         <div className="mt-4 border-t pt-4">
                           {menu.items.map((item) => (
-                            <div key={item.name} className="flex justify-between py-1">
-                              <span className="text-[12px] text-foreground/70">
-                                {item.name}
-                              </span>
+                            <div key={item.name} className="flex justify-between gap-3 py-1.5">
+                              <div className="min-w-0">
+                                <span className="text-[12px] text-foreground/70">
+                                  {item.name}
+                                </span>
+                                {item.detail && (
+                                  <p className="mt-0.5 text-[10px] leading-5 text-muted-foreground">
+                                    {item.detail}
+                                  </p>
+                                )}
+                              </div>
 
-                              <div className="flex items-baseline gap-2">
-                                <span className="text-[11px] text-muted-foreground">
-                                  {item.duration}
-                                </span>
-                                <span className="text-sm text-gold">
-                                  {item.price}
-                                </span>
+                              <div className="shrink-0 text-right">
+                                <div className="flex items-baseline gap-2">
+                                  <span className="text-[11px] text-muted-foreground">
+                                    {item.duration}
+                                  </span>
+                                  <span className="text-sm text-gold">
+                                    {item.price}
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           ))}
@@ -138,10 +149,9 @@ export function MenuSection() {
           })}
         </div>
 
-        {/* CTA */}
         <FadeIn delay={0.2}>
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm leading-7 text-muted-foreground">
               抜け毛・薄毛・分け目が気になり始めた今が、
               最も変化しやすいタイミングです
             </p>
@@ -154,7 +164,8 @@ export function MenuSection() {
               <a
                 href="https://coubic.com/yuheadspa/services"
                 target="_blank"
-                className="rounded-full bg-gold px-6 py-3 text-black text-sm"
+                rel="noopener noreferrer"
+                className="rounded-full bg-gold px-6 py-3 text-sm text-black"
               >
                 初回のご予約はこちら
               </a>
@@ -162,6 +173,7 @@ export function MenuSection() {
               <a
                 href="https://lin.ee/7hso3k1"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-foreground/70"
               >
                 LINEで相談する
