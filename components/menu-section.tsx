@@ -17,10 +17,7 @@ function getMenuPriority(menu: (typeof menus)[number]) {
     return 0
   }
 
-  if (
-    text.includes("color") ||
-    text.includes("カラー")
-  ) {
+  if (text.includes("color") || text.includes("カラー")) {
     return 1
   }
 
@@ -43,7 +40,7 @@ function getMenuAnchor(menu: (typeof menus)[number]) {
     return "color"
   }
 
-  return undefined
+  return "relaxation"
 }
 
 function getMenuCatch(menu: (typeof menus)[number]) {
@@ -55,14 +52,14 @@ function getMenuCatch(menu: (typeof menus)[number]) {
     text.includes("育毛") ||
     text.includes("頭皮")
   ) {
-    return "抜け毛・薄毛・頭皮環境が気になる方へ"
+    return "抜け毛・薄毛・分け目・ボリューム不足が気になる方へ"
   }
 
   if (text.includes("color") || text.includes("カラー")) {
-    return "白髪染め・頭皮負担・ダメージが気になる方へ"
+    return "白髪染め・ダメージ・頭皮負担が気になる方へ"
   }
 
-  return "深い癒しと上質なリラクゼーションを求める方へ"
+  return "深いリラックスと疲労ケアを求める方へ"
 }
 
 function getMenuBadge(menu: (typeof menus)[number]) {
@@ -74,14 +71,49 @@ function getMenuBadge(menu: (typeof menus)[number]) {
     text.includes("育毛") ||
     text.includes("頭皮")
   ) {
-    return "人気訴求"
+    return "人気No.1"
   }
 
   if (text.includes("color") || text.includes("カラー")) {
-    return "高単価訴求"
+    return "高単価メニュー"
   }
 
-  return "癒し訴求"
+  return "リラックス"
+}
+
+function isScalpMenu(menu: (typeof menus)[number]) {
+  const text = `${menu.id} ${menu.tab} ${menu.enTitle}`.toLowerCase()
+
+  return (
+    text.includes("scalp") ||
+    text.includes("care") ||
+    text.includes("育毛") ||
+    text.includes("頭皮")
+  )
+}
+
+function getQuickLinkDescription(type: "scalp" | "color" | "relaxation") {
+  if (type === "scalp") {
+    return "抜け毛・薄毛・分け目・頭皮環境が気になる方に"
+  }
+
+  if (type === "color") {
+    return "白髪染め・ダメージ・頭皮負担が気になる方に"
+  }
+
+  return "深くリラックスしたい方、疲労を癒したい方に"
+}
+
+function getQuickLinkSub(type: "scalp" | "color" | "relaxation") {
+  if (type === "scalp") {
+    return "福岡市で希少な本格育毛ヘッドスパ"
+  }
+
+  if (type === "color") {
+    return "カラーしながら頭皮ケアできる希少施術"
+  }
+
+  return "完全個室で受ける上質な癒し時間"
 }
 
 export function MenuSection() {
@@ -96,28 +128,30 @@ export function MenuSection() {
               MENU
             </span>
             <h2 className="text-center text-xl tracking-[0.2em] text-foreground sm:text-2xl">
-              お悩みから選べるメニュー
+              抜け毛・薄毛・頭皮悩みから選ぶ専門メニュー
             </h2>
             <p className="mt-4 max-w-2xl text-center text-sm leading-7 text-muted-foreground sm:text-base">
-              育毛ヘッドスパ、ヘアカラーヘッドスパ、癒しのリラクゼーションヘッドスパまで。
+              育毛ヘッドスパを中心に、ヘアカラーヘッドスパ、リラクゼーションヘッドスパまで。
               お悩みや目的に合わせて、最適なメニューをご案内します。
             </p>
           </div>
         </FadeIn>
 
-        {/* Quick links */}
         <FadeIn delay={0.05}>
           <div className="mb-10 grid gap-4 md:grid-cols-3 lg:mb-14">
             <a
               href="#ikumou"
-              className="group rounded-2xl border border-gold/20 bg-card px-5 py-5 transition-all duration-300 hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+              className="group rounded-2xl border border-gold/30 bg-card px-5 py-5 transition-all duration-300 hover:border-gold/50 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
             >
               <p className="mb-2 text-[10px] tracking-[0.3em] text-gold/70">SCALP CARE</p>
               <h3 className="text-sm tracking-[0.12em] text-foreground sm:text-base">
                 育毛ヘッドスパ
               </h3>
               <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                抜け毛・薄毛・分け目・頭皮環境が気になる方に
+                {getQuickLinkDescription("scalp")}
+              </p>
+              <p className="mt-2 text-[11px] leading-6 tracking-[0.08em] text-gold/80">
+                {getQuickLinkSub("scalp")}
               </p>
             </a>
 
@@ -130,12 +164,15 @@ export function MenuSection() {
                 ヘアカラーヘッドスパ
               </h3>
               <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                白髪染め・ダメージ・頭皮負担が気になる方に
+                {getQuickLinkDescription("color")}
+              </p>
+              <p className="mt-2 text-[11px] leading-6 tracking-[0.08em] text-gold/80">
+                {getQuickLinkSub("color")}
               </p>
             </a>
 
             <a
-              href="#menu"
+              href="#relaxation"
               className="group rounded-2xl border border-border/30 bg-card px-5 py-5 transition-all duration-300 hover:border-gold/40 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
             >
               <p className="mb-2 text-[10px] tracking-[0.3em] text-gold/70">RELAXATION</p>
@@ -143,7 +180,10 @@ export function MenuSection() {
                 リラクゼーションヘッドスパ
               </h3>
               <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                深くリラックスしたい方、疲労を癒したい方に
+                {getQuickLinkDescription("relaxation")}
+              </p>
+              <p className="mt-2 text-[11px] leading-6 tracking-[0.08em] text-gold/80">
+                {getQuickLinkSub("relaxation")}
               </p>
             </a>
           </div>
@@ -154,14 +194,20 @@ export function MenuSection() {
             const anchor = getMenuAnchor(menu)
             const catchText = getMenuCatch(menu)
             const badge = getMenuBadge(menu)
+            const highlighted = isScalpMenu(menu)
 
             return (
               <FadeIn key={menu.id} delay={idx * 0.08}>
                 <div id={anchor}>
                   <Link href={`/menu/${menu.id}`} className="group block">
-                    <div className="relative overflow-hidden rounded-2xl border border-border/30 bg-card transition-all duration-500 hover:border-gold/50 hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)]">
+                    <div
+                      className={`relative overflow-hidden rounded-2xl bg-card transition-all duration-500 hover:border-gold/50 hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] ${
+                        highlighted
+                          ? "border border-gold/50 shadow-[0_10px_40px_rgba(0,0,0,0.12)]"
+                          : "border border-border/30"
+                      }`}
+                    >
                       <div className="flex flex-col sm:flex-row">
-                        {/* Image */}
                         {menu.image && (
                           <div className="relative h-64 w-full shrink-0 overflow-hidden sm:h-auto sm:w-64 lg:w-80">
                             <Image
@@ -175,7 +221,6 @@ export function MenuSection() {
                           </div>
                         )}
 
-                        {/* Content */}
                         <div className="flex flex-1 flex-col justify-between p-6 lg:p-8">
                           <div>
                             <div className="mb-4 flex items-start justify-between gap-4">
@@ -261,18 +306,10 @@ export function MenuSection() {
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
               抜け毛・薄毛・白髪・頭皮の違和感・疲労感など、
               今のお悩みに合わせて最適なメニューをご提案します。
-              まずは詳細ページをご覧いただくか、LINEからお気軽にご相談ください。
+              まずはご予約いただくか、LINEからお気軽にご相談ください。
             </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="https://lin.ee/7hso3k1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold/40 bg-gold/10 px-6 py-3 text-sm tracking-[0.12em] text-foreground transition hover:bg-gold/20"
-              >
-                LINEで相談する
-              </a>
               <a
                 href="https://coubic.com/yuheadspa/services"
                 target="_blank"
@@ -280,6 +317,14 @@ export function MenuSection() {
                 className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background transition hover:opacity-90"
               >
                 予約ページへ進む
+              </a>
+              <a
+                href="https://lin.ee/7hso3k1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold/40 bg-gold/10 px-6 py-3 text-sm tracking-[0.12em] text-foreground transition hover:bg-gold/20"
+              >
+                LINEで相談する
               </a>
             </div>
           </div>
