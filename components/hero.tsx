@@ -3,12 +3,13 @@
 import { motion } from "framer-motion"
 
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
+const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const LINE_URL = "https://lin.ee/7hso3k1"
 
 export function Hero() {
   return (
     <section className="relative h-[90vh] overflow-hidden md:h-screen">
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-zinc-900">
-        {/* Hero background */}
         <div className="relative h-full w-full">
           <video
             src="/videos/hero.mp4"
@@ -19,13 +20,11 @@ export function Hero() {
             className="h-full w-full object-cover object-center"
           />
 
-          {/* overlay */}
-          <div className="absolute inset-0 bg-black/45" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/65" />
         </div>
 
-        {/* Text */}
-        <div className="pointer-events-none absolute inset-x-0 top-[22%] z-10 flex justify-center px-6 text-center sm:top-[24%]">
+        <div className="pointer-events-none absolute inset-x-0 top-[18%] z-10 flex justify-center px-6 text-center sm:top-[21%]">
           <div className="pointer-events-auto flex max-w-3xl flex-col items-center">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -39,60 +38,84 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.35, ease }}
-              className="mb-4 text-xl tracking-[0.22em] text-[#d6b36a] drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] sm:text-2xl md:text-3xl"
+              transition={{ duration: 0.9, delay: 0.3, ease }}
+              className="mb-3 text-[12px] leading-relaxed tracking-[0.18em] text-white/80 sm:text-sm"
+            >
+              抜け毛・薄毛・分け目が気になり始めた方へ
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.38, ease }}
+              className="mb-5 text-xl tracking-[0.22em] text-[#d6b36a] drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] sm:text-2xl md:text-3xl"
             >
               ヘッドスパ専門店ゆう
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.48, ease }}
+              className="mb-4 text-sm leading-relaxed tracking-[0.18em] text-[#f2deb0] drop-shadow-[0_2px_8px_rgba(0,0,0,0.75)] sm:text-base"
+            >
+              薬に頼らない頭皮ケアという選択
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.5, ease }}
+              transition={{ duration: 0.9, delay: 0.58, ease }}
               className="mb-6 flex flex-col items-center gap-1 text-center text-[11px] leading-relaxed tracking-[0.18em] text-white/75 sm:text-xs"
             >
               <span>創業6年・リピート多数</span>
               <span>ヘッドスパ歴15年以上</span>
-              <span>育毛・頭皮改善・カラー施術対応</span>
+              <span>育毛ヘッドスパ・頭皮改善・ヘアカラーヘッドスパ対応</span>
             </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.65, ease }}
-              className="mb-8 text-sm leading-relaxed tracking-[0.18em] text-[#f2deb0] drop-shadow-[0_2px_8px_rgba(0,0,0,0.75)] sm:text-base md:text-lg"
-            >
-              日常から解放される、静寂と癒しのひととき
-            </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8, ease }}
-              className="mb-8 flex flex-col items-center gap-2 text-center text-sm leading-[2] tracking-[0.18em] text-white/90 sm:text-base md:text-lg"
+              transition={{ duration: 1, delay: 0.72, ease }}
+              className="mb-4 flex flex-col items-center gap-2 text-center text-sm leading-[2] tracking-[0.18em] text-white/92 sm:text-base md:text-lg"
             >
-              <span>福岡市で選ばれる完全個室</span>
+              <span>福岡市で希少な本格育毛ヘッドスパ</span>
+              <span>白髪染めと頭皮ケアを両立するカラー施術</span>
               <span>1日3名限定の特別な空間</span>
-              <span>本物志向のためのヘッドスパ専門店</span>
             </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.84, ease }}
+              className="mb-8 max-w-2xl text-sm leading-7 tracking-[0.08em] text-white/75 sm:text-base"
+            >
+              完全個室で、抜け毛・薄毛・分け目のお悩みから、
+              白髪染めや頭皮負担が気になる方まで。
+              お一人おひとりに合わせて丁寧にご提案します。
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.95, ease }}
+              transition={{ duration: 1, delay: 0.96, ease }}
               className="flex flex-col items-center gap-3 sm:flex-row"
             >
               <a
-                href="#menu"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-[#d6b36a]/70 bg-[#d6b36a]/15 px-8 py-3 text-sm tracking-[0.18em] text-white backdrop-blur-sm transition hover:bg-[#d6b36a]/25"
+                href={COUBIC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-sm tracking-[0.18em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
               >
-                MENUを見る
+                予約する
               </a>
               <a
-                href="https://www.yuheadspa.net/"
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-3 text-sm tracking-[0.18em] text-white backdrop-blur-sm transition hover:bg-white/15"
               >
-                公式サイト
+                LINEで相談する
               </a>
             </motion.div>
           </div>
