@@ -99,7 +99,7 @@ export function MenuSection() {
               お悩みから選べるメニュー
             </h2>
             <p className="mt-4 max-w-2xl text-center text-sm leading-7 text-muted-foreground sm:text-base">
-              育毛ヘッドスパ、ヘアカラーヘッドスパ、癒しのリラクゼーションまで。
+              育毛ヘッドスパ、ヘアカラーヘッドスパ、癒しのリラクゼーションヘッドスパまで。
               お悩みや目的に合わせて、最適なメニューをご案内します。
             </p>
           </div>
@@ -140,7 +140,7 @@ export function MenuSection() {
             >
               <p className="mb-2 text-[10px] tracking-[0.3em] text-gold/70">RELAXATION</p>
               <h3 className="text-sm tracking-[0.12em] text-foreground sm:text-base">
-                癒しのヘッドスパ
+                リラクゼーションヘッドスパ
               </h3>
               <p className="mt-2 text-xs leading-6 text-muted-foreground">
                 深くリラックスしたい方、疲労を癒したい方に
