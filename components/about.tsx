@@ -25,14 +25,19 @@ export function About() {
           </div>
         </FadeIn>
 
+        {/* 👇ここ変更 */}
         <FadeIn>
           <div className="mb-10 flex flex-col items-center text-center">
             <p className="mb-3 text-[11px] tracking-[0.45em] text-gold/70">
               ABOUT
             </p>
             <h2 className="text-xl tracking-[0.18em] text-foreground sm:text-2xl">
-              完全個室で受ける、上質なヘッドスパ
+              福岡市で希少な本格育毛ヘッドスパ
             </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
+              抜け毛・薄毛・分け目・ボリューム不足にお悩みの方へ。
+              頭皮環境から整えることで、髪本来の美しさを引き出します。
+            </p>
           </div>
         </FadeIn>
 
@@ -45,7 +50,6 @@ export function About() {
                   alt="当店の施術ルーム"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 640px"
                 />
               </div>
 
@@ -64,15 +68,26 @@ export function About() {
             <div className="text-center lg:text-left">
               <p className="text-sm leading-8 tracking-[0.05em] text-foreground/75 lg:text-[15px]">
                 福岡市西区豊浜の完全個室ヘッドスパ専門店。
-                ヘッドスパ歴15年以上の技術で、疲労・眼精疲労・頭皮ケア・育毛ケア・
-                ヘアカラーヘッドスパまで、お悩みに合わせて丁寧にご提案いたします。
+                ヘッドスパ歴15年以上の技術で、育毛・頭皮改善・ヘアカラーヘッドスパまで、
+                お悩みに合わせて丁寧にご提案いたします。
               </p>
 
               <p className="mt-5 text-sm leading-8 tracking-[0.05em] text-foreground/75 lg:text-[15px]">
                 1日3名様限定・完全予約制だからこそ、
-                流れ作業ではなく、お一人おひとりの状態に向き合う上質な時間をご提供します。
-                周囲を気にせず、静かにお過ごしいただける空間です。
+                流れ作業ではなく、お一人おひとりの状態に向き合い、
+                頭皮環境から整える本格的なケアをご提供します。
               </p>
+
+              {/* 👇希少性ブロック（追加） */}
+              <div className="mt-6 rounded-2xl border border-gold/20 bg-card px-5 py-5">
+                <p className="text-[10px] tracking-[0.3em] text-gold/70">
+                  SPECIAL VALUE
+                </p>
+                <p className="mt-3 text-sm leading-7 text-foreground/80">
+                  完全個室 × 1日3名限定 × 本格育毛ケア。
+                  福岡市でも希少な、頭皮環境から整えるヘッドスパです。
+                </p>
+              </div>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-gold/20 bg-card px-5 py-5">
@@ -96,8 +111,8 @@ export function About() {
                     ヘアカラーヘッドスパ
                   </h3>
                   <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                    白髪染め・ダメージ・頭皮負担が気になる方へ。
-                    美しい髪色と頭皮ケアを同時に。
+                    白髪染めと頭皮ケアを同時に。
+                    ダメージや頭皮負担が気になる方へ。
                   </p>
                 </div>
               </div>
@@ -120,6 +135,7 @@ export function About() {
           </div>
         </FadeIn>
 
+        {/* CTAはそのまま活かす */}
         <FadeIn delay={0.2}>
           <div
             id="reservation"
@@ -131,18 +147,12 @@ export function About() {
             <h3 className="mt-3 text-lg tracking-[0.15em] text-foreground sm:text-xl">
               初めての方も安心してご予約ください
             </h3>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              育毛ヘッドスパとヘアカラーヘッドスパ、
-              どちらを選べばいいか迷う場合も大丈夫です。
-              ご来店前のご相談も承っております。
-            </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={COUBIC_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-[44px] w-full items-center justify-center rounded-full border border-gold bg-gold px-8 py-3.5 text-center text-sm tracking-[0.15em] text-background transition-all duration-300 hover:opacity-90 sm:w-auto sm:min-w-[220px]"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background"
               >
                 予約する
               </a>
@@ -150,8 +160,7 @@ export function About() {
               <a
                 href={LINE_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-[44px] w-full items-center justify-center rounded-full border border-foreground/20 px-8 py-3.5 text-center text-sm tracking-[0.15em] text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold sm:w-auto sm:min-w-[220px]"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-foreground/20 px-6 py-3 text-sm tracking-[0.12em] text-foreground"
               >
                 LINEで相談する
               </a>
@@ -161,8 +170,7 @@ export function About() {
               <a
                 href={FRANCHISE_URL}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] text-foreground/40 underline transition-colors hover:text-gold"
+                className="text-[11px] text-foreground/40 underline"
               >
                 この技術を学びたい方はこちら
               </a>
