@@ -77,17 +77,27 @@ export function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.72, ease }}
-              className="mb-4 flex flex-col items-center gap-2 text-center text-sm leading-[2] tracking-[0.18em] text-white/92 sm:text-base md:text-lg"
+              className="mb-4 flex flex-col items-center gap-2 text-center text-sm leading-[1.9] tracking-[0.15em] text-white/92 sm:text-base md:text-lg"
             >
               <span>福岡市で希少な本格育毛ヘッドスパ</span>
-              <span>白髪染めと頭皮ケアを両立するカラー施術</span>
-              <span>1日3名限定の特別な空間</span>
+              <span className="text-[12px] tracking-[0.12em] text-white/70 sm:text-sm">
+                白髪染めと頭皮ケアを両立するカラー施術
+              </span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.84, ease }}
+              className="mb-3 text-[11px] text-white/60"
+            >
+              ※抜け毛・薄毛・分け目にお悩みの方が多くご来店されています
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9, ease }}
               className="mb-8 max-w-2xl text-sm leading-7 tracking-[0.08em] text-white/75 sm:text-base"
             >
               完全個室で、抜け毛・薄毛・分け目のお悩みから、
@@ -107,7 +117,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-sm tracking-[0.18em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
               >
-                予約する
+                初回のご予約はこちら
               </a>
               <a
                 href={LINE_URL}
