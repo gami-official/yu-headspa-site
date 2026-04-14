@@ -29,19 +29,19 @@ export const menus: Menu[] = [
     ],
     items: [
       {
-        name: "Scalp Care | Level 3",
+        name: "Scalp Care | Premium",
         detail: "高濃度ヒト幹細胞ケア Premium",
         duration: "90min",
         price: "¥35,000",
       },
       {
-        name: "Scalp Care | Level 2",
+        name: "Scalp Care | Standard",
         detail: "高濃度ヒト幹細胞ケア Standard",
         duration: "90min",
         price: "¥21,000",
       },
       {
-        name: "Scalp Care | Level 1",
+        name: "Scalp Care | Light",
         detail: "高濃度ヒト幹細胞ケア Light",
         duration: "90min",
         price: "¥18,000",
