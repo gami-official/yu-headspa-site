@@ -41,7 +41,8 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.3, ease }}
               className="mb-3 text-[12px] leading-relaxed tracking-[0.18em] text-white/80 sm:text-sm"
             >
-              抜け毛・薄毛・分け目が気になり始めた方へ
+              抜け毛・薄毛・分け目に悩んでいる方へ
+              そのままにすると、進行してしまう可能性があります
             </motion.p>
 
             <motion.p
