@@ -156,7 +156,7 @@ export function Header() {
               </nav>
 
               <div className="mt-12 flex flex-col items-center gap-4">
-                <p className="text-[10px] text-white/50">1日3名限定</p>
+                <p className="text-[10px] text-white/50">完全予約制｜1日3名限定</p>
 
                 <a
                   href={COUBIC_URL}
