@@ -66,7 +66,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 className="rounded-full border border-[#d6b36a] bg-[#d6b36a] px-3 py-2 text-[12px] font-medium text-black transition hover:bg-transparent hover:text-[#d6b36a] sm:px-4 sm:text-sm"
               >
-                育毛ヘッドスパ予約
+                ご予約はこちら
               </a>
 
               <a
@@ -75,7 +75,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 className="rounded-full border border-white/40 px-3 py-2 text-[12px] text-white/80 transition hover:border-[#d6b36a] hover:text-[#d6b36a] sm:px-4 sm:text-sm"
               >
-                LINE相談
+                無料で相談する
               </a>
             </div>
           </div>
@@ -164,7 +164,7 @@ export function Header() {
                   rel="noopener noreferrer"
                   className="border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-center text-sm tracking-[0.16em] text-black transition hover:bg-transparent hover:text-[#d6b36a] sm:px-12"
                 >
-                  ヘアカラーヘッドスパ予約はこちら
+                  ご予約はこちら
                 </a>
 
                 <a
@@ -173,7 +173,7 @@ export function Header() {
                   rel="noopener noreferrer"
                   className="text-sm text-white/70 transition hover:text-[#d6b36a]"
                 >
-                  LINEで相談する
+                  無料で相談する
                 </a>
 
                 <a
