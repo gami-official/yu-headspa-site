@@ -30,78 +30,71 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2, ease }}
-              className="mb-3 text-[11px] tracking-[0.35em] text-white/80 sm:text-xs"
+              className="mb-2 text-[11px] tracking-[0.2em] text-white/60"
+            >
+              完全予約制｜1日3名限定
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.28, ease }}
+              className="mt-2 text-[12px] tracking-[0.2em] text-white/60"
             >
               福岡市の完全個室ヘッドスパ
             </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3, ease }}
-              className="mb-3 text-[12px] leading-relaxed tracking-[0.14em] text-white/85 sm:text-sm"
-            >
-              抜け毛・薄毛・分け目に悩んでいる方へ
-            </motion.p>
-
-            <motion.p
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.38, ease }}
-              className="mb-5 text-xl tracking-[0.22em] text-[#d6b36a] drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] sm:text-2xl md:text-3xl"
+              className="mt-6 text-2xl tracking-[0.2em] text-[#d6b36a] sm:text-3xl"
             >
               ヘッドスパ専門店ゆう
-            </motion.p>
+            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.48, ease }}
-              className="mb-4 text-sm leading-relaxed tracking-[0.16em] text-[#f2deb0] drop-shadow-[0_2px_8px_rgba(0,0,0,0.75)] sm:text-base"
+              className="mt-4 text-sm text-white/70"
             >
               頭皮から美しさを整えるという選択
             </motion.p>
 
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.58, ease }}
-              className="mb-6 flex flex-col items-center gap-1 text-center text-[11px] leading-relaxed tracking-[0.16em] text-white/75 sm:text-xs"
+              className="mt-6 text-base text-white"
             >
-              <span>創業6年・リピート多数</span>
-              <span>ヘッドスパ歴15年以上</span>
-              <span>育毛・ヘアカラー・リラクゼーションまで対応</span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.72, ease }}
-              className="mb-4 flex flex-col items-center gap-2 text-center text-sm leading-[2.2] tracking-[0.12em] text-white/92 sm:text-base md:text-lg"
-            >
-              <span>福岡市で希少な本格育毛ヘッドスパ</span>
-              <span className="text-[12px] tracking-[0.1em] text-white/70 sm:text-sm">
-                頭皮を守りながら染めるヘアカラーヘッドスパも対応
-              </span>
-            </motion.h1>
+              抜け毛・薄毛・分け目に悩む方へ
+            </motion.p>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.84, ease }}
-              className="mb-8 max-w-2xl text-sm leading-7 tracking-[0.04em] text-white/75 sm:text-base"
+              transition={{ duration: 0.9, delay: 0.66, ease }}
+              className="mt-2 text-sm text-white/70"
             >
-              完全個室で、
-              抜け毛・薄毛・分け目のお悩みから、
-              頭皮負担を抑えたヘアカラー、
-              深い癒しのリラクゼーションまで。
+              頭皮から整える本格ケア
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.76, ease }}
+              className="mt-6 max-w-2xl text-xs leading-relaxed text-white/60"
+            >
+              完全個室で、育毛・ヘアカラー・リラクゼーションまで対応。
+              お一人おひとりに合わせた施術をご提供します。
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.96, ease }}
-              className="flex flex-col items-center gap-3 sm:flex-row"
+              transition={{ duration: 1, delay: 0.9, ease }}
+              className="mt-8 flex flex-col items-center gap-3 sm:flex-row"
             >
               <a
                 href={COUBIC_URL}
