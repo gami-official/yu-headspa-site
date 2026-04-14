@@ -6,38 +6,39 @@ import { FadeIn } from "@/components/fade-in"
 import { menus } from "@/lib/menu-data"
 
 function getMenuPriority(menu: (typeof menus)[number]) {
-  const text = `${menu.id} ${menu.tab} ${menu.enTitle}`.toLowerCase()
-
-  if (text.includes("scalp") || text.includes("育毛") || text.includes("頭皮")) return 0
-  if (text.includes("color") || text.includes("カラー")) return 1
+  if (menu.id === "scalp") return 0
+  if (menu.id === "color") return 1
   return 2
 }
 
-function isScalpMenu(menu: (typeof menus)[number]) {
-  const text = `${menu.id} ${menu.tab}`.toLowerCase()
-  return text.includes("scalp") || text.includes("育毛") || text.includes("頭皮")
-}
-
 function getCatch(menu: (typeof menus)[number]) {
-  const text = `${menu.id} ${menu.tab}`.toLowerCase()
-
-  if (text.includes("scalp") || text.includes("育毛")) {
+  if (menu.id === "scalp") {
     return "抜け毛・薄毛・分け目・ボリューム不足が気になる方へ"
   }
 
-  if (text.includes("color") || text.includes("カラー")) {
-    return "福岡でも希少な、頭皮ケアとカラーを同時に叶える特別メニュー"
+  if (menu.id === "color") {
+    return "白髪染め・頭皮負担・将来の髪が気になる方へ"
   }
 
   return "深いリラックスと疲労ケアを求める方へ"
 }
 
 function getBadge(menu: (typeof menus)[number]) {
-  const text = `${menu.id} ${menu.tab}`.toLowerCase()
-
-  if (text.includes("scalp") || text.includes("育毛")) return "人気No.1"
-  if (text.includes("color") || text.includes("カラー")) return "PREMIUM CARE"
+  if (menu.id === "scalp") return "人気No.1"
+  if (menu.id === "color") return "PREMIUM CARE"
   return "RELAXATION"
+}
+
+function getCardStyle(menu: (typeof menus)[number]) {
+  if (menu.id === "scalp") {
+    return "border border-gold/50 bg-card shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
+  }
+
+  if (menu.id === "color") {
+    return "border border-gold/25 bg-card"
+  }
+
+  return "border border-border/30 bg-card"
 }
 
 export function MenuSection() {
@@ -53,29 +54,64 @@ export function MenuSection() {
             </span>
 
             <h2 className="text-xl leading-relaxed tracking-[0.18em] text-foreground sm:text-2xl">
-              抜け毛・薄毛・頭皮悩みから選ぶ専門メニュー
+              お悩みと目的に合わせて選べる専門メニュー
             </h2>
 
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
               育毛ヘッドスパを中心に、ヘアカラーヘッドスパ、リラクゼーションヘッドスパまで。
-              お悩みに合わせて最適なメニューをご提案します。
+              今のお悩みや目的に合わせて、最適なメニューをご提案します。
             </p>
           </div>
         </FadeIn>
 
-        <div className="flex flex-col gap-6 lg:gap-8">
-          {sortedMenus.map((menu, idx) => {
-            const highlighted = isScalpMenu(menu)
+        <div className="mb-8 grid gap-4 md:grid-cols-3">
+          <a
+            href="#scalp"
+            className="rounded-2xl border border-gold/35 bg-card px-5 py-5 transition hover:border-gold/55"
+          >
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">SCALP CARE</p>
+            <h3 className="mt-2 text-base tracking-[0.12em] text-foreground">
+              育毛ヘッドスパ
+            </h3>
+            <p className="mt-2 text-xs leading-6 text-muted-foreground">
+              抜け毛・薄毛・分け目が気になる方へ
+            </p>
+          </a>
 
-            return (
-              <FadeIn key={menu.id} delay={idx * 0.08}>
+          <a
+            href="#color"
+            className="rounded-2xl border border-gold/25 bg-card px-5 py-5 transition hover:border-gold/45"
+          >
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">HAIR COLOR</p>
+            <h3 className="mt-2 text-base tracking-[0.12em] text-foreground">
+              ヘアカラーヘッドスパ
+            </h3>
+            <p className="mt-2 text-xs leading-6 text-muted-foreground">
+              安価なカラーとは違う、頭皮を守るためのカラーケア
+            </p>
+          </a>
+
+          <a
+            href="#relaxation"
+            className="rounded-2xl border border-border/30 bg-card px-5 py-5 transition hover:border-gold/35"
+          >
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">RELAXATION</p>
+            <h3 className="mt-2 text-base tracking-[0.12em] text-foreground">
+              リラクゼーションヘッドスパ
+            </h3>
+            <p className="mt-2 text-xs leading-6 text-muted-foreground">
+              まずは癒しから体験したい方へ
+            </p>
+          </a>
+        </div>
+
+        <div className="flex flex-col gap-6 lg:gap-8">
+          {sortedMenus.map((menu, idx) => (
+            <FadeIn key={menu.id} delay={idx * 0.08}>
+              <div id={menu.id}>
                 <Link href={`/menu/${menu.id}`} className="group block">
                   <div
-                    className={`relative overflow-hidden rounded-2xl transition-all duration-500 ${
-                      highlighted
-                        ? "border border-gold/50 bg-card shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
-                        : "border border-border/30 bg-card"
-                    }`}
+                    className={`relative overflow-hidden rounded-2xl transition-all duration-500 hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] ${getCardStyle(menu)}`}
                   >
                     <div className="flex flex-col sm:flex-row">
                       {menu.image && (
@@ -144,16 +180,16 @@ export function MenuSection() {
                     </div>
                   </div>
                 </Link>
-              </FadeIn>
-            )
-          })}
+              </div>
+            </FadeIn>
+          ))}
         </div>
 
         <FadeIn delay={0.2}>
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center">
             <p className="text-sm leading-7 text-muted-foreground">
-              抜け毛・薄毛・分け目が気になり始めた今が、
-              最も変化しやすいタイミングです
+              抜け毛・薄毛・白髪・頭皮の違和感など、
+              早い段階でのケアが将来の髪につながります。
             </p>
 
             <p className="mt-2 text-xs text-foreground/50">
@@ -167,7 +203,7 @@ export function MenuSection() {
                 rel="noopener noreferrer"
                 className="rounded-full bg-gold px-6 py-3 text-sm text-black"
               >
-                初回のご予約はこちら
+                ご予約はこちら
               </a>
 
               <a
