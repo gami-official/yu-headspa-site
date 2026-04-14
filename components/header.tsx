@@ -56,7 +56,7 @@ export function Header() {
 
           <div className="mx-3 flex flex-col items-center gap-1 text-[10px] tracking-[0.12em] sm:text-[11px]">
             <p className="text-[9px] tracking-[0.18em] text-white/50">
-              1日3名限定
+              完全予約制｜1日3名限定
             </p>
 
             <div className="flex items-center gap-2">
