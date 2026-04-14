@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
@@ -10,8 +10,9 @@ const LINE_URL = "https://lin.ee/7hso3k1"
 const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
 const navLinks = [
-  { label: "育毛ヘッドスパ", href: "#ikumou" },
-  { label: "カラー×ヘッドスパ", href: "#color" },
+  { label: "育毛ヘッドスパ", href: "#scalp" },
+  { label: "ヘアカラーヘッドスパ", href: "#color" },
+  { label: "リラクゼーションヘッドスパ", href: "#relaxation" },
   { label: "当店について", href: "#about" },
   { label: "アクセス", href: "#access" },
   { label: "よくある質問", href: "#faq" },
@@ -108,7 +109,7 @@ export function Header() {
                 <X className="h-6 w-6" />
               </button>
 
-              <div className="mb-12 text-center">
+              <div className="mb-10 text-center">
                 <p className="text-[10px] tracking-[0.4em] text-white/40">
                   ヘッドスパ専門店
                 </p>
@@ -117,7 +118,13 @@ export function Header() {
                 </p>
               </div>
 
-              <nav className="flex flex-col items-center gap-6">
+              <div className="mb-10 text-center">
+                <p className="text-sm leading-8 tracking-[0.16em] text-white/70">
+                  頭皮から美しさを整える
+                </p>
+              </div>
+
+              <nav className="flex flex-col items-center gap-5">
                 {navLinks.map((link, i) => (
                   <motion.a
                     key={link.label}
@@ -131,33 +138,33 @@ export function Header() {
                         return
                       }
 
-                      const el = document.querySelector(link.href)
-                      if (el) {
+                      const target = document.querySelector(link.href)
+                      if (target) {
                         setTimeout(() => {
-                          el.scrollIntoView({ behavior: "smooth" })
-                        }, 300)
+                          target.scrollIntoView({ behavior: "smooth" })
+                        }, 280)
                       }
                     }}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.08 }}
-                    className="text-sm tracking-[0.25em] text-white/80 transition hover:text-[#d6b36a]"
+                    transition={{ delay: i * 0.06 }}
+                    className="text-base tracking-[0.2em] text-white/85 transition hover:text-[#d6b36a] sm:text-lg"
                   >
                     {link.label}
                   </motion.a>
                 ))}
               </nav>
 
-              <div className="mt-14 flex flex-col items-center gap-4">
+              <div className="mt-12 flex flex-col items-center gap-4">
                 <p className="text-[10px] text-white/50">1日3名限定</p>
 
                 <a
                   href={COUBIC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-center text-sm tracking-[0.18em] text-black transition hover:bg-transparent hover:text-[#d6b36a] sm:px-12"
+                  className="border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-center text-sm tracking-[0.16em] text-black transition hover:bg-transparent hover:text-[#d6b36a] sm:px-12"
                 >
-                  育毛ヘッドスパ予約はこちら
+                  ヘアカラーヘッドスパ予約はこちら
                 </a>
 
                 <a
