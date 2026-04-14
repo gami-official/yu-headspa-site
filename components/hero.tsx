@@ -20,8 +20,8 @@ export function Hero() {
             className="h-full w-full object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/70" />
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-black/70" />
         </div>
 
         <div className="pointer-events-none absolute inset-x-0 top-[18%] z-10 flex justify-center px-6 text-center sm:top-[21%]">
@@ -39,10 +39,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3, ease }}
-              className="mb-3 text-[12px] leading-relaxed tracking-[0.18em] text-white/80 sm:text-sm"
+              className="mb-3 text-[12px] leading-relaxed tracking-[0.14em] text-white/85 sm:text-sm"
             >
               抜け毛・薄毛・分け目に悩んでいる方へ
-              そのままにすると、進行してしまう可能性があります
             </motion.p>
 
             <motion.p
@@ -58,7 +57,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.48, ease }}
-              className="mb-4 text-sm leading-relaxed tracking-[0.18em] text-[#f2deb0] drop-shadow-[0_2px_8px_rgba(0,0,0,0.75)] sm:text-base"
+              className="mb-4 text-sm leading-relaxed tracking-[0.16em] text-[#f2deb0] drop-shadow-[0_2px_8px_rgba(0,0,0,0.75)] sm:text-base"
             >
               頭皮から美しさを整えるという選択
             </motion.p>
@@ -67,7 +66,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.58, ease }}
-              className="mb-6 flex flex-col items-center gap-1 text-center text-[11px] leading-relaxed tracking-[0.18em] text-white/75 sm:text-xs"
+              className="mb-6 flex flex-col items-center gap-1 text-center text-[11px] leading-relaxed tracking-[0.16em] text-white/75 sm:text-xs"
             >
               <span>創業6年・リピート多数</span>
               <span>ヘッドスパ歴15年以上</span>
@@ -78,10 +77,10 @@ export function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.72, ease }}
-              className="mb-4 flex flex-col items-center gap-2 text-center text-sm leading-[2.2] tracking-[0.15em] text-white/92 sm:text-base md:text-lg"
+              className="mb-4 flex flex-col items-center gap-2 text-center text-sm leading-[2.2] tracking-[0.12em] text-white/92 sm:text-base md:text-lg"
             >
               <span>福岡市で希少な本格育毛ヘッドスパ</span>
-              <span className="text-[12px] tracking-[0.12em] text-white/70 sm:text-sm">
+              <span className="text-[12px] tracking-[0.1em] text-white/70 sm:text-sm">
                 頭皮を守りながら染めるヘアカラーヘッドスパも対応
               </span>
             </motion.h1>
@@ -90,20 +89,12 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.84, ease }}
-              className="mb-3 text-[11px] text-white/60"
+              className="mb-8 max-w-2xl text-sm leading-7 tracking-[0.04em] text-white/75 sm:text-base"
             >
-              ※抜け毛・薄毛のお悩みから、白髪染めや癒し目的まで幅広くご相談いただいています
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.9, ease }}
-              className="mb-8 max-w-2xl text-sm leading-7 tracking-[0.08em] text-white/75 sm:text-base"
-            >
-              完全個室で、抜け毛・薄毛・分け目のお悩みから、
-              頭皮負担を抑えたヘアカラー、深い癒しのリラクゼーションまで。
-              お一人おひとりの状態に合わせて丁寧にご提案します。
+              完全個室で、
+              抜け毛・薄毛・分け目のお悩みから、
+              頭皮負担を抑えたヘアカラー、
+              深い癒しのリラクゼーションまで。
             </motion.p>
 
             <motion.div
@@ -116,7 +107,7 @@ export function Hero() {
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-sm tracking-[0.18em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-sm tracking-[0.14em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
               >
                 ご予約はこちら
               </a>
@@ -125,9 +116,9 @@ export function Hero() {
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-3 text-sm tracking-[0.18em] text-white backdrop-blur-sm transition hover:bg-white/15"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-3 text-sm tracking-[0.14em] text-white backdrop-blur-sm transition hover:bg-white/15"
               >
-                LINEで相談する
+                無料で相談する
               </a>
             </motion.div>
           </div>
