@@ -9,18 +9,23 @@ const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 const sectionLinks: { label: string; sectionId: string; description: string }[] = [
   {
     label: "育毛ヘッドスパ",
-    sectionId: "ikumou",
+    sectionId: "scalp",
     description: "抜け毛・薄毛・分け目・ボリューム不足が気になる方へ",
   },
   {
     label: "ヘアカラーヘッドスパ",
     sectionId: "color",
-    description: "白髪染め・ダメージ・頭皮負担が気になる方へ",
+    description: "安価なカラーとは違う、頭皮を守りながら染めるための特別ケア",
+  },
+  {
+    label: "リラクゼーションヘッドスパ",
+    sectionId: "relaxation",
+    description: "まずは癒しから体験したい方へ。深いリラックスのための時間",
   },
   {
     label: "当店について",
     sectionId: "about",
-    description: "完全個室・1日3名限定・上質な施術空間について",
+    description: "完全個室・1日3名限定・本質的な頭皮ケアについて",
   },
   {
     label: "アクセス",
@@ -45,7 +50,7 @@ function scrollToSection(sectionId: string) {
 export function CategoryLinks() {
   return (
     <section id="category" className="bg-secondary py-16 lg:py-24">
-      <div className="mx-auto max-w-4xl px-5 lg:px-10">
+      <div className="mx-auto max-w-5xl px-5 lg:px-10">
         <FadeIn>
           <div className="mb-12 flex flex-col items-center text-center">
             <p className="mb-3 text-[11px] tracking-[0.45em] text-gold/70">
@@ -55,8 +60,8 @@ export function CategoryLinks() {
               お悩み・目的から選ぶ
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              育毛ヘッドスパ、ヘアカラーヘッドスパ、ご予約、LINE相談まで。
-              気になる項目からそのままお進みください。
+              育毛・カラー・癒しの3つの目的から、
+              今の自分に合ったメニューや情報へそのままお進みいただけます。
             </p>
           </div>
         </FadeIn>
@@ -99,14 +104,15 @@ export function CategoryLinks() {
         <FadeIn delay={0.2}>
           <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center lg:px-10">
             <p className="text-[10px] tracking-[0.35em] text-gold/70">
-              RESERVE & CONTACT
+              RESERVE & CONSULT
             </p>
             <h3 className="mt-3 text-lg tracking-[0.15em] text-foreground sm:text-xl">
-              ご予約・ご相談はこちら
+              迷ったときはご相談ください
             </h3>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              育毛ヘッドスパとヘアカラーヘッドスパのどちらが合うか迷う方も、
-              まずはお気軽にご相談ください。
+              育毛ヘッドスパ、ヘアカラーヘッドスパ、
+              リラクゼーションヘッドスパのどれが合うか迷う方も、
+              ご予約前にLINEでご相談いただけます。
             </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -116,7 +122,7 @@ export function CategoryLinks() {
                 rel="noopener noreferrer"
                 className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background transition hover:opacity-90"
               >
-                予約する
+                ご予約はこちら
               </a>
 
               <a
