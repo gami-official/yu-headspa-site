@@ -78,7 +78,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.72, ease }}
-              className="mb-4 flex flex-col items-center gap-2 text-center text-sm leading-[1.9] tracking-[0.15em] text-white/92 sm:text-base md:text-lg"
+              className="mb-4 flex flex-col items-center gap-2 text-center text-sm leading-[2.2] tracking-[0.15em] text-white/92 sm:text-base md:text-lg"
             >
               <span>福岡市で希少な本格育毛ヘッドスパ</span>
               <span className="text-[12px] tracking-[0.12em] text-white/70 sm:text-sm">
