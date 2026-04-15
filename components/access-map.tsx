@@ -2,65 +2,88 @@
 
 import { FadeIn } from "@/components/fade-in"
 
+const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+
 export function AccessMap() {
   return (
     <section id="access" className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-3xl px-5 lg:px-10">
         <FadeIn>
-          <div className="mb-16 flex flex-col items-center">
-            <span className="text-sm font-medium tracking-[0.5em] text-gold/80 sm:text-base">
-              アクセス
+          <div className="mb-12 flex flex-col items-center text-center">
+            <span className="text-[11px] tracking-[0.4em] text-gold/70">
+              ACCESS
             </span>
+
+            <h2 className="mt-3 text-lg tracking-[0.12em] text-foreground sm:text-xl">
+              アクセス
+            </h2>
+
+            <p className="mt-3 text-xs text-muted-foreground">
+              駐車場完備・完全個室でゆっくりお過ごしいただけます
+            </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="mb-10 flex flex-col items-center text-center">
-            <p className="mb-1 text-sm tracking-[0.12em] text-foreground/80">
+          <div className="mb-10 text-center">
+            <p className="text-sm tracking-[0.1em] text-foreground">
               ヘッドスパ専門店 ゆう
             </p>
-            <p className="text-xs leading-[2.4] tracking-[0.08em] text-muted-foreground">
+
+            <p className="mt-2 text-xs leading-6 text-muted-foreground">
               福岡県福岡市西区豊浜2丁目20-20-2
             </p>
-            <p className="mt-3 text-[11px] tracking-[0.08em] text-muted-foreground">
+
+            <p className="mt-2 text-xs text-muted-foreground">
               TEL: 092-284-9392
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="overflow-hidden border border-border/40">
+          <div className="overflow-hidden rounded-2xl border border-border/40">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6647.109643438461!2d130.33487757515678!3d33.590906141950285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541936d028cb64d%3A0xf4531f4c7f531b6c!2z44OY44OD44OJ44K544OR5bCC6ZaA5bqX44KG44GG!5e0!3m2!1sja!2sjp!4v1771765599477!5m2!1sja!2sjp"
+              src="https://www.google.com/maps/embed?pb=!1m18..."
               width="100%"
               style={{ border: 0 }}
-              allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="ヘッドスパ専門店 ゆう アクセスマップ"
-              className="h-[300px] w-full grayscale transition-all duration-700 hover:grayscale-0 md:h-[400px]"
+              className="h-[320px] w-full md:h-[420px]"
             />
           </div>
         </FadeIn>
 
         <FadeIn delay={0.3}>
           <div className="mt-8 grid grid-cols-2 gap-px border border-border/40 bg-border/40 text-center">
-            <div className="bg-card px-3 py-4 md:px-4 md:py-5">
-              <p className="mb-1 text-[10px] tracking-[0.2em] text-gold/70">
+            <div className="bg-card px-4 py-5">
+              <p className="text-[10px] tracking-[0.2em] text-gold/70">
                 OPEN
               </p>
-              <p className="text-xs tracking-[0.1em] text-foreground/80">
+              <p className="mt-1 text-xs text-foreground">
                 9:30 - 16:30
               </p>
             </div>
-            <div className="bg-card px-3 py-4 md:px-4 md:py-5">
-              <p className="mb-1 text-[10px] tracking-[0.2em] text-gold/70">
+
+            <div className="bg-card px-4 py-5">
+              <p className="text-[10px] tracking-[0.2em] text-gold/70">
                 CLOSED
               </p>
-              <p className="text-xs tracking-[0.1em] text-foreground/80">
+              <p className="mt-1 text-xs text-foreground">
                 日曜日
               </p>
             </div>
+          </div>
+        </FadeIn>
+
+        {/* 🔥 最後の一押し */}
+        <FadeIn delay={0.4}>
+          <div className="mt-10 text-center">
+            <a
+              href={COUBIC_URL}
+              target="_blank"
+              className="inline-flex rounded-full bg-gold px-6 py-3 text-sm text-black"
+            >
+              残り枠わずか｜ご予約はこちら
+            </a>
           </div>
         </FadeIn>
       </div>
