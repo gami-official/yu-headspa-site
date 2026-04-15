@@ -129,7 +129,37 @@ export function SiteFooter() {
             </div>
           </div>
         </FadeIn>
+<FadeIn delay={0.07}>
+  <div className="mt-10 border-t border-border/20 pt-8 text-center">
+    <h3 className="text-sm tracking-[0.2em] text-foreground/70">
+      運営会社・関連事業
+    </h3>
 
+    <div className="mt-4 space-y-3 text-xs text-foreground/60">
+      <p>
+        <a
+          href="https://www.a-produce.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:text-gold transition-colors"
+        >
+          A-PRODUCE株式会社（中古車・レッカー・軽運送・物流）
+        </a>
+      </p>
+
+      <p>
+        <a
+          href="https://www.gamigami.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 hover:text-gold transition-colors"
+        >
+          株式会社GAMI（物流・法人配送）
+        </a>
+      </p>
+    </div>
+  </div>
+</FadeIn>
         <FadeIn delay={0.08}>
           <div className="mt-10 border-t border-border/20 pt-8 text-center">
             <p className="text-[9px] tracking-[0.2em] text-foreground/25">
