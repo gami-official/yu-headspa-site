@@ -53,18 +53,17 @@ export function Evidence() {
               RESULTS
             </p>
 
-            <h2 className="mt-3 text-xl tracking-[0.14em] text-foreground sm:text-2xl leading-relaxed">
-              抜け毛・薄毛に悩む方へ
+            <h2 className="mt-3 text-xl leading-relaxed tracking-[0.14em] text-foreground sm:text-2xl">
+              抜け毛・薄毛・分け目にお悩みの方へ
             </h2>
 
             <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              頭皮環境を整えることで、髪は変わります。
-              あなたも変化を実感される方の一人かもしれません。
+              頭皮環境を整えることで、髪の印象は変わります。
+              変化を実感される方が多い人気メニューです。
             </p>
           </div>
         </FadeIn>
 
-        {/* 🔥 共感追加 */}
         <FadeIn delay={0.08}>
           <p className="mb-4 text-center text-xs leading-6 text-foreground/65">
             分け目・ボリューム・抜け毛で悩まれていたお客様の変化です
@@ -97,19 +96,17 @@ export function Evidence() {
           </div>
         </FadeIn>
 
-        {/* 🔥 追加（超重要） */}
         <FadeIn delay={0.15}>
           <p className="mt-5 text-center text-xs text-foreground/60">
             初回は頭皮状態を確認しながら最適な施術をご提案します
           </p>
         </FadeIn>
 
-        {/* CTA */}
         <FadeIn delay={0.2}>
           <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center">
             <p className="text-sm leading-7 text-muted-foreground">
               抜け毛・薄毛・分け目が気になり始めた今が、
-              最も変化しやすいタイミングです。
+              ケアを始めるタイミングです。
             </p>
 
             <p className="mt-3 text-xs text-foreground/55">
@@ -120,7 +117,8 @@ export function Evidence() {
               <a
                 href={COUBIC_URL}
                 target="_blank"
-                className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm text-black"
+                rel="noopener noreferrer"
+                className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
               >
                 初回のご予約はこちら
               </a>
@@ -128,7 +126,8 @@ export function Evidence() {
               <a
                 href={LINE_URL}
                 target="_blank"
-                className="text-sm text-foreground/70 hover:text-gold"
+                rel="noopener noreferrer"
+                className="text-sm text-foreground/70 transition hover:text-gold"
               >
                 LINEで相談する
               </a>
@@ -138,7 +137,8 @@ export function Evidence() {
               <a
                 href={FRANCHISE_URL}
                 target="_blank"
-                className="text-[11px] text-foreground/40 underline"
+                rel="noopener noreferrer"
+                className="text-[11px] text-foreground/40 underline transition hover:text-gold"
               >
                 この技術を学びたい方はこちら
               </a>
