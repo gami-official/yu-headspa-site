@@ -168,7 +168,7 @@ export function Faq() {
                 rel="noopener noreferrer"
                 className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background transition hover:opacity-90"
               >
-                ご予約はこちら
+                残り枠わずか｜ご予約はこちら
               </a>
 
               <a
