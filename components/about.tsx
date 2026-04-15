@@ -31,15 +31,15 @@ export function About() {
               ABOUT
             </p>
 
-            <h2 className="text-xl leading-relaxed tracking-[0.16em] text-foreground sm:text-2xl">
-              頭皮から美しさを整えるヘッドスパ専門店
+            <h2 className="text-xl leading-relaxed tracking-[0.14em] text-foreground sm:text-2xl">
+              頭皮から整える、本格ヘッドスパ専門店
             </h2>
 
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
               抜け毛・薄毛・分け目のお悩みから、
               頭皮を守りながら染めるヘアカラー、
-              そして深い癒しのリラクゼーションまで。
-              お一人おひとりに合わせて丁寧にご提案いたします。
+              深い癒しへ導くリラクゼーションまで。
+              お一人おひとりの状態に合わせて丁寧にご提案いたします。
             </p>
           </div>
         </FadeIn>
@@ -78,8 +78,8 @@ export function About() {
 
               <p className="mt-5 text-sm leading-8 tracking-[0.04em] text-foreground/75 lg:text-[15px]">
                 1日3名様限定・完全予約制だからこそ、
-                流れ作業ではなく、お一人おひとりの状態に向き合いながら、
-                頭皮環境と髪の未来を見据えた施術をご提供します。
+                流れ作業ではなく、お一人おひとりの頭皮状態や髪のお悩みに向き合いながら、
+                将来の髪まで見据えた施術をご提供します。
               </p>
 
               <p className="mt-5 text-sm leading-7 text-muted-foreground">
@@ -92,8 +92,8 @@ export function About() {
                   SPECIAL VALUE
                 </p>
                 <p className="mt-3 text-sm leading-7 text-foreground/80">
-                  完全個室 × 1日3名限定 × 本質的な頭皮ケア。
-                  福岡市でも希少な、育毛・カラー・癒しを一つの場所で受けられる
+                  完全個室 × 1日3名限定 × 本格頭皮ケア。
+                  福岡市でも希少な、育毛・ヘアカラー・癒しを一つの場所で受けられる
                   ヘッドスパ専門店です。
                 </p>
               </div>
@@ -121,7 +121,7 @@ export function About() {
                   </h3>
                   <p className="mt-2 text-xs leading-6 text-muted-foreground">
                     頭皮を守りながら染めたい方へ。
-                    安価なカラーとは違う上質ケア。
+                    将来の髪まで考えた上質ケア。
                   </p>
                 </div>
 
@@ -133,7 +133,7 @@ export function About() {
                     リラクゼーション
                   </h3>
                   <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                    まずは癒しから体験したい方へ。
+                    疲れを癒しながら整えたい方へ。
                     深いリラックスのための時間。
                   </p>
                 </div>
