@@ -1,172 +1,87 @@
 "use client"
 
-import { FadeIn } from "@/components/fade-in"
-
-const COUBIC_URL = "https://coubic.com/yuheadspa/services"
-const LINE_URL = "https://lin.ee/7hso3k1"
-const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
+const MAP_LINK_URL =
+  "https://www.google.com/maps/search/?api=1&query=福岡県福岡市西区豊浜2丁目20-20-2"
+const RESERVE_URL = "https://coubic.com/yuheadspa/services"
+const TEL_LINK = "tel:0922849392"
 
 export function SiteFooter() {
   return (
-    <footer className="bg-background py-16 lg:py-24">
-      <div className="mx-auto max-w-6xl px-5 lg:px-10">
-        <FadeIn>
-          <div className="rounded-2xl border border-gold/20 bg-card px-6 py-10 text-center lg:px-10">
-            <p className="mb-2 text-[10px] tracking-[0.4em] text-foreground/40 sm:text-xs">
+    <footer className="mt-20 border-t border-border/40 bg-background">
+      <div className="mx-auto max-w-5xl px-5 py-12 lg:px-10">
+        <div className="grid gap-10 md:grid-cols-2 md:items-start">
+          <div className="text-center md:text-left">
+            <p className="text-[11px] tracking-[0.35em] text-gold/70">
               HEAD SPA SALON
             </p>
 
-            <h2 className="text-base tracking-[0.3em] text-gold-light/80 sm:text-lg">
-              ヘッドスパ専門店 ゆう
+            <h2 className="mt-3 text-lg tracking-[0.08em] text-foreground">
+              ヘッドスパ専門店 ゆう 本店
             </h2>
 
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-muted-foreground">
-              福岡市西区の完全個室ヘッドスパ専門店。
-              育毛ヘッドスパ、ヘアカラーヘッドスパ、リラクゼーションヘッドスパまで、
-              頭皮から美しさを整える本質的なケアをご提供しています。
-            </p>
+            <div className="mt-5 space-y-3 text-sm leading-7 text-muted-foreground">
+              <p>
+                〒819-0014
+                <br />
+                福岡県福岡市西区豊浜2丁目20-20-2
+              </p>
 
-            <div className="mt-8 grid gap-4 text-center sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-border/30 px-4 py-4">
-                <p className="text-[10px] tracking-[0.25em] text-gold/70">ADDRESS</p>
-                <p className="mt-2 text-xs leading-6 text-foreground/70">
-                  福岡県福岡市西区豊浜2丁目20-20-2
-                </p>
-              </div>
+              <p>
+                TEL：
+                <a
+                  href={TEL_LINK}
+                  className="text-foreground underline underline-offset-2"
+                >
+                  092-284-9392
+                </a>
+              </p>
 
-              <div className="rounded-xl border border-border/30 px-4 py-4">
-                <p className="text-[10px] tracking-[0.25em] text-gold/70">HOURS</p>
-                <p className="mt-2 text-xs leading-6 text-foreground/70">
-                  営業時間 9:30～16:30
-                  <br />
-                  （日曜日）
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-border/30 px-4 py-4">
-                <p className="text-[10px] tracking-[0.25em] text-gold/70">STYLE</p>
-                <p className="mt-2 text-xs leading-6 text-foreground/70">
-                  完全個室
-                  <br />
-                  1日3名限定
-                </p>
-              </div>
-
-              <div className="rounded-xl border border-border/30 px-4 py-4">
-                <p className="text-[10px] tracking-[0.25em] text-gold/70">PARKING</p>
-                <p className="mt-2 text-xs leading-6 text-foreground/70">
-                  駐車場あり
-                  <br />
-                  サロン前2台分
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-gold/20 bg-background/40 px-5 py-5">
-                <p className="text-[10px] tracking-[0.25em] text-gold/70">SCALP CARE</p>
-                <h3 className="mt-2 text-sm tracking-[0.12em] text-foreground">
-                  育毛ヘッドスパ
-                </h3>
-                <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                  抜け毛・薄毛・分け目など、
-                  頭皮環境から整えたい方へ。
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-gold/20 bg-background/40 px-5 py-5">
-                <p className="text-[10px] tracking-[0.25em] text-gold/70">HAIR COLOR</p>
-                <h3 className="mt-2 text-sm tracking-[0.12em] text-foreground">
-                  ヘアカラーヘッドスパ
-                </h3>
-                <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                  頭皮を守りながら染める、
-                  別格のカラーケアを求める方へ。
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-gold/20 bg-background/40 px-5 py-5">
-                <p className="text-[10px] tracking-[0.25em] text-gold/70">RELAXATION</p>
-                <h3 className="mt-2 text-sm tracking-[0.12em] text-foreground">
-                  リラクゼーション
-                </h3>
-                <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                  まずは癒しから体験したい方へ。
-                  深いリラックスのための時間。
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href={COUBIC_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background transition hover:opacity-90"
-              >
-                ご予約はこちら
-              </a>
-
-              <a
-                href={LINE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-foreground/20 px-6 py-3 text-sm tracking-[0.12em] text-foreground transition hover:border-gold/50 hover:text-gold"
-              >
-                LINEで相談する
-              </a>
-            </div>
-
-            <div className="mt-6">
-              <a
-                href={FRANCHISE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] text-foreground/40 underline transition-colors hover:text-gold"
-              >
-                この技術を学びたい方はこちら
-              </a>
+              <p>営業時間：9:30 - 16:30</p>
+              <p>定休日：日曜日</p>
+              <p>完全予約制・完全個室・駐車場2台完備</p>
             </div>
           </div>
-        </FadeIn>
-<FadeIn delay={0.07}>
-  <div className="mt-10 border-t border-border/20 pt-8 text-center">
-    <h3 className="text-sm tracking-[0.2em] text-foreground/70">
-      運営会社・関連事業
-    </h3>
 
-    <div className="mt-4 space-y-3 text-xs text-foreground/60">
-      <p>
-        <a
-          href="https://www.a-produce.net/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-4 hover:text-gold transition-colors"
-        >
-          A-PRODUCE株式会社（中古車・レッカー・軽運送・物流）
-        </a>
-      </p>
+          <div className="flex flex-col items-center md:items-end">
+            <div className="w-full max-w-sm rounded-2xl border border-border/40 bg-card/50 p-5">
+              <p className="text-center text-sm leading-7 text-muted-foreground md:text-left">
+                ご来店前に場所の確認やルート検索をご利用いただけます。
+                ご予約をご希望の方は、空き状況をご確認のうえお進みください。
+              </p>
 
-      <p>
-        <a
-          href="https://www.gamigami.net/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-4 hover:text-gold transition-colors"
-        >
-          株式会社GAMI（物流・法人配送）
-        </a>
-      </p>
-    </div>
-  </div>
-</FadeIn>
-        <FadeIn delay={0.08}>
-          <div className="mt-10 border-t border-border/20 pt-8 text-center">
-            <p className="text-[9px] tracking-[0.2em] text-foreground/25">
-              &copy; {new Date().getFullYear()} HEAD SPA YUU. All rights reserved.
-            </p>
+              <div className="mt-5 grid gap-3">
+                <a
+                  href={MAP_LINK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-gold/50 px-6 py-3 text-sm text-foreground transition hover:bg-gold/10"
+                >
+                  Googleマップで経路を見る
+                </a>
+
+                <a
+                  href={RESERVE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
+                >
+                  空き状況を確認する
+                </a>
+              </div>
+            </div>
           </div>
-        </FadeIn>
+        </div>
+
+        <div className="mt-10 border-t border-border/40 pt-6 text-center">
+          <p className="text-[11px] leading-6 text-muted-foreground">
+            頭皮ケア・育毛ケア・完全個室の癒し時間を、
+            福岡市西区でご提供しています。
+          </p>
+
+          <p className="mt-3 text-[10px] text-muted-foreground">
+            © {new Date().getFullYear()} ヘッドスパ専門店 ゆう All Rights Reserved.
+          </p>
+        </div>
       </div>
     </footer>
   )
