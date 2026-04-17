@@ -98,9 +98,7 @@ export function GiftSection() {
               <div className="mt-8 rounded-xl border border-border/40 bg-background/60 p-5">
                 <p className="text-sm leading-7 text-muted-foreground">
                   大切な方に、
-                  <span className="text-foreground">
-                    “自分をいたわる時間”
-                  </span>
+                  <span className="text-foreground">“自分をいたわる時間”</span>
                   を贈りたいと思ったら、
                   こちらからギフトチケットをご覧いただけます。
                 </p>
