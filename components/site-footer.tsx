@@ -4,12 +4,16 @@ const MAP_LINK_URL =
   "https://www.google.com/maps/search/?api=1&query=福岡県福岡市西区豊浜2丁目20-20-2"
 const RESERVE_URL = "https://coubic.com/yuheadspa/services"
 const TEL_LINK = "tel:0922849392"
+const GIFT_URL = "https://gamistore.base.shop/"
+const ONLINE_URL = "https://headspayu.stores.jp/"
 
 export function SiteFooter() {
   return (
     <footer className="mt-20 border-t border-border/40 bg-background">
       <div className="mx-auto max-w-5xl px-5 py-12 lg:px-10">
         <div className="grid gap-10 md:grid-cols-2 md:items-start">
+          
+          {/* 左：店舗情報 */}
           <div className="text-center md:text-left">
             <p className="text-[11px] tracking-[0.35em] text-gold/70">
               HEAD SPA SALON
@@ -42,8 +46,10 @@ export function SiteFooter() {
             </div>
           </div>
 
+          {/* 右：導線まとめ */}
           <div className="flex flex-col items-center md:items-end">
             <div className="w-full max-w-sm rounded-2xl border border-border/40 bg-card/50 p-5">
+
               <p className="text-center text-sm leading-7 text-muted-foreground md:text-left">
                 ご来店前に場所の確認やルート検索をご利用いただけます。
                 ご予約をご希望の方は、空き状況をご確認のうえお進みください。
@@ -68,6 +74,37 @@ export function SiteFooter() {
                   空き状況を確認する
                 </a>
               </div>
+
+              {/* 👇 ここ追加（重要） */}
+              <div className="mt-6 border-t border-border/40 pt-4 text-left">
+
+                <p className="text-[11px] tracking-[0.2em] text-gold/70 mb-2">
+                  ONLINE SERVICE
+                </p>
+
+                <div className="space-y-2 text-sm">
+
+                  <a
+                    href={GIFT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-foreground/80 transition hover:text-gold"
+                  >
+                    ・ヘッドスパギフトチケット
+                  </a>
+
+                  <a
+                    href={ONLINE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-foreground/80 transition hover:text-gold"
+                  >
+                    ・会員限定オンライン（PASS発行制）
+                  </a>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
