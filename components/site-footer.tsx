@@ -12,8 +12,6 @@ export function SiteFooter() {
     <footer className="mt-20 border-t border-border/40 bg-background">
       <div className="mx-auto max-w-5xl px-5 py-12 lg:px-10">
         <div className="grid gap-10 md:grid-cols-2 md:items-start">
-          
-          {/* 左：店舗情報 */}
           <div className="text-center md:text-left">
             <p className="text-[11px] tracking-[0.35em] text-gold/70">
               HEAD SPA SALON
@@ -46,10 +44,8 @@ export function SiteFooter() {
             </div>
           </div>
 
-          {/* 右：導線まとめ */}
           <div className="flex flex-col items-center md:items-end">
             <div className="w-full max-w-sm rounded-2xl border border-border/40 bg-card/50 p-5">
-
               <p className="text-center text-sm leading-7 text-muted-foreground md:text-left">
                 ご来店前に場所の確認やルート検索をご利用いただけます。
                 ご予約をご希望の方は、空き状況をご確認のうえお進みください。
@@ -75,15 +71,12 @@ export function SiteFooter() {
                 </a>
               </div>
 
-              {/* 👇 ここ追加（重要） */}
               <div className="mt-6 border-t border-border/40 pt-4 text-left">
-
-                <p className="text-[11px] tracking-[0.2em] text-gold/70 mb-2">
+                <p className="mb-2 text-[11px] tracking-[0.2em] text-gold/70">
                   ONLINE SERVICE
                 </p>
 
                 <div className="space-y-2 text-sm">
-
                   <a
                     href={GIFT_URL}
                     target="_blank"
@@ -101,10 +94,8 @@ export function SiteFooter() {
                   >
                     ・会員限定オンライン（PASS発行制）
                   </a>
-
                 </div>
               </div>
-
             </div>
           </div>
         </div>
