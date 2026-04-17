@@ -16,10 +16,7 @@ export default function Home() {
       <Hero />
       <About />
       <MenuSection />
-
-      {/* 🔥 ここ追加（最重要ポイント） */}
       <GiftSection />
-
       <Evidence />
       <Faq />
       <AccessMap />
