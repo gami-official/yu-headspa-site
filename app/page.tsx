@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
 import { MenuSection } from "@/components/menu-section"
+import { GiftSection } from "@/components/gift-section"
 import { Evidence } from "@/components/evidence"
 import { Faq } from "@/components/faq"
 import { AccessMap } from "@/components/access-map"
@@ -15,6 +16,10 @@ export default function Home() {
       <Hero />
       <About />
       <MenuSection />
+
+      {/* 🔥 ここ追加（最重要ポイント） */}
+      <GiftSection />
+
       <Evidence />
       <Faq />
       <AccessMap />
