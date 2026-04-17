@@ -28,8 +28,6 @@ export function FloatingReserve() {
           className="fixed bottom-6 left-1/2 z-40 -translate-x-1/2"
         >
           <div className="flex flex-col items-center gap-1">
-
-            {/* メインバー */}
             <div className="flex items-center gap-2 rounded-md border border-gold/40 bg-[#5c4a3d] px-4 py-2.5 shadow-lg">
               <a
                 href={COUBIC_URL}
@@ -52,7 +50,6 @@ export function FloatingReserve() {
               </a>
             </div>
 
-            {/* 👇 さりげないギフト導線 */}
             <a
               href={GIFT_URL}
               target="_blank"
@@ -61,7 +58,6 @@ export function FloatingReserve() {
             >
               ギフトチケットはこちら
             </a>
-
           </div>
         </motion.div>
       )}
