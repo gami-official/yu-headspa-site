@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
+const GIFT_URL = "https://gamistore.base.shop/"
 
 export function FloatingReserve() {
   const [visible, setVisible] = useState(false)
@@ -26,32 +27,41 @@ export function FloatingReserve() {
           transition={{ duration: 0.25 }}
           className="fixed bottom-6 left-1/2 z-40 -translate-x-1/2"
         >
-          <div className="flex items-center gap-2 rounded-md border border-gold/40 bg-[#5c4a3d] px-4 py-2.5 shadow-lg">
+          <div className="flex flex-col items-center gap-1">
+
+            {/* メインバー */}
+            <div className="flex items-center gap-2 rounded-md border border-gold/40 bg-[#5c4a3d] px-4 py-2.5 shadow-lg">
+              <a
+                href={COUBIC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-medium tracking-[0.12em] text-white transition-opacity hover:opacity-90"
+              >
+                空き状況を見る
+              </a>
+
+              <span className="text-white/80">｜</span>
+
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-medium tracking-[0.12em] text-white transition-opacity hover:opacity-90"
+              >
+                LINEで相談
+              </a>
+            </div>
+
+            {/* 👇 さりげないギフト導線 */}
             <a
-              href={COUBIC_URL}
+              href={GIFT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault()
-                window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
-              }}
-              className="text-[11px] font-medium tracking-[0.12em] text-white transition-opacity hover:opacity-90"
+              className="text-[10px] text-white/70 underline underline-offset-2 transition hover:text-[#d6b36a]"
             >
-              空き状況を見る
+              ギフトチケットはこちら
             </a>
-            <span className="text-white/80">｜</span>
-            <a
-              href={LINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault()
-                window.open(LINE_URL, "_blank", "noopener,noreferrer")
-              }}
-              className="text-[11px] font-medium tracking-[0.12em] text-white transition-opacity hover:opacity-90"
-            >
-              LINEで相談
-            </a>
+
           </div>
         </motion.div>
       )}
