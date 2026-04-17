@@ -5,8 +5,6 @@ import { motion } from "framer-motion"
 const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
-const GIFT_URL = "https://gamistore.base.shop/"
-const ONLINE_URL = "https://headspayu.stores.jp/"
 
 export function Hero() {
   return (
@@ -100,60 +98,11 @@ export function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.95, delay: 0.88, ease }}
-            className="mt-10 grid gap-4 sm:grid-cols-2"
-          >
-            <a
-              href={GIFT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-2xl border border-white/15 bg-white/10 p-5 text-left backdrop-blur-md transition hover:bg-white/15"
-            >
-              <p className="text-[11px] tracking-[0.18em] text-[#d6b36a]">
-                GIFT TICKET
-              </p>
-              <h2 className="mt-2 text-lg font-semibold text-white">
-                ヘッドスパギフトチケット
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-white/75">
-                大切な方へ、癒しの時間を贈る特別なギフト。
-                誕生日や記念日のプレゼントにもおすすめです。
-              </p>
-              <p className="mt-4 text-sm font-medium text-[#d6b36a] transition group-hover:translate-x-1">
-                ギフトを見る →
-              </p>
-            </a>
-
-            <a
-              href={ONLINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-2xl border border-white/15 bg-white/10 p-5 text-left backdrop-blur-md transition hover:bg-white/15"
-            >
-              <p className="text-[11px] tracking-[0.18em] text-[#d6b36a]">
-                MEMBERS ONLY
-              </p>
-              <h2 className="mt-2 text-lg font-semibold text-white">
-                クローズドオンライン
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-white/75">
-                通っていただいている方限定のオンライン。
-                PASSはお問い合わせいただいた方へ発行いたします。
-              </p>
-              <p className="mt-4 text-sm font-medium text-[#d6b36a] transition group-hover:translate-x-1">
-                詳しく見る →
-              </p>
-            </a>
-          </motion.div>
-
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.02, ease }}
-            className="mt-6 text-xs leading-6 text-white/65"
+            transition={{ duration: 0.9, delay: 0.92, ease }}
+            className="mt-5 text-xs leading-6 text-white/65"
           >
             駐車場あり・完全個室でゆっくりお過ごしいただけます
           </motion.p>
