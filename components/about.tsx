@@ -31,13 +31,13 @@ export function About() {
               ABOUT
             </p>
 
-            <h2 className="text-[clamp(1.6rem,5vw,2.4rem)] leading-[1.6] tracking-[0.05em] text-foreground">
+            <h2 className="text-[clamp(1.38rem,4.2vw,2.1rem)] leading-[1.7] tracking-[0.04em] text-foreground">
               ヘッドスパ専門店
               <br />
               ゆう本店について
             </h2>
 
-            <div className="mt-5 mx-auto max-w-[16em] text-[14px] leading-[2.1] text-muted-foreground sm:max-w-xl sm:text-[15px]">
+            <div className="mt-5 mx-auto max-w-[15.5em] text-[14px] leading-[2.05] text-muted-foreground sm:max-w-xl sm:text-[15px]">
               <p>
                 福岡市西区にある、
                 <br className="sm:hidden" />
@@ -90,8 +90,8 @@ export function About() {
             </div>
 
             <div className="text-center lg:text-left">
-              <div className="mx-auto max-w-[16em] sm:max-w-none">
-                <p className="text-[14px] leading-[2.1] tracking-[0.02em] text-foreground/75 sm:text-[15px]">
+              <div className="mx-auto max-w-[15.5em] sm:max-w-none">
+                <p className="text-[14px] leading-[2.05] tracking-[0.02em] text-foreground/75 sm:text-[15px]">
                   一日3名限定で、
                   <br className="sm:hidden" />
                   お一人おひとりに合わせた
@@ -99,7 +99,7 @@ export function About() {
                   丁寧な施術をご提供しています。
                 </p>
 
-                <p className="mt-5 text-[14px] leading-[2.1] tracking-[0.02em] text-foreground/75 sm:text-[15px]">
+                <p className="mt-5 text-[14px] leading-[2.05] tracking-[0.02em] text-foreground/75 sm:text-[15px]">
                   育毛ヘッドスパ、
                   <br className="sm:hidden" />
                   ヘアカラーヘッドスパ、
@@ -113,7 +113,7 @@ export function About() {
                   大切にしています。
                 </p>
 
-                <p className="mt-5 text-[14px] leading-[2.1] text-muted-foreground sm:text-[15px]">
+                <p className="mt-5 text-[14px] leading-[2.05] text-muted-foreground sm:text-[15px]">
                   安価な施術ではなく、
                   <br className="sm:hidden" />
                   将来の髪と頭皮まで考えた
@@ -217,13 +217,15 @@ export function About() {
               RESERVE
             </p>
 
-            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.6] tracking-[0.05em] text-foreground">
+            <h3 className="mt-3 text-[clamp(1.28rem,4vw,1.9rem)] leading-[1.75] tracking-[0.03em] text-foreground">
               お悩みに合わせた
               <br />
-              最適なメニューをご案内します
+              最適なメニューを
+              <br />
+              ご案内します
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-xl">
+            <div className="mx-auto mt-5 max-w-[15.5em] text-sm leading-[2.05] text-muted-foreground sm:max-w-xl">
               <p>
                 どのメニューが合うか迷う場合も、
                 <br className="sm:hidden" />
