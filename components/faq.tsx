@@ -48,15 +48,13 @@ export function Faq() {
               FAQ
             </p>
 
-            {/* タイトル修正 */}
-            <h2 className="mt-3 text-[clamp(1.9rem,5.6vw,3rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+            <h2 className="mt-3 text-[clamp(1.55rem,4.8vw,2.4rem)] leading-[1.55] tracking-[0.06em] text-foreground">
               初めての方によくある
-              <br className="sm:hidden" />
+              <br />
               ご質問
             </h2>
 
-            {/* 本文修正 */}
-            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+            <div className="mx-auto mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
               <p>
                 育毛ヘッドスパ・
                 <br className="sm:hidden" />
@@ -99,21 +97,19 @@ export function Faq() {
           </div>
         </FadeIn>
 
-        {/* 一番重要ブロック */}
         <FadeIn delay={0.2}>
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card px-6 py-9 text-center">
             <p className="text-[10px] tracking-[0.35em] text-gold/70">
               RESERVE & CONSULT
             </p>
 
-            {/* ←ここが一番効く */}
-            <h3 className="mt-3 text-[clamp(1.8rem,5.2vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.55] tracking-[0.06em] text-foreground">
               メニュー選びに迷う方も
-              <br className="sm:hidden" />
+              <br />
               ご安心ください
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl">
+            <div className="mx-auto mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl">
               <p>
                 抜け毛・薄毛・分け目のお悩みや、
                 <br className="sm:hidden" />
@@ -137,7 +133,7 @@ export function Faq() {
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full max-w-xs mx-auto items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black"
+                className="mx-auto inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black"
               >
                 ご予約はこちら
               </a>
@@ -146,7 +142,7 @@ export function Faq() {
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full max-w-xs mx-auto items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm text-foreground"
+                className="mx-auto inline-flex w-full max-w-xs items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm text-foreground"
               >
                 LINEで相談する
               </a>
