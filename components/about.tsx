@@ -31,20 +31,31 @@ export function About() {
               ABOUT
             </p>
 
-            <h2 className="text-[clamp(1.55rem,4.8vw,2.4rem)] leading-[1.55] tracking-[0.06em] text-foreground">
-              頭皮から整える、
+            <h2 className="text-[clamp(1.6rem,5vw,2.4rem)] leading-[1.6] tracking-[0.05em] text-foreground">
+              ヘッドスパ専門店
               <br />
-              本格ヘッドスパ専門店
+              ゆう本店について
             </h2>
 
-            <div className="mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+            <div className="mt-5 mx-auto max-w-[16em] text-[14px] leading-[2.1] text-muted-foreground sm:max-w-xl sm:text-[15px]">
               <p>
+                福岡市西区にある、
+                <br className="sm:hidden" />
+                完全個室・完全予約制の
+                <br className="sm:hidden" />
+                ヘッドスパ専門店です。
+              </p>
+              <p className="mt-4">
                 抜け毛・薄毛・分け目のお悩みから、
                 <br className="sm:hidden" />
-                頭皮を守りながら染めるヘアカラー、
+                頭皮を守りながら染める
+                <br className="sm:hidden" />
+                ヘアカラー、
               </p>
-              <p className="mt-3">
-                深い癒しへ導くリラクゼーションまで。
+              <p className="mt-4">
+                深い癒しへ導く
+                <br className="sm:hidden" />
+                リラクゼーションまで、
                 <br className="sm:hidden" />
                 お一人おひとりの状態に合わせて
                 <br className="sm:hidden" />
@@ -79,42 +90,30 @@ export function About() {
             </div>
 
             <div className="text-center lg:text-left">
-              <div className="mx-auto max-w-[18em] sm:max-w-none">
-                <p className="text-[15px] leading-[2] tracking-[0.03em] text-foreground/75">
-                  福岡市西区豊浜の
+              <div className="mx-auto max-w-[16em] sm:max-w-none">
+                <p className="text-[14px] leading-[2.1] tracking-[0.02em] text-foreground/75 sm:text-[15px]">
+                  一日3名限定で、
                   <br className="sm:hidden" />
-                  完全個室ヘッドスパ専門店。
+                  お一人おひとりに合わせた
                   <br className="sm:hidden" />
-                  ヘッドスパ歴15年以上の技術で、
+                  丁寧な施術をご提供しています。
                 </p>
 
-                <p className="mt-5 text-[15px] leading-[2] tracking-[0.03em] text-foreground/75">
-                  育毛ヘッドスパ・
+                <p className="mt-5 text-[14px] leading-[2.1] tracking-[0.02em] text-foreground/75 sm:text-[15px]">
+                  育毛ヘッドスパ、
                   <br className="sm:hidden" />
-                  ヘアカラーヘッドスパ・
+                  ヘアカラーヘッドスパ、
                   <br className="sm:hidden" />
-                  リラクゼーションヘッドスパまで、
+                  リラクゼーションまで、
                   <br className="sm:hidden" />
-                  お悩みや目的に合わせて
+                  ただ気持ちいいだけではない、
                   <br className="sm:hidden" />
-                  ご案内しております。
+                  将来の髪と頭皮を見据えたケアを
+                  <br className="sm:hidden" />
+                  大切にしています。
                 </p>
 
-                <p className="mt-5 text-[15px] leading-[2] tracking-[0.03em] text-foreground/75">
-                  1日3名様限定・完全予約制だからこそ、
-                  <br className="sm:hidden" />
-                  流れ作業ではなく、
-                  <br className="sm:hidden" />
-                  お一人おひとりの頭皮状態や
-                  <br className="sm:hidden" />
-                  髪のお悩みに向き合いながら、
-                  <br className="sm:hidden" />
-                  将来の髪まで見据えた施術を
-                  <br className="sm:hidden" />
-                  ご提供します。
-                </p>
-
-                <p className="mt-5 text-sm leading-[2] text-muted-foreground">
+                <p className="mt-5 text-[14px] leading-[2.1] text-muted-foreground sm:text-[15px]">
                   安価な施術ではなく、
                   <br className="sm:hidden" />
                   将来の髪と頭皮まで考えた
@@ -129,6 +128,7 @@ export function About() {
                 <p className="text-[10px] tracking-[0.3em] text-gold/70">
                   SPECIAL VALUE
                 </p>
+
                 <p className="mt-3 text-sm leading-[2] text-foreground/80">
                   完全個室 × 1日3名限定 × 本格頭皮ケア。
                   <br className="sm:hidden" />
@@ -214,34 +214,27 @@ export function About() {
             className="mt-14 rounded-2xl border border-gold/20 bg-card px-6 py-9 text-center lg:px-10"
           >
             <p className="text-[10px] tracking-[0.35em] text-gold/70">
-              RESERVATION
+              RESERVE
             </p>
 
-            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.55] tracking-[0.06em] text-foreground">
-              初めての方も安心して
+            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.6] tracking-[0.05em] text-foreground">
+              お悩みに合わせた
               <br />
-              ご予約ください
+              最適なメニューをご案内します
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl">
+            <div className="mx-auto mt-5 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-xl">
               <p>
-                育毛ヘッドスパ・
+                どのメニューが合うか迷う場合も、
                 <br className="sm:hidden" />
-                ヘアカラーヘッドスパ・
-                <br className="sm:hidden" />
-                リラクゼーションの中で
-              </p>
-              <p className="mt-3">
-                どれが合うか迷う場合も、
-                <br className="sm:hidden" />
-                ご来店前にご相談いただけます。
+                ご予約前にご相談いただけます。
               </p>
             </div>
 
             <p className="mt-3 text-xs leading-6 text-foreground/50">
               ※1日3名限定のため、
               <br className="sm:hidden" />
-              早めのご予約をおすすめしています
+              ご予約はお早めにお願いいたします
             </p>
 
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
