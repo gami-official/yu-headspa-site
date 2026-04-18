@@ -18,28 +18,36 @@ export function AccessMap() {
               ACCESS
             </span>
 
-            <h2 className="mt-3 text-lg tracking-[0.12em] text-foreground sm:text-xl">
-              アクセス
+            <h2 className="mt-3 text-[clamp(1.9rem,5.6vw,3rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+              ゆっくり通える、
+              <br className="sm:hidden" />
+              上質な空間へ
             </h2>
 
-            <p className="mt-3 text-xs text-muted-foreground">
-              駐車場完備・完全個室でゆっくりお過ごしいただけます
-            </p>
+            <div className="mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+              <p>
+                駐車場完備・完全個室で、
+                <br className="sm:hidden" />
+                周囲を気にせず
+                <br className="sm:hidden" />
+                お過ごしいただけます。
+              </p>
+            </div>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="mb-10 text-center">
-            <p className="text-sm tracking-[0.1em] text-foreground">
+          <div className="mb-10 rounded-2xl border border-gold/20 bg-card px-6 py-7 text-center">
+            <p className="text-sm tracking-[0.12em] text-foreground">
               ヘッドスパ専門店 ゆう
             </p>
 
-            <p className="mt-2 text-xs leading-6 text-muted-foreground">
+            <p className="mt-4 text-sm leading-8 text-muted-foreground">
               福岡県福岡市西区豊浜2丁目20-20-2
             </p>
 
-            <p className="mt-2 text-xs text-muted-foreground">
-              TEL: 092-284-9392
+            <p className="mt-2 text-sm text-muted-foreground">
+              TEL：092-284-9392
             </p>
           </div>
         </FadeIn>
@@ -66,7 +74,7 @@ export function AccessMap() {
               href={MAP_LINK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-gold/50 bg-transparent px-6 py-3 text-sm text-foreground transition hover:bg-gold/10"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-gold/40 px-6 py-3 text-sm tracking-[0.08em] text-foreground transition hover:bg-gold/10"
             >
               Googleマップで経路を見る
             </a>
@@ -75,7 +83,7 @@ export function AccessMap() {
               href={COUBIC_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
             >
               空き状況を確認する
             </a>
@@ -88,7 +96,7 @@ export function AccessMap() {
               <p className="text-[10px] tracking-[0.2em] text-gold/70">
                 OPEN
               </p>
-              <p className="mt-1 text-xs text-foreground">
+              <p className="mt-2 text-sm text-foreground">
                 9:30 - 16:30
               </p>
             </div>
@@ -97,7 +105,7 @@ export function AccessMap() {
               <p className="text-[10px] tracking-[0.2em] text-gold/70">
                 CLOSED
               </p>
-              <p className="mt-1 text-xs text-foreground">
+              <p className="mt-2 text-sm text-foreground">
                 日曜日
               </p>
             </div>
@@ -105,9 +113,11 @@ export function AccessMap() {
         </FadeIn>
 
         <FadeIn delay={0.35}>
-          <div className="mt-4 rounded-2xl border border-border/40 bg-card/50 px-4 py-4 text-center">
-            <p className="text-xs leading-6 text-muted-foreground">
-              お車でもご来店いただけます。店舗前に
+          <div className="mt-4 rounded-2xl border border-border/40 bg-card/50 px-5 py-5 text-center">
+            <p className="text-sm leading-8 text-muted-foreground">
+              お車でもご来店いただけます。
+              <br className="sm:hidden" />
+              店舗前に
               <span className="mx-1 font-medium text-foreground">駐車場2台分</span>
               をご用意しております。
             </p>
