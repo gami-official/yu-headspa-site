@@ -9,7 +9,6 @@ export function Hero() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-black text-white">
-        {/* 背景動画 */}
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
           <video
             src="/videos/hero.mp4"
@@ -23,8 +22,7 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/40 to-black/85" />
         </div>
 
-        {/* メイン */}
-        <div className="relative mx-auto flex min-h-[700px] max-w-5xl flex-col items-center justify-center px-5 py-20 text-center sm:min-h-[760px] sm:px-6 lg:min-h-screen lg:px-10">
+        <div className="relative mx-auto flex min-h-[760px] max-w-5xl flex-col items-center justify-center px-5 pb-20 pt-44 text-center sm:min-h-[820px] sm:px-6 sm:pb-24 sm:pt-48 lg:min-h-screen lg:px-10 lg:pt-44">
           <div className="w-full max-w-3xl">
             <FadeIn>
               <p className="text-[11px] tracking-[0.45em] text-[#d6b36a] sm:text-xs">
@@ -49,7 +47,7 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <div className="mt-5 mx-auto max-w-xl text-sm leading-8 text-white/80 sm:text-base sm:leading-9">
+              <div className="mx-auto mt-5 max-w-xl text-sm leading-8 text-white/80 sm:text-base sm:leading-9">
                 <p>
                   抜け毛・薄毛・白髪・
                   <br className="sm:hidden" />
@@ -66,7 +64,7 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <div className="mt-8 mx-auto flex w-full max-w-md flex-col gap-3">
+              <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3">
                 <a
                   href={COUBIC_URL}
                   target="_blank"
@@ -110,7 +108,7 @@ export function Hero() {
               <h2 className="mt-3 text-xl leading-[1.7] tracking-[0.12em] text-foreground sm:text-2xl">
                 こんなお悩みはありませんか？
               </h2>
-              <p className="mt-4 mx-auto max-w-2xl text-sm leading-7 text-muted-foreground">
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
                 頭皮や髪の変化、
                 <br className="sm:hidden" />
                 慢性的な疲れに寄り添いながら、
