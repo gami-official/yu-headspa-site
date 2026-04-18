@@ -8,21 +8,21 @@ const LINE_URL = "https://lin.ee/7hso3k1"
 export function Hero() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-black text-white">
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+      <section className="relative isolate min-h-screen overflow-hidden bg-black text-white">
+        <div className="absolute inset-0 overflow-hidden">
           <video
             src="/videos/hero.mp4"
             autoPlay
             muted
             loop
             playsInline
-            className="h-[112%] w-[112%] object-contain scale-[1.03] sm:h-[114%] sm:w-[114%] lg:h-[116%] lg:w-[116%]"
+            className="h-full w-full object-cover scale-[1.08] sm:scale-[1.12] lg:scale-[1.15]"
           />
-          <div className="absolute inset-0 bg-black/62" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/16 via-black/38 to-black/84" />
+          <div className="absolute inset-0 bg-black/56" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/12 via-black/34 to-black/78" />
         </div>
 
-        <div className="relative mx-auto flex min-h-[760px] max-w-5xl flex-col items-center justify-center px-5 pb-20 pt-44 text-center sm:min-h-[820px] sm:px-6 sm:pb-24 sm:pt-48 lg:min-h-screen lg:px-10 lg:pt-44">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-36 text-center sm:px-6 sm:pb-20 sm:pt-40 lg:px-10 lg:pt-36">
           <div className="w-full max-w-3xl">
             <FadeIn>
               <p className="text-[11px] tracking-[0.45em] text-[#d6b36a] sm:text-xs">
@@ -37,7 +37,7 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h1 className="mt-5 text-[clamp(1.9rem,7vw,3.6rem)] font-medium leading-[1.55] tracking-[0.12em] text-white">
+              <h1 className="mt-5 text-[clamp(1.9rem,7vw,3.8rem)] font-medium leading-[1.55] tracking-[0.1em] text-white">
                 頭皮から整え、
                 <br />
                 髪も心も満たされる
@@ -47,7 +47,7 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <div className="mx-auto mt-5 max-w-xl text-sm leading-8 text-white/80 sm:text-base sm:leading-9">
+              <div className="mx-auto mt-5 max-w-[19em] text-sm leading-8 text-white/82 sm:max-w-2xl sm:text-base sm:leading-9">
                 <p>
                   抜け毛・薄毛・白髪・
                   <br className="sm:hidden" />
