@@ -21,12 +21,21 @@ export function GiftSection() {
               癒しの時間を贈る
             </h2>
 
-            <p className="mt-6 text-sm leading-7 text-muted-foreground sm:text-base">
-              誕生日、記念日、母の日、感謝の気持ちを伝えたいときに。
-              <br className="hidden sm:block" />
-              完全個室・完全予約制の上質なヘッドスパ体験を、
-              ギフトとしてお贈りいただけます。
-            </p>
+            <div className="mt-6 space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
+              <p>
+                誕生日、記念日、母の日、
+                <br className="sm:hidden" />
+                感謝の気持ちを伝えたいときに。
+              </p>
+
+              <p>
+                完全個室・完全予約制の
+                <br className="sm:hidden" />
+                上質なヘッドスパ体験を、
+                <br className="sm:hidden" />
+                ギフトとしてお贈りいただけます。
+              </p>
+            </div>
           </div>
         </FadeIn>
 
@@ -43,8 +52,13 @@ export function GiftSection() {
                     1. 記憶に残る、上質な贈り物
                   </p>
                   <p className="mt-1">
-                    物ではなく、“自分をいたわる時間”を贈れる特別なギフト。
-                    香り、空間、手技、静けさまで含めて心に残る体験です。
+                    物ではなく、
+                    <span className="text-foreground">“自分をいたわる時間”</span>
+                    を贈れる特別なギフト。
+                    <br className="sm:hidden" />
+                    香り、空間、手技、静けさまで含めて
+                    <br className="sm:hidden" />
+                    心に残る体験です。
                   </p>
                 </div>
 
@@ -53,8 +67,13 @@ export function GiftSection() {
                     2. 完全個室でゆっくり過ごせる
                   </p>
                   <p className="mt-1">
-                    周りを気にせず、落ち着いて過ごせる大人のための空間。
-                    忙しい毎日を過ごす方への贈り物にもぴったりです。
+                    周りを気にせず、
+                    <br className="sm:hidden" />
+                    落ち着いて過ごせる大人のための空間。
+                    <br className="sm:hidden" />
+                    忙しい毎日を過ごす方への
+                    <br className="sm:hidden" />
+                    贈り物にもぴったりです。
                   </p>
                 </div>
 
@@ -64,7 +83,10 @@ export function GiftSection() {
                   </p>
                   <p className="mt-1">
                     抜け毛、薄毛、白髪、乾燥、疲れなど、
-                    気になりはじめたお悩みにもやさしく寄り添います。
+                    <br className="sm:hidden" />
+                    気になりはじめたお悩みにも
+                    <br className="sm:hidden" />
+                    やさしく寄り添います。
                   </p>
                 </div>
 
@@ -73,7 +95,10 @@ export function GiftSection() {
                     4. さまざまな贈り物シーンに対応
                   </p>
                   <p className="mt-1">
-                    誕生日、母の日、結婚記念日、日頃の感謝を伝える贈り物として
+                    誕生日、母の日、結婚記念日、
+                    <br className="sm:hidden" />
+                    日頃の感謝を伝える贈り物として
+                    <br className="sm:hidden" />
                     選ばれやすいギフトです。
                   </p>
                 </div>
@@ -96,12 +121,21 @@ export function GiftSection() {
               </ul>
 
               <div className="mt-8 rounded-xl border border-border/40 bg-background/60 p-5">
-                <p className="text-sm leading-7 text-muted-foreground">
-                  大切な方に、
-                  <span className="text-foreground">“自分をいたわる時間”</span>
-                  を贈りたいと思ったら、
-                  こちらからギフトチケットをご覧いただけます。
-                </p>
+                <div className="space-y-3 text-sm leading-7 text-muted-foreground">
+                  <p>
+                    大切な方に、
+                    <span className="text-foreground">“自分をいたわる時間”</span>
+                    を
+                    <br className="sm:hidden" />
+                    贈りたいと思ったら、
+                  </p>
+
+                  <p>
+                    こちらからギフトチケットを
+                    <br className="sm:hidden" />
+                    ご覧いただけます。
+                  </p>
+                </div>
 
                 <div className="mt-5 grid gap-3">
                   <a
@@ -133,13 +167,37 @@ export function GiftSection() {
               ヘッドスパ専門店ゆう本店
             </h3>
 
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              福岡市西区にある、完全個室・完全予約制のヘッドスパ専門店です。
-              一日3名限定で、お一人おひとりに合わせた丁寧な施術をご提供しています。
-              育毛ヘッドスパ、ヘアカラーヘッドスパ、リラクゼーションまで、
-              ただ気持ちいいだけではない、
-              将来の髪と頭皮を見据えたケアを大切にしています。
-            </p>
+            <div className="mt-4 space-y-4 text-sm leading-7 text-muted-foreground">
+              <p>
+                福岡市西区にある、
+                <br className="sm:hidden" />
+                完全個室・完全予約制のヘッドスパ専門店です。
+              </p>
+
+              <p>
+                一日3名限定で、
+                <br className="sm:hidden" />
+                お一人おひとりに合わせた
+                <br className="sm:hidden" />
+                丁寧な施術をご提供しています。
+              </p>
+
+              <p>
+                育毛ヘッドスパ、
+                <br className="sm:hidden" />
+                ヘアカラーヘッドスパ、
+                <br className="sm:hidden" />
+                リラクゼーションまで。
+              </p>
+
+              <p>
+                ただ気持ちいいだけではない、
+                <br className="sm:hidden" />
+                将来の髪と頭皮を見据えたケアを
+                <br className="sm:hidden" />
+                大切にしています。
+              </p>
+            </div>
 
             <p className="mt-4 text-xs leading-6 text-muted-foreground">
               ※ギフトチケットの内容・ご利用方法は販売ページにてご確認ください
