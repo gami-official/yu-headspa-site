@@ -53,13 +53,13 @@ export function Evidence() {
               RESULTS
             </p>
 
-            <h2 className="mt-3 text-[clamp(1.6rem,5vw,2.4rem)] leading-[1.6] tracking-[0.05em] text-foreground">
+            <h2 className="mt-3 text-[clamp(1.3rem,4vw,1.9rem)] leading-[1.75] tracking-[0.03em] text-foreground">
               抜け毛・薄毛・分け目に
               <br />
               お悩みの方へ
             </h2>
 
-            <div className="mx-auto mt-5 max-w-[16em] text-[14px] leading-[2.1] text-muted-foreground sm:max-w-xl sm:text-[15px]">
+            <div className="mx-auto mt-5 max-w-[15.5em] text-[14px] leading-[2.05] text-muted-foreground sm:max-w-xl sm:text-[15px]">
               <p>
                 頭皮環境を整えることで、
                 <br className="sm:hidden" />
@@ -122,13 +122,13 @@ export function Evidence() {
               RESERVE
             </p>
 
-            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.6] tracking-[0.05em] text-foreground">
+            <h3 className="mt-3 text-[clamp(1.22rem,3.8vw,1.8rem)] leading-[1.78] tracking-[0.03em] text-foreground">
               気になり始めた今こそ
               <br />
               ケアの始めどきです
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-xl">
+            <div className="mx-auto mt-5 max-w-[15.5em] text-sm leading-[2.05] text-muted-foreground sm:max-w-xl">
               <p>
                 抜け毛・薄毛・分け目が
                 <br className="sm:hidden" />
