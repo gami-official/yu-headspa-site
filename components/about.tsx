@@ -10,16 +10,22 @@ export function About() {
   return (
     <section id="about" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
-        <FadeIn>
-          <p className="text-[11px] tracking-[0.38em] text-gold/70">ABOUT</p>
 
-          <h2 className="mt-4 text-[14px] leading-[2.1] tracking-[0.02em] text-foreground sm:text-[24px] sm:leading-[1.8]">
-  ヘッドスパ専門店ゆう
-</h2>
+        {/* タイトル */}
+        <FadeIn>
+          <p className="text-[11px] tracking-[0.38em] text-gold/70">
+            ABOUT
+          </p>
+
+          <h2 className="mt-4 text-[15px] leading-[2.1] tracking-[0.03em] text-foreground sm:text-[26px] sm:leading-[1.8]">
+            ヘッドスパ専門店ゆう
+          </h2>
         </FadeIn>
 
+        {/* 説明文 */}
         <FadeIn delay={0.08}>
-          <div className="mx-auto mt-8 max-w-[16em] text-[13.5px] leading-[2] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+          <div className="mx-auto mt-8 max-w-[17em] text-[14px] leading-[2.1] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+
             <p>
               福岡市西区にある、
               <br className="sm:hidden" />
@@ -57,21 +63,25 @@ export function About() {
               <br />
               ※ご不明点はLINEよりお気軽にお問い合わせください
             </p>
+
           </div>
         </FadeIn>
 
+        {/* CTA */}
         <FadeIn delay={0.15}>
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card px-6 py-10">
+
             <p className="text-[10px] tracking-[0.35em] text-gold/70">
               RESERVE
             </p>
 
-            <h3 className="mt-4 text-[14.5px] leading-[2.15] tracking-[0.02em] text-foreground sm:text-[22px] sm:leading-[1.85]">
-  <span className="block">お悩みに合う</span>
-  <span className="block mt-1">メニューをご案内します</span>
-</h3>
+            <h3 className="mt-4 text-[15px] leading-[2.1] tracking-[0.03em] text-foreground sm:text-[22px] sm:leading-[1.8]">
+              お悩みに合う
+              <br />
+              メニューをご案内します
+            </h3>
 
-            <div className="mx-auto mt-6 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-xl">
+            <div className="mx-auto mt-6 max-w-[17em] text-sm leading-[2.1] text-muted-foreground sm:max-w-xl">
               <p>
                 どのメニューが合うか迷う場合も、
                 <br className="sm:hidden" />
@@ -86,6 +96,7 @@ export function About() {
             </p>
 
             <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+
               <a
                 href={COUBIC_URL}
                 target="_blank"
@@ -103,6 +114,7 @@ export function About() {
               >
                 LINEで相談する
               </a>
+
             </div>
 
             <div className="mt-6">
@@ -115,8 +127,10 @@ export function About() {
                 この技術を学びたい方はこちら
               </a>
             </div>
+
           </div>
         </FadeIn>
+
       </div>
     </section>
   )
