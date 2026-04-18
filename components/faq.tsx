@@ -48,13 +48,13 @@ export function Faq() {
               FAQ
             </p>
 
-            <h2 className="mt-3 text-[clamp(1.55rem,4.8vw,2.4rem)] leading-[1.55] tracking-[0.06em] text-foreground">
+            <h2 className="mt-3 text-[clamp(1.6rem,5vw,2.4rem)] leading-[1.6] tracking-[0.05em] text-foreground">
               初めての方によくある
               <br />
               ご質問
             </h2>
 
-            <div className="mx-auto mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+            <div className="mx-auto mt-5 max-w-[16em] text-[14px] leading-[2.1] text-muted-foreground sm:max-w-xl sm:text-[15px]">
               <p>
                 育毛ヘッドスパ・
                 <br className="sm:hidden" />
@@ -62,7 +62,7 @@ export function Faq() {
                 <br className="sm:hidden" />
                 リラクゼーションヘッドスパを
               </p>
-              <p className="mt-3">
+              <p className="mt-4">
                 ご検討中の方から多くいただく
                 <br className="sm:hidden" />
                 ご質問をまとめました。
@@ -82,7 +82,7 @@ export function Faq() {
                 >
                   <AccordionTrigger className="py-5 text-left text-sm leading-7 text-foreground/85 hover:text-gold hover:no-underline lg:text-[15px]">
                     <span className="flex gap-3">
-                      <span className="text-gold/60">Q.</span>
+                      <span className="shrink-0 text-gold/60">Q.</span>
                       <span>{faq.q}</span>
                     </span>
                   </AccordionTrigger>
@@ -103,26 +103,26 @@ export function Faq() {
               RESERVE & CONSULT
             </p>
 
-            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.55] tracking-[0.06em] text-foreground">
+            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.6] tracking-[0.05em] text-foreground">
               メニュー選びに迷う方も
               <br />
               ご安心ください
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl">
+            <div className="mx-auto mt-5 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-xl">
               <p>
                 抜け毛・薄毛・分け目のお悩みや、
                 <br className="sm:hidden" />
                 ヘアカラーヘッドスパとの違いなど、
               </p>
-              <p className="mt-3">
+              <p className="mt-4">
                 ご予約前にLINEで
                 <br className="sm:hidden" />
                 ご相談いただけます。
               </p>
             </div>
 
-            <p className="mt-3 text-xs text-foreground/50">
+            <p className="mt-3 text-xs leading-6 text-foreground/50">
               ※1日3名限定のため、
               <br className="sm:hidden" />
               早めのご予約をおすすめしています
@@ -133,7 +133,7 @@ export function Faq() {
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mx-auto inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black"
+                className="mx-auto inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
               >
                 ご予約はこちら
               </a>
@@ -142,7 +142,7 @@ export function Faq() {
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mx-auto inline-flex w-full max-w-xs items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm text-foreground"
+                className="mx-auto inline-flex w-full max-w-xs items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm text-foreground transition hover:border-gold/50 hover:text-gold"
               >
                 LINEで相談する
               </a>
