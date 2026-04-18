@@ -39,7 +39,7 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h1 className="mt-5 text-[clamp(1.9rem,7vw,3.6rem)] font-medium leading-[1.45] tracking-[0.12em] text-white">
+              <h1 className="mt-5 text-[clamp(1.9rem,7vw,3.6rem)] font-medium leading-[1.55] tracking-[0.12em] text-white">
                 頭皮から整え、
                 <br />
                 髪も心も満たされる
@@ -49,11 +49,20 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <p className="mt-5 mx-auto max-w-xl text-sm leading-7 text-white/80 sm:text-base sm:leading-8">
-                抜け毛・薄毛・白髪・頭皮の違和感・疲労感に。
-                育毛・カラー・リラクゼーションまで、
-                お悩みに合わせて丁寧にご提案します。
-              </p>
+              <div className="mt-5 mx-auto max-w-xl text-sm leading-8 text-white/80 sm:text-base sm:leading-9">
+                <p>
+                  抜け毛・薄毛・白髪・
+                  <br className="sm:hidden" />
+                  頭皮の違和感・疲労感に。
+                </p>
+                <p className="mt-3">
+                  育毛・カラー・リラクゼーションまで、
+                  <br className="sm:hidden" />
+                  お悩みに合わせて
+                  <br className="sm:hidden" />
+                  丁寧にご提案します。
+                </p>
+              </div>
             </FadeIn>
 
             <FadeIn delay={0.2}>
@@ -84,22 +93,10 @@ export function Hero() {
                 </a>
               </div>
             </FadeIn>
-
-            <FadeIn delay={0.28}>
-              <div className="mt-10 flex justify-center">
-                <a
-                  href="#hero-issues"
-                  className="text-xs tracking-[0.2em] text-white/50 transition hover:text-[#d6b36a]"
-                >
-                  SCROLL ↓
-                </a>
-              </div>
-            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* 悩み訴求ブロック */}
       <section
         id="hero-issues"
         className="bg-background px-5 py-14 sm:px-6 sm:py-16 lg:px-10"
@@ -114,7 +111,10 @@ export function Hero() {
                 こんなお悩みはありませんか？
               </h2>
               <p className="mt-4 mx-auto max-w-2xl text-sm leading-7 text-muted-foreground">
-                頭皮や髪の変化、慢性的な疲れに寄り添いながら、
+                頭皮や髪の変化、
+                <br className="sm:hidden" />
+                慢性的な疲れに寄り添いながら、
+                <br className="sm:hidden" />
                 今の状態に合わせたケアをご提案します。
               </p>
             </div>
@@ -126,13 +126,14 @@ export function Hero() {
                 <p className="text-[10px] tracking-[0.26em] text-gold/70">
                   SCALP CARE
                 </p>
-                <h3 className="mt-3 text-base font-medium tracking-[0.08em] text-foreground">
+                <h3 className="mt-3 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
                   抜け毛・薄毛・
                   <br />
                   分け目が気になる
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   ボリューム不足やハリコシ低下など、
+                  <br className="sm:hidden" />
                   頭皮環境から整えたい方へ。
                 </p>
               </div>
@@ -143,13 +144,14 @@ export function Hero() {
                 <p className="text-[10px] tracking-[0.26em] text-gold/70">
                   COLOR CARE
                 </p>
-                <h3 className="mt-3 text-base font-medium tracking-[0.08em] text-foreground">
+                <h3 className="mt-3 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
                   白髪染めを続けながら
                   <br />
                   頭皮も守りたい
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   頭皮負担やダメージに配慮しながら、
+                  <br className="sm:hidden" />
                   美しい髪色も大切にしたい方へ。
                 </p>
               </div>
@@ -160,13 +162,14 @@ export function Hero() {
                 <p className="text-[10px] tracking-[0.26em] text-gold/70">
                   RELAXATION
                 </p>
-                <h3 className="mt-3 text-base font-medium tracking-[0.08em] text-foreground">
+                <h3 className="mt-3 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
                   頭の重だるさや
                   <br />
                   疲れを癒したい
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   眼精疲労や睡眠の質の低下、
+                  <br className="sm:hidden" />
                   深い休息を求める方へ。
                 </p>
               </div>
