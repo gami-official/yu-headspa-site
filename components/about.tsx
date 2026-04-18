@@ -13,9 +13,10 @@ export function About() {
         <FadeIn>
           <p className="text-[11px] tracking-[0.38em] text-gold/70">ABOUT</p>
 
-          <h2 className="mt-4 text-[clamp(1rem,3.3vw,1.55rem)] leading-[2] tracking-[0.02em] text-foreground">
-            <span className="block whitespace-nowrap">ヘッドスパ専門店ゆう本店</span>
-            <span className="block whitespace-nowrap">について</span>
+          <h2 className="mt-4 text-[clamp(1.1rem,3.8vw,1.6rem)] leading-[1.9] tracking-[0.03em] text-foreground">
+            ヘッドスパ専門店
+            <br />
+            ゆう本店について
           </h2>
         </FadeIn>
 
@@ -67,9 +68,10 @@ export function About() {
               RESERVE
             </p>
 
-            <h3 className="mt-4 text-[clamp(1rem,3.2vw,1.45rem)] leading-[2] tracking-[0.02em] text-foreground">
-              <span className="block whitespace-nowrap">お悩みに合うメニューを</span>
-              <span className="block whitespace-nowrap">ご案内します</span>
+            <h3 className="mt-4 text-[clamp(1.08rem,3.6vw,1.45rem)] leading-[1.9] tracking-[0.03em] text-foreground">
+              お悩みに合う
+              <br />
+              メニューをご案内します
             </h3>
 
             <div className="mx-auto mt-6 max-w-[15em] text-sm leading-[2.05] text-muted-foreground sm:max-w-xl">
