@@ -14,11 +14,11 @@ const LINE_URL = "https://lin.ee/7hso3k1"
 const faqs = [
   {
     q: "事前の予約が必要ですか？",
-    a: "当店は完全予約制です。1日3名様限定でご案内しており、前日までに満席となることも多いため、お早めのご予約をおすすめしております。",
+    a: "当店は完全予約制です。1日3名様限定のため、前日までに満席となることも多くございます。お早めのご予約をおすすめしております。",
   },
   {
     q: "駐車場はありますか？",
-    a: "サロン目の前に駐車場を2台分ご用意しております。お車でも安心してご来店いただけます。",
+    a: "サロン目の前に2台分の駐車場をご用意しております。お車でも安心してご来店いただけます。",
   },
   {
     q: "トータルでどのくらい時間がかかりますか？",
@@ -26,27 +26,15 @@ const faqs = [
   },
   {
     q: "どのメニューを選べばよいか分かりません。",
-    a: "抜け毛・薄毛・分け目のお悩みには育毛ヘッドスパ、頭皮負担を抑えながら染めたい方にはヘアカラーヘッドスパ、まずは癒しから体験したい方にはリラクゼーションヘッドスパがおすすめです。迷われる場合はLINEでご相談ください。",
+    a: "抜け毛・薄毛・分け目には育毛ヘッドスパ、頭皮負担を抑えたい方にはヘアカラーヘッドスパ、まずは癒しを体験したい方にはリラクゼーションヘッドスパがおすすめです。迷われる場合はLINEでご相談ください。",
   },
   {
     q: "ヘアカラーヘッドスパは普通のカラーと何が違いますか？",
-    a: "当店では頭皮への負担に配慮したゼロテクニックカラーを取り入れ、カラーと同時に頭皮環境を整えるケアをご提供しています。安価なカラーとは異なり、その場の仕上がりだけでなく将来の髪と頭皮まで見据えた施術です。",
+    a: "頭皮への負担に配慮したゼロテクニックカラーを採用し、カラーと同時に頭皮環境を整えるケアをご提供しています。その場の仕上がりだけでなく、将来の髪と頭皮まで見据えた施術です。",
   },
   {
     q: "リラクゼーションヘッドスパだけでも受けられますか？",
-    a: "はい、もちろんです。疲労感・眼精疲労・頭の重だるさ・睡眠の質が気になる方など、まずは癒しを目的に受けていただく方にもおすすめです。",
-  },
-  {
-    q: "高濃度ヒト幹細胞ケアは安全ですか？",
-    a: "国内製造の製品を使用しており、品質管理されたものを採用しております。安心して施術を受けていただけます。",
-  },
-  {
-    q: "髪の毛は生えてきますか？",
-    a: "育毛には個人差がありますが、頭皮環境の変化を実感される方が多くいらっしゃいます。まずは今の状態を確認しながら、無理のないケアをご提案いたします。",
-  },
-  {
-    q: "カラーやパーマの次の日にヘッドスパはできますか？",
-    a: "カラーやパーマの施術後は、1週間ほど間隔を空けていただくことをおすすめしております。",
+    a: "はい、可能です。疲労感・眼精疲労・睡眠の質の低下など、癒しを目的にご来店される方にもおすすめです。",
   },
 ]
 
@@ -60,49 +48,26 @@ export function Faq() {
               FAQ
             </p>
 
-            <h2 className="mt-3 text-xl leading-relaxed tracking-[0.18em] text-foreground sm:text-2xl">
-              初めての方によくあるご質問
+            {/* タイトル修正 */}
+            <h2 className="mt-3 text-[clamp(1.9rem,5.6vw,3rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+              初めての方によくある
+              <br className="sm:hidden" />
+              ご質問
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              育毛ヘッドスパ・ヘアカラーヘッドスパ・リラクゼーションヘッドスパを
-              ご検討中の方から、特に多くいただくご質問をまとめました。
-            </p>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.05}>
-          <div className="mb-8 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-2xl border border-gold/20 bg-card px-4 py-4 text-center">
-              <p className="text-[10px] tracking-[0.25em] text-gold/70">
-                RESERVATION
+            {/* 本文修正 */}
+            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+              <p>
+                育毛ヘッドスパ・
+                <br className="sm:hidden" />
+                ヘアカラーヘッドスパ・
+                <br className="sm:hidden" />
+                リラクゼーションヘッドスパを
               </p>
-              <p className="mt-2 text-xs leading-6 text-foreground/75">
-                完全予約制
-                <br />
-                1日3名様限定
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-gold/20 bg-card px-4 py-4 text-center">
-              <p className="text-[10px] tracking-[0.25em] text-gold/70">
-                ACCESS
-              </p>
-              <p className="mt-2 text-xs leading-6 text-foreground/75">
-                駐車場あり
-                <br />
-                2台分完備
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-gold/20 bg-card px-4 py-4 text-center">
-              <p className="text-[10px] tracking-[0.25em] text-gold/70">
-                TIME
-              </p>
-              <p className="mt-2 text-xs leading-6 text-foreground/75">
-                施術時間
-                <br />
-                約2時間
+              <p className="mt-3">
+                ご検討中の方から多くいただく
+                <br className="sm:hidden" />
+                ご質問をまとめました。
               </p>
             </div>
           </div>
@@ -117,22 +82,16 @@ export function Faq() {
                   value={`item-${index}`}
                   className="border-border/30"
                 >
-                  <AccordionTrigger className="flex min-h-[44px] items-center py-5 text-left text-sm tracking-[0.03em] text-foreground/85 hover:text-gold hover:no-underline md:py-6 lg:text-[15px]">
-                    <span className="flex items-start gap-3">
-                      <span className="shrink-0 text-[11px] tracking-[0.18em] text-gold/60">
-                        Q.
-                      </span>
+                  <AccordionTrigger className="py-5 text-left text-sm leading-7 text-foreground/85 hover:text-gold hover:no-underline lg:text-[15px]">
+                    <span className="flex gap-3">
+                      <span className="text-gold/60">Q.</span>
                       <span>{faq.q}</span>
                     </span>
                   </AccordionTrigger>
 
-                  <AccordionContent className="pb-6 pl-6 pr-2 text-xs leading-[2.1] tracking-[0.02em] text-muted-foreground md:pl-7 lg:text-[13px]">
-                    <div className="flex gap-2">
-                      <span className="shrink-0 text-[11px] tracking-[0.18em] text-gold/40">
-                        A.
-                      </span>
-                      <span>{faq.a}</span>
-                    </div>
+                  <AccordionContent className="pb-6 pl-5 text-xs leading-[2.1] text-muted-foreground lg:text-[13px]">
+                    <span className="text-gold/40">A. </span>
+                    {faq.a}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -140,42 +99,54 @@ export function Faq() {
           </div>
         </FadeIn>
 
+        {/* 一番重要ブロック */}
         <FadeIn delay={0.2}>
-          <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center lg:px-10">
+          <div className="mt-12 rounded-2xl border border-gold/20 bg-card px-6 py-9 text-center">
             <p className="text-[10px] tracking-[0.35em] text-gold/70">
               RESERVE & CONSULT
             </p>
 
-            <h3 className="mt-3 text-lg tracking-[0.15em] text-foreground sm:text-xl">
-              メニュー選びに迷う方もご安心ください
+            {/* ←ここが一番効く */}
+            <h3 className="mt-3 text-[clamp(1.8rem,5.2vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+              メニュー選びに迷う方も
+              <br className="sm:hidden" />
+              ご安心ください
             </h3>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              抜け毛・薄毛・分け目のお悩みや、
-              ヘアカラーヘッドスパとの違い、
-              まずは癒しから始めたい場合なども、
-              ご予約前にLINEでご相談いただけます。
-            </p>
+            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl">
+              <p>
+                抜け毛・薄毛・分け目のお悩みや、
+                <br className="sm:hidden" />
+                ヘアカラーヘッドスパとの違いなど、
+              </p>
+              <p className="mt-3">
+                ご予約前にLINEで
+                <br className="sm:hidden" />
+                ご相談いただけます。
+              </p>
+            </div>
 
             <p className="mt-3 text-xs text-foreground/50">
-              ※1日3名限定のため、早めのご予約をおすすめしています
+              ※1日3名限定のため、
+              <br className="sm:hidden" />
+              早めのご予約をおすすめしています
             </p>
 
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col gap-3">
               <a
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background transition hover:opacity-90"
+                className="inline-flex w-full max-w-xs mx-auto items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black"
               >
-                残り枠わずか｜ご予約はこちら
+                ご予約はこちら
               </a>
 
               <a
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-foreground/20 px-6 py-3 text-sm tracking-[0.12em] text-foreground transition hover:border-gold/50 hover:text-gold"
+                className="inline-flex w-full max-w-xs mx-auto items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm text-foreground"
               >
                 LINEで相談する
               </a>
