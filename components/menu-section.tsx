@@ -147,11 +147,10 @@ export function MenuSection() {
               RESERVE
             </p>
 
-            <h3 className="mt-4 text-[13px] leading-[2.05] tracking-[0.01em] text-foreground sm:text-[20px] sm:leading-[1.8]">
-              お悩みに合う
-              <br />
-              メニューをご案内します
-            </h3>
+            <h3 className="mt-4 text-[14.5px] leading-[2.15] tracking-[0.02em] text-foreground sm:text-[22px] sm:leading-[1.85]">
+  <span className="block">お悩みに合う</span>
+  <span className="block mt-1">メニューをご案内します</span>
+</h3>
 
             <div className="mx-auto mt-6 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl">
               <p>
