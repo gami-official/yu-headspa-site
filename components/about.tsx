@@ -13,9 +13,8 @@ export function About() {
         <FadeIn>
           <p className="text-[11px] tracking-[0.38em] text-gold/70">ABOUT</p>
 
-          <h2 className="mt-4 text-[13px] leading-[2.1] text-foreground text-center">
-  <div className="block">ヘッドスパ専門店</div>
-  <div className="block">ゆう本店について</div>
+          <h2 className="mt-4 text-[14px] leading-[2.1] tracking-[0.02em] text-foreground sm:text-[24px] sm:leading-[1.8]">
+  ヘッドスパ専門店ゆう
 </h2>
         </FadeIn>
 
