@@ -130,7 +130,7 @@ export function GiftSection() {
         <FadeIn delay={0.24}>
           <div className="mt-10 rounded-2xl border border-border/40 bg-card/50 px-6 py-8 text-center">
             <h3 className="text-lg tracking-[0.08em] text-foreground">
-              ヘッドスパ専門店ゆう本店について
+              ヘッドスパ専門店ゆう本店
             </h3>
 
             <p className="mt-4 text-sm leading-7 text-muted-foreground">
