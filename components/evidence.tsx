@@ -45,7 +45,7 @@ export function Evidence() {
   }
 
   return (
-    <section id="evidence" className="bg-secondary py-24 lg:py-36">
+    <section id="evidence" className="bg-secondary py-20 lg:py-32">
       <div className="mx-auto max-w-2xl px-5 lg:px-10">
         <FadeIn>
           <div className="mb-10 text-center">
@@ -53,20 +53,32 @@ export function Evidence() {
               RESULTS
             </p>
 
-            <h2 className="mt-3 text-xl leading-relaxed tracking-[0.14em] text-foreground sm:text-2xl">
-              抜け毛・薄毛・分け目にお悩みの方へ
+            <h2 className="mt-3 text-[clamp(1.9rem,5.6vw,3rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+              抜け毛・薄毛・分け目に
+              <br className="sm:hidden" />
+              お悩みの方へ
             </h2>
 
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              頭皮環境を整えることで、髪の印象は変わります。
-              変化を実感される方が多い人気メニューです。
-            </p>
+            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+              <p>
+                頭皮環境を整えることで、
+                <br className="sm:hidden" />
+                髪の印象は変わります。
+              </p>
+              <p className="mt-3">
+                変化を実感される方が多い
+                <br className="sm:hidden" />
+                人気メニューです。
+              </p>
+            </div>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <p className="mb-4 text-center text-xs leading-6 text-foreground/65">
-            分け目・ボリューム・抜け毛で悩まれていたお客様の変化です
+          <p className="mb-5 text-center text-xs leading-6 text-foreground/65">
+            分け目・ボリューム・抜け毛で悩まれていた
+            <br className="sm:hidden" />
+            お客様の変化です
           </p>
         </FadeIn>
 
@@ -97,20 +109,38 @@ export function Evidence() {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <p className="mt-5 text-center text-xs text-foreground/60">
-            初回は頭皮状態を確認しながら最適な施術をご提案します
+          <p className="mt-5 text-center text-xs leading-6 text-foreground/60">
+            初回は頭皮状態を確認しながら、
+            <br className="sm:hidden" />
+            最適な施術をご提案します
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center">
-            <p className="text-sm leading-7 text-muted-foreground">
-              抜け毛・薄毛・分け目が気になり始めた今が、
-              ケアを始めるタイミングです。
-            </p>
+          <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-9 text-center">
+            <h3 className="text-[clamp(1.8rem,5.2vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+              気になり始めた今こそ
+              <br className="sm:hidden" />
+              ケアの始めどきです
+            </h3>
 
-            <p className="mt-3 text-xs text-foreground/55">
-              ※1日3名限定のため、早めのご予約をおすすめしています
+            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl">
+              <p>
+                抜け毛・薄毛・分け目が
+                <br className="sm:hidden" />
+                気になり始めた今が、
+              </p>
+              <p className="mt-3">
+                将来の髪のために
+                <br className="sm:hidden" />
+                ケアを始めるタイミングです。
+              </p>
+            </div>
+
+            <p className="mt-3 text-xs leading-6 text-foreground/55">
+              ※1日3名限定のため、
+              <br className="sm:hidden" />
+              早めのご予約をおすすめしています
             </p>
 
             <div className="mt-6 flex flex-col items-center gap-3">
@@ -118,7 +148,7 @@ export function Evidence() {
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
+                className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
               >
                 初回のご予約はこちら
               </a>
@@ -127,7 +157,7 @@ export function Evidence() {
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-foreground/70 transition hover:text-gold"
+                className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-foreground/20 px-6 py-3 text-sm tracking-[0.08em] text-foreground transition hover:border-gold/50 hover:text-gold"
               >
                 LINEで相談する
               </a>
