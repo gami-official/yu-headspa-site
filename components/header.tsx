@@ -1,193 +1,234 @@
 "use client"
 
-import { FadeIn } from "@/components/fade-in"
+import { useEffect, useState } from "react"
+import { Menu, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
+const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
-export function Hero() {
+const navLinks = [
+  { label: "料金・メニュー", href: "#menu" },
+  { label: "育毛ヘッドスパ", href: "#scalp" },
+  { label: "ヘアカラーヘッドスパ", href: "#color" },
+  { label: "リラクゼーションヘッドスパ", href: "#relaxation" },
+  { label: "当店について", href: "#about" },
+  { label: "アクセス", href: "#access" },
+  { label: "よくある質問", href: "#faq" },
+  { label: "フランチャイズ募集", href: FRANCHISE_URL, external: true },
+]
+
+export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 40)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : ""
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isMenuOpen])
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    link: { label: string; href: string; external?: boolean },
+  ) => {
+    e.preventDefault()
+    setIsMenuOpen(false)
+
+    if (link.external) {
+      window.open(link.href, "_blank", "noopener,noreferrer")
+      return
+    }
+
+    const target = document.querySelector(link.href)
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" })
+      }, 260)
+    }
+  }
+
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-black text-white">
-        {/* 背景動画 */}
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-          <video
-            src="/videos/hero.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="h-[108%] w-[108%] object-cover scale-95"
-          />
-          <div className="absolute inset-0 bg-black/65" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/40 to-black/85" />
-        </div>
+      <header className="fixed left-0 right-0 top-0 z-50">
+        <div className="mx-auto max-w-7xl px-3 pt-3 sm:px-5 sm:pt-4">
+          <div
+            className={`rounded-[28px] border transition-all duration-500 ${
+              isScrolled
+                ? "border-white/12 bg-black/70 shadow-2xl backdrop-blur-xl"
+                : "border-white/10 bg-black/35 backdrop-blur-md"
+            }`}
+          >
+            <div className="px-3 py-3 sm:px-5 sm:py-4">
+              <div className="flex items-center justify-between gap-3">
+                <button
+                  onClick={() => setIsMenuOpen(true)}
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/85 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+                  aria-label="メニューを開く"
+                >
+                  <Menu className="h-5 w-5" />
+                </button>
 
-        {/* メイン */}
-        <div className="relative mx-auto flex min-h-[700px] max-w-5xl flex-col items-center justify-center px-5 py-20 text-center sm:min-h-[760px] sm:px-6 lg:min-h-screen lg:px-10">
-          <div className="w-full max-w-3xl">
-            <FadeIn>
-              <p className="text-[11px] tracking-[0.45em] text-[#d6b36a] sm:text-xs">
-                〜贅沢を日常に〜
-              </p>
-            </FadeIn>
+                <div className="min-w-0 flex-1 text-center">
+                  <p className="text-[10px] tracking-[0.32em] text-[#d6b36a] sm:text-[11px]">
+                    〜贅沢を日常に〜
+                  </p>
+                  <p className="mt-1 text-[9px] tracking-[0.22em] text-white/55 sm:text-[10px]">
+                    完全予約制｜1日3名限定
+                  </p>
+                </div>
 
-            <FadeIn delay={0.05}>
-              <p className="mt-3 text-[10px] tracking-[0.3em] text-white/60 sm:text-[11px]">
-                完全個室｜完全予約制｜1日3名限定
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <h1 className="mt-5 text-[clamp(1.9rem,7vw,3.6rem)] font-medium leading-[1.55] tracking-[0.12em] text-white">
-                頭皮から整え
-                <br />
-                髪も心も満たされる
-                <br />
-                ヘッドスパ専門店
-              </h1>
-            </FadeIn>
-
-            <FadeIn delay={0.15}>
-              <div className="mt-5 mx-auto max-w-xl text-sm leading-8 text-white/80 sm:text-base sm:leading-9">
-                <p>
-                  抜け毛・薄毛・白髪・
-                  <br className="sm:hidden" />
-                  頭皮の違和感・疲労感に。
-                </p>
-                <p className="mt-3">
-                  育毛・カラー・リラクゼーションまで、
-                  <br className="sm:hidden" />
-                  お悩みに合わせて
-                  <br className="sm:hidden" />
-                  丁寧にご提案します。
-                </p>
+                <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white">
+                  <Image
+                    src="/images/logo.png"
+                    alt="ヘッドスパ専門店ゆう"
+                    fill
+                    className="object-contain p-1"
+                    sizes="44px"
+                  />
+                </div>
               </div>
-            </FadeIn>
 
-            <FadeIn delay={0.2}>
-              <div className="mt-8 mx-auto flex w-full max-w-md flex-col gap-3">
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:hidden">
                 <a
                   href={COUBIC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full rounded-full bg-[#d6b36a] px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
+                  className="inline-flex items-center justify-center rounded-full bg-[#d6b36a] px-4 py-3 text-center text-sm font-medium tracking-[0.06em] text-black transition hover:opacity-90"
                 >
-                  空き状況を見る
-                </a>
-
-                <a
-                  href="#menu"
-                  className="w-full rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm tracking-[0.08em] text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
-                >
-                  メニューを見る
+                  ご予約はこちら
                 </a>
 
                 <a
                   href={LINE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm tracking-[0.08em] text-white/85 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-4 py-3 text-center text-sm tracking-[0.06em] text-white/90 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
                 >
-                  LINEで相談する
+                  無料で相談する
                 </a>
               </div>
-            </FadeIn>
+
+              <div className="mt-4 hidden items-center justify-center gap-3 sm:flex">
+                <a
+                  href={COUBIC_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
+                >
+                  ご予約はこちら
+                </a>
+
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm tracking-[0.08em] text-white/90 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+                >
+                  無料で相談する
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      <section
-        id="hero-issues"
-        className="bg-background px-5 py-14 sm:px-6 sm:py-16 lg:px-10"
-      >
-        <div className="mx-auto max-w-6xl">
-          <FadeIn>
-            <div className="text-center">
-              <p className="text-[11px] tracking-[0.35em] text-gold/70 sm:text-xs">
-                FOR YOUR CONCERNS
-              </p>
-              <h2 className="mt-3 text-xl leading-[1.7] tracking-[0.12em] text-foreground sm:text-2xl">
-                こんなお悩みはありませんか？
-              </h2>
-              <p className="mt-4 mx-auto max-w-2xl text-sm leading-7 text-muted-foreground">
-                頭皮や髪の変化、
-                <br className="sm:hidden" />
-                慢性的な疲れに寄り添いながら、
-                <br className="sm:hidden" />
-                今の状態に合わせたケアをご提案します。
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="mt-10 grid gap-4 md:grid-cols-3 lg:gap-6">
-            <FadeIn delay={0.05}>
-              <div className="h-full rounded-2xl border border-gold/20 bg-card px-5 py-6 text-center shadow-sm">
-                <p className="text-[10px] tracking-[0.26em] text-gold/70">
-                  SCALP CARE
-                </p>
-                <h3 className="mt-3 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
-                  抜け毛・薄毛・
-                  <br />
-                  分け目が気になる
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  ボリューム不足やハリコシ低下など、
-                  <br className="sm:hidden" />
-                  頭皮環境から整えたい方へ。
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <div className="h-full rounded-2xl border border-gold/20 bg-card px-5 py-6 text-center shadow-sm">
-                <p className="text-[10px] tracking-[0.26em] text-gold/70">
-                  COLOR CARE
-                </p>
-                <h3 className="mt-3 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
-                  白髪染めを続けながら
-                  <br />
-                  頭皮も守りたい
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  頭皮負担やダメージに配慮しながら、
-                  <br className="sm:hidden" />
-                  美しい髪色も大切にしたい方へ。
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.15}>
-              <div className="h-full rounded-2xl border border-gold/20 bg-card px-5 py-6 text-center shadow-sm">
-                <p className="text-[10px] tracking-[0.26em] text-gold/70">
-                  RELAXATION
-                </p>
-                <h3 className="mt-3 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
-                  頭の重だるさや
-                  <br />
-                  疲れを癒したい
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  眼精疲労や睡眠の質の低下、
-                  <br className="sm:hidden" />
-                  深い休息を求める方へ。
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-
-          <FadeIn delay={0.2}>
-            <div className="mt-8 text-center">
-              <a
-                href="#menu"
-                className="inline-flex items-center justify-center rounded-full border border-gold/30 px-6 py-3 text-sm tracking-[0.08em] text-foreground transition hover:border-gold hover:text-gold"
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl"
+          >
+            <div className="flex min-h-full flex-col items-center justify-center px-6 py-16">
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+                aria-label="メニューを閉じる"
               >
-                お悩みに合うメニューを見る
+                <X className="h-6 w-6" />
+              </button>
+
+              <div className="mb-10 text-center">
+                <p className="text-[10px] tracking-[0.35em] text-[#d6b36a]">
+                  〜贅沢を日常に〜
+                </p>
+                <p className="mt-4 text-[10px] tracking-[0.4em] text-white/40">
+                  ヘッドスパ専門店
+                </p>
+                <p className="mt-2 text-lg tracking-[0.28em] text-white">
+                  ゆう
+                </p>
+              </div>
+
+              <nav className="flex flex-col items-center gap-5">
+                {navLinks.map((link, i) => (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link)}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.06 }}
+                    className="text-center text-base tracking-[0.18em] text-white/85 transition hover:text-[#d6b36a] sm:text-lg"
+                  >
+                    {link.label}
+                  </motion.a>
+                ))}
+              </nav>
+
+              <div className="mt-12 flex w-full max-w-sm flex-col gap-3">
+                <a
+                  href={COUBIC_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3.5 text-center text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
+                >
+                  ご予約はこちら
+                </a>
+
+                <a
+                  href="#menu"
+                  onClick={(e) =>
+                    handleNavClick(e, { label: "料金・メニュー", href: "#menu" })
+                  }
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-center text-sm tracking-[0.08em] text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+                >
+                  料金・メニューを見る
+                </a>
+
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-center text-sm tracking-[0.08em] text-white/90 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+                >
+                  無料で相談する
+                </a>
+              </div>
+
+              <a
+                href={FRANCHISE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 text-[11px] text-white/40 underline transition hover:text-[#d6b36a]"
+              >
+                技術を学びたい方はこちら
               </a>
             </div>
-          </FadeIn>
-        </div>
-      </section>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
