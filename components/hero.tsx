@@ -1,14 +1,14 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { FadeIn } from "@/components/fade-in"
 
-const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[760px] overflow-hidden bg-zinc-900 md:min-h-screen">
+    <section className="relative isolate overflow-hidden bg-black text-white">
+      {/* 背景動画 */}
       <div className="absolute inset-0">
         <video
           src="/videos/hero.mp4"
@@ -19,93 +19,125 @@ export function Hero() {
           className="h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/35 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/35 to-black/75" />
       </div>
 
-      <div className="relative z-10 flex min-h-[760px] items-center justify-center px-5 py-20 md:min-h-screen">
-        <div className="w-full max-w-[360px] text-center sm:max-w-3xl">
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease }}
-            className="text-[11px] tracking-[0.22em] text-white/70 sm:text-xs"
-          >
-            完全個室｜完全予約制｜1日3名限定
-          </motion.p>
+      <div className="relative mx-auto flex min-h-[760px] max-w-6xl items-center px-5 pb-16 pt-28 sm:px-6 lg:min-h-screen lg:px-10">
+        <div className="max-w-3xl">
+          <FadeIn>
+            <p className="text-[11px] tracking-[0.35em] text-[#d6b36a] sm:text-xs">
+              HEAD SPA SALON YU
+            </p>
+          </FadeIn>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.24, ease }}
-            className="mt-3 text-[11px] tracking-[0.22em] text-[#d6b36a] sm:text-xs"
-          >
-            福岡市西区の本格ヘッドスパ専門店
-          </motion.p>
+          <FadeIn delay={0.05}>
+            <p className="mt-4 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] tracking-[0.16em] text-white/85 backdrop-blur-sm sm:text-xs">
+              完全個室｜完全予約制｜1日3名限定｜駐車場2台あり
+            </p>
+          </FadeIn>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease }}
-            className="mt-5 text-[clamp(1.9rem,8vw,3.6rem)] font-semibold leading-[1.28] tracking-[0.08em] text-white"
-          >
-            ヘッドスパ専門店ゆう
-          </motion.h1>
+          <FadeIn delay={0.1}>
+            <h1 className="mt-6 text-3xl font-medium leading-[1.5] tracking-[0.12em] text-white sm:text-4xl sm:leading-[1.6] lg:text-5xl lg:leading-[1.7]">
+              頭皮から整え、
+              <br className="hidden sm:block" />
+              髪も心も満たされる
+              <br />
+              ヘッドスパ専門店
+            </h1>
+          </FadeIn>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.48, ease }}
-            className="mt-5 text-base leading-7 text-[#d6b36a] sm:text-lg"
-          >
-            抜け毛・薄毛・分け目が気になる方へ
-          </motion.p>
+          <FadeIn delay={0.15}>
+            <p className="mt-6 max-w-2xl text-sm leading-8 text-white/80 sm:text-base">
+              抜け毛・薄毛・白髪・頭皮の違和感・疲労感に。
+              育毛ヘッドスパを中心に、ヘアカラーヘッドスパ、
+              リラクゼーションヘッドスパまで、
+              お悩みに合わせて丁寧にご提案します。
+            </p>
+          </FadeIn>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.58, ease }}
-            className="mt-3 text-sm leading-7 text-white/85 sm:text-base"
-          >
-            頭皮環境を整えながら、
-            <br className="hidden sm:block" />
-            育毛・ヘアカラー・リラクゼーションまで
-            <br className="hidden sm:block" />
-            お一人おひとりに合わせて丁寧に施術します。
-          </motion.p>
+          <FadeIn delay={0.2}>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={COUBIC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-sm font-medium tracking-[0.12em] text-black transition hover:bg-transparent hover:text-[#d6b36a] sm:px-8"
+              >
+                空き状況を確認する
+              </a>
 
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.95, delay: 0.75, ease }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center"
-          >
-            <a
-              href={COUBIC_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-w-[240px] items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-8 py-3.5 text-sm font-medium tracking-[0.12em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
-            >
-              ご予約はこちら
-            </a>
+              <a
+                href="#menu"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm tracking-[0.12em] text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a] sm:px-8"
+              >
+                メニューを見る
+              </a>
 
-            <a
-              href={LINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-w-[240px] items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-3.5 text-sm font-medium tracking-[0.12em] text-white backdrop-blur-sm transition hover:bg-white/15"
-            >
-              LINEで無料相談
-            </a>
-          </motion.div>
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm tracking-[0.12em] text-white/85 transition hover:border-[#d6b36a] hover:text-[#d6b36a] sm:px-8"
+              >
+                LINEで相談する
+              </a>
+            </div>
+          </FadeIn>
 
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.92, ease }}
-            className="mt-5 text-xs leading-6 text-white/65"
-          >
-            駐車場あり・完全個室でゆっくりお過ごしいただけます
-          </motion.p>
+          <FadeIn delay={0.25}>
+            <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 backdrop-blur-sm">
+                <p className="text-[10px] tracking-[0.24em] text-[#d6b36a]">
+                  SCALP CARE
+                </p>
+                <p className="mt-2 text-xs leading-6 text-white/80">
+                  抜け毛・薄毛・
+                  <br />
+                  ボリューム不足に
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 backdrop-blur-sm">
+                <p className="text-[10px] tracking-[0.24em] text-[#d6b36a]">
+                  COLOR CARE
+                </p>
+                <p className="mt-2 text-xs leading-6 text-white/80">
+                  白髪染め・頭皮負担・
+                  <br />
+                  ダメージが気になる方へ
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 backdrop-blur-sm">
+                <p className="text-[10px] tracking-[0.24em] text-[#d6b36a]">
+                  RELAXATION
+                </p>
+                <p className="mt-2 text-xs leading-6 text-white/80">
+                  深い癒しと休息を
+                  <br />
+                  求める方へ
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
+            <p className="mt-8 text-xs leading-6 text-white/55">
+              福岡市西区の完全個室ヘッドスパ専門店。
+              上質な空間で、髪と頭皮を丁寧に整えます。
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.35}>
+            <div className="mt-10 flex justify-center lg:justify-start">
+              <a
+                href="#menu"
+                className="text-xs tracking-[0.18em] text-white/55 transition hover:text-[#d6b36a]"
+              >
+                SCROLL TO MENU ↓
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
