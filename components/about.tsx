@@ -31,13 +31,13 @@ export function About() {
               ABOUT
             </p>
 
-            <h2 className="text-[clamp(1.22rem,3.8vw,1.85rem)] leading-[1.85] tracking-[0.02em] text-foreground">
+            <h2 className="text-[clamp(1.45rem,4.4vw,2.1rem)] leading-[1.72] tracking-[0.03em] text-foreground">
               ヘッドスパ専門店
               <br />
               ゆう本店について
             </h2>
 
-            <div className="mt-5 mx-auto max-w-[15em] text-[14px] leading-[2.05] text-muted-foreground sm:max-w-xl sm:text-[15px]">
+            <div className="mt-5 mx-auto max-w-[15.5em] text-[14px] leading-[2.05] text-muted-foreground sm:max-w-xl sm:text-[15px]">
               <p>
                 福岡市西区にある、
                 <br className="sm:hidden" />
@@ -90,7 +90,7 @@ export function About() {
             </div>
 
             <div className="text-center lg:text-left">
-              <div className="mx-auto max-w-[15em] sm:max-w-none">
+              <div className="mx-auto max-w-[15.5em] sm:max-w-none">
                 <p className="text-[14px] leading-[2.05] tracking-[0.02em] text-foreground/75 sm:text-[15px]">
                   一日3名限定で、
                   <br className="sm:hidden" />
@@ -217,7 +217,7 @@ export function About() {
               RESERVE
             </p>
 
-            <h3 className="mt-3 text-[clamp(1.08rem,3.45vw,1.55rem)] leading-[1.95] tracking-[0.015em] text-foreground">
+            <h3 className="mt-3 text-[clamp(1.2rem,3.8vw,1.7rem)] leading-[1.85] tracking-[0.02em] text-foreground">
               お悩みに合うメニューを
               <br />
               ご案内します
