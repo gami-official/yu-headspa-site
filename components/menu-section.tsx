@@ -147,13 +147,13 @@ export function MenuSection() {
               RESERVE
             </p>
 
-            <h3 className="mt-3 text-[clamp(1.8rem,5.2vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-foreground">
-              お悩みに合うメニューを
-              <br className="sm:hidden" />
-              ご案内します
+            <h3 className="mt-4 text-[13px] leading-[2.05] tracking-[0.01em] text-foreground sm:text-[20px] sm:leading-[1.8]">
+              お悩みに合う
+              <br />
+              メニューをご案内します
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl">
+            <div className="mx-auto mt-6 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl">
               <p>
                 どのメニューが合うか迷う場合も、
                 <br className="sm:hidden" />
