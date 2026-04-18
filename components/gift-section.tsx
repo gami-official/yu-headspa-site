@@ -202,7 +202,9 @@ export function GiftSection() {
             </div>
 
             <p className="mt-4 text-xs leading-6 text-muted-foreground">
-              ※ギフトチケットの内容・ご利用方法は販売ページにてご確認ください
+              ※ギフトチケットの内容・ご利用方法は
+              <br className="sm:hidden" />
+              販売ページにてご確認ください
               <br />
               ※ご不明点はLINEよりお気軽にお問い合わせください
             </p>
