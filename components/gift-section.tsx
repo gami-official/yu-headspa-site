@@ -170,12 +170,12 @@ export function GiftSection() {
             <div className="mt-4 space-y-4 text-sm leading-7 text-muted-foreground">
               <p>
                 福岡市西区にある、
-                <br className="sm:hidden" />
                 完全個室・完全予約制のヘッドスパ専門店です。
               </p>
 
               <p>
                 一日3名限定で、
+                <br className="sm:hidden" />
                 お一人おひとりに合わせた
                 <br className="sm:hidden" />
                 丁寧な施術をご提供しています。
