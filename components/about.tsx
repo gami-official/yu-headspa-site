@@ -4,7 +4,6 @@ import { FadeIn } from "@/components/fade-in"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
-const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
 export function About() {
   return (
@@ -13,14 +12,15 @@ export function About() {
         <FadeIn>
           <p className="text-[11px] tracking-[0.38em] text-gold/70">ABOUT</p>
 
-          <h2 className="mt-4 text-[clamp(1.08rem,3.6vw,1.7rem)] leading-[1.95] tracking-[0.02em] text-foreground">
+          <h2 className="mt-4 text-[clamp(1rem,3.3vw,1.55rem)] leading-[2] tracking-[0.02em] text-foreground">
+            <span className="block text-red-500">TEST ABOUT</span>
             <span className="block whitespace-nowrap">ヘッドスパ専門店ゆう本店</span>
             <span className="block whitespace-nowrap">について</span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <div className="mx-auto mt-8 max-w-[15.5em] text-[14px] leading-[2.05] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+          <div className="mx-auto mt-8 max-w-[15em] text-[14px] leading-[2.05] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
             <p>
               福岡市西区にある、
               <br className="sm:hidden" />
@@ -52,12 +52,6 @@ export function About() {
               <br className="sm:hidden" />
               大切にしています。
             </p>
-
-            <p className="mt-6 text-xs leading-7 text-foreground/45 sm:text-sm">
-              ※ギフトチケットの内容・ご利用方法は販売ページにてご確認ください
-              <br />
-              ※ご不明点はLINEよりお気軽にお問い合わせください
-            </p>
           </div>
         </FadeIn>
 
@@ -67,7 +61,8 @@ export function About() {
               RESERVE
             </p>
 
-            <h3 className="mt-4 text-[clamp(1.06rem,3.5vw,1.55rem)] leading-[1.95] tracking-[0.02em] text-foreground">
+            <h3 className="mt-4 text-[clamp(1rem,3.2vw,1.45rem)] leading-[2] tracking-[0.02em] text-foreground">
+              <span className="block text-red-500">TEST RESERVE</span>
               <span className="block whitespace-nowrap">お悩みに合うメニューを</span>
               <span className="block whitespace-nowrap">ご案内します</span>
             </h3>
@@ -79,12 +74,6 @@ export function About() {
                 ご予約前にご相談いただけます。
               </p>
             </div>
-
-            <p className="mt-4 text-xs leading-6 text-foreground/50">
-              ※1日3名限定のため、
-              <br className="sm:hidden" />
-              ご予約はお早めにお願いいたします
-            </p>
 
             <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <a
@@ -103,17 +92,6 @@ export function About() {
                 className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm tracking-[0.1em] text-foreground transition hover:border-gold hover:text-gold"
               >
                 LINEで相談する
-              </a>
-            </div>
-
-            <div className="mt-6">
-              <a
-                href={FRANCHISE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] text-foreground/40 underline transition hover:text-gold"
-              >
-                この技術を学びたい方はこちら
               </a>
             </div>
           </div>
