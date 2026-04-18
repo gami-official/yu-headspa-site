@@ -16,9 +16,9 @@ export function Hero() {
             muted
             loop
             playsInline
-            className="h-[96%] w-[96%] object-contain scale-[0.92]"
+            className="h-[104%] w-[104%] object-contain scale-[0.98] sm:h-[106%] sm:w-[106%] lg:h-[108%] lg:w-[108%]"
           />
-          <div className="absolute inset-0 bg-black/68" />
+          <div className="absolute inset-0 bg-black/64" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/40 to-black/86" />
         </div>
 
