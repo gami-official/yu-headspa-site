@@ -10,17 +10,16 @@ export function About() {
   return (
     <section id="about" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-5xl px-6 text-center lg:px-10">
-        
-        {/* タイトル */}
         <FadeIn>
           <p className="text-[11px] tracking-[0.38em] text-gold/70">ABOUT</p>
 
-          <h2 className="mt-4 text-[clamp(0.95rem,3.2vw,1.4rem)] leading-[1.85] tracking-[0.02em] text-foreground">
-            ヘッドスパ専門店ゆう本店について
+          <h2 className="mt-4 text-[13px] leading-[2.05] tracking-[0.01em] text-foreground sm:text-[22px] sm:leading-[1.8]">
+            ヘッドスパ専門店
+            <br />
+            ゆう本店について
           </h2>
         </FadeIn>
 
-        {/* 本文 */}
         <FadeIn delay={0.08}>
           <div className="mx-auto mt-8 max-w-[16em] text-[13.5px] leading-[2] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
             <p>
@@ -63,15 +62,16 @@ export function About() {
           </div>
         </FadeIn>
 
-        {/* 予約CTA */}
         <FadeIn delay={0.15}>
           <div className="mt-12 rounded-2xl border border-gold/20 bg-card px-6 py-10">
             <p className="text-[10px] tracking-[0.35em] text-gold/70">
               RESERVE
             </p>
 
-            <h3 className="mt-4 text-[clamp(0.95rem,3.2vw,1.3rem)] leading-[1.85] tracking-[0.02em] text-foreground">
-              お悩みに合うメニューをご案内します
+            <h3 className="mt-4 text-[13px] leading-[2.05] tracking-[0.01em] text-foreground sm:text-[20px] sm:leading-[1.8]">
+              お悩みに合う
+              <br />
+              メニューをご案内します
             </h3>
 
             <div className="mx-auto mt-6 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-xl">
@@ -120,7 +120,6 @@ export function About() {
             </div>
           </div>
         </FadeIn>
-
       </div>
     </section>
   )
