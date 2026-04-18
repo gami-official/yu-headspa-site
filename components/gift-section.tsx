@@ -176,7 +176,6 @@ export function GiftSection() {
 
               <p>
                 一日3名限定で、
-                <br className="sm:hidden" />
                 お一人おひとりに合わせた
                 <br className="sm:hidden" />
                 丁寧な施術をご提供しています。
