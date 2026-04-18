@@ -10,6 +10,7 @@ const LINE_URL = "https://lin.ee/7hso3k1"
 const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
 const navLinks = [
+  { label: "料金・メニュー", href: "#menu" },
   { label: "育毛ヘッドスパ", href: "#scalp" },
   { label: "ヘアカラーヘッドスパ", href: "#color" },
   { label: "リラクゼーションヘッドスパ", href: "#relaxation" },
@@ -35,6 +36,26 @@ export function Header() {
       document.body.style.overflow = ""
     }
   }, [isMenuOpen])
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    link: { label: string; href: string; external?: boolean },
+  ) => {
+    e.preventDefault()
+    setIsMenuOpen(false)
+
+    if (link.external) {
+      window.open(link.href, "_blank", "noopener,noreferrer")
+      return
+    }
+
+    const target = document.querySelector(link.href)
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" })
+      }, 280)
+    }
+  }
 
   return (
     <>
@@ -129,22 +150,7 @@ export function Header() {
                   <motion.a
                     key={link.label}
                     href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      setIsMenuOpen(false)
-
-                      if (link.external) {
-                        window.open(link.href, "_blank", "noopener,noreferrer")
-                        return
-                      }
-
-                      const target = document.querySelector(link.href)
-                      if (target) {
-                        setTimeout(() => {
-                          target.scrollIntoView({ behavior: "smooth" })
-                        }, 280)
-                      }
-                    }}
+                    onClick={(e) => handleNavClick(e, link)}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.06 }}
@@ -165,6 +171,16 @@ export function Header() {
                   className="border border-[#d6b36a] bg-[#d6b36a] px-8 py-3 text-center text-sm tracking-[0.16em] text-black transition hover:bg-transparent hover:text-[#d6b36a] sm:px-12"
                 >
                   ご予約はこちら
+                </a>
+
+                <a
+                  href="#menu"
+                  onClick={(e) =>
+                    handleNavClick(e, { label: "料金・メニュー", href: "#menu" })
+                  }
+                  className="text-sm text-white/70 transition hover:text-[#d6b36a]"
+                >
+                  料金・メニューを見る
                 </a>
 
                 <a
