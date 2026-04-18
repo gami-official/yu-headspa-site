@@ -53,13 +53,13 @@ export function Evidence() {
               RESULTS
             </p>
 
-            <h2 className="mt-3 text-[clamp(1.9rem,5.6vw,3rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+            <h2 className="mt-3 text-[clamp(1.55rem,4.8vw,2.4rem)] leading-[1.55] tracking-[0.06em] text-foreground">
               抜け毛・薄毛・分け目に
-              <br className="sm:hidden" />
+              <br />
               お悩みの方へ
             </h2>
 
-            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+            <div className="mx-auto mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
               <p>
                 頭皮環境を整えることで、
                 <br className="sm:hidden" />
@@ -118,13 +118,13 @@ export function Evidence() {
 
         <FadeIn delay={0.2}>
           <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-9 text-center">
-            <h3 className="text-[clamp(1.8rem,5.2vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+            <h3 className="text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.55] tracking-[0.06em] text-foreground">
               気になり始めた今こそ
-              <br className="sm:hidden" />
+              <br />
               ケアの始めどきです
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl">
+            <div className="mx-auto mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl">
               <p>
                 抜け毛・薄毛・分け目が
                 <br className="sm:hidden" />
