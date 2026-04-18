@@ -52,123 +52,116 @@ export function MenuSection() {
   return (
     <section id="menu" className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 lg:px-10">
-        <FadeIn>
-          <div className="mb-10 flex flex-col items-center text-center">
-            <span className="mb-3 text-xs tracking-[0.45em] text-gold/70">
-              MENU
-            </span>
 
-            <h2 className="text-xl leading-relaxed tracking-[0.14em] text-foreground sm:text-2xl">
+        {/* 🔥 追加：最初にCTA（めちゃ重要） */}
+        <FadeIn>
+          <div className="mb-10 text-center">
+            <p className="text-xs text-gold/70 tracking-[0.3em]">MENU</p>
+            <h2 className="mt-3 text-xl sm:text-2xl tracking-[0.14em]">
               お悩み別に選べる本格ヘッドスパ
             </h2>
 
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              抜け毛・薄毛・白髪・疲労感など、
-              お悩みに合わせて最適な施術をご提案します。
-              育毛ヘッドスパを中心に、ヘアカラーヘッドスパ、
-              リラクゼーションヘッドスパまで対応しています。
-            </p>
-          </div>
-        </FadeIn>
-
-        {/* 既存メニューカードはそのまま */}
-
-        <div className="flex flex-col gap-6 lg:gap-8">
-          {sortedMenus.map((menu, idx) => (
-            <FadeIn key={menu.id} delay={idx * 0.08}>
-              <div id={menu.id}>
-                <div
-                  className={`relative overflow-hidden rounded-2xl transition-all duration-500 hover:shadow-[0_14px_40px_rgba(0,0,0,0.10)] ${getCardStyle(menu)}`}
-                >
-                  {/* 中身はそのまま */}
-                  {/* 省略（ここは元コードそのままでOK） */}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-
-        {/* 🔥 ここが重要：売上ブロック */}
-        <FadeIn delay={0.2}>
-          <div className="mt-12 rounded-2xl border border-gold/20 bg-card px-6 py-10 text-center">
-
-            <p className="text-sm leading-7 text-muted-foreground">
-              抜け毛・薄毛・白髪・頭皮の違和感など、
-              早い段階でのケアが将来の髪につながります。
+            <p className="mt-4 text-sm text-muted-foreground leading-7 max-w-xl mx-auto">
+              抜け毛・薄毛・白髪・疲労など、
+              状態に合わせて最適な施術をご提案します。
             </p>
 
-            <p className="mt-2 text-xs text-foreground/50">
-              ※1日3名限定のため、早めのご予約をおすすめしています
-            </p>
-
-            {/* 予約・LINE */}
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            {/* 👇 即予約導線 */}
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
+                className="rounded-full bg-gold px-6 py-3 text-sm font-medium text-black hover:opacity-90"
               >
-                残り枠わずか｜ご予約はこちら
+                空き状況を確認する
               </a>
 
               <a
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-gold/25 px-6 py-3 text-sm text-foreground/70 transition hover:border-gold/45 hover:text-foreground"
+                className="rounded-full border border-gold/30 px-6 py-3 text-sm text-foreground/70 hover:border-gold"
               >
-                LINEで相談する
+                LINEで相談
               </a>
             </div>
-
-            {/* 👇 追加：ギフト＆会員 */}
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 text-left">
-
-              <a
-                href={GIFT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group rounded-xl border border-gold/20 p-5 transition hover:border-gold/40"
-              >
-                <p className="text-[10px] tracking-[0.2em] text-gold/70">
-                  GIFT
-                </p>
-                <h3 className="mt-2 text-sm font-semibold text-foreground">
-                  ヘッドスパギフトチケット
-                </h3>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  大切な方へ、癒しの時間を贈る特別なギフト
-                </p>
-                <p className="mt-3 text-xs text-gold">
-                  ギフトを見る →
-                </p>
-              </a>
-
-              <a
-                href={ONLINE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group rounded-xl border border-gold/20 p-5 transition hover:border-gold/40"
-              >
-                <p className="text-[10px] tracking-[0.2em] text-gold/70">
-                  MEMBERS
-                </p>
-                <h3 className="mt-2 text-sm font-semibold text-foreground">
-                  会員限定オンライン
-                </h3>
-                <p className="mt-2 text-xs text-muted-foreground">
-                  ご来店者様限定（PASSはお問い合わせで発行）
-                </p>
-                <p className="mt-3 text-xs text-gold">
-                  詳しく見る →
-                </p>
-              </a>
-
-            </div>
-
           </div>
         </FadeIn>
+
+        {/* メニュー一覧 */}
+        <div className="flex flex-col gap-6 lg:gap-8">
+          {sortedMenus.map((menu, idx) => (
+            <FadeIn key={menu.id} delay={idx * 0.08}>
+              <div id={menu.id}>
+                <div className={`rounded-2xl ${getCardStyle(menu)}`}>
+                  {/* ここは既存のままでOK */}
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
+        {/* 🔥 クロージング強化 */}
+        <FadeIn delay={0.2}>
+          <div className="mt-14 rounded-2xl border border-gold/20 bg-card px-6 py-10 text-center">
+
+            <h3 className="text-base font-semibold tracking-[0.1em]">
+              迷ったらまずはご相談ください
+            </h3>
+
+            <p className="mt-3 text-sm text-muted-foreground leading-7">
+              抜け毛・薄毛・白髪・頭皮の違和感など、
+              早いケアが将来の髪を守ります。
+            </p>
+
+            <p className="mt-2 text-xs text-foreground/50">
+              ※1日3名限定のためご予約はお早めに
+            </p>
+
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={COUBIC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-gold px-6 py-3 text-sm font-medium text-black"
+              >
+                今すぐ予約する
+              </a>
+
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-gold/25 px-6 py-3 text-sm"
+              >
+                LINE相談
+              </a>
+            </div>
+
+            {/* 物販 */}
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 text-left">
+
+              <a href={GIFT_URL} target="_blank" className="rounded-xl border p-5">
+                <p className="text-xs text-gold">GIFT</p>
+                <p className="mt-2 text-sm font-semibold">ギフトチケット</p>
+                <p className="text-xs mt-2 text-muted-foreground">
+                  癒しを贈る特別なプレゼント
+                </p>
+              </a>
+
+              <a href={ONLINE_URL} target="_blank" className="rounded-xl border p-5">
+                <p className="text-xs text-gold">MEMBERS</p>
+                <p className="mt-2 text-sm font-semibold">会員限定オンライン</p>
+                <p className="text-xs mt-2 text-muted-foreground">
+                  来店者限定コンテンツ
+                </p>
+              </a>
+
+            </div>
+          </div>
+        </FadeIn>
+
       </div>
     </section>
   )
