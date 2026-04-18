@@ -48,13 +48,13 @@ export function Faq() {
               FAQ
             </p>
 
-            <h2 className="mt-3 text-[clamp(1.6rem,5vw,2.4rem)] leading-[1.6] tracking-[0.05em] text-foreground">
+            <h2 className="mt-3 text-[clamp(1.3rem,4vw,1.9rem)] leading-[1.75] tracking-[0.03em] text-foreground">
               初めての方によくある
               <br />
               ご質問
             </h2>
 
-            <div className="mx-auto mt-5 max-w-[16em] text-[14px] leading-[2.1] text-muted-foreground sm:max-w-xl sm:text-[15px]">
+            <div className="mx-auto mt-5 max-w-[15.5em] text-[14px] leading-[2.05] text-muted-foreground sm:max-w-xl sm:text-[15px]">
               <p>
                 育毛ヘッドスパ・
                 <br className="sm:hidden" />
@@ -103,13 +103,13 @@ export function Faq() {
               RESERVE & CONSULT
             </p>
 
-            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.6] tracking-[0.05em] text-foreground">
+            <h3 className="mt-3 text-[clamp(1.22rem,3.8vw,1.8rem)] leading-[1.78] tracking-[0.03em] text-foreground">
               メニュー選びに迷う方も
               <br />
               ご安心ください
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[16em] text-sm leading-[2] text-muted-foreground sm:max-w-xl">
+            <div className="mx-auto mt-5 max-w-[15.5em] text-sm leading-[2.05] text-muted-foreground sm:max-w-xl">
               <p>
                 抜け毛・薄毛・分け目のお悩みや、
                 <br className="sm:hidden" />
