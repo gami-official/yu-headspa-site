@@ -16,10 +16,10 @@ export function Hero() {
             muted
             loop
             playsInline
-            className="h-[104%] w-[104%] object-contain scale-[0.98] sm:h-[106%] sm:w-[106%] lg:h-[108%] lg:w-[108%]"
+            className="h-[112%] w-[112%] object-contain scale-[1.03] sm:h-[114%] sm:w-[114%] lg:h-[116%] lg:w-[116%]"
           />
-          <div className="absolute inset-0 bg-black/64" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/40 to-black/86" />
+          <div className="absolute inset-0 bg-black/62" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/16 via-black/38 to-black/84" />
         </div>
 
         <div className="relative mx-auto flex min-h-[760px] max-w-5xl flex-col items-center justify-center px-5 pb-20 pt-44 text-center sm:min-h-[820px] sm:px-6 sm:pb-24 sm:pt-48 lg:min-h-screen lg:px-10 lg:pt-44">
