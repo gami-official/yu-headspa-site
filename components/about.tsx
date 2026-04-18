@@ -31,13 +31,13 @@ export function About() {
               ABOUT
             </p>
 
-            <h2 className="text-[clamp(1.9rem,5.6vw,3rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+            <h2 className="text-[clamp(1.55rem,4.8vw,2.4rem)] leading-[1.55] tracking-[0.06em] text-foreground">
               頭皮から整える、
-              <br className="sm:hidden" />
+              <br />
               本格ヘッドスパ専門店
             </h2>
 
-            <div className="mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl sm:text-[15px] sm:leading-8">
+            <div className="mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
               <p>
                 抜け毛・薄毛・分け目のお悩みから、
                 <br className="sm:hidden" />
@@ -79,8 +79,8 @@ export function About() {
             </div>
 
             <div className="text-center lg:text-left">
-              <div className="mx-auto max-w-[20em] sm:max-w-none">
-                <p className="text-[15px] leading-[2.1] tracking-[0.03em] text-foreground/75">
+              <div className="mx-auto max-w-[18em] sm:max-w-none">
+                <p className="text-[15px] leading-[2] tracking-[0.03em] text-foreground/75">
                   福岡市西区豊浜の
                   <br className="sm:hidden" />
                   完全個室ヘッドスパ専門店。
@@ -88,7 +88,7 @@ export function About() {
                   ヘッドスパ歴15年以上の技術で、
                 </p>
 
-                <p className="mt-5 text-[15px] leading-[2.1] tracking-[0.03em] text-foreground/75">
+                <p className="mt-5 text-[15px] leading-[2] tracking-[0.03em] text-foreground/75">
                   育毛ヘッドスパ・
                   <br className="sm:hidden" />
                   ヘアカラーヘッドスパ・
@@ -100,7 +100,7 @@ export function About() {
                   ご案内しております。
                 </p>
 
-                <p className="mt-5 text-[15px] leading-[2.1] tracking-[0.03em] text-foreground/75">
+                <p className="mt-5 text-[15px] leading-[2] tracking-[0.03em] text-foreground/75">
                   1日3名様限定・完全予約制だからこそ、
                   <br className="sm:hidden" />
                   流れ作業ではなく、
@@ -114,7 +114,7 @@ export function About() {
                   ご提供します。
                 </p>
 
-                <p className="mt-5 text-sm leading-8 text-muted-foreground">
+                <p className="mt-5 text-sm leading-[2] text-muted-foreground">
                   安価な施術ではなく、
                   <br className="sm:hidden" />
                   将来の髪と頭皮まで考えた
@@ -129,7 +129,7 @@ export function About() {
                 <p className="text-[10px] tracking-[0.3em] text-gold/70">
                   SPECIAL VALUE
                 </p>
-                <p className="mt-3 text-sm leading-8 text-foreground/80">
+                <p className="mt-3 text-sm leading-[2] text-foreground/80">
                   完全個室 × 1日3名限定 × 本格頭皮ケア。
                   <br className="sm:hidden" />
                   福岡市でも希少な、
@@ -217,13 +217,13 @@ export function About() {
               RESERVATION
             </p>
 
-            <h3 className="mt-3 text-[clamp(1.8rem,5.2vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-foreground">
+            <h3 className="mt-3 text-[clamp(1.5rem,4.6vw,2.2rem)] leading-[1.55] tracking-[0.06em] text-foreground">
               初めての方も安心して
-              <br className="sm:hidden" />
+              <br />
               ご予約ください
             </h3>
 
-            <div className="mx-auto mt-5 max-w-[20em] text-sm leading-8 text-muted-foreground sm:max-w-2xl">
+            <div className="mx-auto mt-5 max-w-[18em] text-sm leading-[2] text-muted-foreground sm:max-w-2xl">
               <p>
                 育毛ヘッドスパ・
                 <br className="sm:hidden" />
