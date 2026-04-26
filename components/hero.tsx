@@ -48,7 +48,7 @@ export function Hero() {
             <FadeIn delay={0.1}>
   <h1 className="mx-auto mt-7 max-w-[12em] text-[clamp(1.4rem,5.2vw,2.4rem)] font-medium leading-[1.55] tracking-[0.045em] text-white sm:max-w-none sm:text-[clamp(1.8rem,4.5vw,3.2rem)] sm:leading-[1.5] sm:tracking-[0.1em]">
     <span className="sm:hidden">
-      頭皮から整え、
+      頭皮から整え
       <br />
       髪質と印象を再設計する
       <br />
