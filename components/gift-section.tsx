@@ -7,209 +7,124 @@ const LINE_URL = "https://lin.ee/7hso3k1"
 
 export function GiftSection() {
   return (
-    <section className="bg-background py-16 lg:py-24">
+    <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-5xl px-5 lg:px-10">
+
+        {/* タイトル */}
         <FadeIn>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs tracking-[0.35em] text-gold/70">
-              GIFT TICKET
+            <p className="text-[11px] tracking-[0.4em] text-gold/70">
+              GIFT EXPERIENCE
             </p>
 
-            <h2 className="mt-4 text-2xl leading-relaxed tracking-[0.08em] text-foreground sm:text-3xl">
+            <h2 className="mt-4 text-[clamp(1.8rem,5vw,2.6rem)] leading-[1.7] tracking-[0.08em] text-foreground">
               大切な方へ、
-              <br className="sm:hidden" />
-              癒しの時間を贈る
+              <br />
+              “自分を整える時間”を贈る
             </h2>
 
-            <div className="mt-6 space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
-              <p>
-                誕生日、記念日、母の日、
-                <br className="sm:hidden" />
-                感謝の気持ちを伝えたいときに。
-              </p>
-
-              <p>
-                完全個室・完全予約制の
-                <br className="sm:hidden" />
-                上質なヘッドスパ体験を、
-                <br className="sm:hidden" />
-                ギフトとしてお贈りいただけます。
-              </p>
-            </div>
+            <p className="mt-6 text-sm leading-8 text-muted-foreground">
+              物ではなく、記憶に残る体験を。
+              <br />
+              完全個室のヘッドスパをギフトとしてお贈りいただけます。
+            </p>
           </div>
         </FadeIn>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        {/* メイン */}
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+
+          {/* 左 */}
           <FadeIn delay={0.08}>
-            <div className="rounded-2xl border border-gold/20 bg-card p-6 shadow-[0_12px_40px_rgba(0,0,0,0.06)] lg:p-8">
+            <div className="rounded-2xl border border-gold/20 bg-card p-7">
+
               <h3 className="text-lg tracking-[0.08em] text-foreground">
-                ヘッドスパギフトが喜ばれる理由
+                このギフトが選ばれる理由
               </h3>
 
-              <div className="mt-6 space-y-5 text-sm leading-7 text-muted-foreground">
+              <div className="mt-6 space-y-6 text-sm leading-7 text-muted-foreground">
+
                 <div>
                   <p className="font-medium text-foreground">
-                    1. 記憶に残る、上質な贈り物
+                    記憶に残る“体験”を贈れる
                   </p>
                   <p className="mt-1">
-                    物ではなく、
-                    <span className="text-foreground">“自分をいたわる時間”</span>
-                    を贈れる特別なギフト。
-                    <br className="sm:hidden" />
-                    香り、空間、手技、静けさまで含めて
-                    <br className="sm:hidden" />
-                    心に残る体験です。
+                    モノではなく、
+                    <span className="text-foreground">時間と体験</span>
+                    を贈る特別なギフト。
                   </p>
                 </div>
 
                 <div>
                   <p className="font-medium text-foreground">
-                    2. 完全個室でゆっくり過ごせる
+                    完全個室の上質空間
                   </p>
                   <p className="mt-1">
-                    周りを気にせず、
-                    <br className="sm:hidden" />
-                    落ち着いて過ごせる大人のための空間。
-                    <br className="sm:hidden" />
-                    忙しい毎日を過ごす方への
-                    <br className="sm:hidden" />
-                    贈り物にもぴったりです。
+                    人目を気にせず過ごせる、
+                    大人のためのプライベート空ロン。
                   </p>
                 </div>
 
                 <div>
                   <p className="font-medium text-foreground">
-                    3. 癒しと頭皮ケアを同時に
+                    癒しと頭皮ケアを同時に
                   </p>
                   <p className="mt-1">
-                    抜け毛、薄毛、白髪、乾燥、疲れなど、
-                    <br className="sm:hidden" />
-                    気になりはじめたお悩みにも
-                    <br className="sm:hidden" />
-                    やさしく寄り添います。
+                    抜け毛・白髪・疲労など、
+                    気になり始めた悩みにも対応。
                   </p>
                 </div>
 
-                <div>
-                  <p className="font-medium text-foreground">
-                    4. さまざまな贈り物シーンに対応
-                  </p>
-                  <p className="mt-1">
-                    誕生日、母の日、結婚記念日、
-                    <br className="sm:hidden" />
-                    日頃の感謝を伝える贈り物として
-                    <br className="sm:hidden" />
-                    選ばれやすいギフトです。
-                  </p>
-                </div>
               </div>
             </div>
           </FadeIn>
 
+          {/* 右 */}
           <FadeIn delay={0.16}>
-            <div className="rounded-2xl border border-gold/20 bg-card p-6 lg:p-8">
+            <div className="rounded-2xl border border-gold/20 bg-card p-7">
+
               <h3 className="text-lg tracking-[0.08em] text-foreground">
                 こんな方への贈り物に
               </h3>
 
-              <ul className="mt-6 space-y-3 text-sm leading-7 text-muted-foreground">
-                <li>・母の日のプレゼントを探している</li>
-                <li>・奥様やお母様へ感謝を伝えたい</li>
-                <li>・忙しく頑張っている方に癒しを贈りたい</li>
-                <li>・美容や頭皮ケアに関心のある方へ贈りたい</li>
-                <li>・ありきたりではない上質なギフトを選びたい</li>
+              <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+                <li>・奥様・お母様へのプレゼント</li>
+                <li>・忙しく働く方への癒し</li>
+                <li>・美容意識の高い方へ</li>
+                <li>・特別感のある贈り物をしたい方</li>
               </ul>
 
-              <div className="mt-8 rounded-xl border border-border/40 bg-background/60 p-5">
-                <div className="space-y-3 text-sm leading-7 text-muted-foreground">
-                  <p>
-                    大切な方に、
-                    <span className="text-foreground">“自分をいたわる時間”</span>
-                    を
-                    <br className="sm:hidden" />
-                    贈りたいと思ったら、
-                  </p>
+              <div className="mt-8 rounded-xl border border-border/40 bg-background/60 p-5 text-center">
 
-                  <p>
-                    こちらからギフトチケットを
-                    <br className="sm:hidden" />
-                    ご覧いただけます。
-                  </p>
-                </div>
+                <p className="text-sm leading-7 text-muted-foreground">
+                  「これを贈りたい」と思ったタイミングが
+                  ベストです。
+                </p>
 
-                <div className="mt-5 grid gap-3">
-                  <a
-                    href={GIFT_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
-                  >
-                    ギフトチケットを購入する
-                  </a>
+                <a
+                  href={GIFT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium text-black transition hover:opacity-90"
+                >
+                  ギフトチケットを見る
+                </a>
 
-                  <a
-                    href={LINE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-gold/25 px-6 py-3 text-sm text-foreground/70 transition hover:border-gold/45 hover:text-foreground"
-                  >
-                    LINEで相談する
-                  </a>
-                </div>
+                <a
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex w-full items-center justify-center rounded-full border border-gold/30 px-6 py-3 text-sm text-foreground transition hover:text-gold"
+                >
+                  LINEで相談する
+                </a>
+
               </div>
             </div>
           </FadeIn>
+
         </div>
 
-        <FadeIn delay={0.24}>
-          <div className="mt-10 rounded-2xl border border-border/40 bg-card/50 px-6 py-8 text-center">
-            <h3 className="text-lg tracking-[0.08em] text-foreground">
-              ヘッドスパ専門店ゆう本店
-            </h3>
-
-            <div className="mt-4 space-y-4 text-sm leading-7 text-muted-foreground">
-              <p>
-                福岡市西区にある、
-                <br className="sm:hidden" />
-                完全個室・完全予約制の
-                <br className="sm:hidden" />
-                ヘッドスパ専門店です。
-              </p>
-
-              <p>
-                一日3名限定で、
-                <br className="sm:hidden" />
-                お一人おひとりに合わせた
-                <br className="sm:hidden" />
-                丁寧な施術をご提供しています。
-              </p>
-
-              <p>
-                育毛ヘッドスパ、
-                <br className="sm:hidden" />
-                ヘアカラーヘッドスパ、
-                <br className="sm:hidden" />
-                リラクゼーションまで。
-              </p>
-
-              <p>
-                ただ気持ちいいだけではない、
-                <br className="sm:hidden" />
-                将来の髪と頭皮を見据えたケアを
-                <br className="sm:hidden" />
-                大切にしています。
-              </p>
-            </div>
-
-            <p className="mt-4 text-xs leading-6 text-muted-foreground">
-              ※ギフトチケットの内容・ご利用方法は
-              <br className="sm:hidden" />
-              販売ページにてご確認ください
-              <br />
-              ※ご不明点はLINEよりお気軽にお問い合わせください
-            </p>
-          </div>
-        </FadeIn>
       </div>
     </section>
   )
