@@ -5,8 +5,17 @@ import { FadeIn } from "@/components/fade-in"
 import { menus } from "@/lib/menu-data"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const GOOGLE_ADS_CONVERSION_ID = "AW-576787598/2SfQCIPJ7qIcEI6phJMC"
 
 export function MenuSection() {
+  const handleReserveClick = () => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      ;(window as any).gtag("event", "conversion", {
+        send_to: GOOGLE_ADS_CONVERSION_ID,
+      })
+    }
+  }
+
   return (
     <section id="menu" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-10">
@@ -38,7 +47,6 @@ export function MenuSection() {
             <FadeIn key={menu.id} delay={idx * 0.1}>
               <div className="overflow-hidden rounded-2xl border border-gold/20 bg-card">
 
-                {/* 画像 */}
                 <div className="relative h-56 w-full">
                   <Image
                     src={menu.image}
@@ -50,7 +58,6 @@ export function MenuSection() {
 
                 <div className="p-6">
 
-                  {/* タイトル */}
                   <div className="text-center sm:text-left">
                     <p className="text-[10px] tracking-[0.28em] text-gold/70">
                       {menu.enTitle.toUpperCase()}
@@ -63,14 +70,12 @@ export function MenuSection() {
                     </h3>
                   </div>
 
-                  {/* 説明 */}
                   <div className="mt-6 space-y-4 text-[14px] leading-[2.05] text-muted-foreground">
                     {menu.descriptionParagraphs.map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
                   </div>
 
-                  {/* コース */}
                   <div className="mt-10 space-y-5">
                     {menu.items.map((item, i) => (
                       <div
@@ -109,6 +114,7 @@ export function MenuSection() {
                           href={COUBIC_URL}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={handleReserveClick}
                           className="mt-4 inline-flex w-full max-w-[260px] items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-medium text-black transition hover:opacity-90"
                         >
                           空き状況を見る
@@ -130,9 +136,10 @@ export function MenuSection() {
               href={COUBIC_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleReserveClick}
               className="inline-flex max-w-[300px] items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-medium text-black transition hover:opacity-90"
             >
-              ご予約はこちら
+              初回の空き状況を見る
             </a>
 
             <p className="mt-4 text-xs text-muted-foreground">
