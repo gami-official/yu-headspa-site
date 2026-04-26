@@ -46,19 +46,8 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-  <h1 className="mx-auto mt-7 max-w-[12em] text-[clamp(1.4rem,5.5vw,3rem)] font-medium leading-[1.52] tracking-[0.055em] text-white sm:max-w-none sm:text-[clamp(1.8rem,4.5vw,3.2rem)] sm:leading-[1.5] sm:tracking-[0.1em]">
-    
-    {/* スマホ表示 */}
+  <h1 className="mx-auto mt-7 max-w-[12em] text-[clamp(1.4rem,5.2vw,2.4rem)] font-medium leading-[1.55] tracking-[0.045em] text-white sm:max-w-none sm:text-[clamp(1.8rem,4.5vw,3.2rem)] sm:leading-[1.5] sm:tracking-[0.1em]">
     <span className="sm:hidden">
-      頭皮から整え、
-      <br />
-      髪質と印象を
-      <br />
-      再設計するヘッドスパ専門店
-    </span>
-
-    {/* PC表示 */}
-    <span className="hidden sm:inline">
       頭皮から整え、
       <br />
       髪質と印象を再設計する
@@ -66,6 +55,13 @@ export function Hero() {
       ヘッドスパ専門店
     </span>
 
+    <span className="hidden sm:inline">
+      頭皮から整え、
+      <br />
+      髪質と印象を再設計する
+      <br />
+      ヘッドスパ専門店
+    </span>
   </h1>
 </FadeIn>
 
