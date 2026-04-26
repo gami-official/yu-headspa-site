@@ -78,7 +78,7 @@ export const menus: Menu[] = [
     items: [
       {
         name: "Hair Color Head Spa + Scalp Care",
-        detail: "高濃度ヒト幹細胞ケア Light",
+        detail: "高濃度ヒト幹細胞ケア Standard",
         duration: "90min",
         price: "¥26,000",
       },
