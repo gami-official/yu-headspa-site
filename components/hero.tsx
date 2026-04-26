@@ -56,7 +56,7 @@ export function Hero() {
     </span>
 
     <span className="hidden sm:inline">
-      頭皮から整え、
+      頭皮から整え
       <br />
       髪質と印象を再設計する
       <br />
