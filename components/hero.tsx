@@ -3,13 +3,14 @@
 import { FadeIn } from "@/components/fade-in"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
-const GOOGLE_ADS_CONVERSION_ID = "AW-576787598/2SfQCIPJ7qIcEI6phJMC"
 
 export function Hero() {
   const handleReserveClick = () => {
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      ;(window as any).gtag("event", "conversion", {
-        send_to: GOOGLE_ADS_CONVERSION_ID,
+    if (typeof window !== "undefined") {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: "reserve_click",
+        reserve_location: "hero",
       })
     }
   }
