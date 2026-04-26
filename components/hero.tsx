@@ -3,8 +3,17 @@
 import { FadeIn } from "@/components/fade-in"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const GOOGLE_ADS_CONVERSION_ID = "AW-576787598/2SfQCIPJ7qIcEI6phJMC"
 
 export function Hero() {
+  const handleReserveClick = () => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      ;(window as any).gtag("event", "conversion", {
+        send_to: GOOGLE_ADS_CONVERSION_ID,
+      })
+    }
+  }
+
   return (
     <>
       <section className="relative isolate min-h-screen overflow-hidden bg-black text-white">
@@ -69,6 +78,7 @@ export function Hero() {
                   href={COUBIC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleReserveClick}
                   className="w-full rounded-full bg-[#d6b36a] px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
                 >
                   初回の空き状況を見る
