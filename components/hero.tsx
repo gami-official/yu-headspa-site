@@ -17,26 +17,26 @@ export function Hero() {
             playsInline
             className="h-full w-full object-cover scale-[1.08] sm:scale-[1.12] lg:scale-[1.15]"
           />
-          <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/42 to-black/82" />
+          <div className="absolute inset-0 bg-black/62" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/24 via-black/42 to-black/84" />
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-32 text-center sm:px-6 sm:pb-20 sm:pt-36 lg:px-10">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-28 text-center sm:px-6 sm:pb-20 sm:pt-34 lg:px-10">
           <div className="w-full max-w-3xl">
             <FadeIn>
-              <p className="text-[10px] tracking-[0.38em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
+              <p className="text-[10px] tracking-[0.36em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
                 PRIVATE HEAD SPA SALON
               </p>
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <p className="mt-4 text-[10px] tracking-[0.24em] text-white/60 sm:text-[11px] sm:tracking-[0.35em]">
+              <p className="mt-4 text-[10px] tracking-[0.22em] text-white/60 sm:text-[11px] sm:tracking-[0.35em]">
                 完全個室｜完全予約制｜一日三名限定
               </p>
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h1 className="mx-auto mt-7 max-w-[9.5em] text-[clamp(2.1rem,8.8vw,4rem)] font-medium leading-[1.45] tracking-[0.08em] text-white sm:max-w-none sm:text-[clamp(2.4rem,6vw,4rem)] sm:leading-[1.5] sm:tracking-[0.12em]">
+              <h1 className="mx-auto mt-7 max-w-[9.2em] text-[clamp(1.95rem,8.2vw,3.8rem)] font-medium leading-[1.48] tracking-[0.07em] text-white sm:max-w-none sm:text-[clamp(2.35rem,5.8vw,3.9rem)] sm:leading-[1.48] sm:tracking-[0.11em]">
                 頭皮から整え、
                 <br />
                 髪質と印象を
@@ -71,7 +71,7 @@ export function Hero() {
                   rel="noopener noreferrer"
                   className="w-full rounded-full bg-[#d6b36a] px-6 py-4 text-base font-medium tracking-[0.08em] text-black transition hover:opacity-90"
                 >
-                  空き状況を見る
+                  初回の空き状況を見る
                 </a>
 
                 <a
