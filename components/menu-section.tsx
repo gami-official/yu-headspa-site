@@ -5,13 +5,14 @@ import { FadeIn } from "@/components/fade-in"
 import { menus } from "@/lib/menu-data"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
-const GOOGLE_ADS_CONVERSION_ID = "AW-576787598/2SfQCIPJ7qIcEI6phJMC"
 
 export function MenuSection() {
   const handleReserveClick = () => {
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      ;(window as any).gtag("event", "conversion", {
-        send_to: GOOGLE_ADS_CONVERSION_ID,
+    if (typeof window !== "undefined") {
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: "reserve_click",
+        reserve_location: "menu",
       })
     }
   }
@@ -19,8 +20,6 @@ export function MenuSection() {
   return (
     <section id="menu" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-10">
-
-        {/* タイトル */}
         <FadeIn>
           <div className="mb-14 text-center">
             <p className="text-[11px] tracking-[0.4em] text-gold/70">
@@ -41,12 +40,10 @@ export function MenuSection() {
           </div>
         </FadeIn>
 
-        {/* メニュー */}
         <div className="flex flex-col gap-12">
           {menus.map((menu, idx) => (
             <FadeIn key={menu.id} delay={idx * 0.1}>
               <div className="overflow-hidden rounded-2xl border border-gold/20 bg-card">
-
                 <div className="relative h-56 w-full">
                   <Image
                     src={menu.image}
@@ -57,7 +54,6 @@ export function MenuSection() {
                 </div>
 
                 <div className="p-6">
-
                   <div className="text-center sm:text-left">
                     <p className="text-[10px] tracking-[0.28em] text-gold/70">
                       {menu.enTitle.toUpperCase()}
@@ -122,14 +118,12 @@ export function MenuSection() {
                       </div>
                     ))}
                   </div>
-
                 </div>
               </div>
             </FadeIn>
           ))}
         </div>
 
-        {/* CTA */}
         <FadeIn delay={0.2}>
           <div className="mt-16 text-center">
             <a
@@ -147,7 +141,6 @@ export function MenuSection() {
             </p>
           </div>
         </FadeIn>
-
       </div>
     </section>
   )
