@@ -24,8 +24,8 @@ export function MenuSection() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground sm:text-[15px]">
-              頭皮環境・毛髪状態を見極めた上で、
-              お一人おひとりに最適な施術をご提案いたします。
+              頭皮環境・毛髪状態を見極め、
+              美しさを再設計するオーダーメイド施術をご提供します。
             </p>
           </div>
         </FadeIn>
@@ -64,21 +64,20 @@ export function MenuSection() {
                     ))}
                   </div>
 
-                  {/* コース表示 */}
+                  {/* コース */}
                   <div className="mt-10 space-y-6">
                     {menu.items.map((item, i) => (
                       <div
                         key={i}
-                        className={`rounded-xl border p-5 ${
+                        className={`rounded-xl border p-6 ${
                           i === 1
-                            ? "border-gold bg-gold/5"
+                            ? "border-gold bg-gold/5 shadow-md"
                             : "border-border/30"
                         }`}
                       >
-                        {/* おすすめ表示 */}
                         {i === 1 && (
                           <p className="mb-2 text-[10px] tracking-[0.25em] text-gold">
-                            人気No.1
+                            RECOMMENDED
                           </p>
                         )}
 
@@ -90,8 +89,11 @@ export function MenuSection() {
                           {item.detail} ／ {item.duration}
                         </p>
 
-                        {/* 価格 */}
-                        <p className="mt-4 text-xl font-semibold text-foreground">
+                        <p className="mt-3 text-sm text-muted-foreground">
+                          頭皮環境を整え、髪本来の美しさを引き出す基本コース
+                        </p>
+
+                        <p className="mt-5 text-xl font-semibold text-foreground">
                           {item.price}
                         </p>
 
@@ -99,7 +101,7 @@ export function MenuSection() {
                           href={COUBIC_URL}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-black transition hover:opacity-90"
+                          className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-medium text-black transition hover:opacity-90"
                         >
                           空き状況を見る
                         </a>
@@ -107,7 +109,7 @@ export function MenuSection() {
                     ))}
                   </div>
 
-                  {/* STEP */}
+                  {/* FLOW */}
                   <div className="mt-10 border-t border-border/40 pt-6">
                     <p className="text-[10px] tracking-[0.25em] text-gold/70">
                       FLOW
@@ -144,7 +146,7 @@ export function MenuSection() {
             </a>
 
             <p className="mt-4 text-xs text-muted-foreground">
-              ※完全予約制・一日三名限定
+              完全予約制・一日三名限定
             </p>
           </div>
         </FadeIn>
