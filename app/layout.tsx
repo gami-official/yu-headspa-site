@@ -167,9 +167,26 @@ export default function RootLayout({
     <html lang="ja" className={notoSerifJP.variable}>
       <body className="font-serif antialiased">
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-576787598"
+        />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-576787598');
+            `,
+          }}
+        />
+
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
         {children}
         <Analytics />
       </body>
