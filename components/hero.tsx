@@ -46,14 +46,14 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h1 className="mx-auto mt-7 max-w-[10.5em] text-[clamp(1.75rem,7.2vw,3.7rem)] font-medium leading-[1.52] tracking-[0.055em] text-white sm:max-w-none sm:text-[clamp(2.3rem,5.6vw,3.9rem)] sm:leading-[1.5] sm:tracking-[0.1em]">
-                頭皮から整え、
-                <br />
-                髪質と印象を再設計する
-                <br />
-                ヘッドスパ専門店
-              </h1>
-            </FadeIn>
+  <h1 className="mx-auto mt-7 max-w-[10.5em] text-[clamp(1.4rem,5.5vw,3rem)] font-medium leading-[1.52] tracking-[0.055em] text-white sm:max-w-none sm:text-[clamp(1.8rem,4.5vw,3.2rem)] sm:leading-[1.5] sm:tracking-[0.1em]">
+    頭皮から整え、
+    <br />
+    髪質と印象を再設計する
+    <br />
+    ヘッドスパ専門店
+  </h1>
+</FadeIn>
 
             <FadeIn delay={0.15}>
               <div className="mx-auto mt-7 max-w-[21em] text-[13.5px] leading-[2.05] text-white/82 sm:max-w-2xl sm:text-base sm:leading-9">
