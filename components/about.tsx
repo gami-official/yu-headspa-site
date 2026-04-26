@@ -10,7 +10,7 @@ const strengths = [
   {
     label: "01",
     title: "15年の経験に基づく専門ケア",
-    text: "頭皮・髪・疲労感のお悩みに向き合ってきた経験をもとに、今の状態に合わせた施術をご提案します。",
+    text: "頭皮・髪・疲労感のお悩みに向き合ってきた経験をもとに、現在の状態に合わせた施術をご提案します。",
   },
   {
     label: "02",
@@ -28,22 +28,28 @@ export function About() {
   return (
     <section id="about" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
+
         <FadeIn>
           <div className="text-center">
             <p className="text-[11px] tracking-[0.38em] text-gold/70">
               ABOUT
             </p>
 
-            <h2 className="mt-4 text-[clamp(1.7rem,5vw,2.8rem)] leading-[1.65] tracking-[0.08em] text-foreground">
+            <h2 className="mt-4 text-[clamp(1.7rem,5vw,2.8rem)] leading-[1.7] tracking-[0.08em] text-foreground">
               一日三名だけに向き合う、
               <br />
               完全個室のヘッドスパ専門店
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground sm:text-[15px]">
-              福岡市西区にある「ヘッドスパ専門店ゆう」は、
-              頭皮から髪質と印象を再設計するためのプライベートサロンです。
-            </p>
+            <div className="mx-auto mt-6 max-w-2xl text-[14px] leading-[2.05] text-muted-foreground sm:text-[15px]">
+              <p>
+                福岡市西区にある「ヘッドスパ専門店ゆう」。
+                <br />
+                頭皮から髪質と印象を整える、
+                <br className="sm:hidden" />
+                プライベートサロンです。
+              </p>
+            </div>
           </div>
         </FadeIn>
 
@@ -53,19 +59,21 @@ export function About() {
               PRIVATE CARE
             </p>
 
-            <div className="mx-auto mt-5 max-w-2xl text-sm leading-[2.05] text-muted-foreground sm:text-[15px]">
+            <div className="mx-auto mt-5 max-w-2xl text-[14px] leading-[2.05] text-muted-foreground sm:text-[15px]">
               <p>
                 抜け毛・薄毛・分け目・白髪・頭皮の違和感。
-                <br className="hidden sm:block" />
+                <br />
                 年齢とともに変化する髪のお悩みに、
-                丁寧なカウンセリングと専門ケアで向き合います。
+                <br className="sm:hidden" />
+                丁寧に向き合います。
               </p>
 
-              <p className="mt-5">
-                育毛ヘッドスパ、ヘアカラーヘッドスパ、
-                リラクゼーションまで、
-                その日の癒しだけで終わらせず、
-                将来の髪と頭皮まで見据えた施術をご提供します。
+              <p className="mt-4">
+                育毛・カラー・リラクゼーションまで。
+                <br />
+                一時的な癒しではなく、
+                <br className="sm:hidden" />
+                将来の髪を見据えたケアをご提供します。
               </p>
             </div>
           </div>
@@ -79,11 +87,11 @@ export function About() {
                   {item.label}
                 </p>
 
-                <h3 className="mt-4 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
+                <h3 className="mt-4 text-[15px] font-medium leading-7 tracking-[0.08em] text-foreground">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                <p className="mt-4 text-[13.5px] leading-[2] text-muted-foreground">
                   {item.text}
                 </p>
               </div>
@@ -97,16 +105,21 @@ export function About() {
               RESERVE
             </p>
 
-            <h3 className="mt-4 text-[clamp(1.35rem,4vw,2rem)] leading-[1.75] tracking-[0.06em] text-foreground">
+            <h3 className="mt-4 text-[clamp(1.3rem,4vw,1.9rem)] leading-[1.7] tracking-[0.06em] text-foreground">
               まずは今の頭皮状態を
               <br />
               確認することから
             </h3>
 
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
-              どのメニューが合うか迷う方も、
-              カウンセリングで状態を確認しながら最適なケアをご提案します。
-            </p>
+            <div className="mx-auto mt-5 max-w-2xl text-[14px] leading-[2.05] text-muted-foreground">
+              <p>
+                どのメニューが合うか迷う方も、
+                <br />
+                状態を確認しながら、
+                <br className="sm:hidden" />
+                最適なケアをご提案します。
+              </p>
+            </div>
 
             <p className="mt-4 text-xs leading-6 text-foreground/50">
               完全予約制・一日三名限定
@@ -144,6 +157,7 @@ export function About() {
             </div>
           </div>
         </FadeIn>
+
       </div>
     </section>
   )
