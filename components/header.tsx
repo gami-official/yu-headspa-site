@@ -25,7 +25,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 40)
+    const handleScroll = () => setIsScrolled(window.scrollY > 24)
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -60,82 +60,46 @@ export function Header() {
   return (
     <>
       <header className="fixed left-0 right-0 top-0 z-50">
-        <div className="mx-auto max-w-7xl px-3 pt-3 sm:px-5 sm:pt-4">
+        <div className="mx-auto max-w-7xl px-3 pt-2 sm:px-5 sm:pt-4">
           <div
-            className={`rounded-[28px] border transition-all duration-500 ${
+            className={`rounded-full border transition-all duration-500 ${
               isScrolled
-                ? "border-white/12 bg-black/70 shadow-2xl backdrop-blur-xl"
+                ? "border-white/10 bg-black/70 shadow-2xl backdrop-blur-xl"
                 : "border-white/10 bg-black/35 backdrop-blur-md"
             }`}
           >
-            <div className="px-3 py-3 sm:px-5 sm:py-4">
-              <div className="flex items-center justify-between gap-3">
-                <button
-                  onClick={() => setIsMenuOpen(true)}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/85 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
-                  aria-label="メニューを開く"
-                >
-                  <Menu className="h-5 w-5" />
-                </button>
+            <div className="flex items-center justify-between gap-3 px-3 py-2 sm:px-5 sm:py-3">
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/85 transition hover:border-[#d6b36a] hover:text-[#d6b36a] sm:h-11 sm:w-11"
+                aria-label="メニューを開く"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
 
-                <div className="min-w-0 flex-1 text-center">
-                  <p className="text-[10px] tracking-[0.32em] text-[#d6b36a] sm:text-[11px]">
-                    〜贅沢を日常に〜
-                  </p>
-                  <p className="mt-1 text-[9px] tracking-[0.22em] text-white/55 sm:text-[10px]">
-                    完全予約制｜1日3名限定
-                  </p>
-                </div>
-
-                <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white">
-                  <Image
-                    src="/images/logo.png"
-                    alt="ヘッドスパ専門店ゆう"
-                    fill
-                    className="object-contain p-1"
-                    sizes="44px"
-                  />
-                </div>
+              <div className="hidden min-w-0 flex-1 text-center sm:block">
+                <p className="text-[10px] tracking-[0.32em] text-[#d6b36a]">
+                  完全個室｜完全予約制｜一日三名限定
+                </p>
               </div>
 
-              <div className="mt-3 grid grid-cols-2 gap-2 sm:hidden">
-                <a
-                  href={COUBIC_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-[#d6b36a] px-4 py-3 text-center text-sm font-medium tracking-[0.06em] text-black transition hover:opacity-90"
-                >
-                  ご予約はこちら
-                </a>
+              <a
+                href={COUBIC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-10 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[13px] font-medium tracking-[0.06em] text-black transition hover:opacity-90 sm:h-11 sm:max-w-[220px] sm:text-sm"
+              >
+                ご予約はこちら
+              </a>
 
-                <a
-                  href={LINE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-4 py-3 text-center text-sm tracking-[0.06em] text-white/90 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
-                >
-                  無料で相談する
-                </a>
-              </div>
-
-              <div className="mt-4 hidden items-center justify-center gap-3 sm:flex">
-                <a
-                  href={COUBIC_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
-                >
-                  ご予約はこちら
-                </a>
-
-                <a
-                  href={LINE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-sm tracking-[0.08em] text-white/90 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
-                >
-                  無料で相談する
-                </a>
+              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white sm:h-11 sm:w-11">
+                <Image
+                  src="/images/logo.png"
+                  alt="ヘッドスパ専門店ゆう"
+                  fill
+                  className="object-contain p-1"
+                  sizes="44px"
+                />
               </div>
             </div>
           </div>
@@ -161,7 +125,7 @@ export function Header() {
 
               <div className="mb-10 text-center">
                 <p className="text-[10px] tracking-[0.35em] text-[#d6b36a]">
-                  〜贅沢を日常に〜
+                  完全個室｜完全予約制｜一日三名限定
                 </p>
                 <p className="mt-4 text-[10px] tracking-[0.4em] text-white/40">
                   ヘッドスパ専門店
