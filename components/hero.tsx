@@ -24,29 +24,29 @@ export function Hero() {
         <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-28 text-center sm:px-6 sm:pb-20 sm:pt-34 lg:px-10">
           <div className="w-full max-w-3xl">
             <FadeIn>
-              <p className="text-[10px] tracking-[0.36em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
+              <p className="text-[10px] tracking-[0.34em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
                 PRIVATE HEAD SPA SALON
               </p>
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <p className="mt-4 text-[10px] tracking-[0.22em] text-white/60 sm:text-[11px] sm:tracking-[0.35em]">
+              <p className="mt-4 text-[10px] tracking-[0.2em] text-white/60 sm:text-[11px] sm:tracking-[0.35em]">
                 完全個室｜完全予約制｜一日三名限定
               </p>
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <h1 className="mx-auto mt-7 max-w-[9.2em] text-[clamp(1.95rem,8.2vw,3.8rem)] font-medium leading-[1.48] tracking-[0.07em] text-white sm:max-w-none sm:text-[clamp(2.35rem,5.8vw,3.9rem)] sm:leading-[1.48] sm:tracking-[0.11em]">
+              <h1 className="mx-auto mt-7 max-w-[10.5em] text-[clamp(1.75rem,7.2vw,3.7rem)] font-medium leading-[1.52] tracking-[0.055em] text-white sm:max-w-none sm:text-[clamp(2.3rem,5.6vw,3.9rem)] sm:leading-[1.5] sm:tracking-[0.1em]">
                 頭皮から整え、
                 <br />
-                髪質と印象を
+                髪質と印象を再設計する
                 <br />
-                再設計する専門店
+                ヘッドスパ専門店
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <div className="mx-auto mt-7 max-w-[22em] text-[13.5px] leading-[2.05] text-white/82 sm:max-w-2xl sm:text-base sm:leading-9">
+              <div className="mx-auto mt-7 max-w-[21em] text-[13.5px] leading-[2.05] text-white/82 sm:max-w-2xl sm:text-base sm:leading-9">
                 <p>
                   抜け毛・薄毛・白髪・頭皮トラブルに。
                   <br />
@@ -64,12 +64,12 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <div className="mx-auto mt-10 flex w-full max-w-md flex-col gap-3">
+              <div className="mx-auto mt-10 flex w-full max-w-[340px] flex-col gap-3">
                 <a
                   href={COUBIC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full rounded-full bg-[#d6b36a] px-6 py-4 text-base font-medium tracking-[0.08em] text-black transition hover:opacity-90"
+                  className="w-full rounded-full bg-[#d6b36a] px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
                 >
                   初回の空き状況を見る
                 </a>
@@ -97,7 +97,7 @@ export function Hero() {
                 FOR YOUR CONCERNS
               </p>
 
-              <h2 className="mt-3 text-xl leading-[1.7] tracking-[0.12em] text-foreground sm:text-2xl">
+              <h2 className="mt-3 text-xl leading-[1.7] tracking-[0.1em] text-foreground sm:text-2xl">
                 このようなお悩みを
                 <br className="sm:hidden" />
                 お持ちではありませんか
@@ -168,17 +168,6 @@ export function Hero() {
               </div>
             </FadeIn>
           </div>
-
-          <FadeIn delay={0.2}>
-            <div className="mt-10 text-center">
-              <a
-                href="#menu"
-                className="inline-flex items-center justify-center rounded-full border border-gold/30 px-6 py-3 text-sm tracking-[0.08em] text-foreground transition hover:border-gold hover:text-gold"
-              >
-                お悩みに合うメニューを見る
-              </a>
-            </div>
-          </FadeIn>
         </div>
       </section>
     </>
