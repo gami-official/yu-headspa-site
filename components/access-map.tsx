@@ -96,18 +96,14 @@ export function AccessMap() {
               <p className="text-[10px] tracking-[0.2em] text-gold/70">
                 OPEN
               </p>
-              <p className="mt-2 text-sm text-foreground">
-                9:30 - 16:30
-              </p>
+              <p className="mt-2 text-sm text-foreground">9:30 - 16:30</p>
             </div>
 
             <div className="bg-card px-4 py-5">
               <p className="text-[10px] tracking-[0.2em] text-gold/70">
                 CLOSED
               </p>
-              <p className="mt-2 text-sm text-foreground">
-                日曜日
-              </p>
+              <p className="mt-2 text-sm text-foreground">日曜日</p>
             </div>
           </div>
         </FadeIn>
@@ -118,7 +114,9 @@ export function AccessMap() {
               お車でもご来店いただけます。
               <br className="sm:hidden" />
               店舗前に
-              <span className="mx-1 font-medium text-foreground">駐車場2台分</span>
+              <span className="mx-1 font-medium text-foreground">
+                駐車場2台分
+              </span>
               をご用意しております。
             </p>
           </div>
