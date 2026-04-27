@@ -1,6 +1,7 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { GiftSection } from "@/components/gift-section"
+import { ScalpCareSection } from "@/components/scalp-care-section"
 import { ColorValueSection } from "@/components/color-value-section"
 import { MenuSection } from "@/components/menu-section"
 import { Evidence } from "@/components/evidence"
@@ -15,12 +16,21 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
+
+      {/* ▼売上導線（最重要ゾーン） */}
       <GiftSection />
+      <ScalpCareSection />
       <ColorValueSection />
+
+      {/* ▼比較・検討ゾーン */}
       <MenuSection />
       <Evidence />
+
+      {/* ▼信頼ゾーン */}
       <About />
       <Faq />
+
+      {/* ▼来店導線 */}
       <AccessMap />
       <CategoryLinks />
       <SiteFooter />
