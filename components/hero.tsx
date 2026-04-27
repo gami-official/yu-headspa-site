@@ -3,6 +3,7 @@
 import { FadeIn } from "@/components/fade-in"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const GIFT_STORE_URL = "https://gamistore.base.shop/"
 
 export function Hero() {
   const handleReserveClick = () => {
@@ -33,6 +34,7 @@ export function Hero() {
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-28 text-center sm:px-6 sm:pb-20 sm:pt-34 lg:px-10">
           <div className="w-full max-w-3xl">
+            
             <FadeIn>
               <p className="text-[10px] tracking-[0.34em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
                 PRIVATE HEAD SPA SALON
@@ -46,24 +48,24 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-  <h1 className="mx-auto mt-7 max-w-[12em] text-[clamp(1.4rem,5.2vw,2.4rem)] font-medium leading-[1.55] tracking-[0.045em] text-white sm:max-w-none sm:text-[clamp(1.8rem,4.5vw,3.2rem)] sm:leading-[1.5] sm:tracking-[0.1em]">
-    <span className="sm:hidden">
-      頭皮から整え
-      <br />
-      髪質と印象を再設計する
-      <br />
-      ヘッドスパ専門店
-    </span>
+              <h1 className="mx-auto mt-7 max-w-[12em] text-[clamp(1.4rem,5.2vw,2.4rem)] font-medium leading-[1.55] tracking-[0.045em] text-white sm:max-w-none sm:text-[clamp(1.8rem,4.5vw,3.2rem)] sm:leading-[1.5] sm:tracking-[0.1em]">
+                <span className="sm:hidden">
+                  頭皮から整え
+                  <br />
+                  髪質と印象を再設計する
+                  <br />
+                  ヘッドスパ専門店
+                </span>
 
-    <span className="hidden sm:inline">
-      頭皮から整え
-      <br />
-      髪質と印象を再設計する
-      <br />
-      ヘッドスパ専門店
-    </span>
-  </h1>
-</FadeIn>
+                <span className="hidden sm:inline">
+                  頭皮から整え
+                  <br />
+                  髪質と印象を再設計する
+                  <br />
+                  ヘッドスパ専門店
+                </span>
+              </h1>
+            </FadeIn>
 
             <FadeIn delay={0.15}>
               <div className="mx-auto mt-7 max-w-[21em] text-[13.5px] leading-[2.05] text-white/82 sm:max-w-2xl sm:text-base sm:leading-9">
@@ -83,8 +85,11 @@ export function Hero() {
               </div>
             </FadeIn>
 
+            {/* ▼CTA（強化済み） */}
             <FadeIn delay={0.2}>
               <div className="mx-auto mt-10 flex w-full max-w-[340px] flex-col gap-3">
+                
+                {/* 予約 */}
                 <a
                   href={COUBIC_URL}
                   target="_blank"
@@ -95,6 +100,17 @@ export function Hero() {
                   初回の空き状況を見る
                 </a>
 
+                {/* ▼ギフト（追加） */}
+                <a
+                  href={GIFT_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full rounded-full border border-[#d6b36a] px-6 py-3.5 text-sm tracking-[0.08em] text-[#d6b36a] transition hover:bg-[#d6b36a] hover:text-black"
+                >
+                  ギフトカードを購入する
+                </a>
+
+                {/* メニュー */}
                 <a
                   href="#menu"
                   className="w-full rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm tracking-[0.08em] text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
@@ -103,10 +119,19 @@ export function Hero() {
                 </a>
               </div>
             </FadeIn>
+
+            {/* ▼ギフト補足（CV上げる一言） */}
+            <FadeIn delay={0.25}>
+              <p className="mt-6 text-[11px] text-white/40">
+                大切な方への贈り物としてご利用いただけます
+              </p>
+            </FadeIn>
+
           </div>
         </div>
       </section>
 
+      {/* ▼下セクションはそのまま維持 */}
       <section
         id="hero-issues"
         className="bg-background px-5 py-16 sm:px-6 lg:px-10"
