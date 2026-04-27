@@ -22,11 +22,13 @@ export function GiftSection() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-[22em] text-sm leading-8 text-muted-foreground sm:max-w-2xl">
-              物ではなく、記憶に残る体験を。
+              贅沢なヘッドスパとヘアカラーを、
               <br />
-              完全個室のヘッドスパを、
+              無理のない価格で。
+              <br />
+              ただ染めるだけではない、
               <br className="sm:hidden" />
-              ギフトとしてお贈りいただけます。
+              特別な体験を贈れます。
             </p>
           </div>
         </FadeIn>
@@ -41,12 +43,22 @@ export function GiftSection() {
               <div className="mt-6 space-y-6 text-sm leading-8 text-muted-foreground">
                 <div>
                   <p className="font-medium text-foreground">
-                    記憶に残る“体験”を贈れる
+                    価格以上の満足感
                   </p>
                   <p className="mt-1">
-                    モノではなく、
-                    <span className="text-foreground">時間と体験</span>
-                    を贈る特別なギフトです。
+                    高級層だけの価格ではなく、
+                    <span className="text-foreground">本物志向の方に届く価値</span>
+                    を大切にしています。
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-medium text-foreground">
+                    ただのヘアカラーではない
+                  </p>
+                  <p className="mt-1">
+                    髪を染めるだけでなく、頭皮・髪質・印象まで整える
+                    特別なケアです。
                   </p>
                 </div>
 
@@ -57,16 +69,6 @@ export function GiftSection() {
                   <p className="mt-1">
                     人目を気にせず過ごせる、
                     大人のためのプライベート空間です。
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-medium text-foreground">
-                    癒しと頭皮ケアを同時に
-                  </p>
-                  <p className="mt-1">
-                    抜け毛・白髪・疲労など。
-                    気になり始めたお悩みにも寄り添います。
                   </p>
                 </div>
               </div>
@@ -81,16 +83,16 @@ export function GiftSection() {
 
               <ul className="mt-6 space-y-3 text-sm leading-7 text-muted-foreground">
                 <li>・奥様・お母様へのプレゼント</li>
-                <li>・忙しく働く方への癒し</li>
                 <li>・美容意識の高い方へ</li>
-                <li>・特別感のある贈り物をしたい方</li>
+                <li>・本物志向の方へ</li>
+                <li>・特別感のある贈り物をしたい方へ</li>
               </ul>
 
               <div className="mt-8 rounded-xl border border-border/40 bg-background/60 p-5 text-center">
                 <p className="text-sm leading-7 text-muted-foreground">
                   大切な方へ、
                   <br />
-                  自分をいたわる時間を。
+                  自分をいたわる上質な時間を。
                 </p>
 
                 <div className="mx-auto mt-5 flex max-w-[280px] flex-col gap-3">
