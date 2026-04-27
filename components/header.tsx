@@ -9,6 +9,10 @@ const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
 const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
+// ▼オンラインストア
+const MEMBER_STORE_URL = "https://headspayu.stores.jp/"
+const GIFT_STORE_URL = "https://gamistore.base.shop/"
+
 const navLinks = [
   { label: "料金・メニュー", href: "#menu" },
   { label: "育毛ヘッドスパ", href: "#scalp" },
@@ -17,6 +21,19 @@ const navLinks = [
   { label: "当店について", href: "#about" },
   { label: "アクセス", href: "#access" },
   { label: "よくある質問", href: "#faq" },
+
+  // ▼オンライン導線（改善済み）
+  {
+    label: "ご来店者様限定オンライン",
+    href: MEMBER_STORE_URL,
+    external: true,
+  },
+  {
+    label: "ギフトカード購入",
+    href: GIFT_STORE_URL,
+    external: true,
+  },
+
   { label: "フランチャイズ募集", href: FRANCHISE_URL, external: true },
 ]
 
@@ -144,6 +161,12 @@ export function Header() {
                   </motion.a>
                 ))}
               </nav>
+
+              {/* ▼ここ重要：文言改善済み */}
+              <div className="mt-6 text-center text-[11px] text-white/40 leading-relaxed">
+                <p>ご来店いただいたお客様限定でご案内しています</p>
+                <p>※パスが必要な場合はお問い合わせください</p>
+              </div>
 
               <div className="mt-10 flex w-full max-w-xs flex-col gap-3">
                 <a
