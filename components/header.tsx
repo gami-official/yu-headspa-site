@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Gift } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 
@@ -9,7 +9,6 @@ const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
 const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
-// ▼オンラインストア
 const MEMBER_STORE_URL = "https://headspayu.stores.jp/"
 const GIFT_STORE_URL = "https://gamistore.base.shop/"
 
@@ -22,7 +21,6 @@ const navLinks = [
   { label: "アクセス", href: "#access" },
   { label: "よくある質問", href: "#faq" },
 
-  // ▼オンライン導線（改善済み）
   {
     label: "ご来店者様限定オンライン",
     href: MEMBER_STORE_URL,
@@ -81,11 +79,13 @@ export function Header() {
           <div
             className={`rounded-full border transition-all duration-300 ${
               isScrolled
-                ? "border-white/10 bg-black/80 shadow-xl backdrop-blur-xl"
-                : "border-white/10 bg-black/40 backdrop-blur-md"
+                ? "border-white/10 bg-black/85 shadow-xl backdrop-blur-xl"
+                : "border-white/10 bg-black/45 backdrop-blur-md"
             }`}
           >
             <div className="flex items-center justify-between gap-2 px-3 py-1.5 sm:px-4 sm:py-2">
+
+              {/* menu */}
               <button
                 onClick={() => setIsMenuOpen(true)}
                 className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/85 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
@@ -94,15 +94,28 @@ export function Header() {
                 <Menu className="h-4 w-4" />
               </button>
 
+              {/* reserve */}
               <a
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12.5px] font-medium tracking-[0.06em] text-black transition hover:opacity-90 sm:max-w-[190px]"
+                className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[220px]"
               >
-                ご予約はこちら
+                ご予約枠を確認する
               </a>
 
+              {/* gift */}
+              <a
+                href={GIFT_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden h-9 items-center justify-center rounded-full border border-[#d6b36a]/30 bg-white/5 px-4 text-[11px] tracking-[0.08em] text-[#d6b36a] transition hover:border-[#d6b36a] hover:bg-[#d6b36a]/10 md:inline-flex"
+              >
+                <Gift className="mr-1 h-3.5 w-3.5" />
+                GIFT
+              </a>
+
+              {/* logo */}
               <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white">
                 <Image
                   src="/images/logo.png"
@@ -126,6 +139,7 @@ export function Header() {
             className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl"
           >
             <div className="flex min-h-full flex-col items-center justify-center px-6 py-16">
+
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
@@ -136,13 +150,15 @@ export function Header() {
 
               <div className="mb-10 text-center">
                 <p className="text-[10px] tracking-[0.32em] text-[#d6b36a]">
+                  PRIVATE HEAD SPA SALON
+                </p>
+
+                <p className="mt-4 text-[10px] tracking-[0.35em] text-white/40">
                   完全個室｜完全予約制｜一日三名限定
                 </p>
-                <p className="mt-4 text-[10px] tracking-[0.35em] text-white/40">
-                  ヘッドスパ専門店
-                </p>
-                <p className="mt-2 text-lg tracking-[0.22em] text-white">
-                  ゆう
+
+                <p className="mt-3 text-lg tracking-[0.22em] text-white">
+                  ヘッドスパ専門店 ゆう
                 </p>
               </div>
 
@@ -162,30 +178,33 @@ export function Header() {
                 ))}
               </nav>
 
-              {/* ▼ここ重要：文言改善済み */}
-              <div className="mt-6 text-center text-[11px] text-white/40 leading-relaxed">
-                <p>ご来店いただいたお客様限定でご案内しています</p>
-                <p>※パスが必要な場合はお問い合わせください</p>
+              <div className="mt-6 text-center text-[11px] leading-relaxed text-white/40">
+                <p>
+                  ギフトカード・オンラインサービスも
+                </p>
+                <p>
+                  ご利用いただけます
+                </p>
               </div>
 
               <div className="mt-10 flex w-full max-w-xs flex-col gap-3">
+
                 <a
                   href={COUBIC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-center text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
                 >
-                  ご予約はこちら
+                  ご予約枠を確認する
                 </a>
 
                 <a
-                  href="#menu"
-                  onClick={(e) =>
-                    handleNavClick(e, { label: "料金・メニュー", href: "#menu" })
-                  }
+                  href={GIFT_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-center text-sm tracking-[0.08em] text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
                 >
-                  料金・メニューを見る
+                  ギフトカードを見る
                 </a>
 
                 <a
@@ -194,8 +213,9 @@ export function Header() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-center text-sm tracking-[0.08em] text-white/90 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
                 >
-                  無料で相談する
+                  LINEで相談する
                 </a>
+
               </div>
 
               <a
@@ -206,6 +226,7 @@ export function Header() {
               >
                 技術を学びたい方はこちら
               </a>
+
             </div>
           </motion.div>
         )}
