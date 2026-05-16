@@ -4,149 +4,145 @@ import { FadeIn } from "@/components/fade-in"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
-const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
-const sectionLinks: { label: string; sectionId: string; description: string }[] = [
+const links = [
   {
-    label: "育毛ヘッドスパ",
-    sectionId: "scalp",
-    description: "抜け毛・薄毛・分け目・ボリューム不足が気になる方へ",
+    title: "育毛・印象改善ヘッドスパ",
+    description:
+      "薄毛・抜け毛だけでなく、疲れた印象や老けた印象へ。経営者・医師・富裕層男性向けの印象改善ヘッドスパ。",
+    href: "/scalp-care.html",
+    label: "SCALP CARE",
   },
   {
-    label: "ヘアカラーヘッドスパ",
-    sectionId: "color",
-    description: "安価なカラーとは違う、頭皮を守りながら染めるための特別ケア",
-  },
-  {
-    label: "リラクゼーションヘッドスパ",
-    sectionId: "relaxation",
-    description: "まずは癒しから体験したい方へ。深いリラックスのための時間",
-  },
-  {
-    label: "当店について",
-    sectionId: "about",
-    description: "完全個室・1日3名限定・本質的な頭皮ケアについて",
-  },
-  {
-    label: "アクセス",
-    sectionId: "access",
-    description: "所在地・駐車場・ご来店方法はこちら",
-  },
-  {
-    label: "よくある質問",
-    sectionId: "faq",
-    description: "初めての方から多いご質問をまとめています",
+    title: "ヘアカラーヘッドスパ",
+    description:
+      "白髪を隠すだけでなく、艶・品・若々しさへ。頭皮を守りながら染める高級ヘアカラーケア。",
+    href: "/color-headspa.html",
+    label: "COLOR HEAD SPA",
   },
 ]
 
-function scrollToSection(sectionId: string) {
-  const el = document.getElementById(sectionId)
-  if (el) {
-    window.history.pushState(null, "", `#${sectionId}`)
-    el.scrollIntoView({ behavior: "smooth" })
-  }
-}
-
 export function CategoryLinks() {
   return (
-    <section id="category" className="bg-secondary py-16 lg:py-24">
-      <div className="mx-auto max-w-5xl px-5 lg:px-10">
+    <section
+      id="category"
+      className="bg-[#0a0a0a] py-20 text-white lg:py-28"
+    >
+      <div className="mx-auto max-w-6xl px-5 lg:px-10">
+
         <FadeIn>
-          <div className="mb-12 flex flex-col items-center text-center">
-            <p className="mb-3 text-[11px] tracking-[0.45em] text-gold/70">
-              GUIDE
+          <div className="text-center">
+            <p className="text-[11px] tracking-[0.45em] text-[#d6b36a]/80">
+              SPECIAL CARE
             </p>
-            <h2 className="text-xl tracking-[0.18em] text-foreground sm:text-2xl">
-              お悩み・目的から選ぶ
+
+            <h2 className="mt-4 text-[clamp(1.8rem,5vw,3rem)] leading-[1.7] tracking-[0.12em]">
+              お悩み・目的別の
+              <br />
+              専門ヘッドスパ
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              育毛・カラー・癒しの3つの目的から、
-              今の自分に合ったメニューや情報へそのままお進みいただけます。
+
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-white/65">
+              抜け毛・薄毛・白髪・印象変化など。
+              <br />
+              現在のお悩みに合わせて、
+              最適な専門ページをご用意しております。
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid gap-3 md:grid-cols-2">
-          {sectionLinks.map((item, index) => (
-            <FadeIn key={item.label} delay={index * 0.05}>
-              <a
-                href={`#${item.sectionId}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollToSection(item.sectionId)
-                }}
-                className="group flex min-h-[96px] flex-col justify-between rounded-2xl border border-border/40 bg-card px-5 py-5 transition-all duration-500 hover:border-gold/40 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <span className="text-sm tracking-[0.12em] text-foreground/85 transition-colors duration-500 group-hover:text-gold">
-                    {item.label}
-                  </span>
-                  <svg
-                    className="mt-0.5 h-4 w-4 shrink-0 text-foreground/30 transition-all duration-500 group-hover:translate-x-1 group-hover:text-gold"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
 
-                <p className="mt-3 text-xs leading-6 text-muted-foreground">
-                  {item.description}
-                </p>
+          {links.map((item, index) => (
+            <FadeIn key={item.title} delay={index * 0.08}>
+              <a
+                href={item.href}
+                className="group relative overflow-hidden rounded-[30px] border border-[#d6b36a]/20 bg-white/[0.03] p-8 transition-all duration-500 hover:border-[#d6b36a]/50 hover:bg-white/[0.05]"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#d6b36a]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                <div className="relative z-10">
+
+                  <p className="text-[10px] tracking-[0.35em] text-[#d6b36a]/80">
+                    {item.label}
+                  </p>
+
+                  <h3 className="mt-5 text-2xl leading-[1.7] tracking-[0.08em] text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-6 text-sm leading-8 text-white/65">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-8 inline-flex items-center gap-3 text-sm tracking-[0.14em] text-[#d6b36a]">
+                    詳細を見る
+                    <svg
+                      className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+
+                </div>
               </a>
             </FadeIn>
           ))}
+
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="mt-10 rounded-2xl border border-gold/20 bg-card px-6 py-8 text-center lg:px-10">
-            <p className="text-[10px] tracking-[0.35em] text-gold/70">
-              RESERVE & CONSULT
-            </p>
-            <h3 className="mt-3 text-lg tracking-[0.15em] text-foreground sm:text-xl">
-              迷ったときはご相談ください
-            </h3>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              育毛ヘッドスパ、ヘアカラーヘッドスパ、
-              リラクゼーションヘッドスパのどれが合うか迷う方も、
-              ご予約前にLINEでご相談いただけます。
+          <div className="mt-16 rounded-[32px] border border-[#d6b36a]/20 bg-white/[0.03] px-6 py-10 text-center lg:px-12">
+
+            <p className="text-[10px] tracking-[0.35em] text-[#d6b36a]/80">
+              PRIVATE RESERVE
             </p>
 
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <h3 className="mt-4 text-[clamp(1.5rem,4vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-white">
+              完全個室・完全予約制
+              <br />
+              一日三名限定
+            </h3>
+
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-white/65">
+              流れ作業ではなく、
+              一人ひとりのお悩み・印象・頭皮状態に合わせて、
+              本質的なケアをご提供しております。
+            </p>
+
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
               <a
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm tracking-[0.12em] text-background transition hover:opacity-90"
+                className="inline-flex min-w-[240px] items-center justify-center rounded-full bg-[#d6b36a] px-8 py-4 text-sm tracking-[0.12em] text-black transition hover:opacity-90"
               >
-                ご予約はこちら
+                空き状況を見る
               </a>
 
               <a
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-w-[220px] items-center justify-center rounded-full border border-foreground/20 px-6 py-3 text-sm tracking-[0.12em] text-foreground transition hover:border-gold/50 hover:text-gold"
+                className="inline-flex min-w-[240px] items-center justify-center rounded-full border border-white/15 px-8 py-4 text-sm tracking-[0.12em] text-white transition hover:border-[#d6b36a]/50 hover:text-[#d6b36a]"
               >
                 LINEで相談する
               </a>
+
             </div>
 
-            <div className="mt-6">
-              <a
-                href={FRANCHISE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] text-foreground/40 underline transition-colors hover:text-gold"
-              >
-                この技術を学びたい方はこちら
-              </a>
-            </div>
           </div>
         </FadeIn>
+
       </div>
     </section>
   )
