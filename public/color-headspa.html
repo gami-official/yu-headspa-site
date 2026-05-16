@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    白髪を隠すだけでなく、品のある艶髪へ｜ヘアカラーヘッドスパ福岡
+  </title>
+
+  <meta
+    name="description"
+    content="福岡市西区の完全個室ヘッドスパ専門店。白髪・エイジング毛・頭皮環境を整えながら、美しい艶髪へ導くヘアカラーヘッドスパ。完全予約制・一日三名限定。"
+  />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#0a0a0a;
+      color:white;
+      font-family:
+        "Hiragino Mincho ProN",
+        "Yu Mincho",
+        serif;
+      line-height:1.9;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 20px;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          rgba(0,0,0,.72),
+          rgba(0,0,0,.78)
+        ),
+        url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1600&auto=format&fit=crop");
+      background-size:cover;
+      background-position:center;
+      transform:scale(1.08);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+    }
+
+    .sub{
+      color:#d6b36a;
+      letter-spacing:.4em;
+      font-size:12px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:clamp(2.2rem,6vw,5rem);
+      line-height:1.5;
+      font-weight:400;
+      letter-spacing:.08em;
+    }
+
+    .lead{
+      margin-top:40px;
+      color:rgba(255,255,255,.82);
+      font-size:15px;
+    }
+
+    .cta{
+      margin-top:45px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#d6b36a;
+      color:black;
+      padding:18px 42px;
+      border-radius:999px;
+      font-size:14px;
+      letter-spacing:.12em;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    .btn:hover{
+      opacity:.85;
+    }
+
+    section{
+      padding:110px 24px;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title p{
+      color:#d6b36a;
+      letter-spacing:.35em;
+      font-size:12px;
+    }
+
+    .section-title h2{
+      margin-top:20px;
+      font-size:clamp(1.8rem,4vw,3rem);
+      line-height:1.7;
+      font-weight:400;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .card{
+      border:1px solid rgba(214,179,106,.25);
+      border-radius:24px;
+      padding:36px;
+      background:rgba(255,255,255,.03);
+    }
+
+    .card h3{
+      margin-top:16px;
+      font-size:24px;
+      font-weight:400;
+    }
+
+    .card p{
+      margin-top:18px;
+      color:rgba(255,255,255,.75);
+      font-size:14px;
+    }
+
+    .final{
+      text-align:center;
+      padding-bottom:130px;
+    }
+
+    .final h2{
+      font-size:clamp(2rem,4vw,3.5rem);
+      line-height:1.7;
+      font-weight:400;
+    }
+
+    .final p{
+      margin-top:30px;
+      color:rgba(255,255,255,.8);
+    }
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:2.4rem;
+      }
+
+      .hero{
+        padding-top:120px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <p class="sub">
+        LUXURY COLOR HEAD SPA
+      </p>
+
+      <h1>
+        白髪を隠すだけでなく、<br>
+        品のある艶髪へ。
+      </h1>
+
+      <p class="lead">
+        年齢による髪質変化・白髪・頭皮環境に。<br>
+        頭皮から整える、完全個室のヘアカラーヘッドスパ。
+      </p>
+
+      <div class="cta">
+        <a
+          href="https://coubic.com/yuheadspa/services"
+          target="_blank"
+          class="btn"
+          onclick="reserveClick()"
+        >
+          空き状況を見る
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <p>FOR PREMIUM WOMEN</p>
+
+        <h2>
+          このようなお悩みを<br>
+          お持ちではありませんか
+        </h2>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <p>AGING HAIR</p>
+          <h3>
+            白髪と艶の低下
+          </h3>
+
+          <p>
+            年齢とともに増える白髪。
+            パサつき・広がり・艶不足まで、
+            同時に感じている方へ。
+          </p>
+        </div>
+
+        <div class="card">
+          <p>SCALP CARE</p>
+          <h3>
+            頭皮ダメージ
+          </h3>
+
+          <p>
+            カラーを繰り返すことで、
+            頭皮環境が乱れている方へ。
+            根本から整える専門ケアをご提供します。
+          </p>
+        </div>
+
+        <div class="card">
+          <p>PRIVATE SALON</p>
+          <h3>
+            落ち着ける空間
+          </h3>
+
+          <p>
+            完全個室・完全予約制。
+            周囲を気にせず、
+            静かに過ごせる上質空間。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="container">
+
+      <h2>
+        印象は、<br>
+        髪と頭皮で変わる。
+      </h2>
+
+      <p>
+        福岡市西区の完全個室ヘッドスパ専門店。<br>
+        一日三名限定で、
+        上質なヘアカラーヘッドスパをご提供しています。
+      </p>
+
+      <div class="cta">
+        <a
+          href="https://coubic.com/yuheadspa/services"
+          target="_blank"
+          class="btn"
+          onclick="reserveClick()"
+        >
+          ご予約はこちら
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    function reserveClick() {
+
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({
+        event: "reserve_click"
+      });
+
+    }
+  </script>
+
+</body>
+</html>
