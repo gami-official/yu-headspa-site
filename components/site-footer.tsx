@@ -12,36 +12,36 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-border/40 bg-background">
       <div className="mx-auto max-w-3xl px-5 pt-16 text-center lg:px-10">
         <p className="text-[10px] tracking-[0.35em] text-gold/70">
-          FINAL RESERVE
+          PRIVATE RESERVE
         </p>
 
-        <h2 className="mt-4 text-[clamp(1.6rem,5vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-foreground">
-          頭皮から整え、
+        <h2 className="mt-4 text-[clamp(1.6rem,5vw,2.5rem)] leading-[1.8] tracking-[0.08em] text-foreground">
+          品のある印象は、
           <br />
-          髪の印象を変える一歩を
+          頭皮から始まる。
         </h2>
 
         <p className="mx-auto mt-6 max-w-xl text-sm leading-8 text-muted-foreground">
-          完全個室・一日三名限定。
+          分け目・白髪・艶不足・ボリューム低下へ。
           <br />
-          お一人おひとりの状態に合わせた施術をご提供します。
+          完全個室で、髪質と印象を整える専門ケアをご提供します。
         </p>
 
         <p className="mt-4 text-xs text-foreground/50">
-          初めての方も安心してご利用いただけます
+          完全予約制・一日三名限定
         </p>
 
         <a
           href={RESERVE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-10 py-4 text-base font-medium text-black transition hover:opacity-90"
+          className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-10 py-4 text-base font-medium tracking-[0.08em] text-black transition hover:opacity-90"
         >
-          空き状況を見る
+          ご予約枠を確認する
         </a>
 
         <p className="mt-3 text-[11px] text-muted-foreground">
-          ※完全予約制・一日三名限定
+          ※限られた枠でのご案内となります
         </p>
       </div>
 
@@ -49,7 +49,7 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-2 md:items-start">
           <div className="text-center md:text-left">
             <p className="text-[11px] tracking-[0.35em] text-gold/70">
-              HEAD SPA SALON
+              PRIVATE SCALP BEAUTY SALON
             </p>
 
             <h3 className="mt-3 text-lg tracking-[0.08em] text-foreground">
@@ -127,7 +127,7 @@ export function SiteFooter() {
 
         <div className="mt-10 border-t border-border/40 pt-6 text-center">
           <p className="text-[11px] leading-6 text-muted-foreground">
-            頭皮ケア・育毛ケア・完全個室の施術を福岡市西区でご提供しています。
+            福岡市西区で、分け目・白髪・艶不足・頭皮環境に向き合う完全個室ヘッドスパ専門店。
           </p>
 
           <p className="mt-3 text-[10px] text-muted-foreground">
