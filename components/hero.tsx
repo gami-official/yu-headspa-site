@@ -36,7 +36,7 @@ export function Hero() {
           <div className="w-full max-w-3xl">
             <FadeIn>
               <p className="text-[10px] tracking-[0.34em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
-                PRIVATE SCALP BEAUTY SALON
+                PRIVATE HAIR & SCALP BEAUTY
               </p>
             </FadeIn>
 
