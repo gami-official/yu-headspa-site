@@ -7,18 +7,18 @@ const LINE_URL = "https://lin.ee/7hso3k1"
 
 const links = [
   {
-    title: "育毛・印象改善ヘッドスパ",
+    title: "分け目・薄毛・印象改善ケア",
     description:
-      "薄毛・抜け毛だけでなく、疲れた印象や老けた印象へ。経営者・医師・富裕層男性向けの印象改善ヘッドスパ。",
+      "分け目・頭頂部・ボリューム低下へ。頭皮から整え、年齢による印象変化に向き合う専門ヘッドスパ。",
     href: "/scalp-care.html",
-    label: "SCALP CARE",
+    label: "SCALP & IMPRESSION",
   },
   {
-    title: "ヘアカラーヘッドスパ",
+    title: "白髪・艶髪ヘアカラーヘッドスパ",
     description:
-      "白髪を隠すだけでなく、艶・品・若々しさへ。頭皮を守りながら染める高級ヘアカラーケア。",
+      "白髪を隠すだけでなく、艶・品・若々しさへ。頭皮環境まで考えた大人女性のための高級カラーケア。",
     href: "/color-headspa.html",
-    label: "COLOR HEAD SPA",
+    label: "COLOR & AGING HAIR",
   },
 ]
 
@@ -29,30 +29,25 @@ export function CategoryLinks() {
       className="bg-[#0a0a0a] py-20 text-white lg:py-28"
     >
       <div className="mx-auto max-w-6xl px-5 lg:px-10">
-
         <FadeIn>
           <div className="text-center">
             <p className="text-[11px] tracking-[0.45em] text-[#d6b36a]/80">
-              SPECIAL CARE
+              SPECIAL AGING CARE
             </p>
 
-            <h2 className="mt-4 text-[clamp(1.8rem,5vw,3rem)] leading-[1.7] tracking-[0.12em]">
-              お悩み・目的別の
-              <br />
-              専門ヘッドスパ
+            <h2 className="mt-4 text-[clamp(1.8rem,5vw,3rem)] leading-[1.75] tracking-[0.12em]">
+              年齢による髪と印象の変化へ
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-white/65">
-              抜け毛・薄毛・白髪・印象変化など。
+              分け目・白髪・艶不足・ボリューム低下など。
               <br />
-              現在のお悩みに合わせて、
-              最適な専門ページをご用意しております。
+              お悩みに合わせて、専門ページをご覧ください。
             </p>
           </div>
         </FadeIn>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
-
           {links.map((item, index) => (
             <FadeIn key={item.title} delay={index * 0.08}>
               <a
@@ -62,7 +57,6 @@ export function CategoryLinks() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#d6b36a]/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                 <div className="relative z-10">
-
                   <p className="text-[10px] tracking-[0.35em] text-[#d6b36a]/80">
                     {item.label}
                   </p>
@@ -76,7 +70,7 @@ export function CategoryLinks() {
                   </p>
 
                   <div className="mt-8 inline-flex items-center gap-3 text-sm tracking-[0.14em] text-[#d6b36a]">
-                    詳細を見る
+                    専門ページを見る
                     <svg
                       className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1"
                       fill="none"
@@ -91,42 +85,38 @@ export function CategoryLinks() {
                       />
                     </svg>
                   </div>
-
                 </div>
               </a>
             </FadeIn>
           ))}
-
         </div>
 
         <FadeIn delay={0.2}>
           <div className="mt-16 rounded-[32px] border border-[#d6b36a]/20 bg-white/[0.03] px-6 py-10 text-center lg:px-12">
-
             <p className="text-[10px] tracking-[0.35em] text-[#d6b36a]/80">
               PRIVATE RESERVE
             </p>
 
-            <h3 className="mt-4 text-[clamp(1.5rem,4vw,2.4rem)] leading-[1.7] tracking-[0.08em] text-white">
+            <h3 className="mt-4 text-[clamp(1.5rem,4vw,2.4rem)] leading-[1.8] tracking-[0.08em] text-white">
               完全個室・完全予約制
               <br />
               一日三名限定
             </h3>
 
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-white/65">
-              流れ作業ではなく、
-              一人ひとりのお悩み・印象・頭皮状態に合わせて、
-              本質的なケアをご提供しております。
+              流れ作業ではなく、頭皮状態・髪質・印象に合わせて、
+              <br />
+              限られたお客様だけに丁寧なケアをご提供しております。
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-
               <a
                 href={COUBIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-w-[240px] items-center justify-center rounded-full bg-[#d6b36a] px-8 py-4 text-sm tracking-[0.12em] text-black transition hover:opacity-90"
               >
-                空き状況を見る
+                ご予約枠を確認する
               </a>
 
               <a
@@ -137,12 +127,9 @@ export function CategoryLinks() {
               >
                 LINEで相談する
               </a>
-
             </div>
-
           </div>
         </FadeIn>
-
       </div>
     </section>
   )
