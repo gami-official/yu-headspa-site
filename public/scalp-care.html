@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>印象改善ヘッドスパ｜福岡の完全個室ヘッドスパ専門店</title>
+  <title>分け目・薄毛・印象年齢ケア｜福岡の完全個室ヘッドスパ専門店</title>
 
   <meta
     name="description"
-    content="薄毛・抜け毛だけでなく、疲れた印象や老けた印象へ。経営者・医師・富裕層男性が通う、完全個室の印象改善ヘッドスパ。"
+    content="分け目・頭頂部・薄毛・抜け毛・ボリューム低下が気になる方へ。福岡市西区の完全個室ヘッドスパ専門店。頭皮から整え、印象年齢を変える本格ケア。"
   />
 
   <style>
@@ -18,15 +18,20 @@
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:
         "Hiragino Mincho ProN",
         "Yu Mincho",
         serif;
-      background:#0a0a0a;
+      background:#080808;
       color:white;
-      line-height:1.9;
+      line-height:1.95;
       letter-spacing:.06em;
+      overflow-x:hidden;
     }
 
     img{
@@ -46,6 +51,7 @@
       justify-content:center;
       text-align:center;
       overflow:hidden;
+      padding:70px 24px;
     }
 
     .hero::before{
@@ -53,74 +59,104 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.76)),
-        url("https://images.unsplash.com/photo-1517832606299-7ae9b720a186?q=80&w=1600&auto=format&fit=crop");
+        linear-gradient(rgba(0,0,0,.74), rgba(0,0,0,.82)),
+        url("https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1800&auto=format&fit=crop");
       background-size:cover;
       background-position:center;
-      transform:scale(1.05);
+      transform:scale(1.06);
     }
 
     .hero-inner{
       position:relative;
       z-index:2;
-      width:min(92%, 900px);
+      width:min(92%, 960px);
     }
 
     .eyebrow{
       color:#d6b36a;
-      font-size:.8rem;
-      letter-spacing:.4em;
-      margin-bottom:24px;
+      font-size:.78rem;
+      letter-spacing:.42em;
+      margin-bottom:26px;
     }
 
     h1{
-      font-size:clamp(2.2rem,6vw,5rem);
-      line-height:1.5;
+      font-size:clamp(2.25rem,6vw,5.2rem);
+      line-height:1.58;
       font-weight:400;
+      letter-spacing:.08em;
     }
 
     .lead{
-      margin-top:40px;
+      margin:42px auto 0;
+      max-width:760px;
       color:rgba(255,255,255,.78);
       font-size:1rem;
+      line-height:2.25;
+    }
+
+    .limit{
+      margin-top:32px;
+      color:#d6b36a;
+      font-size:.86rem;
+      letter-spacing:.16em;
     }
 
     .cta{
       margin-top:48px;
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:280px;
       background:#d6b36a;
-      color:black;
-      padding:18px 42px;
+      color:#111;
+      padding:18px 38px;
       border-radius:999px;
       font-weight:bold;
+      letter-spacing:.14em;
       transition:.3s;
     }
 
     .cta:hover{
-      opacity:.85;
+      opacity:.88;
+      transform:translateY(-2px);
+    }
+
+    .note{
+      margin-top:18px;
+      color:rgba(255,255,255,.55);
+      font-size:.8rem;
     }
 
     .section{
-      width:min(92%, 1100px);
+      width:min(92%, 1120px);
       margin:auto;
-      padding:110px 0;
+      padding:115px 0;
     }
 
     .section-title{
       text-align:center;
-      margin-bottom:60px;
+      margin-bottom:64px;
     }
 
     .section-title small{
       color:#d6b36a;
-      letter-spacing:.35em;
+      letter-spacing:.36em;
+      font-size:.76rem;
     }
 
     .section-title h2{
-      margin-top:20px;
-      font-size:clamp(1.8rem,4vw,3rem);
-      line-height:1.7;
+      margin-top:22px;
+      font-size:clamp(1.85rem,4vw,3.2rem);
+      line-height:1.75;
       font-weight:400;
+      letter-spacing:.08em;
+    }
+
+    .section-title p{
+      margin-top:24px;
+      color:rgba(255,255,255,.68);
+      font-size:.95rem;
+      line-height:2.1;
     }
 
     .cards{
@@ -130,80 +166,149 @@
     }
 
     .card{
-      background:#111;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.018)
+        );
       border:1px solid rgba(214,179,106,.2);
-      border-radius:24px;
-      padding:38px;
+      border-radius:28px;
+      padding:40px 34px;
+    }
+
+    .card span{
+      color:#d6b36a;
+      font-size:.7rem;
+      letter-spacing:.32em;
     }
 
     .card h3{
-      font-size:1.3rem;
+      font-size:1.45rem;
+      margin-top:18px;
       margin-bottom:20px;
-      color:#d6b36a;
+      color:#fff;
       font-weight:400;
+      line-height:1.7;
     }
 
     .card p{
       color:rgba(255,255,255,.72);
-      font-size:.96rem;
+      font-size:.95rem;
+      line-height:2.05;
     }
 
     .message{
       background:#111;
-      border-radius:30px;
-      padding:70px 8%;
+      border:1px solid rgba(214,179,106,.18);
+      border-radius:34px;
+      padding:76px 8%;
       text-align:center;
     }
 
+    .message h2{
+      font-size:clamp(1.9rem,4vw,3.4rem);
+      line-height:1.8;
+      font-weight:400;
+      letter-spacing:.08em;
+    }
+
     .message p{
-      color:rgba(255,255,255,.76);
-      margin-top:30px;
+      color:rgba(255,255,255,.75);
+      margin-top:32px;
       font-size:1rem;
+      line-height:2.25;
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:24px;
+      counter-reset:step;
+    }
+
+    .step{
+      border-top:1px solid rgba(214,179,106,.35);
+      padding-top:24px;
+      counter-increment:step;
+    }
+
+    .step::before{
+      content:"0" counter(step);
+      color:#d6b36a;
+      font-size:.8rem;
+      letter-spacing:.25em;
+    }
+
+    .step h3{
+      margin-top:18px;
+      font-size:1.2rem;
+      font-weight:400;
+    }
+
+    .step p{
+      margin-top:14px;
+      color:rgba(255,255,255,.68);
+      font-size:.92rem;
+      line-height:2;
     }
 
     .final{
       text-align:center;
-      padding-bottom:120px;
+      padding-bottom:130px;
     }
 
     .final h2{
       font-size:clamp(2rem,5vw,4rem);
-      line-height:1.7;
+      line-height:1.75;
       font-weight:400;
+      letter-spacing:.08em;
     }
 
     .final p{
-      margin-top:30px;
+      margin-top:32px;
       color:rgba(255,255,255,.74);
     }
 
     footer{
-      padding:40px 20px 70px;
+      padding:42px 20px 74px;
       text-align:center;
       color:rgba(255,255,255,.45);
       font-size:.8rem;
+      border-top:1px solid rgba(255,255,255,.06);
     }
 
     @media(max-width:768px){
 
       .hero{
-        padding:120px 0;
+        padding:120px 22px 90px;
       }
 
       h1{
-        line-height:1.6;
+        font-size:2.45rem;
+        line-height:1.7;
       }
 
       .lead{
-        font-size:.95rem;
+        font-size:.94rem;
+        line-height:2.15;
       }
 
       .section{
-        padding:80px 0;
+        padding:86px 0;
       }
 
       .card{
-        padding:28px;
+        padding:32px 28px;
+      }
+
+      .message{
+        padding:56px 26px;
+      }
+
+      .cta{
+        width:100%;
+        min-width:auto;
       }
 
     }
@@ -216,26 +321,36 @@
     <div class="hero-inner">
 
       <div class="eyebrow">
-        IMPRESSION CARE HEAD SPA
+        SCALP & IMPRESSION CARE
       </div>
 
       <h1>
-        薄毛を隠すのではなく、<br>
-        “印象”を整える。
+        最近、<br>
+        分け目で老けて見える。
       </h1>
 
       <p class="lead">
-        経営者・医師・富裕層男性が通う、<br>
-        完全個室の印象改善ヘッドスパ。
+        分け目・頭頂部・ボリューム低下・抜け毛へ。<br>
+        頭皮から整え、
+        印象年齢を変える本格ヘッドスパ。
+      </p>
+
+      <p class="limit">
+        完全個室｜完全予約制｜一日三名限定
       </p>
 
       <a
         class="cta"
         href="https://coubic.com/yuheadspa/services"
         target="_blank"
+        onclick="reserveClick()"
       >
-        空き状況を見る
+        ご予約枠を確認する
       </a>
+
+      <p class="note">
+        人目を気にせず、静かにご相談いただけます
+      </p>
 
     </div>
   </section>
@@ -243,36 +358,61 @@
   <section class="section">
 
     <div class="section-title">
-      <small>FOR PROFESSIONALS</small>
+      <small>AGING SCALP CARE</small>
+
       <h2>
-        第一印象が、<br>
-        仕事を変える。
+        年齢による<br>
+        印象変化へ。
       </h2>
+
+      <p>
+        髪の量だけではなく、
+        分け目・頭頂部・艶・ハリコシは
+        第一印象に大きく影響します。
+      </p>
     </div>
 
     <div class="cards">
 
       <div class="card">
-        <h3>清潔感</h3>
+        <span>PART LINE</span>
+
+        <h3>
+          分け目
+        </h3>
+
         <p>
-          頭皮環境を整えることで、
-          若々しく洗練された印象へ。
+          年齢とともに気になり始める
+          分け目の広がりやボリューム低下へ。
+          頭皮環境から丁寧に整えます。
         </p>
       </div>
 
       <div class="card">
-        <h3>完全個室</h3>
+        <span>CROWN AREA</span>
+
+        <h3>
+          頭頂部
+        </h3>
+
         <p>
-          他人の目を気にせず、
-          静かな空間で施術を受けられます。
+          頭頂部のぺたんこ感や、
+          髪密度の印象が気になる方へ。
+          将来の髪を見据えたケアを行います。
         </p>
       </div>
 
       <div class="card">
-        <h3>一日三名限定</h3>
+        <span>IMPRESSION AGE</span>
+
+        <h3>
+          印象年齢
+        </h3>
+
         <p>
-          流れ作業ではなく、
-          一人ひとりに合わせた施術をご提供。
+          疲れて見える、老けて見える。
+          その印象を頭皮と髪質から整え、
+          品のある若々しさへ導きます。
         </p>
       </div>
 
@@ -284,23 +424,63 @@
 
     <div class="message">
 
-      <div class="section-title">
-        <small>AGING CARE</small>
-
-        <h2>
-          年齢による印象変化へ。
-        </h2>
-      </div>
+      <h2>
+        “ただの育毛”ではなく、<br>
+        品のある印象づくりまで。
+      </h2>
 
       <p>
         抜け毛・薄毛・頭皮疲労・ボリューム低下。<br>
-        見た目年齢は、頭皮環境で変わります。
+        年齢による髪の変化は、
+        見た目の清潔感や自信にも影響します。
       </p>
 
       <p>
-        “ただの育毛”ではなく、<br>
-        品のある印象づくりまでを見据えたケアを。
+        当店では完全個室の上質空間で、
+        お一人おひとりの頭皮状態に合わせた
+        本格ケアをご提供しています。
       </p>
+
+    </div>
+
+  </section>
+
+  <section class="section">
+
+    <div class="section-title">
+      <small>PRIVATE CARE FLOW</small>
+
+      <h2>
+        一日三名限定で、<br>
+        丁寧に向き合う。
+      </h2>
+    </div>
+
+    <div class="flow">
+
+      <div class="step">
+        <h3>頭皮状態の確認</h3>
+        <p>
+          分け目・頭頂部・ハリコシなど、
+          現在の状態を丁寧に確認します。
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>専門ヘッドスパ</h3>
+        <p>
+          頭皮環境に合わせて、
+          血行・皮脂・硬さに着目したケアを行います。
+        </p>
+      </div>
+
+      <div class="step">
+        <h3>将来を見据えた提案</h3>
+        <p>
+          一時的な癒しだけでなく、
+          継続的な頭皮美容としてご提案します。
+        </p>
+      </div>
 
     </div>
 
@@ -321,6 +501,7 @@
       class="cta"
       href="https://coubic.com/yuheadspa/services"
       target="_blank"
+      onclick="reserveClick()"
     >
       初回の空き状況を見る
     </a>
@@ -328,8 +509,18 @@
   </section>
 
   <footer>
-    HEAD SPA SALON YU
+    HEAD SPA SALON YU｜SCALP & IMPRESSION CARE
   </footer>
+
+  <script>
+    function reserveClick() {
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({
+        event: "reserve_click"
+      });
+    }
+  </script>
 
 </body>
 </html>
