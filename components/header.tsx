@@ -12,6 +12,12 @@ const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 const MEMBER_STORE_URL = "https://headspayu.stores.jp/"
 const GIFT_STORE_URL = "https://gamistore.base.shop/"
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[]
+  }
+}
+
 const navLinks = [
   { label: "料金・メニュー", href: "#menu" },
   { label: "育毛ヘッドスパ", href: "#scalp" },
@@ -20,7 +26,6 @@ const navLinks = [
   { label: "当店について", href: "#about" },
   { label: "アクセス", href: "#access" },
   { label: "よくある質問", href: "#faq" },
-
   {
     label: "ご来店者様限定オンライン",
     href: MEMBER_STORE_URL,
@@ -31,7 +36,6 @@ const navLinks = [
     href: GIFT_STORE_URL,
     external: true,
   },
-
   { label: "フランチャイズ募集", href: FRANCHISE_URL, external: true },
 ]
 
@@ -41,16 +45,38 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10)
-    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    })
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : ""
+
     return () => {
       document.body.style.overflow = ""
     }
   }, [isMenuOpen])
+
+  const handleReserveClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    e.preventDefault()
+
+    window.dataLayer = window.dataLayer || []
+
+    window.dataLayer.push({
+      event: "reserve_click",
+      reserve_location: "header",
+    })
+
+    setTimeout(() => {
+      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+    }, 300)
+  }
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -65,9 +91,13 @@ export function Header() {
     }
 
     const target = document.querySelector(link.href)
+
     if (target) {
       setTimeout(() => {
-        target.scrollIntoView({ behavior: "smooth", block: "start" })
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        })
       }, 200)
     }
   }
@@ -85,7 +115,6 @@ export function Header() {
           >
             <div className="flex items-center justify-between gap-2 px-3 py-1.5 sm:px-4 sm:py-2">
 
-              {/* menu */}
               <button
                 onClick={() => setIsMenuOpen(true)}
                 className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/85 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
@@ -94,17 +123,14 @@ export function Header() {
                 <Menu className="h-4 w-4" />
               </button>
 
-              {/* reserve */}
               <a
                 href={COUBIC_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={handleReserveClick}
                 className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[220px]"
               >
                 ご予約枠を確認する
               </a>
 
-              {/* gift */}
               <a
                 href={GIFT_STORE_URL}
                 target="_blank"
@@ -115,7 +141,6 @@ export function Header() {
                 GIFT
               </a>
 
-              {/* logo */}
               <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white">
                 <Image
                   src="/images/logo.png"
@@ -179,16 +204,11 @@ export function Header() {
               </nav>
 
               <div className="mt-6 text-center text-[11px] leading-relaxed text-white/40">
-                <p>
-                  ギフトカード・オンラインサービスも
-                </p>
-                <p>
-                  ご利用いただけます
-                </p>
+                <p>ギフトカード・オンラインサービスも</p>
+                <p>ご利用いただけます</p>
               </div>
 
               <div className="mt-10 flex w-full max-w-xs flex-col gap-3">
-
                 <a
                   href={COUBIC_URL}
                   target="_blank"
@@ -215,7 +235,6 @@ export function Header() {
                 >
                   LINEで相談する
                 </a>
-
               </div>
 
               <a
@@ -226,7 +245,6 @@ export function Header() {
               >
                 技術を学びたい方はこちら
               </a>
-
             </div>
           </motion.div>
         )}
