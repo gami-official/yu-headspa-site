@@ -3,17 +3,28 @@
 import { FadeIn } from "@/components/fade-in"
 
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
-const GIFT_STORE_URL = "https://gamistore.base.shop/"
+const GIFT_STORE_URL = "https://gamistore.base.shop/items/144607972"
+
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[]
+  }
+}
 
 export function Hero() {
-  const handleReserveClick = () => {
-    if (typeof window !== "undefined") {
-      window.dataLayer = window.dataLayer || []
-      window.dataLayer.push({
-        event: "reserve_click",
-        reserve_location: "hero",
-      })
-    }
+  const handleReserveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+
+    window.dataLayer = window.dataLayer || []
+
+    window.dataLayer.push({
+      event: "reserve_click",
+      reserve_location: "hero",
+    })
+
+    setTimeout(() => {
+      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+    }, 300)
   }
 
   return (
@@ -48,21 +59,11 @@ export function Hero() {
 
             <FadeIn delay={0.1}>
               <h1 className="mx-auto mt-7 max-w-[13em] text-[clamp(1.45rem,5.5vw,2.8rem)] font-medium leading-[1.7] tracking-[0.06em] text-white sm:max-w-none sm:text-[clamp(2rem,4.8vw,3.6rem)] sm:leading-[1.65] sm:tracking-[0.1em]">
-                <span className="sm:hidden">
-                  年齢を重ねた髪に、
-                  <br />
-                  品格という艶を。
-                  <br />
-                  完全個室ヘッドスパ
-                </span>
-
-                <span className="hidden sm:inline">
-                  年齢を重ねた髪に、
-                  <br />
-                  品格という艶を。
-                  <br />
-                  完全個室ヘッドスパ
-                </span>
+                年齢を重ねた髪に、
+                <br />
+                品格という艶を。
+                <br />
+                完全個室ヘッドスパ
               </h1>
             </FadeIn>
 
@@ -90,8 +91,6 @@ export function Hero() {
               <div className="mx-auto mt-10 flex w-full max-w-[340px] flex-col gap-3">
                 <a
                   href={COUBIC_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   onClick={handleReserveClick}
                   className="w-full rounded-full bg-[#d6b36a] px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
                 >
@@ -151,59 +150,29 @@ export function Hero() {
           </FadeIn>
 
           <div className="mt-12 grid gap-5 md:grid-cols-3 lg:gap-8">
-            <FadeIn delay={0.05}>
-              <div className="h-full rounded-2xl border border-gold/20 bg-card px-6 py-7 text-center shadow-sm">
-                <p className="text-[10px] tracking-[0.26em] text-gold/70">
-                  SCALP CARE
-                </p>
-                <h3 className="mt-4 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
-                  分け目・薄毛・
-                  <br />
-                  ボリューム低下
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  頭皮環境から整え、
-                  <br />
-                  品のある印象へ導きます。
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.1}>
-              <div className="h-full rounded-2xl border border-gold/20 bg-card px-6 py-7 text-center shadow-sm">
-                <p className="text-[10px] tracking-[0.26em] text-gold/70">
-                  COLOR CARE
-                </p>
-                <h3 className="mt-4 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
-                  白髪・艶不足・
-                  <br />
-                  エイジング毛
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  頭皮に配慮しながら、
-                  <br />
-                  艶と品のある髪色へ。
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.15}>
-              <div className="h-full rounded-2xl border border-gold/20 bg-card px-6 py-7 text-center shadow-sm">
-                <p className="text-[10px] tracking-[0.26em] text-gold/70">
-                  PRIVATE CARE
-                </p>
-                <h3 className="mt-4 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
-                  完全個室で
-                  <br />
-                  静かに整える
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  一日三名限定。
-                  <br />
-                  流れ作業ではない上質なケア。
-                </p>
-              </div>
-            </FadeIn>
+            {[
+              ["SCALP CARE", "分け目・薄毛・", "ボリューム低下", "頭皮環境から整え、", "品のある印象へ導きます。"],
+              ["COLOR CARE", "白髪・艶不足・", "エイジング毛", "頭皮に配慮しながら、", "艶と品のある髪色へ。"],
+              ["PRIVATE CARE", "完全個室で", "静かに整える", "一日三名限定。", "流れ作業ではない上質なケア。"],
+            ].map(([label, title1, title2, text1, text2], index) => (
+              <FadeIn key={label} delay={0.05 + index * 0.05}>
+                <div className="h-full rounded-2xl border border-gold/20 bg-card px-6 py-7 text-center shadow-sm">
+                  <p className="text-[10px] tracking-[0.26em] text-gold/70">
+                    {label}
+                  </p>
+                  <h3 className="mt-4 text-base font-medium leading-7 tracking-[0.08em] text-foreground">
+                    {title1}
+                    <br />
+                    {title2}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    {text1}
+                    <br />
+                    {text2}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
