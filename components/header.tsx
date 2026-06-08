@@ -10,7 +10,7 @@ const LINE_URL = "https://lin.ee/7hso3k1"
 const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
 
 const MEMBER_STORE_URL = "https://headspayu.stores.jp/"
-const GIFT_STORE_URL = "https://gamistore.base.shop/"
+const GIFT_STORE_URL = "https://gamistore.base.shop/items/144607972"
 
 declare global {
   interface Window {
@@ -26,16 +26,8 @@ const navLinks = [
   { label: "当店について", href: "#about" },
   { label: "アクセス", href: "#access" },
   { label: "よくある質問", href: "#faq" },
-  {
-    label: "ご来店者様限定オンライン",
-    href: MEMBER_STORE_URL,
-    external: true,
-  },
-  {
-    label: "ギフトカード購入",
-    href: GIFT_STORE_URL,
-    external: true,
-  },
+  { label: "ご来店者様限定オンライン", href: MEMBER_STORE_URL, external: true },
+  { label: "ギフトカード購入", href: GIFT_STORE_URL, external: true },
   { label: "フランチャイズ募集", href: FRANCHISE_URL, external: true },
 ]
 
@@ -45,10 +37,9 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10)
+    handleScroll()
 
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    })
+    window.addEventListener("scroll", handleScroll, { passive: true })
 
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -61,17 +52,23 @@ export function Header() {
     }
   }, [isMenuOpen])
 
-  const handleReserveClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-  ) => {
-    e.preventDefault()
-
+  const sendReserveEvent = (location: string) => {
     window.dataLayer = window.dataLayer || []
 
     window.dataLayer.push({
       event: "reserve_click",
-      reserve_location: "header",
+      reserve_location: location,
     })
+  }
+
+  const handleReserveClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    location: string,
+  ) => {
+    e.preventDefault()
+
+    sendReserveEvent(location)
+    setIsMenuOpen(false)
 
     setTimeout(() => {
       window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
@@ -114,7 +111,6 @@ export function Header() {
             }`}
           >
             <div className="flex items-center justify-between gap-2 px-3 py-1.5 sm:px-4 sm:py-2">
-
               <button
                 onClick={() => setIsMenuOpen(true)}
                 className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/85 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
@@ -125,7 +121,7 @@ export function Header() {
 
               <a
                 href={COUBIC_URL}
-                onClick={handleReserveClick}
+                onClick={(e) => handleReserveClick(e, "header")}
                 className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[220px]"
               >
                 ご予約枠を確認する
@@ -164,7 +160,6 @@ export function Header() {
             className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl"
           >
             <div className="flex min-h-full flex-col items-center justify-center px-6 py-16">
-
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
@@ -211,8 +206,7 @@ export function Header() {
               <div className="mt-10 flex w-full max-w-xs flex-col gap-3">
                 <a
                   href={COUBIC_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={(e) => handleReserveClick(e, "menu")}
                   className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-center text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
                 >
                   ご予約枠を確認する
