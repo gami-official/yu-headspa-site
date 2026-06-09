@@ -2,25 +2,48 @@
 
 import { FadeIn } from "@/components/fade-in"
 
+const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[]
+  }
+}
+
 const voices = [
   {
     age: "40代女性",
-    title: "髪だけでなく、気持ちまで整いました",
-    text: "完全個室で人目を気にせず過ごせるので、とても贅沢な時間でした。頭皮や髪の悩みも丁寧に聞いてくださり、安心してお願いできました。",
+    title: "完全個室なので、髪の悩みを相談しやすかったです",
+    text: "分け目やボリュームの悩みを人に話すのが苦手でしたが、完全個室で丁寧に聞いてもらえて安心しました。",
   },
   {
     age: "50代女性",
-    title: "白髪染めの印象が変わりました",
-    text: "ただ染めるだけではなく、頭皮のことまで考えてもらえるのが嬉しいです。髪のまとまりも良くなり、毎月通うのが楽しみです。",
+    title: "白髪や艶不足の印象が気になり来店しました",
+    text: "ただの癒しではなく、頭皮や髪の状態を見ながら提案してもらえるのが良かったです。髪のまとまりも感じました。",
   },
   {
     age: "40代男性",
     title: "抜け毛が気になり相談しました",
-    text: "頭皮の状態を見てもらいながら、自分に合ったケアを提案してもらえました。リラックスもできて、継続して通いたいと思いました。",
+    text: "頭皮の状態を確認しながら説明してもらえたので分かりやすかったです。リラックスできる空間で通いやすいです。",
   },
 ]
 
 export function VoiceSection() {
+  const handleReserveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+
+    window.dataLayer = window.dataLayer || []
+
+    window.dataLayer.push({
+      event: "reserve_click",
+      reserve_location: "voice",
+    })
+
+    setTimeout(() => {
+      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+    }, 300)
+  }
+
   return (
     <section id="voice" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-10">
@@ -31,13 +54,33 @@ export function VoiceSection() {
             </p>
 
             <h2 className="mt-4 text-[clamp(1.55rem,5vw,2.5rem)] leading-[1.75] tracking-[0.06em] text-foreground">
-              お客様の声
+              Google口コミ100件突破。
+              <br />
+              初めての方にも選ばれています
             </h2>
 
-            <p className="mx-auto mt-6 max-w-[23em] text-sm leading-8 text-muted-foreground sm:max-w-2xl">
-              実際にご来店いただいたお客様から、
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
+              完全個室・一日三名限定。
               <br />
-              嬉しいお声をいただいています。
+              人目を気にせず相談できる頭皮美容専門店です。
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.06}>
+          <div className="mx-auto mt-10 max-w-xl rounded-[28px] border border-gold/20 bg-card px-6 py-7 text-center shadow-sm">
+            <p className="text-[10px] tracking-[0.3em] text-gold/70">
+              GOOGLE REVIEW
+            </p>
+
+            <p className="mt-3 text-2xl tracking-[0.12em] text-gold">
+              ★★★★★
+            </p>
+
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">
+              口コミ100件突破
+              <br />
+              相談しやすさ・完全個室・丁寧な施術で選ばれています
             </p>
           </div>
         </FadeIn>
@@ -65,6 +108,18 @@ export function VoiceSection() {
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.2}>
+          <div className="mt-12 text-center">
+            <a
+              href={COUBIC_URL}
+              onClick={handleReserveClick}
+              className="inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
+            >
+              空き状況を見る
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )
