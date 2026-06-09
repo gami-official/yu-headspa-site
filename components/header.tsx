@@ -52,22 +52,19 @@ export function Header() {
     }
   }, [isMenuOpen])
 
-  const sendReserveEvent = (location: string) => {
-    window.dataLayer = window.dataLayer || []
-
-    window.dataLayer.push({
-      event: "reserve_click",
-      reserve_location: location,
-    })
-  }
-
   const handleReserveClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     location: string,
   ) => {
     e.preventDefault()
 
-    sendReserveEvent(location)
+    window.dataLayer = window.dataLayer || []
+
+    window.dataLayer.push({
+      event: "reserve_click",
+      reserve_location: location,
+    })
+
     setIsMenuOpen(false)
 
     setTimeout(() => {
@@ -124,7 +121,7 @@ export function Header() {
                 onClick={(e) => handleReserveClick(e, "header")}
                 className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[220px]"
               >
-                ご予約枠を確認する
+                空き状況を見る
               </a>
 
               <a
@@ -209,7 +206,7 @@ export function Header() {
                   onClick={(e) => handleReserveClick(e, "menu")}
                   className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-center text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
                 >
-                  ご予約枠を確認する
+                  空き状況を見る
                 </a>
 
                 <a
