@@ -141,14 +141,20 @@ export function AccessMap() {
               <p className="text-[10px] tracking-[0.18em] text-gold/70">
                 OPEN
               </p>
-              <p className="mt-2 text-sm text-foreground">9:30 - 16:30</p>
+              <p className="mt-2 text-sm text-foreground">
+                9:30 - 16:30
+              </p>
             </div>
 
             <div className="bg-card px-4 py-5">
               <p className="text-[10px] tracking-[0.18em] text-gold/70">
                 CLOSED
               </p>
-              <p className="mt-2 text-sm text-foreground">日曜日</p>
+              <p className="mt-2 text-sm leading-6 text-foreground">
+                日曜日
+                <br />
+                祝日
+              </p>
             </div>
           </div>
         </FadeIn>
