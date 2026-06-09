@@ -67,9 +67,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   ::selection {
     background-color: #C4A26533;
   }
@@ -79,32 +81,40 @@ html {
   scroll-behavior: smooth;
 }
 
-/* スマホ時の日本語タイトル改行調整 */
+/* 日本語の不自然な1文字改行を防止 */
 h1,
 h2,
-h3 {
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-  text-wrap: balance;
+h3,
+h4,
+p,
+li,
+a,
+button {
+  word-break: normal;
+  overflow-wrap: normal;
   line-break: strict;
 }
 
+/* 英字・数字・URLだけははみ出し防止 */
 p,
 li {
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-  line-break: strict;
+  overflow-wrap: break-word;
 }
 
+/* スマホ用の文字間・行間調整 */
 @media (max-width: 640px) {
   h1,
   h2,
-  h3 {
-    letter-spacing: 0.04em;
+  h3,
+  h4 {
+    letter-spacing: 0.025em !important;
+    line-height: 1.55 !important;
   }
 
   p,
-  li {
-    letter-spacing: 0.02em;
+  li,
+  a,
+  button {
+    letter-spacing: 0.01em !important;
   }
 }
