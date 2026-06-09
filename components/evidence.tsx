@@ -50,17 +50,14 @@ const slides = Array.from({ length: 26 }, (_, i) => i + 1)
   }))
 
 const trustItems = [
-  ["Google口コミ", "100件突破"],
-  ["完全個室", "相談しやすい空間"],
-  ["一日三名限定", "丁寧な施術"],
+  ["口コミ", "100件突破"],
+  ["完全個室", "相談しやすい"],
+  ["一日3名", "丁寧な施術"],
   ["駐車場", "店舗前2台"],
-  ["経験", "歴15年"],
-  ["初めての方", "安心対応"],
 ]
 
 export function Evidence() {
   const [current, setCurrent] = useState(0)
-
   const touchStartX = useRef(0)
   const touchEndX = useRef(0)
 
@@ -86,19 +83,16 @@ export function Evidence() {
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     touchEndX.current = e.changedTouches[0].clientX
-
     const diff = touchStartX.current - touchEndX.current
-    const threshold = 50
 
-    if (diff > threshold) next()
-    else if (diff < -threshold) prev()
+    if (diff > 50) next()
+    if (diff < -50) prev()
   }
 
   const handleReserveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
 
     window.dataLayer = window.dataLayer || []
-
     window.dataLayer.push({
       event: "reserve_click",
       reserve_location: "evidence",
@@ -115,35 +109,33 @@ export function Evidence() {
         <FadeIn>
           <div className="mb-10 text-center">
             <p className="text-[10px] tracking-[0.28em] text-gold/70">
-              TRUST & RESULTS
+              RESULTS
             </p>
 
-            <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.5rem)] leading-[1.55] tracking-[0.03em] text-foreground">
-              口コミ100件突破。
-              <br />
-              選ばれる理由があります
+            <h2 className="mt-4 text-[clamp(1.5rem,5.6vw,2.4rem)] leading-[1.55] tracking-[0.03em] text-foreground">
+              実際のお客様の一例
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
               分け目・薄毛・白髪・艶不足へ。
               <br />
-              完全個室で丁寧に向き合います。
+              状態に合わせてご提案します。
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.06}>
-          <div className="mb-12 grid grid-cols-2 gap-3 lg:grid-cols-3">
+          <div className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {trustItems.map(([label, value]) => (
               <div
                 key={label}
-                className="rounded-2xl border border-gold/20 bg-card px-4 py-4 text-center shadow-sm"
+                className="rounded-2xl border border-gold/20 bg-card px-3 py-4 text-center shadow-sm"
               >
-                <p className="text-[9px] tracking-[0.2em] text-gold/70">
+                <p className="text-[9px] tracking-[0.18em] text-gold/70">
                   {label}
                 </p>
 
-                <p className="mt-2 text-sm leading-6 tracking-[0.03em] text-foreground">
+                <p className="mt-2 text-xs leading-5 text-foreground">
                   {value}
                 </p>
               </div>
@@ -151,16 +143,10 @@ export function Evidence() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.08}>
-          <p className="mb-5 text-center text-xs leading-6 text-foreground/60">
-            実際のお客様の一例
-          </p>
-        </FadeIn>
-
         <FadeIn delay={0.1}>
           <div className="relative">
             <div
-              className="relative mx-auto w-full max-w-sm overflow-hidden rounded-[26px] border border-gold/20 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.35)] sm:max-w-lg"
+              className="relative mx-auto w-full max-w-[300px] overflow-hidden rounded-[24px] border border-gold/20 bg-black shadow-[0_18px_45px_rgba(0,0,0,0.35)] sm:max-w-[380px]"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
@@ -173,17 +159,17 @@ export function Evidence() {
                 {slides.map((slide, i) => (
                   <div
                     key={i}
-                    className="relative aspect-[4/5] w-full shrink-0 bg-black"
+                    className="relative h-[360px] w-full shrink-0 bg-black sm:h-[440px]"
                   >
                     <Image
                       src={slide.src}
                       alt={slide.alt}
                       fill
-                      className="object-cover object-center"
+                      className="object-contain object-center"
                     />
 
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent px-5 pb-5 pt-16">
-                      <p className="text-[9px] tracking-[0.24em] text-gold/80">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent px-5 pb-5 pt-14">
+                      <p className="text-[9px] tracking-[0.2em] text-gold/80">
                         CASE {String(i + 1).padStart(2, "0")}
                       </p>
 
@@ -200,19 +186,19 @@ export function Evidence() {
               <button
                 type="button"
                 onClick={prev}
-                className="rounded-full border border-border/30 px-5 py-2 text-xs tracking-[0.06em] text-foreground/70 transition hover:border-gold/50 hover:text-gold"
+                className="rounded-full border border-border/30 px-5 py-2 text-xs text-foreground/70 transition hover:border-gold/50 hover:text-gold"
               >
                 前へ
               </button>
 
-              <p className="text-xs tracking-[0.08em] text-muted-foreground">
+              <p className="text-xs text-muted-foreground">
                 {current + 1} / {slides.length}
               </p>
 
               <button
                 type="button"
                 onClick={next}
-                className="rounded-full border border-border/30 px-5 py-2 text-xs tracking-[0.06em] text-foreground/70 transition hover:border-gold/50 hover:text-gold"
+                className="rounded-full border border-border/30 px-5 py-2 text-xs text-foreground/70 transition hover:border-gold/50 hover:text-gold"
               >
                 次へ
               </button>
@@ -223,7 +209,7 @@ export function Evidence() {
         <FadeIn delay={0.15}>
           <p className="mt-5 text-center text-xs leading-6 text-foreground/55">
             ※変化には個人差があります。
-            <br className="sm:hidden" />
+            <br />
             状態に合わせて施術をご提案します。
           </p>
         </FadeIn>
@@ -231,7 +217,7 @@ export function Evidence() {
         <FadeIn delay={0.2}>
           <div className="mt-10 rounded-[28px] border border-gold/20 bg-card px-6 py-9 text-center shadow-sm">
             <p className="text-[10px] tracking-[0.28em] text-gold/70">
-              PRIVATE RESERVE
+              RESERVE
             </p>
 
             <h3 className="mt-4 text-[clamp(1.35rem,5vw,2rem)] leading-[1.55] tracking-[0.03em] text-foreground">
@@ -242,12 +228,6 @@ export function Evidence() {
 
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
               完全予約制のため、枠に限りがあります。
-              <br />
-              まずは空き状況をご確認ください。
-            </p>
-
-            <p className="mt-4 text-xs leading-6 text-foreground/55">
-              完全個室｜一日三名限定｜駐車場2台
             </p>
 
             <div className="mt-7 flex flex-col items-center gap-3">
@@ -265,7 +245,7 @@ export function Evidence() {
                 rel="noopener noreferrer"
                 className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-foreground/20 px-6 py-3 text-sm tracking-[0.08em] text-foreground transition hover:border-gold/50 hover:text-gold"
               >
-                LINEで相談する
+                LINEで相談
               </a>
             </div>
           </div>
