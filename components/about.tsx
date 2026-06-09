@@ -13,21 +13,9 @@ declare global {
 }
 
 const strengths = [
-  {
-    label: "01",
-    title: "ヘッドスパ歴15年",
-    text: "頭皮・髪質・印象変化まで。経験をもとに、今の状態に合わせたケアをご提案します。",
-  },
-  {
-    label: "02",
-    title: "完全個室・一日三名限定",
-    text: "人目を気にせず相談できる空間で、流れ作業ではなく丁寧に向き合います。",
-  },
-  {
-    label: "03",
-    title: "Google口コミ100件突破",
-    text: "初めての方にも安心してご来店いただけるよう、丁寧な接客と施術を大切にしています。",
-  },
+  ["歴15年", "専門技術"],
+  ["完全個室", "安心して相談"],
+  ["口コミ100件", "選ばれる理由"],
 ]
 
 export function About() {
@@ -47,77 +35,56 @@ export function About() {
   }
 
   return (
-    <section id="about" className="bg-background py-20 lg:py-28">
+    <section id="about" className="bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
         <FadeIn>
           <div className="text-center">
-            <p className="text-[11px] tracking-[0.36em] text-gold/70">
-              ABOUT YU HEAD SPA
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">
+              ABOUT
             </p>
 
-            <h2 className="mt-4 text-[clamp(1.65rem,5vw,2.8rem)] leading-[1.8] tracking-[0.08em] text-foreground">
-              初めてでも相談しやすい、
+            <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.6rem)] leading-[1.55] tracking-[0.03em] text-foreground">
+              初めてでも、
               <br />
-              大人のための
-              <br className="sm:hidden" />
-              完全個室ヘッドスパ
+              相談しやすい。
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
-              福岡市西区のヘッドスパ専門店ゆう本店。
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
+              福岡市西区の完全個室ヘッドスパ。
               <br />
-              分け目・薄毛・白髪・艶不足・ボリューム低下など、
-              <br className="sm:hidden" />
-              年齢による髪と頭皮のお悩みに寄り添います。
+              分け目・白髪・艶不足に寄り添います。
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <div className="mx-auto mt-12 max-w-3xl rounded-[28px] border border-gold/20 bg-card px-6 py-10 text-center shadow-sm sm:px-10 sm:py-12">
-            <p className="text-[10px] tracking-[0.35em] text-gold/70">
-              PRIVATE COUNSELING
+          <div className="mx-auto mt-10 max-w-3xl rounded-[28px] border border-gold/20 bg-card px-6 py-9 text-center shadow-sm sm:px-10">
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">
+              COUNSELING
             </p>
 
-            <h3 className="mt-4 text-xl leading-9 tracking-[0.08em] text-foreground">
-              いきなり施術ではなく、
-              <br />
-              まずは頭皮と髪の状態を確認します
+            <h3 className="mt-4 text-xl leading-8 tracking-[0.03em] text-foreground">
+              まずは状態を確認します
             </h3>
 
-            <div className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
-              <p>
-                「何を選べばいいかわからない」
-                <br className="sm:hidden" />
-                「薄毛や白髪の悩みを相談しにくい」
-                <br />
-                そんな方にも安心してお越しいただけるよう、
-                完全個室で丁寧にお話を伺います。
-              </p>
-
-              <p className="mt-5">
-                一時的な癒しだけではなく、
-                将来の髪と印象まで見据えた
-                頭皮美容をご提案しています。
-              </p>
-            </div>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
+              何を選べばいいか分からない方も大丈夫です。
+              <br />
+              頭皮と髪の状態を見ながら、最適なケアをご提案します。
+            </p>
           </div>
         </FadeIn>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {strengths.map((item, index) => (
-            <FadeIn key={item.label} delay={0.12 + index * 0.05}>
-              <div className="h-full rounded-[28px] border border-gold/20 bg-card px-6 py-8 text-center shadow-sm">
-                <p className="text-[10px] tracking-[0.28em] text-gold/70">
-                  {item.label}
+        <div className="mt-8 grid grid-cols-3 gap-3">
+          {strengths.map(([title, text], index) => (
+            <FadeIn key={title} delay={0.12 + index * 0.05}>
+              <div className="h-full rounded-2xl border border-gold/20 bg-card px-3 py-5 text-center shadow-sm sm:px-6">
+                <p className="text-sm font-medium leading-6 text-foreground">
+                  {title}
                 </p>
 
-                <h3 className="mt-4 text-[16px] font-medium leading-8 tracking-[0.06em] text-foreground">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 text-[13.5px] leading-7 text-muted-foreground">
-                  {item.text}
+                <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                  {text}
                 </p>
               </div>
             </FadeIn>
@@ -125,26 +92,25 @@ export function About() {
         </div>
 
         <FadeIn delay={0.25}>
-          <div className="mt-14 rounded-[30px] border border-gold/20 bg-card px-6 py-11 text-center shadow-sm">
-            <p className="text-[10px] tracking-[0.35em] text-gold/70">
-              PRIVATE RESERVE
+          <div className="mt-10 rounded-[28px] border border-gold/20 bg-card px-6 py-9 text-center shadow-sm">
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">
+              RESERVE
             </p>
 
-            <h3 className="mt-4 text-[clamp(1.35rem,4vw,2rem)] leading-[1.8] tracking-[0.08em] text-foreground">
-              髪の変化が気になり始めたら、
+            <h3 className="mt-4 text-[clamp(1.35rem,5vw,2rem)] leading-[1.55] tracking-[0.03em] text-foreground">
+              早めのケアが、
               <br />
-              早めのケアがおすすめです
+              未来の髪を守ります。
             </h3>
 
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
-              完全予約制・一日三名限定のため、
-              ご案内できる枠に限りがあります。
+              完全予約制・一日三名限定。
               <br />
-              初めての方も、まずは空き状況をご確認ください。
+              まずは空き状況をご確認ください。
             </p>
 
             <p className="mt-4 text-xs leading-6 text-foreground/50">
-              完全個室｜駐車場2台完備｜福岡市西区
+              完全個室｜駐車場2台｜福岡市西区
             </p>
 
             <div className="mx-auto mt-7 flex max-w-[280px] flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center">
