@@ -11,21 +11,9 @@ declare global {
 }
 
 const voices = [
-  {
-    age: "40代女性",
-    title: "完全個室なので、髪の悩みを相談しやすかったです",
-    text: "分け目やボリュームの悩みを人に話すのが苦手でしたが、完全個室で丁寧に聞いてもらえて安心しました。",
-  },
-  {
-    age: "50代女性",
-    title: "白髪や艶不足の印象が気になり来店しました",
-    text: "ただの癒しではなく、頭皮や髪の状態を見ながら提案してもらえるのが良かったです。髪のまとまりも感じました。",
-  },
-  {
-    age: "40代男性",
-    title: "抜け毛が気になり相談しました",
-    text: "頭皮の状態を確認しながら説明してもらえたので分かりやすかったです。リラックスできる空間で通いやすいです。",
-  },
+  ["相談しやすい", "完全個室なので、髪や頭皮の悩みを話しやすい。"],
+  ["丁寧な説明", "状態を見ながら、分かりやすく提案してもらえる。"],
+  ["通いやすい", "落ち着いた空間で、リラックスして過ごせる。"],
 ]
 
 export function VoiceSection() {
@@ -45,64 +33,58 @@ export function VoiceSection() {
   }
 
   return (
-    <section id="voice" className="bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-10">
+    <section id="voice" className="bg-background py-16 lg:py-24">
+      <div className="mx-auto max-w-5xl px-5 lg:px-10">
         <FadeIn>
           <div className="text-center">
-            <p className="text-[11px] tracking-[0.36em] text-gold/70">
-              CUSTOMER VOICE
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">
+              VOICE
             </p>
 
-            <h2 className="mt-4 text-[clamp(1.55rem,5vw,2.5rem)] leading-[1.75] tracking-[0.06em] text-foreground">
-              Google口コミ100件突破。
+            <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.5rem)] leading-[1.55] tracking-[0.03em] text-foreground">
+              口コミ100件突破。
               <br />
-              初めての方にも選ばれています
+              選ばれています。
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
-              完全個室・一日三名限定。
-              <br />
-              人目を気にせず相談できる頭皮美容専門店です。
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
+              完全個室で、初めての方も安心。
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.06}>
-          <div className="mx-auto mt-10 max-w-xl rounded-[28px] border border-gold/20 bg-card px-6 py-7 text-center shadow-sm">
-            <p className="text-[10px] tracking-[0.3em] text-gold/70">
+          <div className="mx-auto mt-8 max-w-md rounded-[26px] border border-gold/20 bg-card px-6 py-6 text-center shadow-sm">
+            <p className="text-[10px] tracking-[0.24em] text-gold/70">
               GOOGLE REVIEW
             </p>
 
-            <p className="mt-3 text-2xl tracking-[0.12em] text-gold">
+            <p className="mt-3 text-2xl tracking-[0.1em] text-gold">
               ★★★★★
             </p>
 
             <p className="mt-3 text-sm leading-7 text-muted-foreground">
-              口コミ100件突破
+              相談しやすさと丁寧な施術で、
               <br />
-              相談しやすさ・完全個室・丁寧な施術で選ばれています
+              多くのお声をいただいています。
             </p>
           </div>
         </FadeIn>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {voices.map((voice, index) => (
-            <FadeIn key={voice.title} delay={0.08 + index * 0.05}>
-              <div className="h-full rounded-2xl border border-gold/20 bg-card px-6 py-7 shadow-sm">
-                <p className="text-[10px] tracking-[0.28em] text-gold/70">
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {voices.map(([title, text], index) => (
+            <FadeIn key={title} delay={0.08 + index * 0.05}>
+              <div className="h-full rounded-2xl border border-gold/20 bg-card px-5 py-6 text-center shadow-sm">
+                <p className="text-[10px] tracking-[0.22em] text-gold/70">
                   VOICE {index + 1}
                 </p>
 
-                <h3 className="mt-4 text-[15px] font-medium leading-7 tracking-[0.06em] text-foreground">
-                  {voice.title}
+                <h3 className="mt-4 text-base font-medium leading-7 tracking-[0.03em] text-foreground">
+                  {title}
                 </h3>
 
-                <p className="mt-3 text-xs text-foreground/50">
-                  {voice.age}
-                </p>
-
-                <p className="mt-4 text-[13.5px] leading-8 text-muted-foreground">
-                  {voice.text}
+                <p className="mt-3 text-[13px] leading-7 text-muted-foreground">
+                  {text}
                 </p>
               </div>
             </FadeIn>
@@ -110,7 +92,7 @@ export function VoiceSection() {
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <a
               href={COUBIC_URL}
               onClick={handleReserveClick}
