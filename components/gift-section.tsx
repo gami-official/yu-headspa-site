@@ -2,9 +2,7 @@
 
 import { FadeIn } from "@/components/fade-in"
 
-const GIFT_URL =
-  "https://gamistore.base.shop/items/144607972"
-
+const GIFT_URL = "https://gamistore.base.shop/items/144607972"
 const LINE_URL = "https://lin.ee/7hso3k1"
 
 declare global {
@@ -12,6 +10,12 @@ declare global {
     dataLayer?: Record<string, unknown>[]
   }
 }
+
+const giftReasons = [
+  ["奥様・パートナーへ", "誕生日や記念日に、癒しの時間を。"],
+  ["お母様へ", "母の日や感謝の贈り物に。"],
+  ["大切な方へ", "退職祝い・結婚祝い・お礼にも。"],
+]
 
 export function GiftSection() {
   const handleGiftClick = (location: string) => {
@@ -23,11 +27,7 @@ export function GiftSection() {
     })
 
     setTimeout(() => {
-      window.open(
-        GIFT_URL,
-        "_blank",
-        "noopener,noreferrer"
-      )
+      window.open(GIFT_URL, "_blank", "noopener,noreferrer")
     }, 300)
   }
 
@@ -43,16 +43,15 @@ export function GiftSection() {
             <h2 className="mt-4 text-[clamp(1.7rem,5vw,2.8rem)] leading-[1.8] tracking-[0.07em] text-foreground">
               大切な人へ、
               <br />
-              癒しの時間を贈る。
+              完全個室ヘッドスパを贈る。
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
-              モノではなく、
-              心から喜ばれる体験を。
+              モノではなく、心から喜ばれる体験を。
               <br />
-              完全個室で過ごす上質なヘッドスパを、
-              <br />
-              大切な方への贈り物としてお届けします。
+              誕生日・母の日・父の日・退職祝いに選ばれている、
+              <br className="hidden sm:block" />
+              ヘッドスパ専門店ゆうのスペシャルギフトカードです。
             </p>
           </div>
         </FadeIn>
@@ -65,81 +64,55 @@ export function GiftSection() {
               </p>
 
               <h3 className="mt-4 text-[1.5rem] leading-10 tracking-[0.06em] text-foreground">
-                ありがとうを、
+                「ありがとう」を、
                 <br className="sm:hidden" />
                 特別な時間で伝える。
               </h3>
 
               <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
-                誕生日。
-                母の日。
-                父の日。
-                退職祝い。
-                結婚祝い。
+                完全個室で過ごす、静かで上質なヘッドスパ時間。
                 <br />
-                美容が好きな方、
-                日々忙しく頑張る方へ。
+                日々忙しく頑張る方や、美容が好きな方へ。
                 <br />
-                「自分ではなかなか行かないから嬉しい」
-                と選ばれている人気のギフトです。
+                自分ではなかなか選ばないからこそ、喜ばれやすいギフトです。
               </p>
             </div>
 
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              <div className="rounded-2xl border border-gold/15 p-6 text-center">
-                <p className="text-base text-foreground">
-                  完全個室
-                </p>
-                <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                  静かに過ごせる
-                  上質なプライベート空間
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-gold/15 p-6 text-center">
-                <p className="text-base text-foreground">
-                  頭皮美容
-                </p>
-                <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                  白髪・艶不足・
-                  年齢髪のケアにも
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-gold/15 p-6 text-center">
-                <p className="text-base text-foreground">
-                  一日三名限定
-                </p>
-                <p className="mt-2 text-sm leading-7 text-muted-foreground">
-                  丁寧な施術と
-                  特別感のある時間
-                </p>
-              </div>
+              {giftReasons.map(([title, text]) => (
+                <div
+                  key={title}
+                  className="rounded-2xl border border-gold/15 p-6 text-center"
+                >
+                  <p className="text-base text-foreground">{title}</p>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">
+                    {text}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <div className="mt-12 rounded-3xl border border-gold/20 bg-background/60 p-8 text-center">
               <p className="text-[10px] tracking-[0.35em] text-gold/70">
-                SPECIAL GIFT CARD
+                GIFT TICKET
               </p>
 
               <h4 className="mt-4 text-xl leading-9 text-foreground">
-                大切な人へ、
+                迷った時にも選びやすい、
                 <br />
-                ヘッドスパ体験を贈る。
+                上質な体験ギフト。
               </h4>
 
               <p className="mt-5 text-sm leading-8 text-muted-foreground">
-                記憶に残るプレゼントを。
+                商品ページから詳細をご確認いただけます。
                 <br />
-                スペシャルギフトカードはこちら。
+                ギフト内容について不安な方はLINEでもご相談ください。
               </p>
 
               <div className="mx-auto mt-8 flex max-w-sm flex-col gap-3">
                 <button
                   type="button"
-                  onClick={() =>
-                    handleGiftClick("gift_main")
-                  }
+                  onClick={() => handleGiftClick("gift_main")}
                   className="rounded-full bg-gold px-7 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
                 >
                   スペシャルギフトカードを見る
