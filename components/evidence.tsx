@@ -16,29 +16,29 @@ declare global {
 const excluded = [3, 8, 21]
 
 const comments = [
-  "分け目の印象変化が気になり始めたお客様",
-  "トップのボリューム感を整えたい方へ",
-  "頭皮環境を整え、立ち上がりをサポート",
-  "継続ケアで印象変化を感じられたケース",
-  "抜け毛・薄毛が気になり始めた方へ",
-  "ハリ・コシ不足が気になる方へ",
-  "年齢による髪質変化へ向き合うケア",
-  "頭皮から整え、若々しい印象へ",
-  "分け目・つむじ周りのお悩みに",
-  "髪の土台から整えたい方へ",
-  "頭皮状態に合わせた専門ケア",
-  "将来の髪を見据えた頭皮美容",
-  "自然なボリューム感を目指すケア",
-  "印象年齢を整える頭皮ケア",
-  "髪質と印象を再設計する専門施術",
-  "薄毛・抜け毛のお悩みに寄り添います",
-  "完全個室で相談できる安心空間",
-  "お一人おひとりに合わせた本格ケア",
-  "髪の変化を感じ始めた方へ",
-  "早めのケアが未来の髪を守ります",
-  "頭皮と髪を同時に整える施術",
-  "美しい髪を育むための土台づくり",
-  "大人女性の髪悩みに寄り添うケア",
+  "分け目の印象変化に",
+  "トップのボリューム感へ",
+  "頭皮環境を整えるケア",
+  "継続ケアの一例",
+  "抜け毛・薄毛のお悩みに",
+  "ハリ・コシ不足へ",
+  "年齢髪の変化に",
+  "頭皮から若々しい印象へ",
+  "分け目・つむじ周りに",
+  "髪の土台づくり",
+  "頭皮状態に合わせたケア",
+  "将来の髪を見据えて",
+  "自然なボリューム感へ",
+  "印象年齢を整える",
+  "髪質と印象のケア",
+  "薄毛・抜け毛の相談に",
+  "完全個室で安心相談",
+  "一人ひとりに合わせて",
+  "髪の変化を感じたら",
+  "早めの頭皮ケア",
+  "頭皮と髪を同時に",
+  "美しい髪の土台づくり",
+  "大人女性の髪悩みに",
 ]
 
 const slides = Array.from({ length: 26 }, (_, i) => i + 1)
@@ -46,18 +46,16 @@ const slides = Array.from({ length: 26 }, (_, i) => i + 1)
   .map((n, i) => ({
     src: `/images/evidence-${String(n).padStart(2, "0")}.png`,
     alt: `Case ${i + 1}`,
-    comment:
-      comments[i] ??
-      "頭皮環境を整え、髪の印象を引き出す専門ケア",
+    comment: comments[i] ?? "頭皮から整える専門ケア",
   }))
 
 const trustItems = [
   ["Google口コミ", "100件突破"],
-  ["完全個室", "人目を気にせず相談"],
-  ["一日三名限定", "流れ作業ではない施術"],
-  ["駐車場", "店舗前2台完備"],
-  ["経験", "ヘッドスパ歴15年"],
-  ["対応", "初めての方も安心"],
+  ["完全個室", "相談しやすい空間"],
+  ["一日三名限定", "丁寧な施術"],
+  ["駐車場", "店舗前2台"],
+  ["経験", "歴15年"],
+  ["初めての方", "安心対応"],
 ]
 
 export function Evidence() {
@@ -112,41 +110,40 @@ export function Evidence() {
   }
 
   return (
-    <section id="evidence" className="bg-secondary py-20 lg:py-32">
+    <section id="evidence" className="bg-secondary py-16 lg:py-28">
       <div className="mx-auto max-w-5xl px-5 lg:px-10">
         <FadeIn>
-          <div className="mb-12 text-center">
-            <p className="text-[11px] tracking-[0.4em] text-gold/70">
+          <div className="mb-10 text-center">
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">
               TRUST & RESULTS
             </p>
 
-            <h2 className="mt-4 text-[clamp(1.7rem,4.8vw,2.6rem)] leading-[1.8] tracking-[0.08em] text-foreground">
-              Google口コミ100件突破。
+            <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.5rem)] leading-[1.55] tracking-[0.03em] text-foreground">
+              口コミ100件突破。
               <br />
               選ばれる理由があります
             </h2>
 
-            <p className="mx-auto mt-6 max-w-2xl text-sm leading-[2.1] text-muted-foreground sm:text-[15px]">
-              分け目・薄毛・白髪・艶不足・ボリューム低下など。
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
+              分け目・薄毛・白髪・艶不足へ。
               <br />
-              年齢による髪と頭皮の変化に、
               完全個室で丁寧に向き合います。
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.06}>
-          <div className="mb-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mb-12 grid grid-cols-2 gap-3 lg:grid-cols-3">
             {trustItems.map(([label, value]) => (
               <div
                 key={label}
-                className="rounded-2xl border border-gold/20 bg-card px-5 py-5 text-center shadow-sm"
+                className="rounded-2xl border border-gold/20 bg-card px-4 py-4 text-center shadow-sm"
               >
-                <p className="text-[10px] tracking-[0.28em] text-gold/70">
+                <p className="text-[9px] tracking-[0.2em] text-gold/70">
                   {label}
                 </p>
 
-                <p className="mt-3 text-sm leading-7 tracking-[0.06em] text-foreground">
+                <p className="mt-2 text-sm leading-6 tracking-[0.03em] text-foreground">
                   {value}
                 </p>
               </div>
@@ -155,15 +152,15 @@ export function Evidence() {
         </FadeIn>
 
         <FadeIn delay={0.08}>
-          <p className="mb-6 text-center text-xs leading-6 text-foreground/60">
-            実際に施術を受けられたお客様の一例
+          <p className="mb-5 text-center text-xs leading-6 text-foreground/60">
+            実際のお客様の一例
           </p>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <div className="relative">
             <div
-              className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[30px] border border-gold/20 bg-black shadow-[0_24px_60px_rgba(0,0,0,0.38)]"
+              className="relative mx-auto w-full max-w-sm overflow-hidden rounded-[26px] border border-gold/20 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.35)] sm:max-w-lg"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
@@ -176,21 +173,21 @@ export function Evidence() {
                 {slides.map((slide, i) => (
                   <div
                     key={i}
-                    className="relative aspect-[3/4] w-full shrink-0"
+                    className="relative aspect-[4/5] w-full shrink-0 bg-black"
                   >
                     <Image
                       src={slide.src}
                       alt={slide.alt}
                       fill
-                      className="object-contain"
+                      className="object-cover object-center"
                     />
 
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent px-6 pb-6 pt-20">
-                      <p className="text-[10px] tracking-[0.3em] text-gold/80">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent px-5 pb-5 pt-16">
+                      <p className="text-[9px] tracking-[0.24em] text-gold/80">
                         CASE {String(i + 1).padStart(2, "0")}
                       </p>
 
-                      <p className="mt-3 text-sm leading-7 tracking-[0.04em] text-white">
+                      <p className="mt-2 text-sm leading-6 tracking-[0.03em] text-white">
                         {slide.comment}
                       </p>
                     </div>
@@ -199,23 +196,23 @@ export function Evidence() {
               </div>
             </div>
 
-            <div className="mt-6 flex items-center justify-center gap-4">
+            <div className="mt-5 flex items-center justify-center gap-4">
               <button
                 type="button"
                 onClick={prev}
-                className="rounded-full border border-border/30 px-5 py-2 text-xs tracking-[0.08em] text-foreground/70 transition hover:border-gold/50 hover:text-gold"
+                className="rounded-full border border-border/30 px-5 py-2 text-xs tracking-[0.06em] text-foreground/70 transition hover:border-gold/50 hover:text-gold"
               >
                 前へ
               </button>
 
-              <p className="text-xs tracking-[0.12em] text-muted-foreground">
+              <p className="text-xs tracking-[0.08em] text-muted-foreground">
                 {current + 1} / {slides.length}
               </p>
 
               <button
                 type="button"
                 onClick={next}
-                className="rounded-full border border-border/30 px-5 py-2 text-xs tracking-[0.08em] text-foreground/70 transition hover:border-gold/50 hover:text-gold"
+                className="rounded-full border border-border/30 px-5 py-2 text-xs tracking-[0.06em] text-foreground/70 transition hover:border-gold/50 hover:text-gold"
               >
                 次へ
               </button>
@@ -224,35 +221,33 @@ export function Evidence() {
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          <p className="mt-6 text-center text-xs leading-6 text-foreground/55">
+          <p className="mt-5 text-center text-xs leading-6 text-foreground/55">
             ※変化には個人差があります。
             <br className="sm:hidden" />
-            現在の頭皮状態を確認した上で、
-            最適な施術をご提案しております。
+            状態に合わせて施術をご提案します。
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="mt-12 rounded-[32px] border border-gold/20 bg-card px-6 py-11 text-center shadow-sm">
-            <p className="text-[10px] tracking-[0.35em] text-gold/70">
+          <div className="mt-10 rounded-[28px] border border-gold/20 bg-card px-6 py-9 text-center shadow-sm">
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">
               PRIVATE RESERVE
             </p>
 
-            <h3 className="mt-4 text-[clamp(1.45rem,4vw,2.1rem)] leading-[1.8] tracking-[0.08em] text-foreground">
-              気になり始めた今こそ、
+            <h3 className="mt-4 text-[clamp(1.35rem,5vw,2rem)] leading-[1.55] tracking-[0.03em] text-foreground">
+              気になった今が、
               <br />
-              ケアの始めどきです
+              始めどきです
             </h3>
 
-            <p className="mx-auto mt-6 max-w-2xl text-sm leading-[2.1] text-muted-foreground">
-              完全予約制のため、
-              ご案内できる枠に限りがあります。
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
+              完全予約制のため、枠に限りがあります。
               <br />
-              初めての方も、まずは空き状況をご確認ください。
+              まずは空き状況をご確認ください。
             </p>
 
             <p className="mt-4 text-xs leading-6 text-foreground/55">
-              完全個室｜完全予約制｜一日三名限定｜駐車場2台完備
+              完全個室｜一日三名限定｜駐車場2台
             </p>
 
             <div className="mt-7 flex flex-col items-center gap-3">
