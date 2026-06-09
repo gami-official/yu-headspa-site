@@ -7,6 +7,12 @@ import { FadeIn } from "@/components/fade-in"
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[]
+  }
+}
+
 const excluded = [3, 8, 21]
 
 const comments = [
@@ -45,6 +51,15 @@ const slides = Array.from({ length: 26 }, (_, i) => i + 1)
       "頭皮環境を整え、髪の印象を引き出す専門ケア",
   }))
 
+const trustItems = [
+  ["Google口コミ", "100件突破"],
+  ["完全個室", "人目を気にせず相談"],
+  ["一日三名限定", "流れ作業ではない施術"],
+  ["駐車場", "店舗前2台完備"],
+  ["経験", "ヘッドスパ歴15年"],
+  ["対応", "初めての方も安心"],
+]
+
 export function Evidence() {
   const [current, setCurrent] = useState(0)
 
@@ -81,35 +96,61 @@ export function Evidence() {
     else if (diff < -threshold) prev()
   }
 
+  const handleReserveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+
+    window.dataLayer = window.dataLayer || []
+
+    window.dataLayer.push({
+      event: "reserve_click",
+      reserve_location: "evidence",
+    })
+
+    setTimeout(() => {
+      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+    }, 300)
+  }
+
   return (
     <section id="evidence" className="bg-secondary py-20 lg:py-32">
-      <div className="mx-auto max-w-3xl px-5 lg:px-10">
-
+      <div className="mx-auto max-w-5xl px-5 lg:px-10">
         <FadeIn>
           <div className="mb-12 text-center">
-
             <p className="text-[11px] tracking-[0.4em] text-gold/70">
-              RESULTS
+              TRUST & RESULTS
             </p>
 
             <h2 className="mt-4 text-[clamp(1.7rem,4.8vw,2.6rem)] leading-[1.8] tracking-[0.08em] text-foreground">
-              頭皮から整えることで、
+              Google口コミ100件突破。
               <br />
-              印象は変わります
+              選ばれる理由があります
             </h2>
 
-            <div className="mx-auto mt-6 max-w-[19em] text-sm leading-[2.1] text-muted-foreground sm:max-w-2xl sm:text-[15px]">
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-[2.1] text-muted-foreground sm:text-[15px]">
+              分け目・薄毛・白髪・艶不足・ボリューム低下など。
+              <br />
+              年齢による髪と頭皮の変化に、
+              完全個室で丁寧に向き合います。
+            </p>
+          </div>
+        </FadeIn>
 
-              <p>
-                分け目・薄毛・ボリューム低下・艶不足など。
-                <br />
-                現在の頭皮状態に合わせて、
-                <br className="sm:hidden" />
-                髪の土台から整える専門ケアです。
-              </p>
+        <FadeIn delay={0.06}>
+          <div className="mb-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {trustItems.map(([label, value]) => (
+              <div
+                key={label}
+                className="rounded-2xl border border-gold/20 bg-card px-5 py-5 text-center shadow-sm"
+              >
+                <p className="text-[10px] tracking-[0.28em] text-gold/70">
+                  {label}
+                </p>
 
-            </div>
-
+                <p className="mt-3 text-sm leading-7 tracking-[0.06em] text-foreground">
+                  {value}
+                </p>
+              </div>
+            ))}
           </div>
         </FadeIn>
 
@@ -121,26 +162,22 @@ export function Evidence() {
 
         <FadeIn delay={0.1}>
           <div className="relative">
-
             <div
               className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[30px] border border-gold/20 bg-black shadow-[0_24px_60px_rgba(0,0,0,0.38)]"
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
             >
-
               <div
                 className="flex transition-transform duration-500 ease-out"
                 style={{
                   transform: `translateX(-${current * 100}%)`,
                 }}
               >
-
                 {slides.map((slide, i) => (
                   <div
                     key={i}
                     className="relative aspect-[3/4] w-full shrink-0"
                   >
-
                     <Image
                       src={slide.src}
                       alt={slide.alt}
@@ -149,7 +186,6 @@ export function Evidence() {
                     />
 
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent px-6 pb-6 pt-20">
-
                       <p className="text-[10px] tracking-[0.3em] text-gold/80">
                         CASE {String(i + 1).padStart(2, "0")}
                       </p>
@@ -157,18 +193,13 @@ export function Evidence() {
                       <p className="mt-3 text-sm leading-7 tracking-[0.04em] text-white">
                         {slide.comment}
                       </p>
-
                     </div>
-
                   </div>
                 ))}
-
               </div>
-
             </div>
 
             <div className="mt-6 flex items-center justify-center gap-4">
-
               <button
                 type="button"
                 onClick={prev}
@@ -188,9 +219,7 @@ export function Evidence() {
               >
                 次へ
               </button>
-
             </div>
-
           </div>
         </FadeIn>
 
@@ -204,9 +233,7 @@ export function Evidence() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-
           <div className="mt-12 rounded-[32px] border border-gold/20 bg-card px-6 py-11 text-center shadow-sm">
-
             <p className="text-[10px] tracking-[0.35em] text-gold/70">
               PRIVATE RESERVE
             </p>
@@ -217,31 +244,24 @@ export function Evidence() {
               ケアの始めどきです
             </h3>
 
-            <div className="mx-auto mt-6 max-w-[18em] text-sm leading-[2.1] text-muted-foreground sm:max-w-2xl">
-
-              <p>
-                分け目・白髪・艶不足・ボリューム低下など。
-                <br />
-                将来の髪と印象のために、
-                <br className="sm:hidden" />
-                頭皮から整えましょう。
-              </p>
-
-            </div>
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-[2.1] text-muted-foreground">
+              完全予約制のため、
+              ご案内できる枠に限りがあります。
+              <br />
+              初めての方も、まずは空き状況をご確認ください。
+            </p>
 
             <p className="mt-4 text-xs leading-6 text-foreground/55">
-              完全個室｜完全予約制｜一日三名限定
+              完全個室｜完全予約制｜一日三名限定｜駐車場2台完備
             </p>
 
             <div className="mt-7 flex flex-col items-center gap-3">
-
               <a
                 href={COUBIC_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={handleReserveClick}
                 className="inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
               >
-                ご予約枠を確認する
+                空き状況を見る
               </a>
 
               <a
@@ -252,13 +272,9 @@ export function Evidence() {
               >
                 LINEで相談する
               </a>
-
             </div>
-
           </div>
-
         </FadeIn>
-
       </div>
     </section>
   )
