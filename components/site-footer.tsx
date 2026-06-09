@@ -4,44 +4,90 @@ const MAP_LINK_URL =
   "https://www.google.com/maps/search/?api=1&query=福岡県福岡市西区豊浜2丁目20-20-2"
 const RESERVE_URL = "https://coubic.com/yuheadspa/services"
 const TEL_LINK = "tel:0922849392"
-const GIFT_URL = "https://gamistore.base.shop/"
+const LINE_URL = "https://lin.ee/7hso3k1"
+const GIFT_URL = "https://gamistore.base.shop/items/144607972"
 const ONLINE_URL = "https://headspayu.stores.jp/"
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[]
+  }
+}
+
 export function SiteFooter() {
+  const handleReserveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+
+    window.dataLayer = window.dataLayer || []
+
+    window.dataLayer.push({
+      event: "reserve_click",
+      reserve_location: "site_footer",
+    })
+
+    setTimeout(() => {
+      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
+    }, 300)
+  }
+
   return (
     <footer className="mt-24 border-t border-border/40 bg-background">
       <div className="mx-auto max-w-3xl px-5 pt-16 text-center lg:px-10">
         <p className="text-[10px] tracking-[0.35em] text-gold/70">
-          PRIVATE RESERVE
+          FINAL RESERVE
         </p>
 
         <h2 className="mt-4 text-[clamp(1.6rem,5vw,2.5rem)] leading-[1.8] tracking-[0.08em] text-foreground">
-          品のある印象は、
+          迷っている方こそ、
           <br />
-          頭皮から始まる。
+          まずは空き状況をご確認ください
         </h2>
 
         <p className="mx-auto mt-6 max-w-xl text-sm leading-8 text-muted-foreground">
+          Google口コミ100件突破。
+          <br />
           分け目・白髪・艶不足・ボリューム低下へ。
           <br />
-          完全個室で、髪質と印象を整える専門ケアをご提供します。
+          完全個室で、頭皮から髪の印象を整えます。
         </p>
 
-        <p className="mt-4 text-xs text-foreground/50">
-          完全予約制・一日三名限定
-        </p>
+        <div className="mx-auto mt-6 grid max-w-xl gap-3 sm:grid-cols-2">
+          {[
+            "ヘッドスパ歴15年",
+            "完全個室",
+            "一日三名限定",
+            "駐車場2台完備",
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-full border border-gold/20 bg-card px-4 py-3 text-xs tracking-[0.08em] text-foreground/75"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
 
-        <a
-          href={RESERVE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-10 py-4 text-base font-medium tracking-[0.08em] text-black transition hover:opacity-90"
-        >
-          ご予約枠を確認する
-        </a>
+        <div className="mx-auto mt-8 flex max-w-[280px] flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
+          <a
+            href={RESERVE_URL}
+            onClick={handleReserveClick}
+            className="inline-flex items-center justify-center rounded-full bg-gold px-10 py-4 text-base font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:min-w-[240px]"
+          >
+            空き状況を見る
+          </a>
+
+          <a
+            href={LINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full border border-gold/30 px-10 py-4 text-sm tracking-[0.08em] text-foreground transition hover:border-gold/60 hover:text-gold sm:min-w-[220px]"
+          >
+            LINEで相談する
+          </a>
+        </div>
 
         <p className="mt-3 text-[11px] text-muted-foreground">
-          ※限られた枠でのご案内となります
+          ※完全予約制・一日三名限定のため、枠に限りがあります
         </p>
       </div>
 
