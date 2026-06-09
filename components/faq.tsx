@@ -11,42 +11,67 @@ import {
 const COUBIC_URL = "https://coubic.com/yuheadspa/services"
 const LINE_URL = "https://lin.ee/7hso3k1"
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[]
+  }
+}
+
 const faqs = [
   {
     q: "初めてでも予約して大丈夫ですか？",
-    a: "はい。初めての方でも安心してご利用いただけます。\n当店は完全個室・完全予約制のため、人目を気にせず頭皮や髪のお悩みをご相談いただけます。",
+    a: "はい、大丈夫です。当店は完全個室・完全予約制のため、人目を気にせず頭皮や髪のお悩みをご相談いただけます。",
   },
   {
-    q: "高級サロンとのことですが、どんな方が多いですか？",
-    a: "40代以降の女性、経営者、医療関係者、美容意識の高い方など、安さよりも質や結果を重視されるお客様が多くご来店されています。",
+    q: "薄毛・分け目の悩みも相談できますか？",
+    a: "はい。分け目・頭頂部・抜け毛・ボリューム低下など、年齢による髪の印象変化に合わせた頭皮ケアをご提案しています。",
   },
   {
-    q: "育毛ヘッドスパはどんな人に向いていますか？",
-    a: "分け目・頭頂部・抜け毛・ボリューム低下・髪密度の印象が気になる方におすすめです。\n一時的な癒しではなく、将来の髪を見据えた頭皮ケアをご提供します。",
-  },
-  {
-    q: "ヘアカラーヘッドスパは普通のカラーと何が違いますか？",
-    a: "ただ染めるだけではなく、頭皮環境と髪質まで考えたケアです。\n白髪・艶不足・エイジング毛が気になる大人女性に向けて、品のある髪色と印象づくりを目指します。",
-  },
-  {
-    q: "一回で効果は分かりますか？",
-    a: "頭の軽さやスッキリ感、髪のまとまりは一回でも実感される方が多いです。\n育毛・頭皮改善・年齢髪ケアは継続することで変化を感じやすくなります。",
-  },
-  {
-    q: "安いヘッドスパや美容室との違いは何ですか？",
-    a: "当店は価格の安さではなく、完全個室・一日三名限定・専門技術・頭皮から印象を整えることに価値を置いています。\n流れ作業ではなく、お一人ずつ丁寧に向き合います。",
+    q: "白髪や艶不足にも対応していますか？",
+    a: "はい。白髪・艶不足・エイジング毛が気になる方へ、頭皮環境と髪質を考えたケアをご案内しています。",
   },
   {
     q: "どのメニューを選べばよいか分かりません。",
-    a: "分け目・薄毛が気になる方は育毛ヘッドスパ、白髪・艶不足が気になる方はヘアカラーヘッドスパがおすすめです。\n迷われる場合は、当日状態を確認して最適な内容をご提案します。",
+    a: "迷われる場合は、気になるメニューでご予約いただいて大丈夫です。当日、頭皮や髪の状態を確認しながら最適な内容をご提案します。",
+  },
+  {
+    q: "一回で変化は分かりますか？",
+    a: "頭の軽さ・スッキリ感・髪のまとまりは一回でも実感される方が多いです。育毛や頭皮改善は継続することで変化を感じやすくなります。",
+  },
+  {
+    q: "男性も予約できますか？",
+    a: "はい、男性のお客様もご利用いただけます。抜け毛・頭皮環境・疲れ・睡眠不足などのお悩みに合わせてご案内します。",
+  },
+  {
+    q: "無理な勧誘やコース契約はありますか？",
+    a: "無理な勧誘は行っておりません。必要なケアはご提案しますが、お客様のペースを大切にしています。",
+  },
+  {
+    q: "駐車場はありますか？",
+    a: "はい、店舗前に2台分の駐車場がございます。お車でも安心してご来店いただけます。",
   },
   {
     q: "事前予約は必要ですか？",
-    a: "はい。完全予約制です。\n施術品質を保つため、一日三名様限定でご案内しております。ご希望日時がある場合は早めのご予約をおすすめします。",
+    a: "はい。完全予約制です。施術品質を保つため一日三名様限定でご案内しておりますので、ご希望日時がある場合は早めの確認がおすすめです。",
   },
 ]
 
 export function Faq() {
+  const handleReserveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+
+    window.dataLayer = window.dataLayer || []
+
+    window.dataLayer.push({
+      event: "reserve_click",
+      reserve_location: "faq",
+    })
+
+    setTimeout(() => {
+      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+    }, 300)
+  }
+
   return (
     <section id="faq" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-4xl px-5 lg:px-10">
@@ -57,13 +82,13 @@ export function Faq() {
             </p>
 
             <h2 className="mt-4 text-[clamp(1.55rem,5vw,2.5rem)] leading-[1.75] tracking-[0.07em] text-foreground">
-              高級頭皮美容を
+              予約前の不安を、
               <br />
-              初めて受ける方へ
+              ここで解消できます
             </h2>
 
             <p className="mx-auto mt-6 max-w-xl text-sm leading-8 text-muted-foreground">
-              育毛・白髪・年齢髪・完全個室について、
+              薄毛・分け目・白髪・年齢髪・完全個室について、
               <br />
               ご来店前に多いご質問をまとめました。
             </p>
@@ -107,32 +132,31 @@ export function Faq() {
             </p>
 
             <h3 className="mt-4 text-[clamp(1.35rem,4vw,2rem)] leading-[1.8] tracking-[0.07em] text-foreground">
-              一日三名限定。
+              不安が少しでも軽くなったら、
               <br />
-              まずは空き状況をご確認ください。
+              まずは空き状況をご確認ください
             </h3>
 
             <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-muted-foreground">
-              分け目・白髪・艶不足・頭皮環境など。
+              完全個室・一日三名限定。
               <br />
-              状態を確認しながら、最適なケアをご提案します。
+              初めての方も、状態を確認しながら丁寧にご案内します。
             </p>
 
             <div className="mx-auto mt-7 flex max-w-[280px] flex-col gap-3">
               <a
                 href={COUBIC_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black"
+                onClick={handleReserveClick}
+                className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
               >
-                ご予約枠を確認する
+                空き状況を見る
               </a>
 
               <a
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-gold/30 px-6 py-3 text-sm text-foreground"
+                className="inline-flex items-center justify-center rounded-full border border-gold/30 px-6 py-3 text-sm text-foreground transition hover:text-gold"
               >
                 LINEで相談する
               </a>
