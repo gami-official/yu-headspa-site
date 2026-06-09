@@ -31,36 +31,29 @@ export function SiteFooter() {
   }
 
   return (
-    <footer className="mt-24 border-t border-border/40 bg-background">
-      <div className="mx-auto max-w-3xl px-5 pt-16 text-center lg:px-10">
-        <p className="text-[10px] tracking-[0.35em] text-gold/70">
-          FINAL RESERVE
+    <footer className="mt-20 border-t border-border/40 bg-background">
+      <div className="mx-auto max-w-3xl px-5 pt-14 text-center lg:px-10">
+        <p className="text-[10px] tracking-[0.28em] text-gold/70">
+          RESERVE
         </p>
 
-        <h2 className="mt-4 text-[clamp(1.6rem,5vw,2.5rem)] leading-[1.8] tracking-[0.08em] text-foreground">
-          迷っている方こそ、
+        <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.4rem)] leading-[1.55] tracking-[0.03em] text-foreground">
+          迷ったら、
           <br />
-          まずは空き状況をご確認ください
+          空き状況へ。
         </h2>
 
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-8 text-muted-foreground">
-          Google口コミ100件突破。
+        <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-muted-foreground">
+          口コミ100件突破。
           <br />
-          分け目・白髪・艶不足・ボリューム低下へ。
-          <br />
-          完全個室で、頭皮から髪の印象を整えます。
+          完全個室で、頭皮から整えます。
         </p>
 
-        <div className="mx-auto mt-6 grid max-w-xl gap-3 sm:grid-cols-2">
-          {[
-            "ヘッドスパ歴15年",
-            "完全個室",
-            "一日三名限定",
-            "駐車場2台完備",
-          ].map((item) => (
+        <div className="mx-auto mt-6 grid max-w-xl grid-cols-2 gap-3">
+          {["歴15年", "完全個室", "一日3名", "駐車場2台"].map((item) => (
             <div
               key={item}
-              className="rounded-full border border-gold/20 bg-card px-4 py-3 text-xs tracking-[0.08em] text-foreground/75"
+              className="rounded-full border border-gold/20 bg-card px-4 py-3 text-xs tracking-[0.04em] text-foreground/75"
             >
               {item}
             </div>
@@ -80,25 +73,25 @@ export function SiteFooter() {
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-gold/30 px-10 py-4 text-sm tracking-[0.08em] text-foreground transition hover:border-gold/60 hover:text-gold sm:min-w-[220px]"
+            className="inline-flex items-center justify-center rounded-full border border-gold/30 px-10 py-4 text-sm tracking-[0.06em] text-foreground transition hover:border-gold/60 hover:text-gold sm:min-w-[220px]"
           >
-            LINEで相談する
+            LINEで相談
           </a>
         </div>
 
-        <p className="mt-3 text-[11px] text-muted-foreground">
-          ※完全予約制・一日三名限定のため、枠に限りがあります
+        <p className="mt-3 text-[11px] leading-6 text-muted-foreground">
+          完全予約制・一日三名限定
         </p>
       </div>
 
-      <div className="mx-auto mt-16 max-w-5xl px-5 pb-12 lg:px-10">
-        <div className="grid gap-10 md:grid-cols-2 md:items-start">
+      <div className="mx-auto mt-14 max-w-5xl px-5 pb-12 lg:px-10">
+        <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div className="text-center md:text-left">
-            <p className="text-[11px] tracking-[0.35em] text-gold/70">
-              PRIVATE SCALP BEAUTY SALON
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">
+              YU HEAD SPA
             </p>
 
-            <h3 className="mt-3 text-lg tracking-[0.08em] text-foreground">
+            <h3 className="mt-3 text-lg tracking-[0.04em] text-foreground">
               ヘッドスパ専門店 ゆう 本店
             </h3>
 
@@ -121,14 +114,14 @@ export function SiteFooter() {
 
               <p>営業時間：9:30 - 16:30</p>
               <p>定休日：日曜日</p>
-              <p>完全予約制・完全個室・駐車場2台完備</p>
+              <p>完全個室・駐車場2台完備</p>
             </div>
           </div>
 
           <div className="flex flex-col items-center md:items-end">
             <div className="w-full max-w-sm rounded-2xl border border-border/40 bg-card/50 p-5">
               <p className="text-center text-sm leading-7 text-muted-foreground md:text-left">
-                ご来店前に場所の確認やルート検索をご利用いただけます。
+                ご来店前に経路をご確認いただけます。
               </p>
 
               <div className="mt-5 grid gap-3">
@@ -138,13 +131,13 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-gold/40 px-6 py-3 text-sm text-foreground transition hover:bg-gold/10"
                 >
-                  Googleマップで経路を見る
+                  Googleマップを見る
                 </a>
               </div>
 
               <div className="mt-6 border-t border-border/40 pt-4 text-left">
-                <p className="mb-2 text-[11px] tracking-[0.2em] text-gold/70">
-                  ONLINE SERVICE
+                <p className="mb-2 text-[10px] tracking-[0.2em] text-gold/70">
+                  ONLINE
                 </p>
 
                 <div className="space-y-2 text-sm">
@@ -154,7 +147,7 @@ export function SiteFooter() {
                     rel="noopener noreferrer"
                     className="block text-foreground/80 transition hover:text-gold"
                   >
-                    ・ヘッドスパギフトチケット
+                    ・ギフトカード
                   </a>
 
                   <a
@@ -163,7 +156,7 @@ export function SiteFooter() {
                     rel="noopener noreferrer"
                     className="block text-foreground/80 transition hover:text-gold"
                   >
-                    ・会員限定オンライン（PASS発行制）
+                    ・会員限定オンライン
                   </a>
                 </div>
               </div>
@@ -173,7 +166,7 @@ export function SiteFooter() {
 
         <div className="mt-10 border-t border-border/40 pt-6 text-center">
           <p className="text-[11px] leading-6 text-muted-foreground">
-            福岡市西区で、分け目・白髪・艶不足・頭皮環境に向き合う完全個室ヘッドスパ専門店。
+            福岡市西区の完全個室ヘッドスパ専門店。
           </p>
 
           <p className="mt-3 text-[10px] text-muted-foreground">
