@@ -74,7 +74,7 @@ export function AccessMap() {
             </p>
 
             <p className="mt-4 text-base tracking-[0.04em] text-foreground">
-              ヘッドスパ専門店 ゆう 本店
+              ヘッドスパ専門店ゆう本店
             </p>
 
             <p className="mt-4 text-sm leading-8 text-muted-foreground">
@@ -100,7 +100,7 @@ export function AccessMap() {
               referrerPolicy="no-referrer-when-downgrade"
               className="h-[280px] w-full md:h-[420px]"
               allowFullScreen
-              title="ヘッドスパ専門店 ゆう へのアクセスマップ"
+              title="ヘッドスパ専門店ゆう本店へのアクセスマップ"
             />
           </div>
         </FadeIn>
