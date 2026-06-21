@@ -2,7 +2,8 @@
 
 import { FadeIn } from "@/components/fade-in"
 
-const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const RESERVE_URL =
+  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 const GIFT_STORE_URL = "https://gamistore.base.shop/items/144607972"
 
 declare global {
@@ -23,7 +24,7 @@ export function Hero() {
     })
 
     setTimeout(() => {
-      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
     }, 300)
   }
 
@@ -83,27 +84,25 @@ export function Hero() {
                   初めての方も安心してご相談ください。
                 </p>
 
-                <p className="mt-3">
-                  福岡市西区｜駐車場2台完備
-                </p>
+                <p className="mt-3">福岡市西区｜駐車場2台完備</p>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2}>
               <div className="mx-auto mt-10 flex w-full max-w-[360px] flex-col gap-3">
                 <a
-                  href={COUBIC_URL}
+                  href={RESERVE_URL}
                   onClick={handleReserveClick}
                   className="w-full rounded-full bg-[#d6b36a] px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
                 >
-                  空き状況を見る
+                  メニューと空き状況を見る
                 </a>
 
                 <a
-                  href="#hero-issues"
+                  href="#menu"
                   className="w-full rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm tracking-[0.08em] text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
                 >
-                  悩みに合うケアを見る
+                  メニューを見る
                 </a>
 
                 <a
@@ -204,11 +203,11 @@ export function Hero() {
               </p>
 
               <a
-                href={COUBIC_URL}
+                href={RESERVE_URL}
                 onClick={handleReserveClick}
                 className="mx-auto mt-7 inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
               >
-                空き状況を見る
+                メニューと空き状況を見る
               </a>
             </div>
           </FadeIn>
