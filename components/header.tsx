@@ -209,7 +209,7 @@ export function Header() {
                   onClick={(e) => handleReserveClick(e, "menu")}
                   className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-center text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
                 >
-                  メニューと空き状況を見る
+                  空き状況を見る
                 </a>
 
                 <a
