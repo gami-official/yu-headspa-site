@@ -20,6 +20,8 @@ export default function Home() {
       <Header />
       <Hero />
 
+      <VoiceSection />
+
       <div id="menu">
         <MenuSection />
       </div>
@@ -30,7 +32,6 @@ export default function Home() {
       <ScalpCareSection />
       <ColorValueSection />
       <BeforeAfterSection />
-      <VoiceSection />
 
       <Evidence />
       <About />
