@@ -2,7 +2,10 @@
 
 import { FadeIn } from "@/components/fade-in"
 
-const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const RESERVE_URL =
+  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
+const GOOGLE_REVIEW_URL =
+  "https://www.google.com/search?q=ヘッドスパ専門店ゆう本店"
 
 declare global {
   interface Window {
@@ -28,7 +31,7 @@ export function VoiceSection() {
     })
 
     setTimeout(() => {
-      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
     }, 300)
   }
 
@@ -38,37 +41,46 @@ export function VoiceSection() {
         <FadeIn>
           <div className="text-center">
             <p className="text-[10px] tracking-[0.28em] text-gold/70">
-              VOICE
+              GOOGLE REVIEW
             </p>
 
             <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.5rem)] leading-[1.55] tracking-[0.03em] text-foreground">
-              口コミ100件突破。
+              Google口コミ★5.0
               <br />
-              選ばれています。
+              109件の口コミ。
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
               完全個室で、初めての方も安心。
+              <br />
+              多くのお客様に選ばれています。
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.06}>
-          <div className="mx-auto mt-8 max-w-md rounded-[26px] border border-gold/20 bg-card px-6 py-6 text-center shadow-sm">
+          <a
+            href={GOOGLE_REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-auto mt-8 block max-w-md rounded-[26px] border border-gold/20 bg-card px-6 py-6 text-center shadow-sm transition hover:border-gold/50 hover:shadow-md"
+          >
             <p className="text-[10px] tracking-[0.24em] text-gold/70">
-              GOOGLE REVIEW
+              GOOGLE
             </p>
 
-            <p className="mt-3 text-2xl tracking-[0.1em] text-gold">
+            <p className="mt-3 text-3xl tracking-[0.12em] text-gold">
               ★★★★★
             </p>
 
-            <p className="mt-3 text-sm leading-7 text-muted-foreground">
-              相談しやすさと丁寧な施術で、
-              <br />
-              多くのお声をいただいています。
+            <p className="mt-3 text-2xl font-semibold tracking-[0.03em] text-foreground">
+              5.0 / 109件
             </p>
-          </div>
+
+            <p className="mt-3 text-sm leading-7 text-muted-foreground">
+              Google口コミを見る
+            </p>
+          </a>
         </FadeIn>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -94,11 +106,11 @@ export function VoiceSection() {
         <FadeIn delay={0.2}>
           <div className="mt-10 text-center">
             <a
-              href={COUBIC_URL}
+              href={RESERVE_URL}
               onClick={handleReserveClick}
               className="inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
             >
-              空き状況を見る
+              メニューと空き状況を見る
             </a>
           </div>
         </FadeIn>
