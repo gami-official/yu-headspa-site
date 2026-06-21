@@ -5,10 +5,10 @@ import { Menu, X, Gift } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 
-const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const RESERVE_URL =
+  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 const LINE_URL = "https://lin.ee/7hso3k1"
 const FRANCHISE_URL = "https://www.gamigami.net/headspa-franchise"
-
 const MEMBER_STORE_URL = "https://headspayu.stores.jp/"
 const GIFT_STORE_URL = "https://gamistore.base.shop/items/144607972"
 
@@ -20,6 +20,7 @@ declare global {
 
 const navLinks = [
   { label: "料金・メニュー", href: "#menu" },
+  { label: "空き状況・予約", href: "#reserve-calendar" },
   { label: "育毛ヘッドスパ", href: "#scalp" },
   { label: "ヘアカラーヘッドスパ", href: "#color" },
   { label: "リラクゼーションヘッドスパ", href: "#relaxation" },
@@ -38,7 +39,6 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10)
     handleScroll()
-
     window.addEventListener("scroll", handleScroll, { passive: true })
 
     return () => window.removeEventListener("scroll", handleScroll)
@@ -68,7 +68,7 @@ export function Header() {
     setIsMenuOpen(false)
 
     setTimeout(() => {
-      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
     }, 300)
   }
 
@@ -117,11 +117,11 @@ export function Header() {
               </button>
 
               <a
-                href={COUBIC_URL}
+                href={RESERVE_URL}
                 onClick={(e) => handleReserveClick(e, "header")}
-                className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[220px]"
+                className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[240px]"
               >
-                空き状況を見る
+                メニューと空き状況を見る
               </a>
 
               <a
@@ -148,6 +148,14 @@ export function Header() {
         </div>
       </header>
 
+      <a
+        href={RESERVE_URL}
+        onClick={(e) => handleReserveClick(e, "fixed_bottom")}
+        className="fixed bottom-4 left-4 right-4 z-50 inline-flex items-center justify-center rounded-full bg-[#d6b36a] px-5 py-4 text-center text-sm font-medium tracking-[0.08em] text-black shadow-2xl transition hover:opacity-90 md:hidden"
+      >
+        メニュー・空き状況を見る
+      </a>
+
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -171,7 +179,7 @@ export function Header() {
                 </p>
 
                 <p className="mt-4 text-[10px] tracking-[0.35em] text-white/40">
-                  完全個室｜完全予約制｜一日三名限定
+                  Google口コミ★5.0｜109件｜完全個室
                 </p>
 
                 <p className="mt-3 text-lg tracking-[0.22em] text-white">
@@ -195,18 +203,13 @@ export function Header() {
                 ))}
               </nav>
 
-              <div className="mt-6 text-center text-[11px] leading-relaxed text-white/40">
-                <p>ギフトカード・オンラインサービスも</p>
-                <p>ご利用いただけます</p>
-              </div>
-
               <div className="mt-10 flex w-full max-w-xs flex-col gap-3">
                 <a
-                  href={COUBIC_URL}
+                  href={RESERVE_URL}
                   onClick={(e) => handleReserveClick(e, "menu")}
                   className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-center text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
                 >
-                  空き状況を見る
+                  メニューと空き状況を見る
                 </a>
 
                 <a
