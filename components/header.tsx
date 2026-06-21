@@ -19,17 +19,15 @@ declare global {
 }
 
 const navLinks = [
-  { label: "料金・メニュー", href: "#menu" },
-  { label: "予約する", href: "#reserve-calendar" },
-  { label: "育毛ヘッドスパ", href: "#scalp" },
-  { label: "ヘアカラーヘッドスパ", href: "#color" },
-  { label: "リラクゼーションヘッドスパ", href: "#relaxation" },
-  { label: "当店について", href: "#about" },
+  { label: "メニュー", href: "#menu" },
+  { label: "予約", href: "#reserve-calendar" },
+  { label: "口コミ", href: "#voice" },
+  { label: "ビフォーアフター", href: "#before-after" },
+  { label: "FAQ", href: "#faq" },
   { label: "アクセス", href: "#access" },
-  { label: "よくある質問", href: "#faq" },
-  { label: "ご来店者様限定オンライン", href: MEMBER_STORE_URL, external: true },
-  { label: "ギフトカード購入", href: GIFT_STORE_URL, external: true },
-  { label: "フランチャイズ募集", href: FRANCHISE_URL, external: true },
+  { label: "会員ストア", href: MEMBER_STORE_URL, external: true },
+  { label: "ギフト", href: GIFT_STORE_URL, external: true },
+  { label: "FC募集", href: FRANCHISE_URL, external: true },
 ]
 
 export function Header() {
@@ -119,9 +117,9 @@ export function Header() {
               <a
                 href={RESERVE_URL}
                 onClick={(e) => handleReserveClick(e, "header")}
-                className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[240px]"
+                className="inline-flex h-9 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-4 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[200px]"
               >
-                メニューと空き状況を見る
+                予約する
               </a>
 
               <a
@@ -149,12 +147,12 @@ export function Header() {
       </header>
 
       <a
-  href={RESERVE_URL}
-  onClick={(e) => handleReserveClick(e, "fixed_bottom")}
-  className="fixed bottom-4 left-6 right-6 z-50 inline-flex items-center justify-center rounded-full bg-[#d6b36a] px-5 py-3 text-center text-sm font-medium tracking-[0.08em] text-black shadow-2xl transition hover:opacity-90 md:hidden"
->
-  今すぐ予約する
-</a>
+        href={RESERVE_URL}
+        onClick={(e) => handleReserveClick(e, "fixed_bottom")}
+        className="fixed bottom-4 left-6 right-6 z-50 inline-flex items-center justify-center rounded-full bg-[#d6b36a] px-5 py-3 text-center text-sm font-medium tracking-[0.08em] text-black shadow-2xl transition hover:opacity-90 md:hidden"
+      >
+        今すぐ予約
+      </a>
 
       <AnimatePresence>
         {isMenuOpen && (
@@ -178,8 +176,8 @@ export function Header() {
                   PRIVATE HEAD SPA SALON
                 </p>
 
-                <p className="mt-4 text-[10px] tracking-[0.35em] text-white/40">
-                  Google口コミ★5.0｜109件｜完全個室
+                <p className="mt-4 text-[10px] tracking-[0.28em] text-white/40">
+                  口コミ★5.0｜109件
                 </p>
 
                 <p className="mt-3 text-lg tracking-[0.22em] text-white">
@@ -209,7 +207,7 @@ export function Header() {
                   onClick={(e) => handleReserveClick(e, "menu")}
                   className="inline-flex items-center justify-center rounded-full border border-[#d6b36a] bg-[#d6b36a] px-6 py-3 text-center text-sm font-medium tracking-[0.08em] text-black transition hover:bg-transparent hover:text-[#d6b36a]"
                 >
-                  空き状況を見る
+                  予約する
                 </a>
 
                 <a
@@ -218,7 +216,7 @@ export function Header() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-center text-sm tracking-[0.08em] text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
                 >
-                  ギフトカードを見る
+                  ギフトを見る
                 </a>
 
                 <a
@@ -227,7 +225,7 @@ export function Header() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-3 text-center text-sm tracking-[0.08em] text-white/90 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
                 >
-                  LINEで相談する
+                  LINE相談
                 </a>
               </div>
 
