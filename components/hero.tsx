@@ -112,13 +112,6 @@ export function Hero() {
                 </a>
 
                 <a
-                  href="#menu"
-                  className="w-full rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm tracking-[0.08em] text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
-                >
-                  メニューを見る
-                </a>
-
-                <a
                   href={GIFT_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
