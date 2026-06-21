@@ -20,7 +20,7 @@ declare global {
 
 const navLinks = [
   { label: "料金・メニュー", href: "#menu" },
-  { label: "空き状況・予約", href: "#reserve-calendar" },
+  { label: "予約する", href: "#reserve-calendar" },
   { label: "育毛ヘッドスパ", href: "#scalp" },
   { label: "ヘアカラーヘッドスパ", href: "#color" },
   { label: "リラクゼーションヘッドスパ", href: "#relaxation" },
