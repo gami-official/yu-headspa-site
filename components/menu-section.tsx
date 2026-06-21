@@ -4,7 +4,8 @@ import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
 import { menus } from "@/lib/menu-data"
 
-const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const RESERVE_URL =
+  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 
 declare global {
   interface Window {
@@ -27,7 +28,7 @@ export function MenuSection() {
     })
 
     setTimeout(() => {
-      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
     }, 300)
   }
 
@@ -41,15 +42,15 @@ export function MenuSection() {
             </p>
 
             <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.6rem)] leading-[1.55] tracking-[0.03em] text-foreground">
-              悩みに合わせて、
+              メニューと空き状況を
               <br />
-              選べるケア。
+              すぐ確認できます。
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
-              分け目・白髪・艶不足へ。
+              ご希望のメニューを選んで、
               <br />
-              状態に合わせてご提案します。
+              空き枠をご確認ください。
             </p>
           </div>
         </FadeIn>
@@ -120,13 +121,13 @@ export function MenuSection() {
                         </p>
 
                         <a
-                          href={COUBIC_URL}
+                          href={RESERVE_URL}
                           onClick={(e) =>
                             handleReserveClick(e, `menu_${menu.id}_${i + 1}`)
                           }
                           className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
                         >
-                          空き状況を見る
+                          メニューと空き状況を見る
                         </a>
                       </div>
                     ))}
@@ -156,11 +157,11 @@ export function MenuSection() {
             </p>
 
             <a
-              href={COUBIC_URL}
+              href={RESERVE_URL}
               onClick={(e) => handleReserveClick(e, "menu_bottom")}
               className="mt-7 inline-flex min-w-[260px] items-center justify-center rounded-full bg-gold px-8 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
             >
-              空き状況を見る
+              メニューと空き状況を見る
             </a>
 
             <p className="mt-5 text-xs leading-6 text-muted-foreground">
