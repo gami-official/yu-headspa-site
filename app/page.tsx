@@ -6,6 +6,7 @@ import { ColorValueSection } from "@/components/color-value-section"
 import { BeforeAfterSection } from "@/components/before-after-section"
 import { VoiceSection } from "@/components/voice-section"
 import { MenuSection } from "@/components/menu-section"
+import { ReservationSection } from "@/components/reservation-section"
 import { Evidence } from "@/components/evidence"
 import { About } from "@/components/about"
 import { Faq } from "@/components/faq"
@@ -22,6 +23,8 @@ export default function Home() {
       <div id="menu">
         <MenuSection />
       </div>
+
+      <ReservationSection />
 
       <GiftSection />
       <ScalpCareSection />
