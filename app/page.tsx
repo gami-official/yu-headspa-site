@@ -17,22 +17,23 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <Hero />
+<Hero />
 
-      <GiftSection />
-      <ScalpCareSection />
-      <ColorValueSection />
-      <BeforeAfterSection />
-      <VoiceSection />
+<MenuSection />
 
-      <MenuSection />
-      <Evidence />
-      <About />
-      <Faq />
+<GiftSection />
+<ScalpCareSection />
+<ColorValueSection />
+<BeforeAfterSection />
+<VoiceSection />
 
-      <AccessMap />
-      <CategoryLinks />
-      <SiteFooter />
+<Evidence />
+<About />
+<Faq />
+
+<AccessMap />
+<CategoryLinks />
+<SiteFooter />
     </main>
   )
 }
