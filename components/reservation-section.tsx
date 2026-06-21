@@ -7,7 +7,10 @@ const RESERVE_URL =
 
 export function ReservationSection() {
   return (
-    <section id="reserve-calendar" className="bg-background px-5 py-16 sm:px-6 lg:px-10">
+    <section
+      id="reserve-calendar"
+      className="bg-background px-5 py-16 sm:px-6 lg:px-10"
+    >
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="mb-8 text-center">
