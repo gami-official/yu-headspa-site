@@ -149,12 +149,12 @@ export function Header() {
       </header>
 
       <a
-        href={RESERVE_URL}
-        onClick={(e) => handleReserveClick(e, "fixed_bottom")}
-        className="fixed bottom-4 left-4 right-4 z-50 inline-flex items-center justify-center rounded-full bg-[#d6b36a] px-5 py-4 text-center text-sm font-medium tracking-[0.08em] text-black shadow-2xl transition hover:opacity-90 md:hidden"
-      >
-        メニュー・空き状況を見る
-      </a>
+  href={RESERVE_URL}
+  onClick={(e) => handleReserveClick(e, "fixed_bottom")}
+  className="fixed bottom-4 left-6 right-6 z-50 inline-flex items-center justify-center rounded-full bg-[#d6b36a] px-5 py-3 text-center text-sm font-medium tracking-[0.08em] text-black shadow-2xl transition hover:opacity-90 md:hidden"
+>
+  今すぐ予約する
+</a>
 
       <AnimatePresence>
         {isMenuOpen && (
