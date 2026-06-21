@@ -53,14 +53,25 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <div className="mx-auto mt-5 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-[#d6b36a]/35 bg-black/45 px-4 py-2 text-[10px] tracking-[0.04em] text-[#d6b36a] backdrop-blur-md sm:text-[11px]">
-                <span>口コミ100件突破</span>
-                <span className="text-white/45">｜</span>
-                <span>完全個室</span>
-                <span className="text-white/45">｜</span>
-                <span>一日三名限定</span>
-              </div>
-            </FadeIn>
+  <a
+    href="https://www.google.com/search?q=ヘッドスパ専門店ゆう本店"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mx-auto mt-5 flex w-fit max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-[#d6b36a]/35 bg-black/45 px-4 py-2 text-[10px] tracking-[0.04em] text-[#d6b36a] backdrop-blur-md transition hover:border-[#d6b36a] hover:bg-black/60 sm:text-[11px]"
+  >
+    <span>Google口コミ ★5.0</span>
+    <span className="text-white/45">｜</span>
+    <span>109件の口コミ</span>
+    <span className="text-white/45">｜</span>
+    <span>完全個室</span>
+  </a>
+</FadeIn>
+
+            <FadeIn delay={0.08}>
+  <p className="mt-4 text-sm tracking-[0.08em] text-[#d6b36a]">
+    ★★★★★ Google口コミ109件
+  </p>
+</FadeIn>
 
             <FadeIn delay={0.1}>
               <h1 className="mx-auto mt-8 text-[clamp(2.15rem,10vw,3.8rem)] font-medium leading-[1.38] tracking-[0.03em] text-white sm:text-[clamp(2.4rem,5vw,4rem)] sm:leading-[1.45]">
