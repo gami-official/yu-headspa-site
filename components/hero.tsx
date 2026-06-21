@@ -108,7 +108,7 @@ export function Hero() {
                   onClick={handleReserveClick}
                   className="w-full rounded-full bg-[#d6b36a] px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
                 >
-                  メニューと空き状況を見る
+                  空き状況を見る
                 </a>
 
                 <a
@@ -213,7 +213,7 @@ export function Hero() {
                 onClick={handleReserveClick}
                 className="mx-auto mt-7 inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
               >
-                メニューと空き状況を見る
+                空き状況を見る
               </a>
             </div>
           </FadeIn>
