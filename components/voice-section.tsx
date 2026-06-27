@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/fade-in"
 const RESERVE_URL =
   "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 const GOOGLE_REVIEW_URL =
-  "https://www.google.com/search?q=ヘッドスパ専門店ゆう本店"
+  "https://www.google.com/search?q=ヘッドスパ専門店　ゆう　本店"
 
 declare global {
   interface Window {
