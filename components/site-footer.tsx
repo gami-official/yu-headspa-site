@@ -170,7 +170,7 @@ export function SiteFooter() {
           </p>
 
           <p className="mt-3 text-[10px] text-muted-foreground">
-            © {new Date().getFullYear()} ヘッドスパ専門店ゆう本店 All Rights Reserved.
+            © {new Date().getFullYear()} ヘッドスパ専門店　ゆう　本店 All Rights Reserved.
           </p>
         </div>
       </div>
