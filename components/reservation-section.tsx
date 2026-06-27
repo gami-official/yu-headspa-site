@@ -32,7 +32,7 @@ export function ReservationSection() {
           <div className="overflow-hidden rounded-[28px] border border-gold/20 bg-white shadow-sm">
             <iframe
               src={RESERVE_URL}
-              title="ヘッドスパ専門店ゆう 予約カレンダー"
+              title="ヘッドスパ専門店　ゆう　本店 予約カレンダー"
               className="h-[820px] w-full border-0"
             />
           </div>
