@@ -135,7 +135,7 @@ export function Header() {
               <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white">
                 <Image
                   src="/images/logo.png"
-                  alt="ヘッドスパ専門店ゆう本店"
+                  alt="ヘッドスパ専門店　ゆう　本店"
                   fill
                   className="object-contain p-1"
                   sizes="36px"
@@ -181,7 +181,7 @@ export function Header() {
                 </p>
 
                 <p className="mt-3 text-lg tracking-[0.22em] text-white">
-                  ヘッドスパ専門店ゆう本店
+                  ヘッドスパ専門店　ゆう　本店
                 </p>
               </div>
 
