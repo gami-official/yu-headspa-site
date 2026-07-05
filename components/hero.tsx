@@ -25,7 +25,7 @@ export function Hero() {
     })
 
     setTimeout(() => {
-      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
+      window.location.href = RESERVE_URL
     }, 300)
   }
 
