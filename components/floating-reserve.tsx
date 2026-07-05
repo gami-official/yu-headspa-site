@@ -34,7 +34,7 @@ export function FloatingReserve() {
     })
 
     setTimeout(() => {
-      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
+      window.location.href = RESERVE_URL
     }, 300)
   }
 
