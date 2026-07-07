@@ -26,7 +26,7 @@ export function Hero() {
 
     setTimeout(() => {
       window.location.href = RESERVE_URL
-    }, 300)
+    }, 800)
   }
 
   return (
