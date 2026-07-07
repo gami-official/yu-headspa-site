@@ -35,7 +35,7 @@ export function FloatingReserve() {
 
     setTimeout(() => {
       window.location.href = RESERVE_URL
-    }, 300)
+    }, 800)
   }
 
   return (
