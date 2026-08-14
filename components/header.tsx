@@ -177,7 +177,7 @@ export function Header() {
                 </p>
 
                 <p className="mt-4 text-[10px] tracking-[0.28em] text-white/40">
-                  口コミ★5.0｜112件
+                  口コミ★5.0｜113件
                 </p>
 
                 <p className="mt-3 text-lg tracking-[0.22em] text-white">
