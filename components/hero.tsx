@@ -61,7 +61,7 @@ export function Hero() {
             >
               <span>Google口コミ ★5.0</span>
               <span className="text-white/45">｜</span>
-              <span>112件</span>
+              <span>113件</span>
               <span className="text-white/45">｜</span>
               <span>完全個室</span>
             </a>
