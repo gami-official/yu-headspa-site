@@ -50,7 +50,7 @@ export function FloatingReserve() {
         >
           <div className="rounded-[26px] border border-gold/25 bg-black/90 px-5 py-5 shadow-[0_18px_40px_rgba(0,0,0,0.42)] backdrop-blur-xl">
             <p className="text-center text-[10px] tracking-[0.28em] text-gold/80">
-              GOOGLE口コミ100件突破
+              GOOGLE口コミ113件突破
             </p>
 
             <h3 className="mt-3 text-center text-[15px] leading-7 tracking-[0.06em] text-white">
