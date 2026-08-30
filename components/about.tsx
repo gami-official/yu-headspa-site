@@ -15,7 +15,7 @@ declare global {
 const strengths = [
   ["歴15年", "専門技術"],
   ["完全個室", "安心して相談"],
-  ["口コミ113件", "選ばれる理由"],
+  ["口コミ114件", "選ばれる理由"],
 ]
 
 export function About() {
