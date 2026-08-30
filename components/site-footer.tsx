@@ -44,7 +44,7 @@ export function SiteFooter() {
         </h2>
 
         <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-muted-foreground">
-          口コミ113件突破。
+          口コミ114件突破。
           <br />
           完全個室で、頭皮から整えます。
         </p>
