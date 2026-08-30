@@ -40,7 +40,7 @@ export function VoiceSection() {
             <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.4rem)] leading-[1.5] tracking-[0.03em] text-foreground">
               Google口コミ★5.0
               <br />
-              113件の評価
+              114件の評価
             </h2>
 
             <a
