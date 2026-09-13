@@ -32,6 +32,7 @@
       line-height:1.95;
       letter-spacing:.06em;
       overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
     }
 
     img{
@@ -278,40 +279,230 @@
       border-top:1px solid rgba(255,255,255,.06);
     }
 
+
+    /* ========================================
+       SMARTPHONE
+       ======================================== */
+
     @media(max-width:768px){
 
       .hero{
-        padding:120px 22px 90px;
+        min-height:100svh;
+        padding:105px 22px 72px;
+      }
+
+      .hero-inner{
+        width:100%;
+        max-width:100%;
+      }
+
+      .eyebrow{
+        font-size:.66rem;
+        line-height:1.7;
+        letter-spacing:.25em;
+        margin-bottom:22px;
       }
 
       h1{
-        font-size:2.45rem;
-        line-height:1.7;
+        font-size:clamp(2rem,9.5vw,2.75rem);
+        line-height:1.48;
+        letter-spacing:.04em;
       }
 
       .lead{
+        margin-top:30px;
+        max-width:100%;
         font-size:.94rem;
-        line-height:2.15;
+        line-height:2;
+        letter-spacing:.025em;
       }
 
-      .section{
-        padding:86px 0;
-      }
-
-      .card{
-        padding:32px 28px;
-      }
-
-      .message{
-        padding:56px 26px;
+      .limit{
+        margin-top:26px;
+        font-size:.75rem;
+        line-height:1.8;
+        letter-spacing:.08em;
       }
 
       .cta{
         width:100%;
         min-width:auto;
+        margin-top:36px;
+        padding:17px 20px;
+        font-size:.94rem;
+        line-height:1.5;
+        letter-spacing:.08em;
       }
 
+      .note{
+        margin-top:15px;
+        padding:0 6px;
+        font-size:.73rem;
+        line-height:1.8;
+        letter-spacing:.03em;
+      }
+
+      .section{
+        width:calc(100% - 40px);
+        padding:76px 0;
+      }
+
+      .section-title{
+        margin-bottom:44px;
+      }
+
+      .section-title small{
+        font-size:.66rem;
+        line-height:1.6;
+        letter-spacing:.24em;
+      }
+
+      .section-title h2{
+        margin-top:18px;
+        font-size:clamp(1.65rem,7.4vw,2.2rem);
+        line-height:1.55;
+        letter-spacing:.04em;
+      }
+
+      .section-title p{
+        margin-top:20px;
+        font-size:.93rem;
+        line-height:1.95;
+        letter-spacing:.02em;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+        gap:18px;
+      }
+
+      .card{
+        padding:30px 24px;
+        border-radius:22px;
+      }
+
+      .card span{
+        font-size:.63rem;
+        line-height:1.5;
+        letter-spacing:.24em;
+      }
+
+      .card h3{
+        margin-top:14px;
+        margin-bottom:14px;
+        font-size:1.3rem;
+        line-height:1.55;
+        letter-spacing:.04em;
+      }
+
+      .card p{
+        font-size:.92rem;
+        line-height:1.95;
+        letter-spacing:.02em;
+      }
+
+      .message{
+        padding:48px 23px;
+        border-radius:25px;
+      }
+
+      .message h2{
+        font-size:clamp(1.5rem,6.8vw,2.1rem);
+        line-height:1.62;
+        letter-spacing:.035em;
+      }
+
+      .message p{
+        margin-top:24px;
+        font-size:.92rem;
+        line-height:2;
+        letter-spacing:.02em;
+      }
+
+      .flow{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .step{
+        padding-top:20px;
+      }
+
+      .step::before{
+        font-size:.72rem;
+        letter-spacing:.22em;
+      }
+
+      .step h3{
+        margin-top:14px;
+        font-size:1.12rem;
+        line-height:1.6;
+        letter-spacing:.035em;
+      }
+
+      .step p{
+        margin-top:10px;
+        font-size:.91rem;
+        line-height:1.95;
+        letter-spacing:.02em;
+      }
+
+      .final{
+        padding-bottom:96px;
+      }
+
+      .final h2{
+        font-size:clamp(1.8rem,8vw,2.5rem);
+        line-height:1.6;
+        letter-spacing:.04em;
+      }
+
+      .final p{
+        margin-top:24px;
+        font-size:.8rem;
+        line-height:1.9;
+        letter-spacing:.025em;
+      }
+
+      .final .cta{
+        margin-top:32px;
+      }
+
+      footer{
+        padding:34px 20px 54px;
+        font-size:.7rem;
+        line-height:1.8;
+        letter-spacing:.04em;
+      }
     }
+
+
+    /* 小さいスマホ用 */
+    @media(max-width:380px){
+
+      .hero{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      h1{
+        font-size:1.95rem;
+      }
+
+      .section{
+        width:calc(100% - 32px);
+      }
+
+      .message{
+        padding-left:20px;
+        padding-right:20px;
+      }
+
+      .limit{
+        font-size:.7rem;
+      }
+    }
+
   </style>
 </head>
 
@@ -330,9 +521,8 @@
       </h1>
 
       <p class="lead">
-        分け目・頭頂部・ボリューム低下・抜け毛へ。<br>
-        頭皮から整え、
-        印象年齢を変える本格ヘッドスパ。
+        分け目・頭頂部・ボリューム低下へ。<br>
+        頭皮から整え、印象まで美しく。
       </p>
 
       <p class="limit">
@@ -343,6 +533,7 @@
         class="cta"
         href="https://coubic.com/yuheadspa/services"
         target="_blank"
+        rel="noopener noreferrer"
         onclick="reserveClick()"
       >
         ご予約枠を確認する
@@ -460,6 +651,7 @@
 
       <div class="step">
         <h3>頭皮状態の確認</h3>
+
         <p>
           分け目・頭頂部・ハリコシなど、
           現在の状態を丁寧に確認します。
@@ -468,6 +660,7 @@
 
       <div class="step">
         <h3>専門ヘッドスパ</h3>
+
         <p>
           頭皮環境に合わせて、
           血行・皮脂・硬さに着目したケアを行います。
@@ -476,6 +669,7 @@
 
       <div class="step">
         <h3>将来を見据えた提案</h3>
+
         <p>
           一時的な癒しだけでなく、
           継続的な頭皮美容としてご提案します。
@@ -501,6 +695,7 @@
       class="cta"
       href="https://coubic.com/yuheadspa/services"
       target="_blank"
+      rel="noopener noreferrer"
       onclick="reserveClick()"
     >
       初回の空き状況を見る
