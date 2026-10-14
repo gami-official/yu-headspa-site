@@ -90,7 +90,7 @@ export function Hero() {
 
           <FadeIn delay={0.16}>
             <p className="mt-6 text-sm leading-8 text-white/75 sm:text-base">
-              福岡市西区｜駐車場2台完備
+              福岡市西区｜完全予約制・完全個室
             </p>
           </FadeIn>
 
