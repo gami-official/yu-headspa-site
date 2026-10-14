@@ -14,19 +14,23 @@ export default function Home() {
   return (
     <main>
       <Header />
+
       <Hero />
+
       <VoiceSection />
 
       <Essences />
 
-      <div id="menu">
-        <MenuSection />
-      </div>
+      <MenuSection />
 
       <ReservationSection />
+
       <BeforeAfterSection />
+
       <Faq />
+
       <AccessMap />
+
       <SiteFooter />
     </main>
   )
