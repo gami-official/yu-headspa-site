@@ -27,19 +27,19 @@ const menuIntroductions: Record<
     catchphrase: "未来の髪を考える、本格頭皮ケア。",
     description:
       "頭皮の状態やお悩みに合わせて選べる、3つの育毛ヘッドスパ。ヒト幹細胞由来成分を取り入れたケアで、健やかな頭皮環境を目指します。",
-    recommended: "髪・頭皮のお悩みがある方",
+    recommended: "髪や頭皮の変化が気になり始めた方",
   },
   color: {
     catchphrase: "髪色も、頭皮も、美しく。",
     description:
-      "ゼロテクニックカラーとウェットヘッドスパを融合。美しい髪色と頭皮への配慮を両立。",
-    recommended: "白髪染め・カラーをされる方",
+      "頭皮への配慮を大切にしたゼロテクニックカラーと、心地よいウェットヘッドスパ。美しい髪色と上質なケアを一度に。",
+    recommended: "髪色を楽しみながら頭皮もケアしたい方",
   },
   relaxation: {
-    catchphrase: "90分、自分だけの贅沢な時間。",
+    catchphrase: "自分をいたわる、贅沢な90分。",
     description:
-      "アロマクリーム・スチーム・ホットストーンを組み合わせた本格ウェットヘッドスパ。",
-    recommended: "リフレッシュ・自分へのご褒美",
+      "アロマクリーム、スチーム、ホットストーン。水と温もりに包まれる、本格ウェットヘッドスパをご堪能ください。",
+    recommended: "日常を離れて、ゆったり過ごしたい方",
   },
 }
 
@@ -56,23 +56,32 @@ export function MenuSection() {
   return (
     <section
       id="menu"
-      className="scroll-mt-20 bg-background py-14 lg:py-20"
+      className="scroll-mt-20 bg-background py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-6xl px-5 lg:px-10">
         <FadeIn>
-          <div className="mx-auto mb-10 max-w-2xl text-center lg:mb-12">
-            <p className="text-[10px] tracking-[0.3em] text-gold/80">
+          <div className="mx-auto mb-8 max-w-2xl text-center sm:mb-11 lg:mb-12">
+            <p className="text-[10px] tracking-[0.28em] text-gold/80">
               HEAD SPA MENU
             </p>
 
-            <h2 className="mt-4 text-[clamp(1.6rem,5vw,2.5rem)] leading-[1.5] tracking-[0.04em] text-foreground">
-              あなたに合う、特別な90分を。
+            <h2 className="mt-4 text-[clamp(1.45rem,5vw,2.5rem)] leading-[1.65] tracking-[0.02em] text-foreground">
+              <span className="block sm:inline">
+                あなたに合う、
+              </span>
+              <span className="block sm:inline">
+                特別な90分。
+              </span>
             </h2>
 
-            <p className="mt-5 text-sm leading-8 text-muted-foreground">
-              頭皮ケア、ヘアカラー、リラクゼーション。
-              <br className="hidden sm:block" />
-              目的に合わせて選べる3つのヘッドスパ。
+            <p className="mx-auto mt-4 max-w-xl text-[13px] leading-7 text-muted-foreground sm:mt-5 sm:text-sm sm:leading-8">
+              髪と頭皮を整える時間も、
+              <br className="sm:hidden" />
+              心をほどく時間も。
+              <br />
+              目的に合わせた3つのヘッドスパを
+              <br className="sm:hidden" />
+              ご用意しました。
             </p>
           </div>
         </FadeIn>
@@ -105,7 +114,7 @@ export function MenuSection() {
                     )}
 
                     <div className="absolute bottom-4 left-5 right-5">
-                      <p className="text-[10px] tracking-[0.16em] text-[#d6b36a]">
+                      <p className="text-[10px] tracking-[0.12em] text-[#d6b36a]">
                         {menu.enTitle.toUpperCase()}
                       </p>
 
@@ -116,22 +125,22 @@ export function MenuSection() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-5 sm:p-6">
-                    <p className="text-base font-medium leading-7 text-foreground">
+                    <p className="text-[15px] font-medium leading-7 tracking-[0.01em] text-foreground sm:text-base">
                       {intro?.catchphrase ?? menu.tab}
                     </p>
 
-                    <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    <p className="mt-3 text-[13px] leading-[1.9] text-muted-foreground sm:text-sm">
                       {intro?.description ??
                         menu.descriptionParagraphs[0]}
                     </p>
 
                     {intro && (
                       <div className="mt-5 rounded-xl border border-gold/15 bg-gold/5 px-4 py-3">
-                        <p className="text-[10px] tracking-wider text-gold">
+                        <p className="text-[10px] tracking-[0.08em] text-gold">
                           こんな方におすすめ
                         </p>
 
-                        <p className="mt-1 text-xs leading-6 text-foreground">
+                        <p className="mt-1 text-[12px] leading-6 text-foreground sm:text-xs">
                           {intro.recommended}
                         </p>
                       </div>
@@ -162,25 +171,38 @@ export function MenuSection() {
                     </div>
 
                     {isScalp && (
-                      <div className="mt-4 rounded-xl border border-gold/20 bg-gold/5 px-4 py-3">
+                      <div className="mt-4 rounded-xl border border-gold/20 bg-gold/5 px-4 py-4">
                         <p className="mb-3 text-[10px] tracking-[0.14em] text-gold">
                           3 COURSES
                         </p>
 
-                        <div className="space-y-2 text-xs leading-6 text-muted-foreground">
-                          <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                        <div className="space-y-3 text-[12px] leading-6 text-muted-foreground">
+                          <div className="flex items-start justify-between gap-3">
                             <span>Light｜中濃度</span>
-                            <span>¥18,000</span>
+                            <span className="shrink-0">
+                              ¥18,000
+                            </span>
                           </div>
 
-                          <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                          <div className="flex items-start justify-between gap-3">
                             <span>Standard｜高濃度</span>
-                            <span>¥21,000</span>
+                            <span className="shrink-0">
+                              ¥21,000
+                            </span>
                           </div>
 
-                          <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                            <span>Premium｜超高濃度＋使用量多め</span>
-                            <span>¥35,000</span>
+                          <div className="flex items-start justify-between gap-3">
+                            <span>
+                              Premium
+                              <br />
+                              <span className="text-[11px] text-muted-foreground/80">
+                                超高濃度・使用量多め
+                              </span>
+                            </span>
+
+                            <span className="shrink-0">
+                              ¥35,000
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -189,7 +211,7 @@ export function MenuSection() {
                     <div className="mt-auto space-y-3 pt-7">
                       <Link
                         href={`/menu/${menu.id}`}
-                        className="flex min-h-12 w-full items-center justify-center rounded-full border border-gold/70 px-5 py-3 text-sm font-medium text-gold transition hover:bg-gold hover:text-background"
+                        className="flex min-h-12 w-full items-center justify-center rounded-full border border-gold/70 px-4 py-3 text-[13px] font-medium text-gold transition hover:bg-gold hover:text-background sm:text-sm"
                       >
                         コースの違い・詳細を見る →
                       </Link>
@@ -201,7 +223,7 @@ export function MenuSection() {
                         onClick={() =>
                           trackReserve(`menu_${menu.id}`)
                         }
-                        className="flex min-h-12 w-full items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-medium text-background transition hover:opacity-90"
+                        className="flex min-h-12 w-full items-center justify-center rounded-full bg-gold px-4 py-3 text-[13px] font-medium text-background transition hover:opacity-90 sm:text-sm"
                       >
                         空き状況・予約はこちら
                       </a>
@@ -214,14 +236,14 @@ export function MenuSection() {
         </div>
 
         <FadeIn>
-          <div className="mt-10 text-center">
-            <p className="text-sm leading-8 text-muted-foreground">
-              どのコースが合うか迷われた方も、
+          <div className="mt-8 text-center sm:mt-10">
+            <p className="text-[13px] leading-7 text-muted-foreground sm:text-sm sm:leading-8">
+              コース選びに迷われた方は、
               <br className="sm:hidden" />
-              詳細ページで特徴をご確認いただけます。
+              詳細ページで特徴をご確認ください。
             </p>
 
-            <p className="mt-4 text-xs leading-7 text-muted-foreground">
+            <p className="mt-3 text-xs leading-7 text-muted-foreground sm:mt-4">
               完全予約制・完全個室 ／ 1日3名限定
             </p>
           </div>
