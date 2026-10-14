@@ -14,86 +14,137 @@ const menuGuides: Record<
     lead: string
     recommended: string[]
     highlights: { title: string; description: string }[]
+    faq: { question: string; answer: string }[]
   }
 > = {
   scalp: {
-    headline: "これからの髪のために、今できる頭皮ケアを。",
-    lead: "髪のボリュームや頭皮の状態が気になり始めた方へ。15年以上の施術経験を活かし、一人ひとりの頭皮に向き合う本格ウェットヘッドスパです。",
+    headline: "未来の髪のために、今できる上質な頭皮ケア。",
+    lead: "髪のボリュームや頭皮環境が気になり始めた方へ。15年以上の経験を活かした手技と、本格ウェットヘッドスパで、頭皮と丁寧に向き合う90分を。",
     recommended: [
-      "髪のハリ・コシやボリュームが気になる",
-      "頭皮の乾燥やベタつきが気になる",
+      "抜け毛や髪のボリュームが気になる",
+      "分け目や髪のハリ・コシが気になる",
       "本格的な頭皮ケアを始めたい",
-      "自分に合ったケアを相談したい",
+      "質にこだわったケアを受けたい",
     ],
     highlights: [
       {
-        title: "頭皮の状態に合わせたケア",
+        title: "頭皮の状態を丁寧に確認",
         description:
-          "頭皮の状態やお悩みを確認し、一人ひとりに合わせて丁寧に施術します。",
+          "マイクロスコープで頭皮の状態を確認し、お悩みに合わせたケアを行います。",
       },
       {
-        title: "本格ウェットヘッドスパ",
+        title: "熟練のウェットヘッドスパ",
         description:
-          "水やスチーム、洗浄と熟練の手技を組み合わせ、頭皮環境を整えることを目指します。",
+          "スチーム、クリームスパ、洗浄、トリートメントなどを組み合わせた専門ケアです。",
       },
       {
-        title: "濃度別のコースをご用意",
+        title: "濃度と使用量で選べる3コース",
         description:
-          "ご希望やご予算に合わせてコースを選べます。具体的な施術内容の違いはご予約前にご確認ください。",
+          "Premium・Standard・Lightの3種類から、ご希望やご予算に合わせてお選びいただけます。",
+      },
+    ],
+    faq: [
+      {
+        question: "3つのコースは何が違いますか？",
+        answer:
+          "主な違いは頭皮ケア成分の濃度と使用量です。Premiumは超高濃度かつ使用量多め、Standardは高濃度、Lightは中濃度です。いずれも施術時間は90分です。",
+      },
+      {
+        question: "初めてでもPremiumを選べますか？",
+        answer:
+          "はい。初めての方でもお選びいただけます。ケアの質や使用量を重視される方におすすめしています。",
+      },
+      {
+        question: "1回で髪が生えるようになりますか？",
+        answer:
+          "発毛や育毛の結果を保証する施術ではありません。頭皮環境を整えることを目的とした美容ケアです。抜け毛などの症状が気になる場合は医療機関への相談もご検討ください。",
       },
     ],
   },
   color: {
-    headline: "美しい髪色も、頭皮への思いやりも。",
-    lead: "ヘアカラーを楽しみたい。でも頭皮のことも大切にしたい。そんな方に向けた、ヘアカラーとヘッドスパを組み合わせたメニューです。",
+    headline: "美しい髪色と、頭皮への思いやりを。",
+    lead: "カラーを続けたい。でも頭皮のことも大切にしたい。そんな方へ、ゼロテクニックカラーと本格ウェットヘッドスパを組み合わせた特別なメニューです。",
     recommended: [
-      "カラーと頭皮ケアを一緒に受けたい",
-      "髪色だけでなく頭皮にも気を配りたい",
-      "落ち着いた個室でカラーを楽しみたい",
-      "施術時間も上質なリラックスタイムにしたい",
+      "白髪染めと頭皮ケアを一緒に受けたい",
+      "カラー剤が頭皮に触れることが気になる",
+      "髪色だけでなく頭皮環境も大切にしたい",
+      "落ち着いた個室で施術を受けたい",
     ],
     highlights: [
       {
+        title: "ゼロテクニックカラー",
+        description:
+          "カラー剤を頭皮にできるだけ直接つけないよう、根元からわずかに離して塗布する技術です。",
+      },
+      {
         title: "ヘアカラーとスパを一度に",
         description:
-          "髪色の仕上がりと頭皮への配慮を大切にした、専門店ならではの組み合わせです。",
+          "アロマクリームスパや高保水Wトリートメントなどを組み合わせ、心地よい時間を演出します。",
       },
       {
-        title: "完全個室でゆったり",
+        title: "頭皮ケア付きコースも",
         description:
-          "周囲を気にせず、落ち着いた空間で施術をお受けいただけます。",
+          "高濃度ヒト幹細胞ケアStandardを組み合わせた上位コースもご用意しています。",
+      },
+    ],
+    faq: [
+      {
+        question: "普通のヘアカラーとの違いは何ですか？",
+        answer:
+          "ゼロテクニックカラーに加えて、ウェットヘッドスパやトリートメントなどのケア工程を組み合わせている点が特徴です。",
       },
       {
-        title: "経験を活かした丁寧な施術",
-        description:
-          "髪や頭皮の状態、ご希望を確認しながら施術を進めます。",
+        question: "ブリーチはできますか？",
+        answer: "申し訳ございません。当店ではブリーチを使用しておりません。",
+      },
+      {
+        question: "カラー剤のアレルギーがあっても大丈夫ですか？",
+        answer:
+          "ゼロテクニックカラーや残留ジアミンへのケアは、アレルギーを防ぐことを保証するものではありません。過去にカラー剤でアレルギー症状が出た方は、施術前に必ずご相談ください。",
       },
     ],
   },
   relaxation: {
-    headline: "ただ休むだけではない、深く満たされる時間。",
-    lead: "毎日頑張る自分に、特別なひとときを。完全個室の空間で、水と温もりに包まれる本格ウェットヘッドスパをご体験ください。",
+    headline: "何もしない贅沢を、90分間。",
+    lead: "水・スチーム・アロマクリーム・熟練の手技。ドライヘッドスパとは異なる、本格ウェットスパならではの心地よさをご体験ください。",
     recommended: [
-      "仕事や日常から離れてリフレッシュしたい",
-      "ドライヘッドスパとは違う体験をしたい",
+      "毎日忙しく、自分だけの時間がほしい",
+      "気分をリフレッシュしたい",
+      "本格的なウェットヘッドスパを体験したい",
       "自分へのご褒美を探している",
-      "大切な方へのギフトを検討している",
     ],
     highlights: [
       {
-        title: "ウェットスパならではの心地よさ",
+        title: "ドライとは異なるウェットスパ",
         description:
-          "水やスチームを使った施術で、ドライスパとは異なる体験をお楽しみいただけます。",
+          "シャンプーやスチーム、トリートメントを組み合わせ、頭皮を洗い上げる心地よさまで楽しめます。",
       },
       {
-        title: "五感に配慮した空間",
+        title: "多彩なリラクゼーション工程",
         description:
-          "照明や香り、音、温度までこだわり、心地よい時間を演出します。",
+          "足湯、カッサ、アロマクリームスパ、ホットストーンなどを取り入れています。",
       },
       {
-        title: "自分だけのプライベート時間",
+        title: "完全個室で過ごす90分",
         description:
-          "完全予約制・完全個室で、周囲を気にせずゆったりお過ごしいただけます。",
+          "周囲の視線や会話を気にせず、静かな空間でゆったりとお過ごしいただけます。",
+      },
+    ],
+    faq: [
+      {
+        question: "ドライヘッドスパとは何が違いますか？",
+        answer:
+          "当店では水やスチーム、シャンプー、トリートメントなどを使用します。頭をほぐすだけでなく、頭皮や髪を洗い上げる工程も含まれます。",
+      },
+      {
+        question: "ヘッドスパが初めてでも大丈夫ですか？",
+        answer:
+          "はい。初めての方にもお選びいただけるメニューです。気になることがあれば施術前にご相談ください。",
+      },
+      {
+        question: "どんな服装で行けばいいですか？",
+        answer:
+          "普段の服装でお越しいただけます。施術にあたり気になることがあれば、ご予約前にお問い合わせください。",
       },
     ],
   },
@@ -114,9 +165,11 @@ export default async function MenuDetailPage({
   if (!menu) notFound()
 
   const guide = menuGuides[id]
+  const isScalp = id === "scalp"
 
   return (
     <main className="min-h-screen bg-background">
+      {/* HERO */}
       <section
         className={`relative w-full overflow-hidden ${
           menu.image
@@ -129,26 +182,24 @@ export default async function MenuDetailPage({
             src={menu.image}
             alt={menu.tab}
             fill
-            className="object-cover"
-            sizes="100vw"
             priority
+            sizes="100vw"
+            className="object-cover"
           />
         )}
 
         <div className="absolute inset-0 bg-black/60" />
 
-        <div className="absolute left-5 top-8 z-10 lg:left-10">
-          <Link
-            href="/#menu"
-            className="text-xs tracking-widest text-white/80 transition hover:text-gold"
-          >
-            ← メニュー一覧へ
-          </Link>
-        </div>
+        <Link
+          href="/#menu"
+          className="absolute left-5 top-8 z-10 text-xs tracking-widest text-white/80 transition hover:text-gold lg:left-10"
+        >
+          ← メニュー一覧へ
+        </Link>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center">
-          <p className="mb-4 text-xs tracking-[0.35em] text-gold">
-            HEAD SPA MENU
+          <p className="mb-4 text-xs tracking-[0.3em] text-gold">
+            PRIVATE HEAD SPA
           </p>
           <h1 className="text-2xl leading-relaxed tracking-wider text-white sm:text-4xl">
             {menu.tab}
@@ -160,10 +211,11 @@ export default async function MenuDetailPage({
       </section>
 
       <div className="mx-auto max-w-5xl px-5 py-16 lg:px-10 lg:py-24">
+        {/* INTRO */}
         {guide && (
           <section className="mb-20 text-center">
             <p className="text-xs tracking-[0.3em] text-gold">
-              FOR YOUR BEAUTY & WELLNESS
+              YOUR SPECIAL EXPERIENCE
             </p>
             <h2 className="mx-auto mt-6 max-w-3xl text-xl leading-[1.8] text-foreground sm:text-3xl">
               {guide.headline}
@@ -174,6 +226,7 @@ export default async function MenuDetailPage({
           </section>
         )}
 
+        {/* DESCRIPTION */}
         <section className="mb-20">
           <div className="mx-auto max-w-3xl space-y-5 text-center text-sm leading-9 text-muted-foreground">
             {menu.descriptionParagraphs.map((paragraph, index) => (
@@ -182,6 +235,7 @@ export default async function MenuDetailPage({
           </div>
         </section>
 
+        {/* RECOMMENDED */}
         {guide && (
           <section className="mb-20">
             <div className="mb-9 text-center">
@@ -209,6 +263,7 @@ export default async function MenuDetailPage({
           </section>
         )}
 
+        {/* HIGHLIGHTS */}
         {guide && (
           <section className="mb-20">
             <div className="mb-9 text-center">
@@ -241,7 +296,8 @@ export default async function MenuDetailPage({
           </section>
         )}
 
-        <section className="mb-20">
+        {/* PRICING */}
+        <section className="mb-20" id="course">
           <div className="mb-9 text-center">
             <p className="text-xs tracking-[0.3em] text-gold">
               MENU & PRICE
@@ -249,60 +305,83 @@ export default async function MenuDetailPage({
             <h2 className="mt-3 text-xl text-foreground sm:text-2xl">
               コース・料金
             </h2>
+            <p className="mt-4 text-sm text-muted-foreground">
+              すべて90分・税込価格
+            </p>
           </div>
 
-          <div className="border border-border/40 bg-card">
-            {menu.items.map((item, index) => (
-              <div
-                key={item.name}
-                className={`px-5 py-7 sm:px-8 ${
-                  index < menu.items.length - 1
-                    ? "border-b border-border/40"
-                    : ""
-                }`}
-              >
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <h3 className="text-base leading-7 text-foreground">
-                      {item.name}
-                    </h3>
-                    {item.detail && (
-                      <p className="mt-2 text-xs leading-6 text-muted-foreground">
+          <div className="space-y-4">
+            {menu.items.map((item, index) => {
+              const isPremium = isScalp && index === 0
+
+              return (
+                <article
+                  key={item.name}
+                  className={`relative border p-6 sm:p-8 ${
+                    isPremium
+                      ? "border-gold/70 bg-card"
+                      : "border-border/40 bg-card"
+                  }`}
+                >
+                  {isPremium && (
+                    <span className="mb-5 inline-block rounded-full border border-gold/60 px-4 py-1.5 text-[10px] tracking-[0.15em] text-gold">
+                      PREMIUM COLLECTION
+                    </span>
+                  )}
+
+                  <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="max-w-xl">
+                      <h3 className="text-lg leading-8 text-foreground">
+                        {item.name}
+                      </h3>
+                      <p className="mt-3 text-sm leading-8 text-muted-foreground">
                         {item.detail}
                       </p>
-                    )}
-                  </div>
+                    </div>
 
-                  <div className="shrink-0 sm:text-right">
-                    <p className="text-xs text-muted-foreground">
-                      {item.duration}
-                    </p>
-                    <p className="mt-1 text-2xl text-gold">
-                      {item.price}
-                      <span className="ml-2 text-xs text-muted-foreground">
+                    <div className="shrink-0 sm:text-right">
+                      <p className="text-xs text-muted-foreground">
+                        {item.duration}
+                      </p>
+                      <p className="mt-2 text-3xl text-gold">
+                        {item.price}
+                      </p>
+                      <p className="mt-1 text-xs text-muted-foreground">
                         税込
-                      </span>
-                    </p>
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <a
-                  href={RESERVE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex min-h-11 w-full items-center justify-center rounded-full border border-gold bg-gold px-6 py-3 text-sm font-medium text-background transition hover:opacity-90 sm:w-auto"
-                >
-                  空き状況・予約を確認する →
-                </a>
-              </div>
-            ))}
+                  <a
+                    href={RESERVE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`mt-7 flex min-h-12 w-full items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition sm:w-fit ${
+                      isPremium
+                        ? "bg-gold text-background hover:opacity-90"
+                        : "border border-gold/60 text-gold hover:bg-gold hover:text-background"
+                    }`}
+                  >
+                    このコースの空き状況を見る →
+                  </a>
+                </article>
+              )
+            })}
           </div>
+
+          {isScalp && (
+            <p className="mt-6 text-center text-xs leading-7 text-muted-foreground">
+              3コースの主な違いはケア成分の濃度と使用量です。
+              施術時間はいずれも90分です。
+            </p>
+          )}
         </section>
 
+        {/* STEPS */}
         <section className="mb-20">
           <div className="mb-9 text-center">
             <p className="text-xs tracking-[0.3em] text-gold">
-              TREATMENT
+              TREATMENT FLOW
             </p>
             <h2 className="mt-3 text-xl text-foreground sm:text-2xl">
               施術内容
@@ -313,7 +392,7 @@ export default async function MenuDetailPage({
             {menu.steps.map((step, index) => (
               <div
                 key={`${step}-${index}`}
-                className="flex min-h-20 items-center justify-center border border-border/40 bg-card px-3 py-4 text-center"
+                className="flex min-h-24 items-center justify-center border border-border/40 bg-card px-3 py-4 text-center"
               >
                 <div>
                   <p className="mb-2 text-xs text-gold">
@@ -328,18 +407,48 @@ export default async function MenuDetailPage({
           </div>
         </section>
 
-        <section className="border border-gold/25 bg-card px-6 py-12 text-center sm:px-10">
+        {/* FAQ */}
+        {guide && (
+          <section className="mb-20">
+            <div className="mb-9 text-center">
+              <p className="text-xs tracking-[0.3em] text-gold">
+                FAQ
+              </p>
+              <h2 className="mt-3 text-xl text-foreground sm:text-2xl">
+                よくあるご質問
+              </h2>
+            </div>
+
+            <div className="mx-auto max-w-3xl divide-y divide-border/40 border-y border-border/40">
+              {guide.faq.map((item) => (
+                <details key={item.question} className="group py-5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm leading-7 text-foreground">
+                    <span>Q. {item.question}</span>
+                    <span className="shrink-0 text-lg text-gold group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-4 pr-6 text-sm leading-8 text-muted-foreground">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* FINAL CTA */}
+        <section className="border border-gold/30 bg-card px-6 py-12 text-center sm:px-10 sm:py-16">
           <p className="text-xs tracking-[0.3em] text-gold">
             FIRST VISIT
           </p>
-          <h2 className="mt-4 text-xl text-foreground sm:text-2xl">
-            初めてのお客様へ
+          <h2 className="mt-5 text-xl leading-8 text-foreground sm:text-2xl">
+            初めての方も、安心してお越しください。
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-muted-foreground">
-            初めてのヘッドスパでもご安心ください。
-            ご希望や気になることを伺いながら、
-            お一人おひとりに合わせて丁寧にご案内します。
-            コース選びに迷われた場合もお気軽にご相談ください。
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
+            完全予約制・完全個室のヘッドスパ専門店ゆう。
+            お悩みやご希望を伺いながら、丁寧にご案内いたします。
+            自分のためだけの特別な時間をお楽しみください。
           </p>
 
           <a
@@ -353,9 +462,9 @@ export default async function MenuDetailPage({
 
           <Link
             href="/#menu"
-            className="mt-6 inline-block text-sm text-muted-foreground underline underline-offset-4 transition hover:text-gold"
+            className="mt-7 inline-block text-sm text-muted-foreground underline underline-offset-4 transition hover:text-gold"
           >
-            ほかのメニューも見る
+            ほかのメニューを見る
           </Link>
         </section>
       </div>
