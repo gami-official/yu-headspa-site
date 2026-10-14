@@ -122,15 +122,17 @@ export function Header() {
                 予約する
               </a>
 
-              <a
-                href={GIFT_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden h-9 items-center justify-center rounded-full border border-[#d6b36a]/30 bg-white/5 px-4 text-[11px] tracking-[0.08em] text-[#d6b36a] transition hover:border-[#d6b36a] hover:bg-[#d6b36a]/10 md:inline-flex"
-              >
-                <Gift className="mr-1 h-3.5 w-3.5" />
-                GIFT
-              </a>
+             
+<a
+  href={GIFT_STORE_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-[#d6b36a]/40 bg-white/5 px-2 text-[10px] tracking-[0.04em] text-[#d6b36a] transition hover:border-[#d6b36a] hover:bg-[#d6b36a]/10 sm:px-4 sm:text-[11px] sm:tracking-[0.08em]"
+>
+  <Gift className="mr-1 h-3.5 w-3.5" />
+  GIFT
+</a>
+
 
               <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-white/10 bg-white">
                 <Image
