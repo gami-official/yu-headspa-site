@@ -30,14 +30,23 @@ export function Hero() {
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden bg-black text-white">
       <div className="absolute inset-0 overflow-hidden">
-        <video
-          src="/videos/hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="h-full w-full object-cover scale-[1.08] sm:scale-[1.12] lg:scale-[1.15]"
-        />
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+  />
+
+  <video
+    src="/videos/hero.mp4"
+    poster="/images/hero-bg.jpg"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    aria-hidden="true"
+    className="absolute inset-0 h-full w-full object-cover scale-[1.08] sm:scale-[1.12] lg:scale-[1.15]"
+  />
         <div className="absolute inset-0 bg-black/68" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-black/88" />
       </div>
