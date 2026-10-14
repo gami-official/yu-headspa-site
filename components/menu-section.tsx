@@ -1,6 +1,8 @@
+
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { FadeIn } from "@/components/fade-in"
 import { menus } from "@/lib/menu-data"
 
@@ -13,114 +15,199 @@ declare global {
   }
 }
 
-export function MenuSection() {
-  const handleReserveClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    location: string,
-  ) => {
-    e.preventDefault()
+const menuIntroductions: Record<
+  string,
+  {
+    catchphrase: string
+    description: string
+    recommended: string
+  }
+> = {
+  scalp: {
+    catchphrase: "未来の髪を考える、本格頭皮ケア。",
+    description:
+      "髪のボリュームや頭皮環境が気になる方へ。濃度と使用量で選べる3つの育毛ヘッドスパ。",
+    recommended: "髪・頭皮のお悩みがある方",
+  },
+  color: {
+    catchphrase: "髪色も、頭皮も、美しく。",
+    description:
+      "ゼロテクニックカラーとウェットヘッドスパを融合。美しい髪色と頭皮への配慮を両立。",
+    recommended: "白髪染め・カラーをされる方",
+  },
+  relaxation: {
+    catchphrase: "90分、自分だけの贅沢な時間。",
+    description:
+      "アロマクリーム・スチーム・ホットストーンを組み合わせた本格ウェットヘッドスパ。",
+    recommended: "リフレッシュ・自分へのご褒美",
+  },
+}
 
+export function MenuSection() {
+  const trackReserve = (location: string) => {
     window.dataLayer = window.dataLayer || []
 
     window.dataLayer.push({
       event: "reserve_click",
       reserve_location: location,
     })
-
-    setTimeout(() => {
-      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
-    }, 300)
   }
 
   return (
-    <section id="menu" className="bg-background py-12 lg:py-18">
-      <div className="mx-auto max-w-5xl px-5 lg:px-10">
+    <section
+      id="menu"
+      className="scroll-mt-20 bg-background py-14 lg:py-20"
+    >
+      <div className="mx-auto max-w-6xl px-5 lg:px-10">
         <FadeIn>
-          <div className="mb-9 text-center">
-            <p className="text-[10px] tracking-[0.28em] text-gold/70">
-              MENU
+          <div className="mx-auto mb-10 max-w-2xl text-center lg:mb-12">
+            <p className="text-[10px] tracking-[0.3em] text-gold/80">
+              HEAD SPA MENU
             </p>
 
-            <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.4rem)] leading-[1.45] tracking-[0.03em] text-foreground">
-              メニューを選ぶ
+            <h2 className="mt-4 text-[clamp(1.6rem,5vw,2.5rem)] leading-[1.5] tracking-[0.04em] text-foreground">
+              あなたに合う、特別な90分を。
             </h2>
 
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-muted-foreground">
-              空き状況は予約ページで確認できます。
+            <p className="mt-5 text-sm leading-8 text-muted-foreground">
+              頭皮ケア、ヘアカラー、リラクゼーション。
+              <br className="hidden sm:block" />
+              目的に合わせて選べる3つのヘッドスパ。
             </p>
           </div>
         </FadeIn>
 
-        <div className="flex flex-col gap-7">
-          {menus.map((menu, idx) => (
-            <FadeIn key={menu.id} delay={idx * 0.06}>
-              <div className="overflow-hidden rounded-[26px] border border-gold/20 bg-card shadow-sm">
-                <div className="relative h-40 w-full overflow-hidden sm:h-52">
-                  <Image
-                    src={menu.image}
-                    alt={menu.tab}
-                    fill
-                    className="object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
-                </div>
+        <div className="grid gap-5 lg:grid-cols-3 lg:gap-6">
+          {menus.map((menu, index) => {
+            const intro = menuIntroductions[menu.id]
+            const lowestPrice = menu.items[menu.items.length - 1]?.price
+            const isScalp = menu.id === "scalp"
 
-                <div className="p-5 sm:p-7">
-                  <div className="text-center sm:text-left">
-                    <p className="text-[10px] tracking-[0.24em] text-gold/70">
-                      {menu.enTitle.toUpperCase()}
+            return (
+              <FadeIn key={menu.id} delay={index * 0.06}>
+                <article className="flex h-full flex-col overflow-hidden rounded-[22px] border border-gold/20 bg-card shadow-sm">
+                  <div className="relative h-44 w-full overflow-hidden sm:h-52 lg:h-48">
+                    <Image
+                      src={menu.image}
+                      alt={menu.tab}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-700 hover:scale-105"
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+
+                    {isScalp && (
+                      <span className="absolute left-4 top-4 rounded-full border border-[#d6b36a]/60 bg-black/65 px-3 py-1.5 text-[10px] tracking-wider text-[#d6b36a]">
+                        人気No.1
+                      </span>
+                    )}
+
+                    <div className="absolute bottom-4 left-5 right-5">
+                      <p className="text-[10px] tracking-[0.16em] text-[#d6b36a]">
+                        {menu.enTitle.toUpperCase()}
+                      </p>
+                      <h3 className="mt-2 text-lg leading-7 text-white sm:text-xl">
+                        {menu.tab}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-1 flex-col p-5 sm:p-6">
+                    <p className="text-base font-medium leading-7 text-foreground">
+                      {intro?.catchphrase ?? menu.tab}
                     </p>
 
-                    <h3 className="mt-3 text-[clamp(1.25rem,5vw,1.8rem)] leading-[1.45] tracking-[0.03em] text-foreground">
-                      {menu.tab}
-                    </h3>
-                  </div>
+                    <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                      {intro?.description ??
+                        menu.descriptionParagraphs[0]}
+                    </p>
 
-                  <div className="mt-6 space-y-3">
-                    {menu.items.map((item, i) => (
-                      <div
-                        key={i}
-                        className={`rounded-2xl border p-5 ${
-                          i === 1
-                            ? "border-gold bg-gold/5"
-                            : "border-border/30"
-                        }`}
-                      >
-                        {i === 1 && (
-                          <p className="mb-2 text-[10px] tracking-[0.24em] text-gold">
-                            MOST POPULAR
-                          </p>
-                        )}
-
-                        <p className="text-[15px] font-medium leading-7 text-foreground">
-                          {item.name}
+                    {intro && (
+                      <div className="mt-5 rounded-xl border border-gold/15 bg-gold/5 px-4 py-3">
+                        <p className="text-[10px] tracking-wider text-gold">
+                          こんな方におすすめ
                         </p>
-
-                        <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                          {item.detail} ／ {item.duration}
+                        <p className="mt-1 text-xs leading-6 text-foreground">
+                          {intro.recommended}
                         </p>
-
-                        <p className="mt-4 text-2xl font-semibold tracking-[0.03em] text-foreground">
-                          {item.price}
-                        </p>
-
-                        <a
-                          href={RESERVE_URL}
-                          onClick={(e) =>
-                            handleReserveClick(e, `menu_${menu.id}_${i + 1}`)
-                          }
-                          className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
-                        >
-                          このコースを予約する
-                        </a>
                       </div>
-                    ))}
+                    )}
+
+                    <div className="mt-6 border-t border-border/40 pt-5">
+                      <p className="text-xs text-muted-foreground">
+                        施術時間 90分 ／ 税込
+                      </p>
+
+                      <div className="mt-2 flex flex-wrap items-baseline gap-2">
+                        <span className="text-2xl font-medium text-foreground">
+                          {lowestPrice}
+                        </span>
+                        {menu.items.length > 1 && (
+                          <span className="text-sm text-muted-foreground">
+                            〜
+                          </span>
+                        )}
+                      </div>
+
+                      <p className="mt-2 text-xs leading-6 text-muted-foreground">
+                        {menu.items.length === 1
+                          ? "1コースをご用意"
+                          : `${menu.items.length}つのコースから選べます`}
+                      </p>
+                    </div>
+
+                    {isScalp && (
+                      <div className="mt-4 border-l-2 border-gold/60 pl-3">
+                        <p className="text-xs leading-6 text-muted-foreground">
+                          Premium ¥35,000
+                          <br />
+                          超高濃度＋使用量多めの最上位コース。
+                          セレブや医師のお客様にも選ばれています。
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="mt-auto space-y-3 pt-7">
+                      <Link
+                        href={`/menu/${menu.id}`}
+                        className="flex min-h-12 w-full items-center justify-center rounded-full border border-gold/70 px-5 py-3 text-sm font-medium text-gold transition hover:bg-gold hover:text-background"
+                      >
+                        コースの違い・詳細を見る →
+                      </Link>
+
+                      <a
+                        href={RESERVE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() =>
+                          trackReserve(`menu_${menu.id}`)
+                        }
+                        className="flex min-h-12 w-full items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-medium text-background transition hover:opacity-90"
+                      >
+                        空き状況・予約はこちら
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </FadeIn>
-          ))}
+                </article>
+              </FadeIn>
+            )
+          })}
         </div>
+
+        <FadeIn>
+          <div className="mt-10 text-center">
+            <p className="text-sm leading-8 text-muted-foreground">
+              どのコースが合うか迷われた方も、
+              <br className="sm:hidden" />
+              詳細ページで特徴をご確認いただけます。
+            </p>
+
+            <p className="mt-4 text-xs leading-7 text-muted-foreground">
+              完全予約制・完全個室 ／ 1日3名限定
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )
