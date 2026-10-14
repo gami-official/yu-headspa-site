@@ -24,9 +24,7 @@ export function Hero() {
       reserve_location: "hero",
     })
 
-    setTimeout(() => {
-      window.location.href = RESERVE_URL
-    }, 800)
+    window.location.href = RESERVE_URL
   }
 
   return (
