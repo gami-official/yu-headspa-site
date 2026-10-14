@@ -26,7 +26,7 @@ const menuIntroductions: Record<
   scalp: {
     catchphrase: "未来の髪を考える、本格頭皮ケア。",
     description:
-      "髪のボリュームや頭皮環境が気になる方へ。濃度と使用量で選べる3つの育毛ヘッドスパ。",
+      "頭皮の状態やお悩みに合わせて選べる、3つの育毛ヘッドスパ。ヒト幹細胞由来成分を取り入れたケアで、健やかな頭皮環境を目指します。",
     recommended: "髪・頭皮のお悩みがある方",
   },
   color: {
@@ -80,7 +80,8 @@ export function MenuSection() {
         <div className="grid gap-5 lg:grid-cols-3 lg:gap-6">
           {menus.map((menu, index) => {
             const intro = menuIntroductions[menu.id]
-            const lowestPrice = menu.items[menu.items.length - 1]?.price
+            const lowestPrice =
+              menu.items[menu.items.length - 1]?.price
             const isScalp = menu.id === "scalp"
 
             return (
@@ -99,7 +100,7 @@ export function MenuSection() {
 
                     {isScalp && (
                       <span className="absolute left-4 top-4 rounded-full border border-[#d6b36a]/60 bg-black/65 px-3 py-1.5 text-[10px] tracking-wider text-[#d6b36a]">
-                        人気No.1
+                        SCALP CARE
                       </span>
                     )}
 
@@ -107,6 +108,7 @@ export function MenuSection() {
                       <p className="text-[10px] tracking-[0.16em] text-[#d6b36a]">
                         {menu.enTitle.toUpperCase()}
                       </p>
+
                       <h3 className="mt-2 text-lg leading-7 text-white sm:text-xl">
                         {menu.tab}
                       </h3>
@@ -128,6 +130,7 @@ export function MenuSection() {
                         <p className="text-[10px] tracking-wider text-gold">
                           こんな方におすすめ
                         </p>
+
                         <p className="mt-1 text-xs leading-6 text-foreground">
                           {intro.recommended}
                         </p>
@@ -143,6 +146,7 @@ export function MenuSection() {
                         <span className="text-2xl font-medium text-foreground">
                           {lowestPrice}
                         </span>
+
                         {menu.items.length > 1 && (
                           <span className="text-sm text-muted-foreground">
                             〜
@@ -158,13 +162,27 @@ export function MenuSection() {
                     </div>
 
                     {isScalp && (
-                      <div className="mt-4 border-l-2 border-gold/60 pl-3">
-                        <p className="text-xs leading-6 text-muted-foreground">
-                          Premium ¥35,000
-                          <br />
-                          超高濃度＋使用量多めの最上位コース。
-                          セレブや医師のお客様にも選ばれています。
+                      <div className="mt-4 rounded-xl border border-gold/20 bg-gold/5 px-4 py-3">
+                        <p className="mb-3 text-[10px] tracking-[0.14em] text-gold">
+                          3 COURSES
                         </p>
+
+                        <div className="space-y-2 text-xs leading-6 text-muted-foreground">
+                          <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                            <span>Light｜中濃度</span>
+                            <span>¥18,000</span>
+                          </div>
+
+                          <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                            <span>Standard｜高濃度</span>
+                            <span>¥21,000</span>
+                          </div>
+
+                          <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                            <span>Premium｜超高濃度＋使用量多め</span>
+                            <span>¥35,000</span>
+                          </div>
+                        </div>
                       </div>
                     )}
 
