@@ -42,7 +42,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-black/88" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-28 text-center sm:px-6 sm:pb-20 sm:pt-34 lg:px-10">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-5 py-20 text-center sm:px-6 sm:py-24 lg:px-10">
         <div className="w-full max-w-3xl">
           <FadeIn>
             <p className="text-[10px] tracking-[0.28em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
