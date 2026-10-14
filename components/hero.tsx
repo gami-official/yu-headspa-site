@@ -28,7 +28,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative isolate min-h-screen overflow-hidden bg-black text-white">
+    <section className="relative isolate min-h-[100svh] overflow-hidden bg-black text-white">
       <div className="absolute inset-0 overflow-hidden">
         <video
           src="/videos/hero.mp4"
