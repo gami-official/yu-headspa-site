@@ -1,7 +1,8 @@
+
 "use client"
 
 import Image from "next/image"
-import { FadeIn } from "@/components/fade-in"
+import Link from "next/link"
 import { menus } from "@/lib/menu-data"
 
 const RESERVE_URL =
@@ -14,113 +15,123 @@ declare global {
 }
 
 export function MenuSection() {
-  const handleReserveClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    location: string,
-  ) => {
-    e.preventDefault()
-
+  const trackReserve = (location: string) => {
     window.dataLayer = window.dataLayer || []
-
     window.dataLayer.push({
       event: "reserve_click",
       reserve_location: location,
     })
-
-    setTimeout(() => {
-      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
-    }, 300)
   }
 
   return (
-    <section id="menu" className="bg-background py-12 lg:py-18">
-      <div className="mx-auto max-w-5xl px-5 lg:px-10">
-        <FadeIn>
-          <div className="mb-9 text-center">
-            <p className="text-[10px] tracking-[0.28em] text-gold/70">
-              MENU
-            </p>
+    <section
+      id="menu"
+      className="scroll-mt-20 overflow-hidden bg-background py-14 sm:py-20 lg:py-24"
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center sm:mb-14">
+          <p className="text-xs tracking-[0.25em] text-gold">
+            HEAD SPA MENU
+          </p>
 
-            <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.4rem)] leading-[1.45] tracking-[0.03em] text-foreground">
-              メニューを選ぶ
-            </h2>
+          <h2 className="mt-4 text-2xl font-medium leading-relaxed text-foreground sm:text-3xl">
+            あなたに合ったヘッドスパを
+          </h2>
 
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-muted-foreground">
-              空き状況は予約ページで確認できます。
-            </p>
-          </div>
-        </FadeIn>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-muted-foreground sm:text-base">
+            頭皮や髪のお悩み、リラックスしたい気持ちに合わせて
+            3種類のヘッドスパをご用意しています。
+            施術内容や料金を比較してお選びください。
+          </p>
+        </div>
 
-        <div className="flex flex-col gap-7">
-          {menus.map((menu, idx) => (
-            <FadeIn key={menu.id} delay={idx * 0.06}>
-              <div className="overflow-hidden rounded-[26px] border border-gold/20 bg-card shadow-sm">
-                <div className="relative h-40 w-full overflow-hidden sm:h-52">
-                  <Image
-                    src={menu.image}
-                    alt={menu.tab}
-                    fill
-                    className="object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {menus.map((menu) => (
+            <article
+              key={menu.id}
+              className="flex min-w-0 flex-col overflow-hidden rounded-2xl border border-gold/25 bg-card"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden bg-zinc-900">
+                <Image
+                  src={menu.image}
+                  alt={menu.tab}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute bottom-4 left-4 text-xs tracking-widest text-white">
+                  {menu.enTitle}
+                </span>
+              </div>
+
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <h3 className="break-words text-lg font-semibold leading-8 text-foreground">
+                  {menu.tab}
+                </h3>
+
+                <p className="mt-3 line-clamp-3 text-sm leading-7 text-muted-foreground">
+                  {menu.descriptionParagraphs[0]}
+                </p>
+
+                <div className="mt-6 space-y-4 border-t border-border/50 pt-5">
+                  {menu.items.map((item, index) => (
+                    <div
+                      key={`${menu.id}-${index}`}
+                      className="min-w-0 border-b border-border/30 pb-4 last:border-b-0 last:pb-0"
+                    >
+                      <p className="break-words text-sm font-medium leading-6 text-foreground">
+                        {item.name}
+                      </p>
+
+                      <p className="mt-1 break-words text-xs leading-6 text-muted-foreground">
+                        {item.detail}
+                      </p>
+
+                      <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+                        <span className="text-xs text-muted-foreground">
+                          {item.duration}
+                        </span>
+                        <span className="text-lg font-semibold text-gold">
+                          {item.price}
+                          <span className="ml-1 text-xs font-normal">
+                            税込
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="p-5 sm:p-7">
-                  <div className="text-center sm:text-left">
-                    <p className="text-[10px] tracking-[0.24em] text-gold/70">
-                      {menu.enTitle.toUpperCase()}
-                    </p>
+                <div className="mt-auto space-y-3 pt-7">
+                  <Link
+                    href={`/menu/${menu.id}`}
+                    className="flex min-h-12 w-full items-center justify-center rounded-full border border-gold px-4 py-3 text-center text-sm font-medium text-gold transition hover:bg-gold/10"
+                  >
+                    施術内容・コース詳細を見る →
+                  </Link>
 
-                    <h3 className="mt-3 text-[clamp(1.25rem,5vw,1.8rem)] leading-[1.45] tracking-[0.03em] text-foreground">
-                      {menu.tab}
-                    </h3>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {menu.items.map((item, i) => (
-                      <div
-                        key={i}
-                        className={`rounded-2xl border p-5 ${
-                          i === 1
-                            ? "border-gold bg-gold/5"
-                            : "border-border/30"
-                        }`}
-                      >
-                        {i === 1 && (
-                          <p className="mb-2 text-[10px] tracking-[0.24em] text-gold">
-                            MOST POPULAR
-                          </p>
-                        )}
-
-                        <p className="text-[15px] font-medium leading-7 text-foreground">
-                          {item.name}
-                        </p>
-
-                        <p className="mt-2 text-xs leading-6 text-muted-foreground">
-                          {item.detail} ／ {item.duration}
-                        </p>
-
-                        <p className="mt-4 text-2xl font-semibold tracking-[0.03em] text-foreground">
-                          {item.price}
-                        </p>
-
-                        <a
-                          href={RESERVE_URL}
-                          onClick={(e) =>
-                            handleReserveClick(e, `menu_${menu.id}_${i + 1}`)
-                          }
-                          className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
-                        >
-                          このコースを予約する
-                        </a>
-                      </div>
-                    ))}
-                  </div>
+                  <a
+                    href={RESERVE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackReserve(`menu_${menu.id}`)
+                    }
+                    className="flex min-h-12 w-full items-center justify-center rounded-full bg-gold px-4 py-3 text-center text-sm font-medium text-black transition hover:opacity-90"
+                  >
+                    空き状況を確認・予約する →
+                  </a>
                 </div>
               </div>
-            </FadeIn>
+            </article>
           ))}
         </div>
+
+        <p className="mt-8 text-center text-xs leading-7 text-muted-foreground">
+          ※ ご予約は外部予約サイトに移動します。
+          コース内容に迷われた方は、詳細ページをご覧ください。
+        </p>
       </div>
     </section>
   )
