@@ -1,77 +1,120 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
-/* =====================================
-   HEAD SPA YU - Responsive Improvements
-   ===================================== */
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #F5F5F0;
+  --card: #141414;
+  --card-foreground: #F5F5F0;
+  --popover: #141414;
+  --popover-foreground: #F5F5F0;
+  --primary: #0A0A0A;
+  --primary-foreground: #F5F5F0;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #F5F5F0;
+  --muted: #1A1A1A;
+  --muted-foreground: #8A8A80;
+  --accent: #C4A265;
+  --accent-foreground: #0A0A0A;
+  --destructive: #dc2626;
+  --destructive-foreground: #F5F5F0;
+  --border: #2A2A2A;
+  --input: #2A2A2A;
+  --ring: #C4A265;
+  --radius: 0.25rem;
+  --gold: #C4A265;
+  --gold-light: #D4B87A;
+  --brown: #3E2723;
+  --brown-light: #5D4037;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', sans-serif;
+  --font-serif: 'Noto Serif JP', 'Georgia', serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-brown: var(--brown);
+  --color-brown-light: var(--brown-light);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::selection {
+    background-color: #C4A26533;
+  }
+}
 
 html {
-  width: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
-body {
-  width: 100%;
-  min-width: 0;
-  overflow-x: clip;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-img,
-video,
-iframe {
-  max-width: 100%;
-}
-
-img {
-  height: auto;
-}
-
+/* 日本語の不自然な1文字改行を防止 */
 h1,
 h2,
 h3,
 h4,
 p,
-li {
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  line-break: strict;
+li,
+a,
+button {
   word-break: normal;
+  overflow-wrap: normal;
+  line-break: strict;
 }
 
-section,
-article,
-main {
-  min-width: 0;
+/* 英字・数字・URLだけははみ出し防止 */
+p,
+li {
+  overflow-wrap: break-word;
 }
 
+/* スマホ用の文字間・行間調整 */
 @media (max-width: 640px) {
   h1,
   h2,
   h3,
   h4 {
-    letter-spacing: 0.01em;
-    line-height: 1.5;
+    letter-spacing: 0.025em !important;
+    line-height: 1.55 !important;
   }
 
-  p {
-    line-height: 1.85;
-  }
-
-  button,
-  a {
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  p,
+  li,
+  a,
+  button {
+    letter-spacing: 0.01em !important;
   }
 }

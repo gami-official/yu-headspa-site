@@ -166,9 +166,7 @@ export default function RootLayout({
 
   return (
     <html lang="ja" className={notoSerifJP.variable}>
-      
-<body className="font-serif antialiased pb-24 md:pb-0">
-
+      <body className="font-serif antialiased">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-W9ZZDQDS"
