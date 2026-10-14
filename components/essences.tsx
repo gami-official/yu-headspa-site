@@ -1,10 +1,19 @@
 
 "use client"
 
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import { FadeIn } from "@/components/fade-in"
 
-const essences = [
+type Essence = {
+  number: string
+  english: string
+  title: string
+  description: string
+  image?: string
+}
+
+const essences: Essence[] = [
   {
     number: "01",
     english: "PRIVATE SPACE",
@@ -79,36 +88,104 @@ const essences = [
 
 export function Essences() {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
 
-  const scroll = (direction: "left" | "right") => {
-    const element = scrollRef.current
-    if (!element) return
+  const scrollToIndex = (index: number) => {
+    const container = scrollRef.current
+    if (!container) return
 
-    const card = element.querySelector<HTMLElement>(
+    const cards = container.querySelectorAll<HTMLElement>(
       "[data-essence-card]"
     )
 
-    const distance = (card?.offsetWidth ?? 300) + 16
+    const targetIndex = Math.max(
+      0,
+      Math.min(index, cards.length - 1)
+    )
 
-    element.scrollBy({
-      left: direction === "left" ? -distance : distance,
+    const target = cards[targetIndex]
+    if (!target) return
+
+    container.scrollTo({
+      left: target.offsetLeft - container.offsetLeft,
       behavior: "smooth",
     })
+
+    setActiveIndex(targetIndex)
   }
+
+  const scroll = (direction: "left" | "right") => {
+    scrollToIndex(
+      activeIndex + (direction === "left" ? -1 : 1)
+    )
+  }
+
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+
+    let frame = 0
+
+    const updateActiveIndex = () => {
+      cancelAnimationFrame(frame)
+
+      frame = requestAnimationFrame(() => {
+        const cards = container.querySelectorAll<HTMLElement>(
+          "[data-essence-card]"
+        )
+
+        if (!cards.length) return
+
+        const scrollPosition = container.scrollLeft
+
+        let nearestIndex = 0
+        let nearestDistance = Infinity
+
+        cards.forEach((card, index) => {
+          const distance = Math.abs(
+            card.offsetLeft -
+              container.offsetLeft -
+              scrollPosition
+          )
+
+          if (distance < nearestDistance) {
+            nearestDistance = distance
+            nearestIndex = index
+          }
+        })
+
+        setActiveIndex(nearestIndex)
+      })
+    }
+
+    container.addEventListener("scroll", updateActiveIndex, {
+      passive: true,
+    })
+
+    window.addEventListener("resize", updateActiveIndex)
+
+    updateActiveIndex()
+
+    return () => {
+      cancelAnimationFrame(frame)
+      container.removeEventListener("scroll", updateActiveIndex)
+      window.removeEventListener("resize", updateActiveIndex)
+    }
+  }, [])
 
   return (
     <section
       id="essences"
-      className="overflow-hidden bg-secondary py-20 text-white sm:py-24 lg:py-32"
+      className="overflow-hidden bg-[#171310] py-16 text-white sm:py-20 lg:py-24"
     >
-      <div className="mx-auto max-w-6xl px-5 lg:px-10">
+      <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <FadeIn>
-          <div className="mb-12 text-center sm:mb-16">
-            <p className="text-[11px] tracking-[0.25em] text-gold sm:text-sm sm:tracking-[0.4em]">
+          <div className="mb-10 text-center sm:mb-12">
+            <p className="text-[10px] tracking-[0.28em] text-[#d6b36a] sm:text-xs sm:tracking-[0.4em]">
               10 REASONS TO CHOOSE YU
             </p>
 
-            <h2 className="mt-5 text-2xl font-medium leading-relaxed tracking-wider text-white sm:text-3xl lg:text-4xl">
+            <h2 className="mt-5 text-2xl font-medium leading-relaxed tracking-[0.05em] text-white sm:text-3xl lg:text-4xl">
               選ばれる、10の理由。
             </h2>
 
@@ -118,68 +195,120 @@ export function Essences() {
               すべては、特別なひとときのために。
             </p>
 
-            <div className="mx-auto mt-7 h-px w-16 bg-gold/60" />
+            <div className="mx-auto mt-7 h-px w-16 bg-[#d6b36a]/60" />
           </div>
         </FadeIn>
 
         <div className="relative">
           <div
             ref={scrollRef}
-            className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-5 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-2"
-            style={{ scrollbarWidth: "none" }}
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-5 sm:gap-5 lg:gap-6"
+            style={{
+              scrollbarWidth: "none",
+              scrollPaddingLeft: "0px",
+            }}
+            aria-label="選ばれる10の理由"
           >
             {essences.map((item) => (
               <article
                 key={item.number}
                 data-essence-card
-                className="flex w-[84vw] max-w-[360px] shrink-0 snap-center flex-col border border-gold/25 bg-black/35 p-6 sm:w-full sm:max-w-none sm:p-8 lg:p-10"
+                className="relative flex w-[86%] shrink-0 snap-start flex-col overflow-hidden rounded-[20px] border border-[#d6b36a]/25 bg-[#211a15] sm:w-[47%] lg:w-[31%]"
               >
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-3xl font-light tracking-wide text-gold/80 sm:text-4xl">
-                    {item.number}
-                  </span>
+                {item.image ? (
+                  <div className="relative h-48 w-full overflow-hidden sm:h-52">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 86vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#211a15]/70 to-transparent" />
+                  </div>
+                ) : (
+                  <div className="relative flex h-28 items-center justify-center overflow-hidden border-b border-[#d6b36a]/15 bg-gradient-to-br from-[#35291e] via-[#241c17] to-[#171310] sm:h-32">
+                    <div className="absolute inset-5 rounded-full border border-[#d6b36a]/10" />
+                    <div className="absolute inset-8 rounded-full border border-[#d6b36a]/10" />
 
-                  <span className="text-right text-[9px] tracking-[0.12em] text-gold/70 sm:text-[10px] sm:tracking-[0.2em]">
-                    {item.english}
-                  </span>
+                    <span className="relative text-5xl font-light tracking-[0.1em] text-[#d6b36a]/65 sm:text-6xl">
+                      {item.number}
+                    </span>
+                  </div>
+                )}
+
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="text-xs tracking-[0.15em] text-[#d6b36a]/75">
+                      {item.number} / 10
+                    </span>
+
+                    <span className="text-right text-[9px] leading-5 tracking-[0.1em] text-[#d6b36a]/80">
+                      {item.english}
+                    </span>
+                  </div>
+
+                  <div className="mt-5 h-px w-full bg-[#d6b36a]/20" />
+
+                  <h3 className="mt-5 text-lg font-medium leading-[1.75] tracking-[0.02em] text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-8 text-white/65">
+                    {item.description}
+                  </p>
                 </div>
-
-                <div className="mt-6 h-px w-full bg-gold/20" />
-
-                <h3 className="mt-6 text-lg font-medium leading-[1.8] tracking-[0.03em] text-white sm:text-xl">
-                  {item.title}
-                </h3>
-
-                <p className="mt-5 text-sm leading-8 text-white/70">
-                  {item.description}
-                </p>
               </article>
             ))}
           </div>
 
-          <div className="mt-5 flex items-center justify-center gap-5 sm:hidden">
-            <button
-              type="button"
-              onClick={() => scroll("left")}
-              aria-label="前のこだわりを見る"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/50 text-gold transition hover:bg-gold hover:text-black"
-            >
-              <span aria-hidden="true">←</span>
-            </button>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="text-sm tracking-[0.15em] text-[#d6b36a]">
+                {String(activeIndex + 1).padStart(2, "0")}
+              </span>
 
-            <span className="text-xs tracking-widest text-white/50">
-              SWIPE
-            </span>
+              <div className="h-px w-12 bg-[#d6b36a]/50" />
 
-            <button
-              type="button"
-              onClick={() => scroll("right")}
-              aria-label="次のこだわりを見る"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/50 text-gold transition hover:bg-gold hover:text-black"
-            >
-              <span aria-hidden="true">→</span>
-            </button>
+              <span className="text-sm tracking-[0.15em] text-white/50">
+                10
+              </span>
+            </div>
+
+            <p className="hidden text-xs tracking-[0.15em] text-white/45 sm:block">
+              DRAG TO EXPLORE
+            </p>
+
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => scroll("left")}
+                disabled={activeIndex === 0}
+                aria-label="前のこだわりを見る"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d6b36a]/50 text-[#d6b36a] transition hover:bg-[#d6b36a] hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
+              >
+                <span aria-hidden="true" className="text-lg">
+                  ←
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scroll("right")}
+                disabled={activeIndex === essences.length - 1}
+                aria-label="次のこだわりを見る"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d6b36a]/50 text-[#d6b36a] transition hover:bg-[#d6b36a] hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
+              >
+                <span aria-hidden="true" className="text-lg">
+                  →
+                </span>
+              </button>
+            </div>
           </div>
+
+          <p className="mt-4 text-center text-xs leading-6 text-white/40 sm:hidden">
+            横にスワイプしてご覧ください
+          </p>
         </div>
       </div>
     </section>
