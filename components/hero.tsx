@@ -24,27 +24,34 @@ export function Hero() {
       reserve_location: "hero",
     })
 
-    setTimeout(() => {
-      window.location.href = RESERVE_URL
-    }, 800)
+    window.location.href = RESERVE_URL
   }
 
   return (
-    <section className="relative isolate min-h-screen overflow-hidden bg-black text-white">
+    <section className="relative isolate min-h-[100svh] overflow-hidden bg-black text-white">
       <div className="absolute inset-0 overflow-hidden">
-        <video
-          src="/videos/hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="h-full w-full object-cover scale-[1.08] sm:scale-[1.12] lg:scale-[1.15]"
-        />
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-cover bg-center"
+    style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+  />
+
+  <video
+    src="/videos/hero.mp4"
+    poster="/images/hero-bg.jpg"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    aria-hidden="true"
+    className="absolute inset-0 h-full w-full object-cover scale-[1.08] sm:scale-[1.12] lg:scale-[1.15]"
+  />
         <div className="absolute inset-0 bg-black/68" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/45 to-black/88" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-5 pb-16 pt-28 text-center sm:px-6 sm:pb-20 sm:pt-34 lg:px-10">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-5 py-20 text-center sm:px-6 sm:py-24 lg:px-10">
         <div className="w-full max-w-3xl">
           <FadeIn>
             <p className="text-[10px] tracking-[0.28em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
@@ -83,7 +90,7 @@ export function Hero() {
 
           <FadeIn delay={0.16}>
             <p className="mt-6 text-sm leading-8 text-white/75 sm:text-base">
-              福岡市西区｜駐車場2台完備
+              福岡市西区｜完全予約制・完全個室
             </p>
           </FadeIn>
 
