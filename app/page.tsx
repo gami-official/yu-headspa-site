@@ -1,3 +1,5 @@
+
+import { Essences } from "@/components/essences"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { BeforeAfterSection } from "@/components/before-after-section"
@@ -20,6 +22,7 @@ export default function Home() {
       </div>
 
       <ReservationSection />
+      <Essences />
       <BeforeAfterSection />
       <Faq />
       <AccessMap />
