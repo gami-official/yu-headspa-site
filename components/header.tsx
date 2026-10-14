@@ -52,6 +52,8 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isReservationVisible, setIsReservationVisible] =
+    useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,6 +68,32 @@ export function Header() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
+  useEffect(() => {
+    const reservationSection =
+      document.getElementById("reserve-calendar")
+
+    if (!reservationSection) {
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setIsReservationVisible(entries[0].isIntersecting)
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -60px 0px",
+        threshold: 0,
+      }
+    )
+
+    observer.observe(reservationSection)
+
+    return () => {
+      observer.disconnect()
     }
   }, [])
 
@@ -187,7 +215,7 @@ export function Header() {
         </div>
       </header>
 
-      {!isMenuOpen && (
+      {!isMenuOpen && !isReservationVisible && (
         <a
           href={RESERVE_URL}
           target="_blank"
