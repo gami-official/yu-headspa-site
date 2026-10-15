@@ -21,6 +21,7 @@ const menuIntroductions: Record<
     catchphrase: string
     description: string
     recommended: string
+    badge: string
   }
 > = {
   scalp: {
@@ -28,19 +29,57 @@ const menuIntroductions: Record<
     description:
       "頭皮の状態やお悩みに合わせて選べる、3つの育毛ヘッドスパ。ヒト幹細胞由来成分を取り入れたケアで、健やかな頭皮環境を目指します。",
     recommended: "髪や頭皮の変化が気になり始めた方",
+    badge: "SCALP CARE",
   },
   color: {
     catchphrase: "髪色も、頭皮も、美しく。",
     description:
       "頭皮への配慮を大切にしたゼロテクニックカラーと、心地よいウェットヘッドスパ。美しい髪色と上質なケアを一度に。",
     recommended: "髪色を楽しみながら頭皮もケアしたい方",
+    badge: "HAIR COLOR",
   },
   relaxation: {
     catchphrase: "自分をいたわる、贅沢な90分。",
     description:
       "アロマクリーム、スチーム、ホットストーン。水と温もりに包まれる、本格ウェットヘッドスパをご堪能ください。",
     recommended: "日常を離れて、ゆったり過ごしたい方",
+    badge: "RELAXATION",
   },
+}
+
+const courseDetails: Record<
+  string,
+  {
+    name: string
+    note?: string
+    price: string
+  }[]
+> = {
+  scalp: [
+    {
+      name: "Light｜中濃度",
+      price: "¥18,000",
+    },
+    {
+      name: "Standard｜高濃度",
+      price: "¥21,000",
+    },
+    {
+      name: "Premium",
+      note: "超高濃度・使用量多め",
+      price: "¥35,000",
+    },
+  ],
+  color: [
+    {
+      name: "ヘアカラーコース①",
+      price: "¥21,000",
+    },
+    {
+      name: "ヘアカラーコース②",
+      price: "¥26,000",
+    },
+  ],
 }
 
 export function MenuSection() {
@@ -91,7 +130,7 @@ export function MenuSection() {
             const intro = menuIntroductions[menu.id]
             const lowestPrice =
               menu.items[menu.items.length - 1]?.price
-            const isScalp = menu.id === "scalp"
+            const courses = courseDetails[menu.id]
 
             return (
               <FadeIn key={menu.id} delay={index * 0.06}>
@@ -107,9 +146,9 @@ export function MenuSection() {
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
-                    {isScalp && (
+                    {intro?.badge && (
                       <span className="absolute left-4 top-4 rounded-full border border-[#d6b36a]/60 bg-black/65 px-3 py-1.5 text-[10px] tracking-wider text-[#d6b36a]">
-                        SCALP CARE
+                        {intro.badge}
                       </span>
                     )}
 
@@ -170,40 +209,36 @@ export function MenuSection() {
                       </p>
                     </div>
 
-                    {isScalp && (
+                    {courses && (
                       <div className="mt-4 rounded-xl border border-gold/20 bg-gold/5 px-4 py-4">
                         <p className="mb-3 text-[10px] tracking-[0.14em] text-gold">
-                          3 COURSES
+                          {courses.length} COURSES
                         </p>
 
                         <div className="space-y-3 text-[12px] leading-6 text-muted-foreground">
-                          <div className="flex items-start justify-between gap-3">
-                            <span>Light｜中濃度</span>
-                            <span className="shrink-0">
-                              ¥18,000
-                            </span>
-                          </div>
+                          {courses.map((course) => (
+                            <div
+                              key={course.name}
+                              className="flex items-start justify-between gap-3"
+                            >
+                              <span>
+                                {course.name}
 
-                          <div className="flex items-start justify-between gap-3">
-                            <span>Standard｜高濃度</span>
-                            <span className="shrink-0">
-                              ¥21,000
-                            </span>
-                          </div>
-
-                          <div className="flex items-start justify-between gap-3">
-                            <span>
-                              Premium
-                              <br />
-                              <span className="text-[11px] text-muted-foreground/80">
-                                超高濃度・使用量多め
+                                {course.note && (
+                                  <>
+                                    <br />
+                                    <span className="text-[11px] text-muted-foreground/80">
+                                      {course.note}
+                                    </span>
+                                  </>
+                                )}
                               </span>
-                            </span>
 
-                            <span className="shrink-0">
-                              ¥35,000
-                            </span>
-                          </div>
+                              <span className="shrink-0">
+                                {course.price}
+                              </span>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     )}
