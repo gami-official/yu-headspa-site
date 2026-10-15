@@ -152,19 +152,16 @@ export function MenuSection() {
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
-                    {/* 英語ラベルを3メニューに表示 */}
+                    {/* 写真左上の英語ラベル */}
                     {intro?.badge && (
                       <span className="absolute left-4 top-4 rounded-full border border-[#d6b36a]/60 bg-black/65 px-3 py-1.5 text-[10px] tracking-wider text-[#d6b36a]">
                         {intro.badge}
                       </span>
                     )}
 
+                    {/* 日本語タイトルのみ表示 */}
                     <div className="absolute bottom-4 left-5 right-5">
-                      <p className="text-[10px] tracking-[0.12em] text-[#d6b36a]">
-                        {menu.enTitle.toUpperCase()}
-                      </p>
-
-                      <h3 className="mt-2 text-lg leading-7 text-white sm:text-xl">
+                      <h3 className="text-lg leading-7 text-white sm:text-xl">
                         {menu.tab}
                       </h3>
                     </div>
