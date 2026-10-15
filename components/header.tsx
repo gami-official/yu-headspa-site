@@ -79,6 +79,10 @@ export function Header() {
       return
     }
 
+    if (!("IntersectionObserver" in window)) {
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         setIsReservationVisible(entries[0].isIntersecting)
@@ -215,15 +219,17 @@ export function Header() {
         </div>
       </header>
 
+      {/* スマホ右下のコンパクトな予約ボタン */}
       {!isMenuOpen && !isReservationVisible && (
         <a
           href={RESERVE_URL}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackReserve("fixed_bottom")}
-          className="fixed bottom-4 left-5 right-5 z-50 inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6b36a] px-5 py-3 text-center text-sm font-medium tracking-[0.08em] text-black shadow-2xl transition hover:opacity-90 md:hidden"
+          aria-label="今すぐ予約する"
+          className="fixed bottom-[calc(env(safe-area-inset-bottom)+16px)] right-4 z-50 inline-flex min-h-11 items-center justify-center rounded-full border border-[#e5c88a]/50 bg-[#d6b36a] px-5 py-2.5 text-center text-[12px] font-medium tracking-[0.04em] text-black shadow-[0_6px_24px_rgba(0,0,0,0.45)] transition hover:opacity-90 active:scale-95 md:hidden"
         >
-          今すぐ予約する
+          今すぐ予約する ↗
         </a>
       )}
 
