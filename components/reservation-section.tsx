@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { FadeIn } from "@/components/fade-in"
 
 const RESERVE_URL =
-  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
+  "https://headspayu.stores.jp/reserve/yuheadspa/655962"
 
 export function ReservationSection() {
   const sectionRef = useRef<HTMLElement>(null)
