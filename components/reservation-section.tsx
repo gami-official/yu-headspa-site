@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 import { FadeIn } from "@/components/fade-in"
 
 const RESERVE_URL =
-  "https://headspayu.stores.jp/reserve/yuheadspa/655962"
+  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 
 export function ReservationSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -106,7 +106,7 @@ export function ReservationSection() {
             rel="noopener noreferrer"
             className="mt-4 inline-flex min-h-12 items-center justify-center rounded-full border border-gold/50 px-8 py-3 text-[13px] font-medium tracking-[0.06em] text-gold transition hover:border-gold hover:bg-gold/10 sm:text-sm"
           >
-            予約ページを直接開く ↗
+            予約カレンダーを直接開く ↗
           </a>
         </div>
       </div>
