@@ -10,7 +10,8 @@ type Essence = {
   english: string
   title: string
   description: string
-  image?: string
+  image: string
+  imagePosition?: string
 }
 
 const essences: Essence[] = [
@@ -20,6 +21,7 @@ const essences: Essence[] = [
     title: "誰にも邪魔されない。完全個室という、最高の贅沢。",
     description:
       "人目も周囲の会話も気にしない。扉を閉めた瞬間から始まる、あなただけの特別な時間。",
+    image: "/images/01-private-room.webp",
   },
   {
     number: "02",
@@ -27,6 +29,7 @@ const essences: Essence[] = [
     title: "待たない贅沢。24時間365日、スマートに予約。",
     description:
       "完全予約制だからこそ、時間まで上質に。空き状況の確認から予約まで、いつでもオンラインで完結。",
+    image: "/images/02-art-interior.webp",
   },
   {
     number: "03",
@@ -34,6 +37,8 @@ const essences: Essence[] = [
     title: "駐車場2台完備。ご来店の瞬間から、ストレスフリー。",
     description:
       "店舗前に駐車スペースを2台分ご用意。お車で気軽に訪れられる快適さも、おもてなしのひとつ。",
+    image: "/images/03-parking.webp",
+    imagePosition: "center 58%",
   },
   {
     number: "04",
@@ -41,6 +46,7 @@ const essences: Essence[] = [
     title: "15年以上の経験。その手技に、技術の差が現れる。",
     description:
       "積み重ねた経験が生み出す繊細な力加減と熟練の技。マニュアルだけでは再現できない、一人ひとりに合わせた施術。",
+    image: "/images/04-headspa-treatment.webp",
   },
   {
     number: "05",
@@ -48,6 +54,7 @@ const essences: Essence[] = [
     title: "ドライでは味わえない。本物志向の極上ウェットスパ。",
     description:
       "水・スチーム・洗浄・トリートメント・熟練の手技を融合。頭皮を直接ケアする、本格ウェットヘッドスパの醍醐味を。",
+    image: "/images/05-scalp-care.webp",
   },
   {
     number: "06",
@@ -55,6 +62,7 @@ const essences: Essence[] = [
     title: "著名人も、セレブも、医師も。選ばれる育毛ヘッドスパ。",
     description:
       "美と健康への意識が高い方々にもご愛顧いただく専門ケア。頭皮環境とこれからの髪を考え、質にこだわるお客様に選ばれています。",
+    image: "/images/06-consultation-space.webp",
   },
   {
     number: "07",
@@ -62,6 +70,8 @@ const essences: Essence[] = [
     title: "髪色も、頭皮も、美しく。妥協なきヘアカラー＆スパ。",
     description:
       "美しい仕上がりを追求しながら、頭皮への配慮も大切に。ヘアカラーとヘッドスパを組み合わせた、こだわりの施術。",
+    image: "/images/07-glossy-hair.webp",
+    imagePosition: "center 45%",
   },
   {
     number: "08",
@@ -69,6 +79,7 @@ const essences: Essence[] = [
     title: "1日わずか3名。数を追わない、質を極める。",
     description:
       "一人ひとりのお客様と丁寧に向き合うための人数限定。慌ただしさとは無縁の、贅沢なひとときを。",
+    image: "/images/08-relaxation-bed.webp",
   },
   {
     number: "09",
@@ -76,6 +87,7 @@ const essences: Essence[] = [
     title: "その場の癒やしで終わらせない。未来の髪まで考える。",
     description:
       "頭皮の状態を確認し、一人ひとりに合うケアをご提案。美しい髪の土台となる、健やかな頭皮環境を目指します。",
+    image: "/images/09-counseling.webp",
   },
   {
     number: "10",
@@ -83,6 +95,7 @@ const essences: Essence[] = [
     title: "五感すべてを満たす。日常を忘れる、非日常へ。",
     description:
       "光・音・香り・温度・肌に触れる心地よさまで。細部にこだわり抜いた空間が、上質なスパ体験を演出します。",
+    image: "/images/10-floral-lighting.webp",
   },
 ]
 
@@ -213,42 +226,39 @@ export function Essences() {
               <article
                 key={item.number}
                 data-essence-card
-                className="relative flex w-[86%] shrink-0 snap-start flex-col overflow-hidden rounded-[20px] border border-[#d6b36a]/25 bg-[#211a15] sm:w-[47%] lg:w-[31%]"
+                className="group relative flex w-[86%] shrink-0 snap-start flex-col overflow-hidden rounded-[20px] border border-[#d6b36a]/25 bg-[#211a15] sm:w-[47%] lg:w-[31%]"
               >
-                {item.image ? (
-                  <div className="relative h-48 w-full overflow-hidden sm:h-52">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 86vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#211a15]/70 to-transparent" />
-                  </div>
-                ) : (
-                  <div className="relative flex h-28 items-center justify-center overflow-hidden border-b border-[#d6b36a]/15 bg-gradient-to-br from-[#35291e] via-[#241c17] to-[#171310] sm:h-32">
-                    <div className="absolute inset-5 rounded-full border border-[#d6b36a]/10" />
-                    <div className="absolute inset-8 rounded-full border border-[#d6b36a]/10" />
+                <div className="relative h-56 w-full overflow-hidden sm:h-60 lg:h-64">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 86vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    style={{
+                      objectPosition: item.imagePosition ?? "center",
+                    }}
+                  />
 
-                    <span className="relative text-5xl font-light tracking-[0.1em] text-[#d6b36a]/65 sm:text-6xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#211a15] via-[#211a15]/10 to-transparent" />
+
+                  <div className="absolute bottom-4 left-5 flex items-end gap-3 sm:left-6">
+                    <span className="font-serif text-5xl font-light leading-none tracking-[-0.04em] text-[#e5c783] drop-shadow-lg sm:text-6xl">
                       {item.number}
                     </span>
-                  </div>
-                )}
 
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="text-xs tracking-[0.15em] text-[#d6b36a]/75">
-                      {item.number} / 10
-                    </span>
-
-                    <span className="text-right text-[9px] leading-5 tracking-[0.1em] text-[#d6b36a]/80">
-                      {item.english}
+                    <span className="mb-1 text-[9px] tracking-[0.16em] text-white/80">
+                      / 10
                     </span>
                   </div>
+                </div>
 
-                  <div className="mt-5 h-px w-full bg-[#d6b36a]/20" />
+                <div className="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-5">
+                  <p className="min-h-5 text-[10px] tracking-[0.17em] text-[#d6b36a]/85">
+                    {item.english}
+                  </p>
+
+                  <div className="mt-4 h-px w-full bg-[#d6b36a]/20" />
 
                   <h3 className="mt-5 text-lg font-medium leading-[1.75] tracking-[0.02em] text-white">
                     {item.title}
