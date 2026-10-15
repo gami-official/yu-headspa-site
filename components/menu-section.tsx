@@ -15,15 +15,20 @@ declare global {
   }
 }
 
-const menuIntroductions: Record<
-  string,
-  {
-    catchphrase: string
-    description: string
-    recommended: string
-    badge: string
-  }
-> = {
+type MenuIntroduction = {
+  catchphrase: string
+  description: string
+  recommended: string
+  badge: string
+}
+
+type CourseDetail = {
+  name: string
+  note?: string
+  price: string
+}
+
+const menuIntroductions: Record<string, MenuIntroduction> = {
   scalp: {
     catchphrase: "未来の髪を考える、本格頭皮ケア。",
     description:
@@ -31,6 +36,7 @@ const menuIntroductions: Record<
     recommended: "髪や頭皮の変化が気になり始めた方",
     badge: "SCALP CARE",
   },
+
   color: {
     catchphrase: "髪色も、頭皮も、美しく。",
     description:
@@ -38,6 +44,7 @@ const menuIntroductions: Record<
     recommended: "髪色を楽しみながら頭皮もケアしたい方",
     badge: "HAIR COLOR",
   },
+
   relaxation: {
     catchphrase: "自分をいたわる、贅沢な90分。",
     description:
@@ -47,14 +54,7 @@ const menuIntroductions: Record<
   },
 }
 
-const courseDetails: Record<
-  string,
-  {
-    name: string
-    note?: string
-    price: string
-  }[]
-> = {
+const courseDetails: Record<string, CourseDetail[]> = {
   scalp: [
     {
       name: "Light｜中濃度",
@@ -70,13 +70,16 @@ const courseDetails: Record<
       price: "¥35,000",
     },
   ],
+
   color: [
     {
-      name: "ヘアカラーコース①",
+      name: "Hair Color Head Spa",
+      note: "ゼロテクニックカラー＋ウェットヘッドスパ",
       price: "¥21,000",
     },
     {
-      name: "ヘアカラーコース②",
+      name: "Hair Color Head Spa + Scalp Care",
+      note: "高濃度ヒト幹細胞ケア Standard付き",
       price: "¥26,000",
     },
   ],
@@ -128,13 +131,16 @@ export function MenuSection() {
         <div className="grid gap-5 lg:grid-cols-3 lg:gap-6">
           {menus.map((menu, index) => {
             const intro = menuIntroductions[menu.id]
+
             const lowestPrice =
               menu.items[menu.items.length - 1]?.price
+
             const courses = courseDetails[menu.id]
 
             return (
               <FadeIn key={menu.id} delay={index * 0.06}>
                 <article className="flex h-full flex-col overflow-hidden rounded-[22px] border border-gold/20 bg-card shadow-sm">
+                  {/* メニュー写真 */}
                   <div className="relative h-44 w-full overflow-hidden sm:h-52 lg:h-48">
                     <Image
                       src={menu.image}
@@ -146,6 +152,7 @@ export function MenuSection() {
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
+                    {/* 英語ラベルを3メニューに表示 */}
                     {intro?.badge && (
                       <span className="absolute left-4 top-4 rounded-full border border-[#d6b36a]/60 bg-black/65 px-3 py-1.5 text-[10px] tracking-wider text-[#d6b36a]">
                         {intro.badge}
@@ -163,6 +170,7 @@ export function MenuSection() {
                     </div>
                   </div>
 
+                  {/* メニュー紹介 */}
                   <div className="flex flex-1 flex-col p-5 sm:p-6">
                     <p className="text-[15px] font-medium leading-7 tracking-[0.01em] text-foreground sm:text-base">
                       {intro?.catchphrase ?? menu.tab}
@@ -173,6 +181,7 @@ export function MenuSection() {
                         menu.descriptionParagraphs[0]}
                     </p>
 
+                    {/* おすすめ */}
                     {intro && (
                       <div className="mt-5 rounded-xl border border-gold/15 bg-gold/5 px-4 py-3">
                         <p className="text-[10px] tracking-[0.08em] text-gold">
@@ -185,6 +194,7 @@ export function MenuSection() {
                       </div>
                     )}
 
+                    {/* 基本料金 */}
                     <div className="mt-6 border-t border-border/40 pt-5">
                       <p className="text-xs text-muted-foreground">
                         施術時間 90分 ／ 税込
@@ -209,32 +219,32 @@ export function MenuSection() {
                       </p>
                     </div>
 
+                    {/* コース別料金表 */}
                     {courses && (
                       <div className="mt-4 rounded-xl border border-gold/20 bg-gold/5 px-4 py-4">
                         <p className="mb-3 text-[10px] tracking-[0.14em] text-gold">
                           {courses.length} COURSES
                         </p>
 
-                        <div className="space-y-3 text-[12px] leading-6 text-muted-foreground">
+                        <div className="space-y-3">
                           {courses.map((course) => (
                             <div
                               key={course.name}
                               className="flex items-start justify-between gap-3"
                             >
-                              <span>
-                                {course.name}
+                              <div className="min-w-0 flex-1">
+                                <p className="text-[12px] leading-6 text-foreground">
+                                  {course.name}
+                                </p>
 
                                 {course.note && (
-                                  <>
-                                    <br />
-                                    <span className="text-[11px] text-muted-foreground/80">
-                                      {course.note}
-                                    </span>
-                                  </>
+                                  <p className="mt-0.5 text-[11px] leading-[1.7] text-muted-foreground">
+                                    {course.note}
+                                  </p>
                                 )}
-                              </span>
+                              </div>
 
-                              <span className="shrink-0">
+                              <span className="shrink-0 pt-0.5 text-[12px] leading-6 text-gold">
                                 {course.price}
                               </span>
                             </div>
@@ -243,10 +253,11 @@ export function MenuSection() {
                       </div>
                     )}
 
+                    {/* ボタン */}
                     <div className="mt-auto space-y-3 pt-7">
                       <Link
                         href={`/menu/${menu.id}`}
-                        className="flex min-h-12 w-full items-center justify-center rounded-full border border-gold/70 px-4 py-3 text-[13px] font-medium text-gold transition hover:bg-gold hover:text-background sm:text-sm"
+                        className="flex min-h-12 w-full items-center justify-center rounded-full border border-gold/70 px-4 py-3 text-center text-[13px] font-medium text-gold transition hover:bg-gold hover:text-background sm:text-sm"
                       >
                         コースの違い・詳細を見る →
                       </Link>
@@ -258,7 +269,7 @@ export function MenuSection() {
                         onClick={() =>
                           trackReserve(`menu_${menu.id}`)
                         }
-                        className="flex min-h-12 w-full items-center justify-center rounded-full bg-gold px-4 py-3 text-[13px] font-medium text-background transition hover:opacity-90 sm:text-sm"
+                        className="flex min-h-12 w-full items-center justify-center rounded-full bg-gold px-4 py-3 text-center text-[13px] font-medium text-background transition hover:opacity-90 sm:text-sm"
                       >
                         空き状況・予約はこちら
                       </a>
@@ -270,6 +281,7 @@ export function MenuSection() {
           })}
         </div>
 
+        {/* 補足 */}
         <FadeIn>
           <div className="mt-8 text-center sm:mt-10">
             <p className="text-[13px] leading-7 text-muted-foreground sm:text-sm sm:leading-8">
