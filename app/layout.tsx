@@ -1,8 +1,20 @@
+
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 import { Noto_Serif_JP } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+
+const SITE_URL = "https://www.yuheadspa.net"
+
+const RESERVE_URL =
+  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
+
+const SITE_TITLE =
+  "ヘッドスパ専門店ゆう｜福岡市西区の完全個室ヘッドスパ・育毛頭皮ケア"
+
+const SITE_DESCRIPTION =
+  "福岡市西区豊浜の完全個室ヘッドスパ専門店。育毛・頭皮ケア、ヘアカラーヘッドスパ、リラクゼーションヘッドスパをご用意。ヒト幹細胞由来成分を取り入れた頭皮ケアも。1日3名限定・完全予約制。"
 
 const notoSerifJP = Noto_Serif_JP({
   subsets: ["latin"],
@@ -12,39 +24,38 @@ const notoSerifJP = Noto_Serif_JP({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.yuheadspa.net"),
+  metadataBase: new URL(SITE_URL),
+
   title: {
-    default:
-      "ヘッドスパ専門店ゆう｜福岡市西区の完全個室ヘッドスパ・育毛頭皮ケア",
+    default: SITE_TITLE,
     template: "%s｜ヘッドスパ専門店ゆう",
   },
-  description:
-    "福岡市西区豊浜の完全個室ヘッドスパ専門店。抜け毛・薄毛・白髪・分け目・頭皮ケアに。ヒト幹細胞ケアと専門技術で、髪質と印象を頭皮から整えます。一日三名限定・完全予約制。",
+
+  description: SITE_DESCRIPTION,
+
   keywords: [
     "ヘッドスパ 福岡",
-    "ヘッドスパ 福岡市",
-    "ヘッドスパ 西区",
-    "福岡 ヘッドスパ 専門店",
-    "育毛 ヘッドスパ 福岡",
-    "頭皮ケア 福岡",
-    "薄毛 改善 福岡",
-    "抜け毛 改善 福岡",
-    "白髪 頭皮ケア 福岡",
-    "ヘッドスパ 個室 福岡",
-    "ヘッドスパ 高級 福岡",
+    "福岡 ヘッドスパ",
+    "福岡市 ヘッドスパ",
     "福岡市西区 ヘッドスパ",
     "豊浜 ヘッドスパ",
+    "ヘッドスパ専門店 福岡",
+    "完全個室 ヘッドスパ 福岡",
+    "育毛ヘッドスパ 福岡",
+    "頭皮ケア 福岡",
+    "ヘアカラーヘッドスパ 福岡",
+    "リラクゼーションヘッドスパ 福岡",
     "ヒト幹細胞 頭皮ケア",
   ],
+
   alternates: {
-    canonical: "https://www.yuheadspa.net",
+    canonical: "/",
   },
+
   openGraph: {
-    title:
-      "ヘッドスパ専門店ゆう｜福岡市西区の完全個室ヘッドスパ・育毛頭皮ケア",
-    description:
-      "完全個室・一日三名限定。抜け毛・薄毛・白髪・分け目のお悩みに、頭皮から髪質と印象を整える専門ヘッドスパ。",
-    url: "https://www.yuheadspa.net",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
     siteName: "ヘッドスパ専門店ゆう",
     locale: "ja_JP",
     type: "website",
@@ -57,17 +68,21 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title:
-      "ヘッドスパ専門店ゆう｜福岡市西区の完全個室ヘッドスパ・育毛頭皮ケア",
-    description:
-      "完全個室・一日三名限定。抜け毛・薄毛・白髪・分け目のお悩みに、頭皮から髪質と印象を整える専門ヘッドスパ。",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: ["/images/ogp.jpg"],
   },
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 }
 
@@ -85,42 +100,31 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
+    "@id": `${SITE_URL}/#salon`,
+
     name: "ヘッドスパ専門店ゆう 本店",
     alternateName: "ヘッドスパ専門店 ゆう",
-    image: "https://www.yuheadspa.net/images/ogp.jpg",
-    url: "https://www.yuheadspa.net",
+
+    description: SITE_DESCRIPTION,
+
+    url: SITE_URL,
+
+    image: `${SITE_URL}/images/ogp.jpg`,
+
     telephone: "092-284-9392",
     email: "info@yuheadspa.net",
-    priceRange: "¥¥¥",
-    description:
-      "福岡市西区豊浜の完全個室ヘッドスパ専門店。抜け毛・薄毛・白髪・分け目・頭皮ケアに。ヒト幹細胞ケアと専門技術で、髪質と印象を頭皮から整えます。",
+
+    priceRange: "¥16,000〜¥35,000",
+
     address: {
       "@type": "PostalAddress",
       postalCode: "819-0014",
-      streetAddress: "豊浜2丁目20-20-2",
-      addressLocality: "福岡市西区",
+      streetAddress: "西区豊浜2丁目20-20-2",
+      addressLocality: "福岡市",
       addressRegion: "福岡県",
       addressCountry: "JP",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      address: "福岡県福岡市西区豊浜2丁目20-20-2",
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ],
-        opens: "09:30",
-        closes: "16:30",
-      },
-    ],
+
     amenityFeature: [
       {
         "@type": "LocationFeatureSpecification",
@@ -138,30 +142,91 @@ export default function RootLayout({
         value: true,
       },
     ],
-    makesOffer: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
+
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "ヘッドスパメニュー",
+      itemListElement: [
+        {
+          "@type": "OfferCatalog",
           name: "育毛ヘッドスパ",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              price: "18000",
+              priceCurrency: "JPY",
+              itemOffered: {
+                "@type": "Service",
+                name: "育毛ヘッドスパ Light",
+              },
+            },
+            {
+              "@type": "Offer",
+              price: "21000",
+              priceCurrency: "JPY",
+              itemOffered: {
+                "@type": "Service",
+                name: "育毛ヘッドスパ Standard",
+              },
+            },
+            {
+              "@type": "Offer",
+              price: "35000",
+              priceCurrency: "JPY",
+              itemOffered: {
+                "@type": "Service",
+                name: "育毛ヘッドスパ Premium",
+              },
+            },
+          ],
         },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
+        {
+          "@type": "OfferCatalog",
           name: "ヘアカラーヘッドスパ",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              price: "21000",
+              priceCurrency: "JPY",
+              itemOffered: {
+                "@type": "Service",
+                name: "Hair Color Head Spa",
+              },
+            },
+            {
+              "@type": "Offer",
+              price: "26000",
+              priceCurrency: "JPY",
+              itemOffered: {
+                "@type": "Service",
+                name: "Hair Color Head Spa + Scalp Care",
+              },
+            },
+          ],
         },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "リラクゼーションヘッドスパ",
+        {
+          "@type": "Offer",
+          price: "16000",
+          priceCurrency: "JPY",
+          itemOffered: {
+            "@type": "Service",
+            name: "リラクゼーションヘッドスパ",
+          },
         },
+      ],
+    },
+
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: RESERVE_URL,
       },
-    ],
-    sameAs: ["https://coubic.com/yuheadspa/services"],
+      result: {
+        "@type": "Reservation",
+        name: "ヘッドスパ予約",
+      },
+    },
   }
 
   return (
@@ -176,7 +241,10 @@ export default function RootLayout({
           />
         </noscript>
 
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+        >
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -188,10 +256,13 @@ export default function RootLayout({
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
         />
 
         {children}
+
         <Analytics />
       </body>
     </html>
