@@ -1,5 +1,7 @@
+
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Luxury Private Head Spa in Fukuoka | Head Spa Yu",
@@ -89,6 +91,11 @@ const treatments = [
     ],
   },
 ]
+
+const resultImages = Array.from({ length: 18 }, (_, index) => ({
+  src: `/images/evidence-${String(index + 1).padStart(2, "0")}.webp`,
+  alt: `Scalp care client example ${index + 1}`,
+}))
 
 export default function EnglishHomePage() {
   return (
@@ -310,6 +317,81 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
+      {/* Scalp care results */}
+      <section
+        id="results"
+        className="scroll-mt-20 border-b border-[#c8a66a]/15 bg-[#0d0d0d] px-5 py-20 sm:py-28"
+      >
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">
+              SCALP CARE RESULTS
+            </p>
+
+            <h2 className="mt-5 text-3xl leading-relaxed sm:text-4xl">
+              Real Client Examples
+            </h2>
+
+            <p className="mt-5 text-sm leading-8 text-[#b9b0a6]">
+              Explore photographs from individual scalp-care cases at
+              Head Spa Yu. Every client has different scalp and hair
+              needs.
+            </p>
+          </div>
+
+          <p className="mb-4 text-center text-xs tracking-[0.1em] text-[#d4b675]">
+            Swipe or scroll to explore all 18 examples →
+          </p>
+
+          <div
+            className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-6"
+            aria-label="Scalp care client photographs"
+          >
+            {resultImages.map((result, index) => (
+              <div
+                key={result.src}
+                className="w-[min(82vw,390px)] shrink-0 snap-center overflow-hidden rounded-2xl border border-[#c8a66a]/25 bg-[#151515]"
+              >
+                <div className="relative aspect-[4/5] bg-black">
+                  <Image
+                    src={result.src}
+                    alt={result.alt}
+                    fill
+                    sizes="(max-width: 640px) 82vw, 390px"
+                    className="object-contain"
+                  />
+                </div>
+
+                <div className="border-t border-[#c8a66a]/20 px-5 py-4">
+                  <p className="text-xs tracking-[0.2em] text-[#d4b675]">
+                    CASE {String(index + 1).padStart(2, "0")}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-7 max-w-2xl text-center text-xs leading-7 text-[#a79b8e]">
+            These photographs show individual examples only. Results
+            vary from person to person and similar changes are not
+            guaranteed.
+            <br />
+            Treatment details and time periods may differ between cases.
+          </p>
+
+          <div className="mt-10 text-center">
+            <a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d4b675] px-8 py-3 text-sm font-medium text-[#17120c] transition hover:bg-[#e6c990]"
+            >
+              Explore Scalp Care Reservations ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Location */}
       <section className="px-5 py-20 sm:py-28">
         <div className="mx-auto max-w-4xl">
@@ -392,17 +474,23 @@ export default function EnglishHomePage() {
 
         <div className="mx-auto mt-7 max-w-lg rounded-2xl border border-[#d4b675]/35 bg-[#211c16] px-5 py-6 text-left sm:px-7">
           <div className="flex items-center gap-3">
-            <span aria-hidden="true" className="text-xl">🌐</span>
+            <span aria-hidden="true" className="text-xl">
+              🌐
+            </span>
             <h3 className="text-base font-medium text-[#d4b675]">
               Booking in English
             </h3>
           </div>
+
           <p className="mt-3 text-sm leading-8 text-[#f1e8da]">
-            On the booking page, click the globe icon (🌐) at the top and
-            select &quot;English&quot; to view the reservation system in English.
+            On the booking page, click the globe icon (🌐) at the top
+            and select &quot;English&quot; to view the reservation
+            system in English.
           </p>
+
           <p className="mt-3 text-xs leading-7 text-[#b9b0a6]">
-            Some treatment names and time slots may still appear in Japanese.
+            Some treatment names and time slots may still appear in
+            Japanese.
           </p>
         </div>
 
