@@ -9,6 +9,8 @@ import Image from "next/image"
 const RESERVE_URL =
   "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 
+const ENGLISH_URL = "/en"
+
 const LINE_URL = "https://lin.ee/7hso3k1"
 
 const FRANCHISE_URL =
@@ -75,13 +77,8 @@ export function Header() {
     const reservationSection =
       document.getElementById("reserve-calendar")
 
-    if (!reservationSection) {
-      return
-    }
-
-    if (!("IntersectionObserver" in window)) {
-      return
-    }
+    if (!reservationSection) return
+    if (!("IntersectionObserver" in window)) return
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -142,15 +139,11 @@ export function Header() {
   ) => {
     setIsMenuOpen(false)
 
-    if (link.external) {
-      return
-    }
+    if (link.external) return
 
     const target = document.querySelector(link.href)
 
-    if (!target) {
-      return
-    }
+    if (!target) return
 
     event.preventDefault()
 
@@ -173,7 +166,7 @@ export function Header() {
                 : "border-white/10 bg-black/45 backdrop-blur-md"
             }`}
           >
-            <div className="flex items-center justify-between gap-2 px-3 py-1.5 sm:px-4 sm:py-2">
+            <div className="flex items-center justify-between gap-1.5 px-2.5 py-1.5 sm:gap-2 sm:px-4 sm:py-2">
               <button
                 type="button"
                 onClick={() => setIsMenuOpen(true)}
@@ -190,9 +183,18 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackReserve("header")}
-                className="inline-flex h-9 min-w-0 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-3 text-center text-[12px] font-medium tracking-[0.08em] text-black transition hover:opacity-90 sm:max-w-[200px] sm:px-4"
+                className="inline-flex h-9 min-w-0 flex-1 items-center justify-center rounded-full bg-[#d6b36a] px-2 text-center text-[12px] font-medium tracking-[0.04em] text-black transition hover:opacity-90 sm:max-w-[200px] sm:px-4 sm:tracking-[0.08em]"
               >
                 予約する
+              </a>
+
+              <a
+                href={ENGLISH_URL}
+                lang="en"
+                aria-label="View English website"
+                className="inline-flex h-9 min-w-9 shrink-0 items-center justify-center rounded-full border border-[#d6b36a]/50 bg-black/40 px-2 text-[11px] font-semibold tracking-[0.04em] text-[#d6b36a] transition hover:border-[#d6b36a] hover:bg-[#d6b36a]/15 sm:px-3"
+              >
+                EN
               </a>
 
               <a
@@ -219,7 +221,7 @@ export function Header() {
         </div>
       </header>
 
-      {/* スマホ右下のコンパクトな予約ボタン */}
+      {/* スマホ右下の予約ボタン */}
       {!isMenuOpen && !isReservationVisible && (
         <a
           href={RESERVE_URL}
@@ -292,6 +294,27 @@ export function Header() {
                   </motion.a>
                 ))}
               </nav>
+
+              {/* 言語切り替え */}
+              <div className="mt-8 flex items-center gap-3">
+                <span
+                  aria-current="page"
+                  className="rounded-full border border-[#d6b36a] bg-[#d6b36a]/10 px-5 py-2 text-xs font-medium tracking-[0.12em] text-[#d6b36a]"
+                >
+                  JP
+                </span>
+
+                <span className="text-white/30">/</span>
+
+                <a
+                  href={ENGLISH_URL}
+                  lang="en"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="rounded-full border border-white/25 px-5 py-2 text-xs font-medium tracking-[0.12em] text-white/80 transition hover:border-[#d6b36a] hover:text-[#d6b36a]"
+                >
+                  EN
+                </a>
+              </div>
 
               <div className="mt-9 flex w-full max-w-xs flex-col gap-3">
                 <a
