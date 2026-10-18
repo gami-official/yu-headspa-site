@@ -35,8 +35,16 @@ const treatments = [
     image: "/images/04-headspa-treatment.webp",
     imagePosition: "center",
     courses: [
-      { name: "Light", detail: "Medium concentration", price: "¥18,000" },
-      { name: "Standard", detail: "High concentration", price: "¥21,000" },
+      {
+        name: "Light",
+        detail: "Medium concentration",
+        price: "¥18,000",
+      },
+      {
+        name: "Standard",
+        detail: "High concentration",
+        price: "¥21,000",
+      },
       {
         name: "Premium",
         detail: "Extra-high concentration and increased product usage",
@@ -86,37 +94,53 @@ const treatments = [
 export default function EnglishHomePage() {
   return (
     <main className="min-h-screen bg-[#090909] font-serif text-[#f4eee5]">
+      {/* English header */}
       <header className="sticky top-0 z-50 border-b border-[#c8a66a]/20 bg-[#090909]/95 backdrop-blur-xl">
-        <div className="mx-auto flex min-h-[72px] max-w-6xl items-center justify-between gap-3 px-5 sm:px-8">
-          <Link href="/en/" className="min-w-0">
-            <span className="block text-[15px] tracking-[0.1em] text-[#d4b675] sm:text-lg">
+        <div className="mx-auto flex min-h-[72px] max-w-6xl items-center justify-between gap-2 px-3 sm:gap-4 sm:px-8">
+          <Link href="/en/" className="min-w-0 shrink">
+            <span className="block whitespace-nowrap text-[13px] tracking-[0.06em] text-[#d4b675] sm:text-lg sm:tracking-[0.1em]">
               HEAD SPA YU
             </span>
-            <span className="block text-[9px] tracking-[0.17em] text-[#b7a994]">
+            <span className="block whitespace-nowrap text-[8px] tracking-[0.08em] text-[#b7a994] sm:text-[9px] sm:tracking-[0.17em]">
               FUKUOKA · JAPAN
             </span>
           </Link>
 
-          <div className="flex items-center gap-3 sm:gap-5">
+          <nav
+            aria-label="Language and reservation"
+            className="flex shrink-0 items-center gap-1.5 sm:gap-3"
+          >
             <Link
               href="/"
-              className="text-xs tracking-wider text-[#b7a994] transition hover:text-white"
+              hrefLang="ja"
+              lang="ja"
+              aria-label="日本語サイトへ"
+              className="inline-flex h-9 min-w-9 items-center justify-center rounded-full border border-[#d4b675]/70 px-2.5 text-[11px] font-medium text-[#d4b675] transition hover:bg-[#d4b675]/15 sm:px-4"
             >
               JP
             </Link>
-            <span className="text-xs text-[#d4b675]">EN</span>
+
+            <span
+              aria-current="page"
+              className="inline-flex h-9 min-w-9 items-center justify-center rounded-full bg-[#d4b675]/15 px-2.5 text-[11px] font-semibold text-[#e6c990] ring-1 ring-inset ring-[#d4b675]/30 sm:px-4"
+            >
+              EN
+            </span>
+
             <a
               href={bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[#d4b675] px-5 py-2.5 text-xs font-semibold text-[#17120c] transition hover:bg-[#e6c990] sm:px-7"
+              className="inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-[#d4b675] px-3 text-[11px] font-semibold text-[#17120c] transition hover:bg-[#e6c990] sm:px-7 sm:text-xs"
             >
-              Book Now ↗
+              <span className="sm:hidden">Book ↗</span>
+              <span className="hidden sm:inline">Book Now ↗</span>
             </a>
-          </div>
+          </nav>
         </div>
       </header>
 
+      {/* Hero */}
       <section className="relative flex min-h-[650px] items-center justify-center overflow-hidden px-5 py-24 text-center sm:min-h-[740px]">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -159,6 +183,7 @@ export default function EnglishHomePage() {
             >
               Check Availability ↗
             </a>
+
             <a
               href="#treatments"
               className="flex min-h-14 flex-1 items-center justify-center rounded-full border border-[#d4b675]/70 px-8 text-sm text-[#e2c58b] transition hover:bg-[#d4b675]/10"
@@ -169,16 +194,19 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
+      {/* Introduction */}
       <section className="px-5 py-20 text-center sm:py-28">
         <div className="mx-auto max-w-3xl">
           <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">
             WELCOME TO HEAD SPA YU
           </p>
+
           <h2 className="mt-6 text-2xl leading-relaxed sm:text-4xl">
             Your Moment of Tranquility
             <br />
             in Fukuoka
           </h2>
+
           <p className="mx-auto mt-8 max-w-2xl text-sm leading-9 text-[#b9b0a6]">
             At Head Spa Yu, we believe that caring for your scalp and
             hair should also be a moment of deep relaxation. Enjoy a
@@ -188,18 +216,21 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
+      {/* Treatments */}
       <section
         id="treatments"
-        className="border-y border-[#c8a66a]/15 bg-[#101010] px-5 py-20 sm:py-28"
+        className="scroll-mt-20 border-y border-[#c8a66a]/15 bg-[#101010] px-5 py-20 sm:py-28"
       >
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">
               OUR TREATMENTS
             </p>
+
             <h2 className="mt-5 text-3xl sm:text-4xl">
               Find Your Perfect Head Spa
             </h2>
+
             <p className="mt-5 text-sm leading-8 text-[#b9b0a6]">
               All treatments are 90 minutes. Prices include tax.
             </p>
@@ -219,10 +250,12 @@ export default function EnglishHomePage() {
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+
                   <div className="absolute bottom-5 left-6">
                     <p className="text-[10px] tracking-[0.2em] text-[#d4b675]">
                       {treatment.label}
                     </p>
+
                     <h3 className="mt-2 text-xl text-white">
                       {treatment.title}
                     </h3>
@@ -245,14 +278,16 @@ export default function EnglishHomePage() {
                           key={course.name}
                           className="flex items-start justify-between gap-4"
                         >
-                          <div>
+                          <div className="min-w-0">
                             <p className="text-sm text-[#f4eee5]">
                               {course.name}
                             </p>
+
                             <p className="mt-1 text-xs leading-6 text-[#a79b8e]">
                               {course.detail}
                             </p>
                           </div>
+
                           <p className="shrink-0 text-sm text-[#d4b675]">
                             {course.price}
                           </p>
@@ -276,12 +311,14 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
+      {/* Location */}
       <section className="px-5 py-20 sm:py-28">
         <div className="mx-auto max-w-4xl">
           <div className="text-center">
             <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">
               VISIT US
             </p>
+
             <h2 className="mt-5 text-3xl sm:text-4xl">
               Our Fukuoka Location
             </h2>
@@ -292,6 +329,7 @@ export default function EnglishHomePage() {
               <p className="text-xs tracking-[0.2em] text-[#d4b675]">
                 ADDRESS
               </p>
+
               <p className="mt-4 text-sm leading-8 text-[#e4dbcf]">
                 Head Spa Yu — Fukuoka Main Salon
                 <br />
@@ -305,6 +343,7 @@ export default function EnglishHomePage() {
               <p className="text-xs tracking-[0.2em] text-[#d4b675]">
                 OPENING HOURS
               </p>
+
               <p className="mt-4 text-sm leading-8 text-[#e4dbcf]">
                 9:30 AM – 4:30 PM
                 <br />
@@ -328,13 +367,16 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
+      {/* Reservations */}
       <section className="border-t border-[#c8a66a]/20 bg-[#15120e] px-5 py-20 text-center sm:py-24">
         <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">
           RESERVATIONS
         </p>
+
         <h2 className="mt-6 text-3xl sm:text-4xl">
           Your Escape Awaits
         </h2>
+
         <p className="mx-auto mt-6 max-w-xl text-sm leading-8 text-[#c4b9ad]">
           Choose your preferred treatment and date through our online
           booking page. Reservations are subject to availability.
@@ -354,20 +396,33 @@ export default function EnglishHomePage() {
         </p>
       </section>
 
+      {/* Footer */}
       <footer className="border-t border-[#c8a66a]/15 px-5 py-10 text-center">
         <p className="text-lg tracking-[0.12em] text-[#d4b675]">
           HEAD SPA YU
         </p>
+
         <p className="mt-3 text-xs text-[#a79b8e]">
           Fukuoka, Japan · Private Head Spa
         </p>
 
-        <Link
-          href="/"
-          className="mt-6 inline-block text-xs text-[#d4b675] underline underline-offset-4"
-        >
-          日本語サイトに戻る
-        </Link>
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <Link
+            href="/"
+            hrefLang="ja"
+            lang="ja"
+            className="rounded-full border border-[#d4b675]/50 px-5 py-2.5 text-xs text-[#d4b675] transition hover:bg-[#d4b675]/10"
+          >
+            日本語 / JP
+          </Link>
+
+          <span
+            aria-current="page"
+            className="rounded-full bg-[#d4b675]/15 px-5 py-2.5 text-xs text-[#e6c990] ring-1 ring-inset ring-[#d4b675]/30"
+          >
+            English / EN
+          </span>
+        </div>
 
         <p className="mt-8 text-[10px] text-[#777067]">
           © Head Spa Yu. All rights reserved.
