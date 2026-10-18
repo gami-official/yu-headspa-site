@@ -28,6 +28,12 @@ type CourseDetail = {
   price: string
 }
 
+const menuImages: Record<string, string> = {
+  scalp: "/images/menu-scalp-care.webp",
+  color: "/images/menu-hair-color.webp",
+  relaxation: "/images/menu-relaxation.webp",
+}
+
 const menuIntroductions: Record<string, MenuIntroduction> = {
   scalp: {
     catchphrase: "未来の髪を考える、本格頭皮ケア。",
@@ -137,13 +143,15 @@ export function MenuSection() {
 
             const courses = courseDetails[menu.id]
 
+            const imageSrc = menuImages[menu.id] ?? menu.image
+
             return (
               <FadeIn key={menu.id} delay={index * 0.06}>
                 <article className="flex h-full flex-col overflow-hidden rounded-[22px] border border-gold/20 bg-card shadow-sm">
                   {/* メニュー写真 */}
                   <div className="relative h-44 w-full overflow-hidden sm:h-52 lg:h-48">
                     <Image
-                      src={menu.image}
+                      src={imageSrc}
                       alt={menu.tab}
                       fill
                       sizes="(min-width: 1024px) 33vw, 100vw"
@@ -159,7 +167,7 @@ export function MenuSection() {
                       </span>
                     )}
 
-                    {/* 日本語タイトルのみ表示 */}
+                    {/* 日本語タイトル */}
                     <div className="absolute bottom-4 left-5 right-5">
                       <h3 className="text-lg leading-7 text-white sm:text-xl">
                         {menu.tab}
