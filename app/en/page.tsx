@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next"
 import Link from "next/link"
 
@@ -390,6 +389,22 @@ export default function EnglishHomePage() {
         >
           Book Your Head Spa ↗
         </a>
+
+        <div className="mx-auto mt-7 max-w-lg rounded-2xl border border-[#d4b675]/35 bg-[#211c16] px-5 py-6 text-left sm:px-7">
+          <div className="flex items-center gap-3">
+            <span aria-hidden="true" className="text-xl">🌐</span>
+            <h3 className="text-base font-medium text-[#d4b675]">
+              Booking in English
+            </h3>
+          </div>
+          <p className="mt-3 text-sm leading-8 text-[#f1e8da]">
+            On the booking page, click the globe icon (🌐) at the top and
+            select &quot;English&quot; to view the reservation system in English.
+          </p>
+          <p className="mt-3 text-xs leading-7 text-[#b9b0a6]">
+            Some treatment names and time slots may still appear in Japanese.
+          </p>
+        </div>
 
         <p className="mt-5 text-xs leading-7 text-[#a79b8e]">
           The booking page is provided by our reservation partner.
