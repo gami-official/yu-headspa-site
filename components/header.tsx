@@ -31,7 +31,7 @@ const navLinks = [
   { label: "メニュー", href: "#menu" },
   { label: "予約", href: "#reserve-calendar" },
   { label: "口コミ", href: "#voice" },
-  { label: "ビフォーアフター", href: "#before-after" },
+  { label: "ビフォーアフター", href: "#evidence" },
   { label: "FAQ", href: "#faq" },
   { label: "アクセス", href: "#access" },
   {
