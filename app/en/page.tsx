@@ -33,7 +33,7 @@ const treatments = [
     title: "Scalp Care Head Spa",
     description:
       "A specialized scalp treatment designed to support a healthy scalp environment. Choose from three levels of care based on your needs.",
-    image: "/images/04-headspa-treatment.webp",
+    image: "/images/menu-scalp-care.webp",
     imagePosition: "center",
     courses: [
       {
@@ -59,7 +59,7 @@ const treatments = [
     title: "Hair Color Head Spa",
     description:
       "Enjoy beautiful hair color together with a relaxing wet head spa. Our coloring technique is designed to minimize direct contact with the scalp.",
-    image: "/images/07-glossy-hair.webp",
+    image: "/images/menu-hair-color.webp",
     imagePosition: "center",
     courses: [
       {
@@ -80,7 +80,7 @@ const treatments = [
     title: "Relaxation Head Spa",
     description:
       "Unwind with a luxurious wet head spa featuring aromatic cream, steam, and warm stones. A peaceful moment away from everyday life.",
-    image: "/images/08-relaxation-bed.webp",
+    image: "/images/menu-relaxation.webp",
     imagePosition: "center",
     courses: [
       {
