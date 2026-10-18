@@ -6,6 +6,7 @@ import { VoiceSection } from "@/components/voice-section"
 import { MenuSection } from "@/components/menu-section"
 import { ReservationSection } from "@/components/reservation-section"
 import { Essences } from "@/components/essences"
+import { Evidence } from "@/components/evidence"
 import { Faq } from "@/components/faq"
 import { AccessMap } from "@/components/access-map"
 import { SiteFooter } from "@/components/site-footer"
@@ -22,6 +23,8 @@ export default function Home() {
       <Essences />
 
       <MenuSection />
+
+      <Evidence />
 
       <ReservationSection />
 
