@@ -222,9 +222,16 @@ export default function OsakaPage() {
           </p>
         </div>
 
-        <p className="mt-8 text-sm text-[#e7c78d]">
-          Square予約ページは準備中です
-        </p>
+        
+<a
+  href="https://book.squareup.com/appointments/w4hozbb9zwbeg5/location/LFXN7SMC38Q2H/services"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-8 inline-block rounded-full bg-[#c6a15b] px-10 py-4 text-sm font-medium text-black transition hover:bg-[#e7c78d]"
+>
+  SquareでWEB予約する →
+</a>
+
       </section>
 
       {/* アクセス */}
