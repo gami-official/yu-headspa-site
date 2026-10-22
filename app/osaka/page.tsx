@@ -40,12 +40,16 @@ export default function OsakaPage() {
           <a href="/" className="text-sm tracking-widest text-[#d8b66d]">
             HEAD SPA YU
           </a>
-          <a
-            href="#reservation"
-            className="rounded-full border border-[#c6a15b] px-5 py-2 text-xs text-[#e8cc92]"
-          >
-            WEB予約
-          </a>
+          
+<a
+  href="https://book.squareup.com/appointments/w4hozbb9zwbeg5/location/LFXN7SMC38Q2H/services"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-full border border-[#c6a15b] bg-[#c6a15b] px-5 py-2 text-xs font-medium text-black transition hover:bg-[#e7c78d]"
+>
+  WEB予約はこちら →
+</a>
+
         </div>
       </header>
 
