@@ -200,6 +200,64 @@ export default function OsakaPage() {
         </div>
       </section>
 
+      {/* セラピスト紹介 */}
+      <section className="bg-[#0d0d0d] px-5 py-20">
+        <div className="mx-auto max-w-5xl">
+          <p className="text-center text-xs tracking-[0.3em] text-[#c6a15b]">
+            THERAPIST
+          </p>
+
+          <h2 className="mt-4 text-center text-2xl">
+            セラピスト紹介
+          </h2>
+
+          <div className="mt-12 overflow-hidden rounded-xl border border-[#c6a15b]/30 bg-[#201e1b] md:grid md:grid-cols-2">
+            <div className="relative aspect-square bg-[#f7f3eb]">
+              <Image
+                src="/images/osaka-therapist.jpg"
+                alt="大阪店 セラピスト まゆ"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain"
+              />
+            </div>
+
+            <div className="flex flex-col justify-center p-8 sm:p-12">
+              <p className="text-xs tracking-[0.2em] text-[#c6a15b]">
+                HEAD SPA THERAPIST
+              </p>
+
+              <h3 className="mt-4 text-2xl">
+                まゆ
+              </h3>
+
+              <div className="mt-6 h-px w-12 bg-[#c6a15b]" />
+
+              <p className="mt-7 text-sm leading-9 text-[#d1c9bd]">
+                お客様一人ひとりに寄り添い、
+                心地よくリラックスできる時間を
+                大切にしています。
+              </p>
+
+              <p className="mt-5 text-sm leading-9 text-[#d1c9bd]">
+                日々の疲れを癒やしたい方も、
+                頭皮ケアが初めての方も、
+                どうぞお気軽にご相談ください。
+              </p>
+
+              <a
+                href="https://book.squareup.com/appointments/w4hozbb9zwbeg5/location/LFXN7SMC38Q2H/services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block self-start rounded-full bg-[#c6a15b] px-8 py-3 text-sm font-medium text-black transition hover:bg-[#e7c78d]"
+              >
+                WEB予約はこちら →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 予約 */}
       <section id="reservation" className="px-5 py-20 text-center">
         <p className="text-xs tracking-[0.3em] text-[#c6a15b]">
