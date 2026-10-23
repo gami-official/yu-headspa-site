@@ -64,7 +64,7 @@ const faqs = [
   {
     question: "駐車場はありますか？",
     answer:
-      "店舗とは別の場所に駐車場をご用意しています。詳しい場所はご来店前にお問い合わせください。写真付きの駐車場案内も準備中です。",
+      "店舗とは別の場所に駐車場をご用意しています。アクセス欄の航空写真と駐車場写真をご確認ください。",
   },
   {
     question: "お手洗いは利用できますか？",
@@ -495,60 +495,166 @@ export default function OsakaPage() {
           <SectionHeading
             en="ACCESS"
             title="店舗情報・アクセス"
-            description="初めての方にも安心してお越しいただけるよう、駅からの道順や駐車場のご案内を準備しています。"
+            description="大阪メトロ谷町線「大日駅」から徒歩約6分。写真を見ながらお越しいただけます。"
           />
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {[
-              {
-                icon: "🚉",
-                title: "駅からの道のり",
-                description:
-                  "駅からサロンまでの写真付き道案内を準備中です。",
-              },
-              {
-                icon: "🏠",
-                title: "サロン外観",
-                description:
-                  "建物の外観と入口のご案内を準備中です。",
-              },
-              {
-                icon: "🌿",
-                title: "サロン内観",
-                description:
-                  "実際のサロン空間の写真を準備中です。",
-              },
-              {
-                icon: "🚗",
-                title: "駐車場のご案内",
-                description:
-                  "駐車場は店舗から離れた場所にあります。詳しい位置と道順を準備中です。",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-[#e4dfd5] bg-white p-7"
-              >
-                <div className="flex h-16 items-center justify-center rounded-xl bg-[#f0ede5] text-3xl">
-                  {item.icon}
-                </div>
-                <h3 className="mt-5 text-base font-medium">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-8 text-[#777167]">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+          <div className="mt-12 overflow-hidden rounded-2xl bg-white shadow-sm md:grid md:grid-cols-2">
+            <div className="relative min-h-[280px]">
+              <Image
+                src="/images/osaka-interior.png.jpg"
+                alt="大阪店のプライベートサロン内観"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center p-8 sm:p-10">
+              <p className="text-xs tracking-[0.2em] text-[#858b6a]">
+                PRIVATE SALON
+              </p>
+              <h3 className="mt-4 text-xl font-medium">
+                落ち着いた完全予約制の空間
+              </h3>
+              <p className="mt-5 text-sm leading-8 text-[#716c63]">
+                倉庫内に設けたプライベートサロンです。
+                周囲を気にせず、頭皮ケアとリラクゼーションの時間をお過ごしください。
+              </p>
+            </div>
           </div>
 
-          <div className="mt-10 rounded-2xl bg-[#f0ede5] p-8 sm:p-10">
+          <div className="mt-8 overflow-hidden rounded-2xl bg-white shadow-sm md:grid md:grid-cols-2">
+            <div className="relative min-h-[260px]">
+              <Image
+                src="/images/osaka-exterior.png.jpg"
+                alt="大阪店の建物外観"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center p-8 sm:p-10">
+              <p className="text-xs tracking-[0.2em] text-[#858b6a]">
+                OUR LOCATION
+              </p>
+              <h3 className="mt-4 text-xl font-medium">
+                こちらの建物が目印です
+              </h3>
+              <p className="mt-5 text-sm leading-8 text-[#716c63]">
+                大阪府守口市大日町1-8-18。
+                建物の入口には大阪店のロゴが掲示されています。
+              </p>
+              <p className="mt-4 text-xs leading-7 text-[#857e72]">
+                ※倉庫を併設しています。ご予約時間に合わせてお越しください。
+              </p>
+            </div>
+          </div>
+
+          {/* ROUTE */}
+          <div className="mt-16">
+            <h3 className="text-center text-xl font-medium tracking-wider">
+              大日駅からの写真付き道順
+            </h3>
+            <p className="mt-4 text-center text-sm leading-8 text-[#716c63]">
+              写真を順番にご覧ください。大日駅から徒歩約6分です。
+            </p>
+
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              {[
+                ["01", "大日駅で降り、写真の場所から地上へ出ます。"],
+                ["02", "そのまままっすぐ進みます。"],
+                ["03", "目印を過ぎても、まっすぐ進みます。"],
+                ["04", "そのまま直進します。"],
+                ["05", "もう少し直進します。"],
+                ["06", "左に曲がります。"],
+                ["07", "少し進むと、右手に倉庫兼サロンが見えます。"],
+                ["08", "建物入口の大阪店ロゴを目印にお越しください。"],
+              ].map(([number, description]) => (
+                <div
+                  key={number}
+                  className="overflow-hidden rounded-2xl border border-[#e4dfd5] bg-white"
+                >
+                  <div className="relative aspect-[4/3]">
+                    <Image
+                      src={`/images/osaka-route-${number}.png.jpg`}
+                      alt={`大日駅からの道順 ${number}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex gap-4 p-5">
+                    <span className="text-xl text-[#858b6a]">
+                      {number}
+                    </span>
+                    <p className="text-sm leading-7 text-[#716c63]">
+                      {description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* PARKING */}
+          <div className="mt-16">
+            <h3 className="text-center text-xl font-medium tracking-wider">
+              駐車場のご案内
+            </h3>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-8 text-[#716c63]">
+              駐車場はサロンとは別の場所にございます。
+              下の航空写真で位置関係をご確認ください。
+            </p>
+
+            <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl bg-white sm:aspect-[16/9]">
+              <Image
+                src="/images/osaka-parking-map.png.jpg"
+                alt="サロンと駐車場の位置関係を示した航空写真"
+                fill
+                sizes="100vw"
+                className="object-contain"
+              />
+            </div>
+
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+              {[
+                [
+                  "/images/osaka-parking-01.png.jpg",
+                  "駐車場の目印・周辺の様子",
+                ],
+                [
+                  "/images/osaka-parking-02.png.jpg",
+                  "駐車場の入口・周辺の様子",
+                ],
+              ].map(([src, alt]) => (
+                <div
+                  key={src}
+                  className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white"
+                >
+                  <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-5 text-sm leading-8 text-[#716c63]">
+              駐車位置がご不明な場合は、ご来店前にお電話でお問い合わせください。
+            </p>
+          </div>
+
+          {/* SHOP INFORMATION */}
+          <div className="mt-12 rounded-2xl bg-[#f0ede5] p-8 sm:p-10">
             <h3 className="text-lg font-medium">
               ヘッドスパ専門店 ゆう 大阪店
             </h3>
 
             <div className="mt-6 space-y-3 text-sm leading-8 text-[#716c63]">
               <p>〒570-0003 大阪府守口市大日町1-8-18</p>
+              <p>大阪メトロ谷町線「大日駅」徒歩約6分</p>
               <p>営業時間：9:30〜17:00</p>
               <p>定休日：土曜日・日曜日・祝日</p>
               <p>完全予約制・前日まで受付</p>
@@ -578,10 +684,7 @@ export default function OsakaPage() {
       {/* FAQ */}
       <section className="bg-[#f0ede5] px-5 py-20 sm:py-24">
         <div className="mx-auto max-w-3xl">
-          <SectionHeading
-            en="FAQ"
-            title="よくあるご質問"
-          />
+          <SectionHeading en="FAQ" title="よくあるご質問" />
 
           <div className="mt-12 space-y-3">
             {faqs.map((faq) => (
