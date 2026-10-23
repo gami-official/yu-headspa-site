@@ -2,14 +2,39 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "ヘッドスパ専門店 ゆう 大阪店｜完全予約制の頭皮ケアサロン",
-  description:
-    "大阪府守口市大日町の完全予約制ヘッドスパ専門店。癒しを土台に、頭皮環境を整えるケアを。リラクゼーション・育毛頭皮ケアを提供しています。",
-};
-
+const siteUrl = "https://www.yuheadspa.net";
 const bookingUrl =
   "https://book.squareup.com/appointments/w4hozbb9zwbeg5/location/LFXN7SMC38Q2H/services";
+
+export const metadata: Metadata = {
+  title: "ヘッドスパ専門店 ゆう 大阪店｜60分で、頭を切り替える。",
+  description:
+    "大阪府守口市大日町の完全予約制プライベートヘッドスパ。忙しい毎日に、上質な60分のリセットを。リラクゼーション8,000円から、育毛・頭皮ケアも。",
+  alternates: {
+    canonical: `${siteUrl}/osaka`,
+  },
+  openGraph: {
+    title: "ヘッドスパ専門店 ゆう 大阪店｜60分で、頭を切り替える。",
+    description:
+      "忙しい毎日に、上質な60分のリセットを。大阪・大日の完全予約制プライベートヘッドスパ。",
+    url: `${siteUrl}/osaka`,
+    siteName: "ヘッドスパ専門店 ゆう 大阪店",
+    type: "website",
+    locale: "ja_JP",
+    images: [
+      {
+        url: `${siteUrl}/images/osaka-logo.png`,
+        alt: "ヘッドスパ専門店 ゆう 大阪店",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ヘッドスパ専門店 ゆう 大阪店",
+    description: "60分で、頭を切り替える。",
+    images: [`${siteUrl}/images/osaka-logo.png`],
+  },
+};
 
 const scalpCourses = [
   {
@@ -35,6 +60,17 @@ const scalpCourses = [
   },
 ];
 
+const routeSteps = [
+  ["01", "大日駅で降り、写真の場所から地上へ出ます。"],
+  ["02", "そのまままっすぐ進みます。"],
+  ["03", "目印を過ぎても、まっすぐ進みます。"],
+  ["04", "そのまま直進します。"],
+  ["05", "もう少し直進します。"],
+  ["06", "左に曲がります。"],
+  ["07", "少し進むと、右手に倉庫兼サロンが見えます。"],
+  ["08", "建物入口を目印にお越しください。"],
+];
+
 const faqs = [
   {
     question: "予約なしでも利用できますか？",
@@ -54,7 +90,7 @@ const faqs = [
   {
     question: "キャンセルはできますか？",
     answer:
-      "キャンセルはご予約日の前日までにお願いいたします。前日まではWEBからお手続きいただけます。当日やむを得ずキャンセルされる場合は、必ずお電話でご連絡ください。",
+      "前日まではWEBからキャンセルできます。当日やむを得ずキャンセルされる場合は、お電話でご連絡ください。",
   },
   {
     question: "支払い方法を教えてください。",
@@ -73,6 +109,23 @@ const faqs = [
   },
 ];
 
+function BookingButton({
+  children = "60分のヘッドスパを予約する",
+}: {
+  children?: string;
+}) {
+  return (
+    <a
+      href={bookingUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#777a59] px-8 py-4 text-center text-sm font-medium tracking-wide text-white shadow-sm transition hover:bg-[#5d6245]"
+    >
+      {children} →
+    </a>
+  );
+}
+
 function SectionHeading({
   en,
   title,
@@ -84,10 +137,10 @@ function SectionHeading({
 }) {
   return (
     <div className="text-center">
-      <p className="text-xs font-medium tracking-[0.3em] text-[#74795b]">
+      <p className="text-xs font-medium tracking-[0.25em] text-[#777a59]">
         {en}
       </p>
-      <h2 className="mt-4 text-2xl font-medium tracking-widest text-[#39362f] sm:text-3xl">
+      <h2 className="mt-4 text-2xl font-medium tracking-wider text-[#39362f] sm:text-3xl">
         {title}
       </h2>
       {description && (
@@ -99,70 +152,52 @@ function SectionHeading({
   );
 }
 
-function BookingButton({
-  children = "WEB予約はこちら",
-}: {
-  children?: string;
-}) {
-  return (
-    <a
-      href={bookingUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center justify-center rounded-full bg-[#777a59] px-8 py-4 text-sm font-medium tracking-wider text-white shadow-sm transition hover:bg-[#5d6245]"
-    >
-      {children} →
-    </a>
-  );
-}
-
 export default function OsakaPage() {
   return (
-    <main className="min-h-screen bg-[#faf8f3] text-[#39362f]">
+    <main className="min-h-screen overflow-x-hidden bg-[#faf8f3] text-[#39362f]">
       {/* HEADER */}
       <header className="border-b border-[#ded9ce] bg-[#faf8f3]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-4 sm:px-5">
           <a
             href="/osaka"
-            className="text-sm font-medium tracking-[0.14em] text-[#565440]"
+            className="shrink-0 text-[13px] font-medium tracking-wide text-[#565440] sm:text-base"
           >
             HEAD SPA YU
-            <span className="ml-2 text-xs text-[#8c8579]">
+            <span className="ml-1.5 text-[10px] text-[#8c8579] sm:text-xs">
               OSAKA
             </span>
           </a>
 
-          <div className="flex items-center gap-3">
+          <nav className="flex items-center gap-2 sm:gap-4">
             <a
               href="/en/osaka"
-              className="text-xs text-[#666858] underline underline-offset-4"
+              className="text-[11px] text-[#666858] underline underline-offset-4 sm:text-xs"
             >
               ENGLISH
             </a>
-
             <a
               href={bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-[#777a59] px-4 py-2 text-xs text-white transition hover:bg-[#5d6245]"
+              className="whitespace-nowrap rounded-full bg-[#777a59] px-3 py-2.5 text-[11px] text-white transition hover:bg-[#5d6245] sm:px-5 sm:text-xs"
             >
               WEB予約
             </a>
-          </div>
+          </nav>
         </div>
       </header>
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#f0ece3] px-5 py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-[#f0ece3] px-5 pb-16 pt-12 sm:pb-24 sm:pt-20">
         <div className="pointer-events-none absolute -left-20 top-0 h-72 w-72 rounded-full bg-[#dce0ce]/50 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-[#e2d5c3]/60 blur-3xl" />
 
         <div className="relative mx-auto max-w-4xl text-center">
-          <p className="text-xs tracking-[0.3em] text-[#777a59]">
-            PRIVATE HEAD SPA IN OSAKA
+          <p className="text-[11px] font-medium tracking-[0.25em] text-[#777a59] sm:text-xs">
+            QUICK RESET HEAD SPA
           </p>
 
-          <div className="mx-auto mt-7 w-44 sm:w-56">
+          <div className="mx-auto mt-6 w-36 sm:w-48">
             <Image
               src="/images/osaka-logo.png"
               alt="ヘッドスパ専門店 ゆう 大阪店 ロゴ"
@@ -173,39 +208,76 @@ export default function OsakaPage() {
             />
           </div>
 
-          <p className="mt-7 text-sm tracking-[0.2em] text-[#777a59]">
+          <p className="mt-7 text-xs tracking-[0.15em] text-[#777a59] sm:text-sm">
             完全予約制・プライベートサロン
           </p>
 
-          <h1 className="mt-6 text-3xl font-medium leading-[1.7] tracking-wider sm:text-5xl">
-            癒しを土台に、
+          <h1 className="mt-5 text-[clamp(1.8rem,7.5vw,3.5rem)] font-medium leading-[1.5] tracking-tight">
+            60分で、
             <br />
-            頭皮環境を整えるケアを。
+            頭を切り替える。
           </h1>
 
-          <p className="mt-6 text-lg leading-9 text-[#686558]">
-            がんばる毎日に、
-            <br className="sm:hidden" />
-            頭と心がほどける60分。
+          <p className="mt-5 text-base font-medium leading-8 text-[#686558] sm:text-xl">
+            忙しい毎日に、上質なリセットを。
           </p>
 
-          <p className="mx-auto mt-7 max-w-xl text-sm leading-9 text-[#716c63]">
-            一人ひとりの頭皮とお悩みに寄り添う、
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-[#716c63]">
+            限られた時間でも、頭と心に余白を。
             <br />
-            丁寧なカウンセリングと心地よいケア。
+            リラクゼーションから本格的な頭皮ケアまで。
             <br />
-            落ち着いた空間で、
-            <br />
-            自分のための時間をお過ごしください。
+            大阪・大日のプライベートヘッドスパ。
           </p>
 
-          <div className="mt-10">
+          <div className="mt-8">
             <BookingButton />
           </div>
 
-          <p className="mt-5 text-xs text-[#8b857a]">
-            大阪府守口市大日町 ／ 前日までの完全予約制
+          <p className="mt-4 text-xs leading-6 text-[#8b857a]">
+            全コース60分枠｜税込8,000円〜
+            <br />
+            平日営業・前日までの予約制
           </p>
+        </div>
+      </section>
+
+      {/* QUICK RESET */}
+      <section className="bg-[#393a31] px-5 py-16 text-center text-white sm:py-20">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-xs tracking-[0.3em] text-[#c5c7ad]">
+            ONE HOUR. YOUR RESET.
+          </p>
+          <h2 className="mt-5 text-2xl font-medium leading-relaxed tracking-wider sm:text-4xl">
+            忙しい人にこそ、
+            <br />
+            頭を休める60分を。
+          </h2>
+          <p className="mt-6 text-sm leading-9 text-[#e2e0d7]">
+            長時間の予定を組まなくても、
+            <br />
+            自分のための時間をつくれる。
+            <br />
+            大阪店は60分枠のヘッドスパ専門店です。
+          </p>
+
+          <div className="mt-9 grid gap-3 sm:grid-cols-3">
+            {[
+              ["60 MIN", "全コース60分枠"],
+              ["PRIVATE", "完全予約制の空間"],
+              ["SCALP CARE", "癒しと頭皮ケア"],
+            ].map(([en, ja]) => (
+              <div
+                key={en}
+                className="rounded-xl border border-white/20 px-5 py-6"
+              >
+                <p className="text-lg tracking-widest text-[#d8d2aa]">
+                  {en}
+                </p>
+                <p className="mt-3 text-xs text-[#e2e0d7]">{ja}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -214,8 +286,8 @@ export default function OsakaPage() {
         <div className="mx-auto max-w-5xl">
           <SectionHeading
             en="OUR CONCEPT"
-            title="大切にしていること"
-            description="リラックスできる心地よさと、頭皮に向き合う専門的なケア。その両方を大切にしています。"
+            title="60分に、上質なケアを。"
+            description="短い時間だからこそ、心地よさと丁寧さを大切に。目的に合わせたヘッドスパをご用意しています。"
           />
 
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -228,13 +300,13 @@ export default function OsakaPage() {
               },
               {
                 number: "02",
-                title: "心地よい頭皮ケア",
+                title: "癒しと頭皮ケア",
                 description:
-                  "癒しを大切にしながら、健やかな頭皮環境を目指すケアをご提供します。",
+                  "リラックスできる心地よさと、健やかな頭皮環境を目指すケアを大切にしています。",
               },
               {
                 number: "03",
-                title: "落ち着いたプライベート空間",
+                title: "プライベート空間",
                 description:
                   "完全予約制だからこそ、周囲を気にせず自分のための時間をお過ごしいただけます。",
               },
@@ -265,7 +337,7 @@ export default function OsakaPage() {
           <SectionHeading
             en="MENU & PRICE"
             title="メニュー・料金"
-            description="リラクゼーションと頭皮ケア。目的に合わせてお選びいただける4つのコースをご用意しています。"
+            description="リラクゼーションと育毛・頭皮ケア。目的に合わせて選べる4つのコース。"
           />
 
           <p className="mt-5 text-center text-xs text-[#817c70]">
@@ -286,26 +358,22 @@ export default function OsakaPage() {
 
             <div className="flex flex-col justify-center p-8 sm:p-12">
               <p className="text-xs tracking-[0.2em] text-[#858b6a]">
-                RELAXATION
+                QUICK RELAXATION
               </p>
-
               <h3 className="mt-4 text-xl font-medium">
                 リラクゼーションコース
               </h3>
-
               <p className="mt-5 text-3xl text-[#777a59]">
                 ¥8,000
                 <span className="ml-3 text-xs text-[#8b857a]">
                   税込
                 </span>
               </p>
-
               <p className="mt-5 text-sm leading-9 text-[#716c63]">
-                日々の疲れを癒やしたい方へ。
+                忙しい毎日に、頭を休める時間を。
                 心地よいヘッドスパで、
                 ゆったりとしたリラックスタイムをお届けします。
               </p>
-
               <p className="mt-5 text-xs text-[#8b857a]">
                 予約枠：60分
               </p>
@@ -328,11 +396,9 @@ export default function OsakaPage() {
               <p className="text-xs tracking-[0.2em] text-[#858b6a]">
                 SCALP & HAIR CARE
               </p>
-
               <h3 className="mt-4 text-xl font-medium">
                 育毛・頭皮ケア
               </h3>
-
               <p className="mt-5 text-sm leading-8 text-[#716c63]">
                 頭皮の状態やお悩みに合わせて、
                 健やかな頭皮環境を目指すケアを行います。
@@ -344,7 +410,6 @@ export default function OsakaPage() {
                     <p className="text-[11px] tracking-widest text-[#858b6a]">
                       {course.en}
                     </p>
-
                     <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
                       <h4 className="text-sm font-medium">
                         {course.name}
@@ -353,11 +418,9 @@ export default function OsakaPage() {
                         {course.price}
                       </p>
                     </div>
-
                     <p className="mt-3 text-xs leading-7 text-[#777167]">
                       {course.description}
                     </p>
-
                     <p className="mt-2 text-xs text-[#938b7e]">
                       60分枠・税込
                     </p>
@@ -367,11 +430,11 @@ export default function OsakaPage() {
             </div>
           </div>
 
+          {/* DECIDE ON ARRIVAL */}
           <div className="mt-7 rounded-2xl border border-[#e1dace] bg-white p-8 text-center">
             <h3 className="text-lg font-medium">
               当日決める
             </h3>
-
             <p className="mt-4 text-sm leading-8 text-[#716c63]">
               どのコースがよいか迷われている方は、
               <br />
@@ -460,11 +523,9 @@ export default function OsakaPage() {
               <p className="text-xs tracking-[0.2em] text-[#858b6a]">
                 HEAD SPA THERAPIST
               </p>
-
               <h3 className="mt-5 text-3xl font-medium">
                 まゆ
               </h3>
-
               <div className="mt-6 h-px w-12 bg-[#b7b18f]" />
 
               <p className="mt-7 text-sm leading-9 text-[#716c63]">
@@ -472,7 +533,6 @@ export default function OsakaPage() {
                 心地よくリラックスできる時間を
                 大切にしています。
               </p>
-
               <p className="mt-5 text-sm leading-9 text-[#716c63]">
                 日々の疲れを癒やしたい方も、
                 頭皮ケアが初めての方も、
@@ -498,6 +558,7 @@ export default function OsakaPage() {
             description="大阪メトロ谷町線「大日駅」から徒歩約6分。写真を見ながらお越しいただけます。"
           />
 
+          {/* INTERIOR */}
           <div className="mt-12 overflow-hidden rounded-2xl bg-white shadow-sm md:grid md:grid-cols-2">
             <div className="relative min-h-[280px]">
               <Image
@@ -517,11 +578,13 @@ export default function OsakaPage() {
               </h3>
               <p className="mt-5 text-sm leading-8 text-[#716c63]">
                 倉庫内に設けたプライベートサロンです。
-                周囲を気にせず、頭皮ケアとリラクゼーションの時間をお過ごしください。
+                周囲を気にせず、頭皮ケアとリラクゼーションの時間を
+                お過ごしください。
               </p>
             </div>
           </div>
 
+          {/* EXTERIOR */}
           <div className="mt-8 overflow-hidden rounded-2xl bg-white shadow-sm md:grid md:grid-cols-2">
             <div className="relative min-h-[260px]">
               <Image
@@ -541,34 +604,25 @@ export default function OsakaPage() {
               </h3>
               <p className="mt-5 text-sm leading-8 text-[#716c63]">
                 大阪府守口市大日町1-8-18。
-                建物の入口には大阪店のロゴが掲示されています。
+                倉庫を併設した建物内にございます。
               </p>
               <p className="mt-4 text-xs leading-7 text-[#857e72]">
-                ※倉庫を併設しています。ご予約時間に合わせてお越しください。
+                ※ご予約時間に合わせてお越しください。
               </p>
             </div>
           </div>
 
-          {/* ROUTE */}
+          {/* ROUTE PHOTOS */}
           <div className="mt-16">
             <h3 className="text-center text-xl font-medium tracking-wider">
               大日駅からの写真付き道順
             </h3>
             <p className="mt-4 text-center text-sm leading-8 text-[#716c63]">
-              写真を順番にご覧ください。大日駅から徒歩約6分です。
+              写真を01から08まで順番にご覧ください。
             </p>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              {[
-                ["01", "大日駅で降り、写真の場所から地上へ出ます。"],
-                ["02", "そのまままっすぐ進みます。"],
-                ["03", "目印を過ぎても、まっすぐ進みます。"],
-                ["04", "そのまま直進します。"],
-                ["05", "もう少し直進します。"],
-                ["06", "左に曲がります。"],
-                ["07", "少し進むと、右手に倉庫兼サロンが見えます。"],
-                ["08", "建物入口の大阪店ロゴを目印にお越しください。"],
-              ].map(([number, description]) => (
+              {routeSteps.map(([number, description]) => (
                 <div
                   key={number}
                   className="overflow-hidden rounded-2xl border border-[#e4dfd5] bg-white"
@@ -642,11 +696,12 @@ export default function OsakaPage() {
             </div>
 
             <p className="mt-5 text-sm leading-8 text-[#716c63]">
-              駐車位置がご不明な場合は、ご来店前にお電話でお問い合わせください。
+              駐車位置がご不明な場合は、
+              ご来店前にお電話でお問い合わせください。
             </p>
           </div>
 
-          {/* SHOP INFORMATION */}
+          {/* STORE DETAILS */}
           <div className="mt-12 rounded-2xl bg-[#f0ede5] p-8 sm:p-10">
             <h3 className="text-lg font-medium">
               ヘッドスパ専門店 ゆう 大阪店
@@ -684,7 +739,10 @@ export default function OsakaPage() {
       {/* FAQ */}
       <section className="bg-[#f0ede5] px-5 py-20 sm:py-24">
         <div className="mx-auto max-w-3xl">
-          <SectionHeading en="FAQ" title="よくあるご質問" />
+          <SectionHeading
+            en="FAQ"
+            title="よくあるご質問"
+          />
 
           <div className="mt-12 space-y-3">
             {faqs.map((faq) => (
@@ -726,13 +784,13 @@ export default function OsakaPage() {
         </p>
 
         <h2 className="mt-5 text-2xl font-medium tracking-widest sm:text-3xl">
-          ご予約はこちら
+          60分のリセットを予約する
         </h2>
 
         <p className="mt-7 text-sm leading-9 text-[#f7f4e9]">
           完全予約制・前日まで受付
           <br />
-          60分のプライベートヘッドスパ
+          大阪・大日のプライベートヘッドスパ
         </p>
 
         <div className="mx-auto mt-8 max-w-lg rounded-2xl border border-white/30 p-7">
@@ -761,35 +819,65 @@ export default function OsakaPage() {
         <p className="mt-6 text-xs leading-7 text-[#f1ecda]">
           お支払いは現地払いのみ
           <br />
-          キャンセルは前日までにお願いいたします
+          キャンセルは前日までWEB受付
+          <br />
+          当日のキャンセルはお電話でご連絡ください
         </p>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#faf8f3] px-5 py-10 text-center">
+      <footer className="bg-[#faf8f3] px-5 py-12 text-center">
         <p className="text-sm tracking-widest text-[#777a59]">
           HEAD SPA YU · OSAKA
         </p>
 
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-6 text-xs text-[#716c63]">
-          <a href="/" className="underline underline-offset-4">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-xs text-[#716c63]">
+          <a
+            href="/"
+            className="underline underline-offset-4"
+          >
             福岡本店
           </a>
+
           <a
             href="/en/osaka"
             className="underline underline-offset-4"
           >
             ENGLISH
           </a>
+
           <a
             href="#access"
             className="underline underline-offset-4"
           >
             アクセス
           </a>
+
+          <a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4"
+          >
+            WEB予約
+          </a>
         </div>
 
-        <p className="mt-7 text-xs text-[#9b9488]">
+        <div className="mx-auto mt-8 max-w-lg border-t border-[#e4dfd5] pt-7">
+          <p className="text-xs text-[#938b7e]">
+            運営会社
+          </p>
+          <a
+            href="https://www.gamigami.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-sm font-medium text-[#646d49] underline underline-offset-4 transition hover:text-[#39362f]"
+          >
+            株式会社GAMI ↗
+          </a>
+        </div>
+
+        <p className="mt-8 text-xs text-[#9b9488]">
           © HEAD SPA YU OSAKA
         </p>
       </footer>
