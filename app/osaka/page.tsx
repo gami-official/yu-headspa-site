@@ -504,14 +504,14 @@ export default function OsakaPage() {
       <section className="bg-[#f0ede5] px-5 py-20 sm:py-24">
         <div className="mx-auto max-w-5xl">
           <SectionHeading
-            en="THERAPIST"
-            title="セラピスト紹介"
-          />
+  en="THE HEALER — MAYU"
+  title="癒しを届ける人"
+/>
 
           <div className="mt-12 overflow-hidden rounded-2xl bg-white shadow-sm md:grid md:grid-cols-2">
             <div className="relative aspect-square bg-[#fffdf8]">
               <Image
-                src="/images/osaka-therapist.jpg"
+                src="/images/osaka-mayu-healer.jpg"
                 alt="大阪店セラピスト まゆ"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
