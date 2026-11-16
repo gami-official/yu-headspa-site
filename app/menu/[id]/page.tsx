@@ -18,8 +18,8 @@ const menuGuides: Record<
   }
 > = {
   scalp: {
-    headline: "未来の髪のために、今できる上質な頭皮ケア。",
-    lead: "髪のボリュームや頭皮環境が気になり始めた方へ。15年以上の経験を活かした手技と、本格ウェットヘッドスパで、頭皮と丁寧に向き合う90分を。",
+    headline: "未来の髪を考える、上質な頭皮ケア。",
+    lead: "髪や頭皮の変化が気になる方へ。熟練の手技と本格ウェットスパで、丁寧にケアする90分。",
     recommended: [
       "抜け毛や髪のボリュームが気になる",
       "分け目や髪のハリ・コシが気になる",
@@ -62,8 +62,8 @@ const menuGuides: Record<
     ],
   },
   color: {
-    headline: "美しい髪色と、頭皮への思いやりを。",
-    lead: "カラーを続けたい。でも頭皮のことも大切にしたい。そんな方へ、ゼロテクニックカラーと本格ウェットヘッドスパを組み合わせた特別なメニューです。",
+    headline: "髪色も、頭皮も、大切に。",
+    lead: "カラーを楽しみながら、頭皮も大切に。ゼロテクニックカラーとウェットスパを組み合わせたメニューです。",
     recommended: [
       "白髪染めと頭皮ケアを一緒に受けたい",
       "カラー剤が頭皮に触れることが気になる",
@@ -105,8 +105,8 @@ const menuGuides: Record<
     ],
   },
   relaxation: {
-    headline: "何もしない贅沢を、90分間。",
-    lead: "水・スチーム・アロマクリーム・熟練の手技。ドライヘッドスパとは異なる、本格ウェットスパならではの心地よさをご体験ください。",
+    headline: "心ほどける、贅沢な90分。",
+    lead: "水とスチーム、アロマクリーム、熟練の手技。本格ウェットスパならではの心地よさを。",
     recommended: [
       "毎日忙しく、自分だけの時間がほしい",
       "気分をリフレッシュしたい",
@@ -225,10 +225,10 @@ export default async function MenuDetailPage({
             <p className="text-xs tracking-[0.3em] text-gold">
               YOUR SPECIAL EXPERIENCE
             </p>
-            <h2 className="mx-auto mt-6 max-w-3xl text-xl leading-[1.8] text-foreground sm:text-3xl">
+            <h2 className="mx-auto mt-6 max-w-3xl px-1 text-[19px] leading-[1.7] tracking-normal text-foreground [overflow-wrap:anywhere] sm:text-3xl">
               {guide.headline}
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-[13px] leading-8 break-words text-muted-foreground sm:text-sm">
+            <p className="mx-auto mt-5 max-w-2xl px-1 text-left text-[13px] leading-[1.95] tracking-normal text-muted-foreground [overflow-wrap:anywhere] sm:text-center sm:text-sm">
               {guide.lead}
             </p>
           </section>
@@ -236,7 +236,7 @@ export default async function MenuDetailPage({
 
         {/* DESCRIPTION */}
         <section className="mb-20">
-          <div className="mx-auto max-w-3xl space-y-5 text-left text-[13px] leading-8 break-words text-muted-foreground sm:text-center sm:text-sm sm:leading-9">
+          <div className="mx-auto max-w-3xl space-y-5 text-left text-[13px] leading-[1.95] tracking-normal text-muted-foreground [overflow-wrap:anywhere] sm:text-sm sm:leading-9">
             {menu.descriptionParagraphs.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
@@ -453,7 +453,7 @@ export default async function MenuDetailPage({
           <h2 className="mt-5 text-xl leading-8 text-foreground sm:text-2xl">
             初めての方も、安心してお越しください。
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-[13px] leading-8 break-words text-muted-foreground sm:text-sm">
+          <p className="mx-auto mt-5 max-w-2xl px-1 text-left text-[13px] leading-[1.95] tracking-normal text-muted-foreground [overflow-wrap:anywhere] sm:text-center sm:text-sm">
             完全予約制・完全個室のヘッドスパ専門店ゆう。
             お悩みやご希望を伺いながら、丁寧にご案内いたします。
             自分のためだけの特別な時間をお楽しみください。
