@@ -8,14 +8,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-const COUBIC_URL = "https://coubic.com/yuheadspa/services"
+const RESERVE_URL =
+  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 const LINE_URL = "https://lin.ee/7hso3k1"
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[]
-  }
-}
 
 const faqs = [
   ["初めてでも大丈夫？", "はい。完全個室なので、安心してご相談いただけます。"],
@@ -30,19 +25,15 @@ const faqs = [
 ]
 
 export function Faq() {
-  const handleReserveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-
-    window.dataLayer = window.dataLayer || []
-
-    window.dataLayer.push({
+  const handleReserveClick = () => {
+    const trackingWindow = window as Window & {
+      dataLayer?: Record<string, unknown>[]
+    }
+    trackingWindow.dataLayer = trackingWindow.dataLayer || []
+    trackingWindow.dataLayer.push({
       event: "reserve_click",
       reserve_location: "faq",
     })
-
-    setTimeout(() => {
-      window.open(COUBIC_URL, "_blank", "noopener,noreferrer")
-    }, 300)
   }
 
   return (
@@ -50,16 +41,12 @@ export function Faq() {
       <div className="mx-auto max-w-4xl px-5 lg:px-10">
         <FadeIn>
           <div className="mb-10 text-center">
-            <p className="text-[10px] tracking-[0.28em] text-gold/70">
-              FAQ
-            </p>
-
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">FAQ</p>
             <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.4rem)] leading-[1.55] tracking-[0.03em] text-foreground">
               予約前の不安を、
               <br />
               ここで解消。
             </h2>
-
             <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-muted-foreground">
               初めての方から多い質問をまとめました。
             </p>
@@ -81,7 +68,6 @@ export function Faq() {
                       <span>{q}</span>
                     </div>
                   </AccordionTrigger>
-
                   <AccordionContent className="pb-5 pl-5 text-[13px] leading-7 text-muted-foreground">
                     <span className="text-gold/50">A. </span>
                     {a}
@@ -94,36 +80,32 @@ export function Faq() {
 
         <FadeIn delay={0.2}>
           <div className="mt-10 rounded-[28px] border border-gold/25 bg-card px-6 py-9 text-center shadow-sm">
-            <p className="text-[10px] tracking-[0.28em] text-gold/70">
-              RESERVE
-            </p>
-
+            <p className="text-[10px] tracking-[0.28em] text-gold/70">RESERVE</p>
             <h3 className="mt-4 text-[clamp(1.35rem,5vw,2rem)] leading-[1.55] tracking-[0.03em] text-foreground">
               不安が軽くなったら、
               <br />
               空き状況へ。
             </h3>
-
             <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-muted-foreground">
               完全個室・一日三名限定。
               <br />
               初めての方も丁寧にご案内します。
             </p>
-
             <div className="mx-auto mt-7 flex max-w-[280px] flex-col gap-3">
               <a
-                href={COUBIC_URL}
+                href={RESERVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={handleReserveClick}
-                className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium text-black transition hover:opacity-90"
               >
                 空き状況を見る
               </a>
-
               <a
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-gold/30 px-6 py-3 text-sm text-foreground transition hover:text-gold"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-gold/30 px-6 py-3 text-sm text-foreground transition hover:text-gold"
               >
                 LINEで相談する
               </a>
