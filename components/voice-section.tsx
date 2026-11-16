@@ -14,22 +14,16 @@ declare global {
 }
 
 export function VoiceSection() {
-  const handleReserveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-
+  const trackReserve = () => {
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({
       event: "reserve_click",
       reserve_location: "voice",
     })
-
-    setTimeout(() => {
-      window.open(RESERVE_URL, "_blank", "noopener,noreferrer")
-    }, 300)
   }
 
   return (
-    <section id="voice" className="bg-background py-14 lg:py-20">
+    <section id="voice" className="scroll-mt-24 bg-background py-14 lg:py-20">
       <div className="mx-auto max-w-4xl px-5 lg:px-10">
         <FadeIn>
           <div className="text-center">
@@ -38,29 +32,33 @@ export function VoiceSection() {
             </p>
 
             <h2 className="mt-4 text-[clamp(1.55rem,6vw,2.4rem)] leading-[1.5] tracking-[0.03em] text-foreground">
-              Google口コミ★5.0
-              <br />
-              114件の評価
+              お客様からの口コミ
             </h2>
+
+            <p className="mx-auto mt-4 max-w-lg text-[13px] leading-7 text-muted-foreground sm:text-sm">
+              ご来店いただいたお客様の声を、Googleの口コミでご覧いただけます。
+            </p>
 
             <a
               href={GOOGLE_REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mx-auto mt-7 block max-w-sm rounded-[24px] border border-gold/20 bg-card px-6 py-6 text-center shadow-sm transition hover:border-gold/50"
+              className="mx-auto mt-7 flex min-h-28 max-w-sm flex-col items-center justify-center rounded-[24px] border border-gold/20 bg-card px-6 py-6 text-center shadow-sm transition hover:border-gold/50"
             >
-              <p className="text-3xl tracking-[0.12em] text-gold">★★★★★</p>
+              <p className="text-xl tracking-[0.12em] text-gold">Google Reviews</p>
               <p className="mt-3 text-sm text-muted-foreground">
-                Google口コミを見る
+                最新の評価・口コミを見る ↗
               </p>
             </a>
 
             <a
               href={RESERVE_URL}
-              onClick={handleReserveClick}
-              className="mt-8 inline-flex w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackReserve}
+              className="mt-8 inline-flex min-h-12 w-full max-w-xs items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium tracking-[0.08em] text-black transition hover:opacity-90"
             >
-              空き状況を見る
+              空き状況を見る ↗
             </a>
           </div>
         </FadeIn>
