@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useEffect, useRef, useState } from "react"
@@ -111,11 +110,7 @@ export function Essences() {
       "[data-essence-card]"
     )
 
-    const targetIndex = Math.max(
-      0,
-      Math.min(index, cards.length - 1)
-    )
-
+    const targetIndex = Math.max(0, Math.min(index, cards.length - 1))
     const target = cards[targetIndex]
     if (!target) return
 
@@ -128,9 +123,7 @@ export function Essences() {
   }
 
   const scroll = (direction: "left" | "right") => {
-    scrollToIndex(
-      activeIndex + (direction === "left" ? -1 : 1)
-    )
+    scrollToIndex(activeIndex + (direction === "left" ? -1 : 1))
   }
 
   useEffect(() => {
@@ -150,15 +143,12 @@ export function Essences() {
         if (!cards.length) return
 
         const scrollPosition = container.scrollLeft
-
         let nearestIndex = 0
         let nearestDistance = Infinity
 
         cards.forEach((card, index) => {
           const distance = Math.abs(
-            card.offsetLeft -
-              container.offsetLeft -
-              scrollPosition
+            card.offsetLeft - container.offsetLeft - scrollPosition
           )
 
           if (distance < nearestDistance) {
@@ -174,9 +164,7 @@ export function Essences() {
     container.addEventListener("scroll", updateActiveIndex, {
       passive: true,
     })
-
     window.addEventListener("resize", updateActiveIndex)
-
     updateActiveIndex()
 
     return () => {
@@ -246,25 +234,24 @@ export function Essences() {
                     <span className="font-serif text-5xl font-light leading-none tracking-[-0.04em] text-[#e5c783] drop-shadow-lg sm:text-6xl">
                       {item.number}
                     </span>
-
                     <span className="mb-1 text-[9px] tracking-[0.16em] text-white/80">
                       / 10
                     </span>
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col p-6 pt-5 sm:p-7 sm:pt-5">
+                <div className="flex min-w-0 flex-1 flex-col px-5 pb-6 pt-5 sm:p-7 sm:pt-5">
                   <p className="min-h-5 text-[10px] tracking-[0.17em] text-[#d6b36a]/85">
                     {item.english}
                   </p>
 
                   <div className="mt-4 h-px w-full bg-[#d6b36a]/20" />
 
-                  <h3 className="mt-5 text-lg font-medium leading-[1.75] tracking-[0.02em] text-white">
+                  <h3 className="mt-4 text-[16px] font-medium leading-[1.9] tracking-normal text-white sm:mt-5 sm:text-lg sm:tracking-[0.02em]">
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-8 text-white/65">
+                  <p className="mt-3 text-[13px] leading-[1.95] tracking-normal text-white/70 sm:mt-4 sm:text-sm sm:leading-8">
                     {item.description}
                   </p>
                 </div>
@@ -277,9 +264,7 @@ export function Essences() {
               <span className="text-sm tracking-[0.15em] text-[#d6b36a]">
                 {String(activeIndex + 1).padStart(2, "0")}
               </span>
-
               <div className="h-px w-12 bg-[#d6b36a]/50" />
-
               <span className="text-sm tracking-[0.15em] text-white/50">
                 10
               </span>
@@ -297,9 +282,7 @@ export function Essences() {
                 aria-label="前のこだわりを見る"
                 className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d6b36a]/50 text-[#d6b36a] transition hover:bg-[#d6b36a] hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
               >
-                <span aria-hidden="true" className="text-lg">
-                  ←
-                </span>
+                <span aria-hidden="true" className="text-lg">←</span>
               </button>
 
               <button
@@ -309,9 +292,7 @@ export function Essences() {
                 aria-label="次のこだわりを見る"
                 className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d6b36a]/50 text-[#d6b36a] transition hover:bg-[#d6b36a] hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
               >
-                <span aria-hidden="true" className="text-lg">
-                  →
-                </span>
+                <span aria-hidden="true" className="text-lg">→</span>
               </button>
             </div>
           </div>
