@@ -138,10 +138,8 @@ export function MenuSection() {
           {menus.map((menu, index) => {
             const intro = menuIntroductions[menu.id]
 
-            const lowestPrice =
-              menu.items[menu.items.length - 1]?.price
-
             const courses = courseDetails[menu.id]
+            const lowestPrice = courses?.[0]?.price ?? menu.items[menu.items.length - 1]?.price
 
             const imageSrc = menuImages[menu.id] ?? menu.image
 
@@ -274,7 +272,7 @@ export function MenuSection() {
                         onClick={() =>
                           trackReserve(`menu_${menu.id}`)
                         }
-                        className="flex min-h-12 w-full items-center justify-center rounded-full bg-gold px-4 py-3 text-center text-[13px] font-medium text-background transition hover:opacity-90 sm:text-sm"
+                        className="flex min-h-14 w-full items-center justify-center rounded-full bg-gold px-4 py-3 text-center text-[13px] font-medium text-background transition hover:opacity-90 sm:text-sm"
                       >
                         空き状況・予約はこちら
                       </a>
