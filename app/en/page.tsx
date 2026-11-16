@@ -94,6 +94,81 @@ const treatments = [
   },
 ]
 
+const essences = [
+  {
+    number: "01",
+    label: "PRIVATE SPACE",
+    title: "The Ultimate Luxury of a Completely Private Room",
+    description: "No curious glances or surrounding conversations. From the moment the door closes, enjoy a special experience reserved entirely for you.",
+    image: "/images/01-private-room.webp",
+  },
+  {
+    number: "02",
+    label: "24/7 ONLINE RESERVATION",
+    title: "Effortless Booking, 24 Hours a Day, 365 Days a Year",
+    description: "With treatments available by appointment only, your time is valued from the very beginning. Check availability and complete your booking online whenever it suits you.",
+    image: "/images/02-art-interior.webp",
+  },
+  {
+    number: "03",
+    label: "TWO PRIVATE PARKING SPACES",
+    title: "Two Parking Spaces for a Stress-Free Arrival",
+    description: "Two parking spaces are available directly in front of our salon. The convenience of arriving comfortably by car is part of our thoughtful hospitality.",
+    image: "/images/03-parking.webp",
+    imagePosition: "center 58%",
+  },
+  {
+    number: "04",
+    label: "15+ YEARS OF EXPERTISE",
+    title: "Over 15 Years of Experience, Reflected in Every Touch",
+    description: "Years of dedicated experience shape our precise pressure and refined techniques. Each treatment is tailored to the individual, with a level of care that cannot be captured by a manual alone.",
+    image: "/images/04-headspa-treatment.webp",
+  },
+  {
+    number: "05",
+    label: "WET HEAD SPA",
+    title: "An Authentic Wet Head Spa Beyond Dry Treatments",
+    description: "Water, steam, cleansing, conditioning, and expert hands come together in one complete experience. Discover the distinctive pleasure of a true wet head spa that cares directly for your scalp.",
+    image: "/images/05-scalp-care.webp",
+  },
+  {
+    number: "06",
+    label: "TRUSTED BY VIPS & PROFESSIONALS",
+    title: "Scalp Care Chosen by Celebrities and Medical Professionals",
+    description: "Our specialized care is appreciated by clients who value beauty and well-being, including celebrities and medical professionals. We welcome those who seek quality and care about their scalp and future hair health.",
+    image: "/images/06-consultation-space.webp",
+  },
+  {
+    number: "07",
+    label: "PREMIUM HAIR COLOR & SPA",
+    title: "Beautiful Hair Color and Thoughtful Scalp Care",
+    description: "We pursue beautiful color results while taking care to be considerate of the scalp. Enjoy a carefully designed experience combining professional hair coloring with a soothing head spa.",
+    image: "/images/07-glossy-hair.webp",
+    imagePosition: "center 45%",
+  },
+  {
+    number: "08",
+    label: "ONLY THREE GUESTS A DAY",
+    title: "Just Three Guests a Day, with Quality Above Quantity",
+    description: "We limit our appointments so we can give each guest our full attention. Leave the rush of everyday life behind and enjoy an unhurried, luxurious moment.",
+    image: "/images/08-relaxation-bed.webp",
+  },
+  {
+    number: "09",
+    label: "FUTURE-FOCUSED SCALP CARE",
+    title: "Care That Looks Beyond Today to Your Hair’s Future",
+    description: "We assess your scalp condition and recommend care suited to your individual needs. Our goal is to support a healthy scalp environment, the foundation of beautiful hair.",
+    image: "/images/09-counseling.webp",
+  },
+  {
+    number: "10",
+    label: "A FIVE-SENSE EXPERIENCE",
+    title: "An Extraordinary Experience for All Five Senses",
+    description: "From lighting, sound, and fragrance to warmth and the comfort of every touch, each detail is thoughtfully considered to create a truly refined spa experience.",
+    image: "/images/10-floral-lighting.webp",
+  },
+]
+
 const resultImages = Array.from({ length: 18 }, (_, index) => ({
   src: `/images/evidence-${String(index + 1).padStart(2, "0")}.webp`,
   alt: `Scalp care client example ${index + 1}`,
@@ -260,6 +335,104 @@ export default function EnglishHomePage() {
             personalized 90-minute treatment in a peaceful private
             space, away from the rush of everyday life.
           </p>
+        </div>
+      </section>
+
+      {/* Why Japanese head spa */}
+      <section id="japanese-head-spa" className="border-y border-[#c8a66a]/15 bg-[#11100e] px-5 py-20 sm:py-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center">
+            <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">THE JAPANESE HEAD SPA EXPERIENCE</p>
+            <h2 className="mt-5 text-3xl leading-relaxed sm:text-4xl">More Than a Hair Treatment</h2>
+            <p className="mx-auto mt-6 max-w-3xl text-sm leading-9 text-[#c4b9ad]">
+              In Japan, a head spa is a thoughtful ritual that combines scalp cleansing,
+              skilled hands, and quiet relaxation. At Head Spa Yu, we bring these elements
+              together in a private setting, creating time to care for your scalp, hair, and peace of mind.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              { number: "01", title: "Personalized Scalp Care", body: "We consider your scalp condition and preferences before recommending an appropriate treatment." },
+              { number: "02", title: "The Comfort of a Wet Spa", body: "Enjoy the combination of water, steam, cleansing, and carefully practiced hands." },
+              { number: "03", title: "A Moment Entirely Yours", body: "A completely private treatment room and a limited number of guests create a peaceful experience." },
+            ].map((item) => (
+              <div key={item.number} className="rounded-2xl border border-[#c8a66a]/25 bg-[#1a1713] p-7">
+                <p className="text-xs tracking-[0.2em] text-[#d4b675]">{item.number} / EXPERIENCE</p>
+                <h3 className="mt-4 text-xl leading-8">{item.title}</h3>
+                <p className="mt-4 text-sm leading-8 text-[#b9b0a6]">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ten reasons — matched to the Japanese Fukuoka homepage */}
+      <section id="essences" className="overflow-hidden bg-[#171310] px-5 py-20 text-white sm:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <p className="text-[11px] tracking-[0.25em] text-[#d6b36a]">10 REASONS TO CHOOSE YU</p>
+            <h2 className="mt-5 text-2xl leading-relaxed sm:text-4xl">Ten Reasons to Choose Head Spa Yu</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-white/65 sm:text-base">
+              Expert techniques, a thoughtfully designed space, and heartfelt hospitality.
+              <br className="hidden sm:block" /> Every detail is dedicated to your special moment.
+            </p>
+            <div className="mx-auto mt-7 h-px w-16 bg-[#d6b36a]/60" />
+          </div>
+          <p className="mb-4 text-center text-xs tracking-[0.1em] text-[#d6b36a]">Swipe to explore all 10 reasons →</p>
+          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-6 sm:gap-5 lg:gap-6" aria-label="Ten reasons to choose Head Spa Yu">
+            {essences.map((item) => (
+              <article key={item.number} className="group flex w-[86%] shrink-0 snap-start flex-col overflow-hidden rounded-[20px] border border-[#d6b36a]/25 bg-[#211a15] sm:w-[47%] lg:w-[31%]">
+                <div className="relative h-56 overflow-hidden sm:h-60 lg:h-64">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 86vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ objectPosition: item.imagePosition ?? "center" }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#211a15] via-[#211a15]/10 to-transparent" />
+                  <div className="absolute bottom-4 left-5 flex items-end gap-3 sm:left-6">
+                    <span className="text-5xl leading-none text-[#e5c783] sm:text-6xl">{item.number}</span>
+                    <span className="mb-1 text-[9px] tracking-[0.16em] text-white/80">/ 10</span>
+                  </div>
+                </div>
+                <div className="flex flex-1 flex-col px-5 pb-6 pt-5 sm:p-7 sm:pt-5">
+                  <p className="min-h-5 break-words text-[10px] leading-5 tracking-[0.09em] text-[#d6b36a]/85 sm:tracking-[0.13em]">{item.label}</p>
+                  <h3 className="mt-3 text-lg leading-8 text-white sm:text-xl">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-white/70">{item.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What to expect */}
+      <section id="your-visit" className="bg-[#11100e] px-5 py-20 sm:py-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center">
+            <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">YOUR VISIT</p>
+            <h2 className="mt-5 text-3xl sm:text-4xl">What to Expect at Head Spa Yu</h2>
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-[#b9b0a6]">
+              Visiting a Japanese head spa for the first time? Here is a simple guide
+              to the experience. The exact steps vary by treatment.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {[
+              { number: "01", title: "Book Your Appointment", body: "Choose your preferred 90-minute treatment and available time through our online booking page." },
+              { number: "02", title: "Arrive & Share Your Preferences", body: "We discuss your scalp or hair concerns and the kind of experience you are looking for. Translation apps can help us communicate." },
+              { number: "03", title: "Enjoy Your Private Treatment", body: "Relax in your private space while we provide the treatment you selected, with techniques tailored to your needs." },
+              { number: "04", title: "Finish Feeling Refreshed", body: "Take a moment to unwind after your session. We can share general care suggestions when appropriate." },
+            ].map((step) => (
+              <div key={step.number} className="rounded-2xl border border-[#c8a66a]/20 bg-[#191715] p-7 sm:p-8">
+                <p className="text-3xl text-[#d4b675]">{step.number}</p>
+                <h3 className="mt-4 text-xl leading-8">{step.title}</h3>
+                <p className="mt-4 text-sm leading-8 text-[#b9b0a6]">{step.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -433,6 +606,27 @@ export default function EnglishHomePage() {
         </div>
       </section>
 
+      {/* International guest guidance */}
+      <section id="international-guests" className="border-y border-[#c8a66a]/20 bg-[#1b1610] px-5 py-20 sm:py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">WELCOME, INTERNATIONAL GUESTS</p>
+          <h2 className="mt-5 text-3xl leading-relaxed sm:text-4xl">Enjoy Your Head Spa in Fukuoka</h2>
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-9 text-[#e1d6c8]">
+            Guests from around the world are welcome. Our team primarily communicates in Japanese,
+            but we use translation apps to help with consultations and questions.
+            Fluent English conversation is not guaranteed.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-[#c4b9ad]">
+            You can view the online reservation system in English by selecting the globe icon
+            on the booking page. Please check that you are booking our Fukuoka Main Salon.
+          </p>
+          <a href={bookingUrl} target="_blank" rel="noopener noreferrer"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#d4b675] px-8 py-3 text-sm font-medium text-[#17120c] transition hover:bg-[#e6c990]">
+            Check Available Appointments ↗
+          </a>
+        </div>
+      </section>
+
       {/* Location */}
       <section className="px-5 py-20 sm:py-28">
         <div className="mx-auto max-w-4xl">
@@ -485,6 +679,36 @@ export default function EnglishHomePage() {
             >
               Open in Google Maps ↗
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* International guest FAQs */}
+      <section id="faq" className="border-t border-[#c8a66a]/15 bg-[#101010] px-5 py-20 sm:py-28">
+        <div className="mx-auto max-w-4xl">
+          <div className="text-center">
+            <p className="text-[11px] tracking-[0.3em] text-[#d4b675]">FREQUENTLY ASKED QUESTIONS</p>
+            <h2 className="mt-5 text-3xl sm:text-4xl">Good to Know Before You Visit</h2>
+          </div>
+          <div className="mt-10 space-y-4">
+            {[
+              { q: "Can I visit if I do not speak Japanese?", a: "Yes. We welcome international guests and use translation apps to support communication. Our staff may not be able to converse fluently in English." },
+              { q: "How do I book in English?", a: "Open the reservation link and select the globe icon to switch the booking interface to English. Some treatment names or available slots may still be shown in Japanese." },
+              { q: "Is the treatment room private?", a: "Yes. Our Fukuoka salon offers a completely private treatment space and welcomes a limited number of guests each day." },
+              { q: "How long is an appointment?", a: "The Fukuoka treatments listed on this page are 90 minutes. Please review the selected service details when booking." },
+              { q: "Is parking available?", a: "Yes. Two parking spaces are available in front of the Fukuoka salon." },
+              { q: "Can I use a gift ticket at the Osaka salon?", a: "No. Gift cards and head spa tickets are valid at our Fukuoka Main Salon only." },
+              { q: "Will scalp care guarantee hair growth?", a: "No. Individual scalp and hair conditions vary, and specific results cannot be guaranteed." },
+            ].map((item) => (
+              <details key={item.q} className="group rounded-2xl border border-[#c8a66a]/25 bg-[#191919] px-5 py-5 sm:px-7">
+                <summary className="cursor-pointer list-none pr-2 text-base leading-7 text-[#f4eee5] marker:hidden">
+                  <span className="flex items-start justify-between gap-4">
+                    <span>{item.q}</span><span aria-hidden="true" className="shrink-0 text-xl text-[#d4b675] group-open:rotate-45">+</span>
+                  </span>
+                </summary>
+                <p className="mt-4 border-t border-[#c8a66a]/20 pt-4 text-sm leading-8 text-[#b9b0a6]">{item.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
