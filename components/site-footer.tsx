@@ -1,4 +1,3 @@
-
 "use client"
 
 const MAP_LINK_URL =
@@ -9,11 +8,9 @@ const RESERVE_URL =
 
 const TEL_LINK = "tel:0922849392"
 const LINE_URL = "https://lin.ee/7hso3k1"
-
-const GIFT_URL =
-  "https://gamistore.base.shop/items/144607972"
-
+const GIFT_URL = "https://gamistore.base.shop/items/144607972"
 const ONLINE_URL = "https://headspayu.stores.jp/"
+const OSAKA_URL = "/osaka"
 
 declare global {
   interface Window {
@@ -22,28 +19,15 @@ declare global {
 }
 
 const features = [
-  {
-    label: "15年以上",
-    detail: "施術経験",
-  },
-  {
-    label: "完全個室",
-    detail: "プライベート空間",
-  },
-  {
-    label: "1日3名",
-    detail: "丁寧なおもてなし",
-  },
-  {
-    label: "駐車場2台",
-    detail: "店舗前に完備",
-  },
+  { label: "15年以上", detail: "施術経験" },
+  { label: "完全個室", detail: "プライベート空間" },
+  { label: "1日3名", detail: "丁寧なおもてなし" },
+  { label: "駐車場2台", detail: "店舗前に完備" },
 ]
 
 export function SiteFooter() {
   const trackReserve = () => {
     window.dataLayer = window.dataLayer || []
-
     window.dataLayer.push({
       event: "reserve_click",
       reserve_location: "site_footer",
@@ -78,7 +62,6 @@ export function SiteFooter() {
               <p className="text-sm font-medium tracking-[0.03em] text-foreground">
                 {feature.label}
               </p>
-
               <p className="mt-2 text-[10px] leading-5 text-muted-foreground">
                 {feature.detail}
               </p>
@@ -96,7 +79,6 @@ export function SiteFooter() {
           >
             ご予約・空き状況を見る
           </a>
-
           <a
             href={LINE_URL}
             target="_blank"
@@ -112,24 +94,48 @@ export function SiteFooter() {
         </p>
       </div>
 
+      {/* 本店・大阪店の店舗切り替え */}
+      <div className="border-t border-border/30">
+        <div className="mx-auto max-w-5xl px-5 py-10 lg:px-10">
+          <p className="text-center text-[10px] tracking-[0.28em] text-gold/70">
+            OUR LOCATIONS
+          </p>
+          <h3 className="mt-3 text-center text-lg text-foreground">
+            店舗のご案内
+          </h3>
+          <div className="mx-auto mt-6 grid max-w-2xl gap-3 sm:grid-cols-2">
+            <a
+              href="/"
+              aria-current="page"
+              className="flex min-h-14 items-center justify-center rounded-2xl border border-gold/40 bg-gold/10 px-4 py-4 text-center text-sm font-medium text-foreground transition hover:border-gold"
+            >
+              ヘッドスパ専門店ゆう本店
+            </a>
+            <a
+              href={OSAKA_URL}
+              className="flex min-h-14 items-center justify-center rounded-2xl border border-gold/25 bg-card px-4 py-4 text-center text-sm font-medium text-foreground transition hover:border-gold hover:text-gold"
+            >
+              ヘッドスパ専門店ゆう大阪店 →
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="border-t border-border/30">
         <div className="mx-auto grid max-w-5xl gap-10 px-5 pb-12 pt-12 md:grid-cols-2 md:items-start lg:px-10">
           <div className="text-center md:text-left">
             <p className="text-[10px] tracking-[0.28em] text-gold/70">
               YU HEAD SPA
             </p>
-
             <h3 className="mt-4 text-lg leading-8 tracking-[0.04em] text-foreground">
               ヘッドスパ専門店 ゆう 本店
             </h3>
-
             <div className="mt-5 space-y-3 text-sm leading-7 text-muted-foreground">
               <p>
                 〒819-0014
                 <br />
                 福岡県福岡市西区豊浜2丁目20-20-2
               </p>
-
               <p>
                 TEL：
                 <a
@@ -139,11 +145,8 @@ export function SiteFooter() {
                   092-284-9392
                 </a>
               </p>
-
               <p>営業時間：9:30〜16:30</p>
-
               <p>定休日：日曜日</p>
-
               <p>完全個室・駐車場2台完備</p>
             </div>
           </div>
@@ -153,7 +156,6 @@ export function SiteFooter() {
               <p className="text-center text-sm leading-7 text-muted-foreground md:text-left">
                 ご来店の際は、店舗所在地をご確認ください。
               </p>
-
               <a
                 href={MAP_LINK_URL}
                 target="_blank"
@@ -162,12 +164,10 @@ export function SiteFooter() {
               >
                 Googleマップで場所を見る →
               </a>
-
               <div className="mt-6 border-t border-border/40 pt-5">
                 <p className="mb-3 text-[10px] tracking-[0.2em] text-gold/70">
                   ONLINE SERVICES
                 </p>
-
                 <div className="space-y-3">
                   <a
                     href={GIFT_URL}
@@ -177,7 +177,6 @@ export function SiteFooter() {
                   >
                     ギフトカードを見る →
                   </a>
-
                   <a
                     href={ONLINE_URL}
                     target="_blank"
@@ -197,7 +196,6 @@ export function SiteFooter() {
         <p className="text-xs leading-6 text-muted-foreground">
           福岡市西区の完全個室ヘッドスパ専門店
         </p>
-
         <p className="mt-2 text-[10px] leading-6 text-muted-foreground">
           © {new Date().getFullYear()} ヘッドスパ専門店 ゆう 本店
           All Rights Reserved.
