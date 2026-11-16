@@ -138,27 +138,18 @@ function BookingButton({
 
 function StoreNotice({ compact = false }: { compact?: boolean }) {
   return (
-    <div
-      className={`mx-auto max-w-3xl rounded-2xl border border-[#c8bfa8] bg-[#fffdf8] px-5 text-center shadow-sm ${compact ? "py-5" : "py-7"}`}
-      role="note"
-    >
-      <p className="text-xs font-semibold tracking-[0.12em] text-[#666b4e]">
-        ご予約前にご確認ください｜大阪店
-      </p>
-      <p className="mt-3 text-sm leading-8 text-[#514b42]">
-        <strong>大阪店と福岡本店では、メニュー・料金・予約先が異なります。</strong>
-        <br />
-        <strong>ギフトカード・ヘッドスパチケットは福岡本店専用です。大阪店ではご利用いただけません。</strong>
-      </p>
-      <p className="mt-3 text-xs leading-7 text-[#716c63]">
-        大阪店のご予約はSquareからお願いいたします。
-        <br />
-        福岡本店をご希望の方は
-        <a href="/" className="ml-1 font-medium text-[#646d49] underline underline-offset-4">
-          福岡本店のページ
-        </a>
-        をご確認ください。
-      </p>
+    <div className={`mx-auto w-full max-w-2xl rounded-2xl border border-[#c8bfa8] bg-[#fffdf8] text-center shadow-sm ${compact ? "px-4 py-6 sm:px-8" : "px-4 py-7 sm:px-8"}`} role="note">
+      <p className="text-xs font-semibold tracking-wider text-[#666b4e]">ご予約前のご案内｜大阪店</p>
+      <div className="mx-auto mt-5 max-w-lg space-y-3 text-[13px] leading-7 text-[#514b42] sm:text-sm sm:leading-8">
+        <p className="font-semibold">大阪店と福岡本店では<br className="sm:hidden" />メニュー・料金が異なります。</p>
+        <p>予約先も店舗ごとに異なります。</p>
+        <p className="font-semibold">ギフトカード・ヘッドスパチケットは<br />福岡本店限定です。</p>
+        <p>大阪店ではご利用いただけません。</p>
+      </div>
+      <div className="mt-5 space-y-2 text-xs leading-7 text-[#716c63] sm:text-sm">
+        <p>大阪店のご予約はSquareから。</p>
+        <p>福岡本店をご希望の方は<br className="sm:hidden" /><a href="/" className="font-medium text-[#646d49] underline underline-offset-4">福岡本店のページ</a>をご確認ください。</p>
+      </div>
     </div>
   );
 }
@@ -173,7 +164,7 @@ function SectionHeading({
   description?: string;
 }) {
   return (
-    <div className="text-center">
+    <div className="mx-auto w-full max-w-2xl text-center">
       <p className="text-xs font-medium tracking-[0.25em] text-[#777a59]">
         {en}
       </p>
@@ -181,7 +172,7 @@ function SectionHeading({
         {title}
       </h2>
       {description && (
-        <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-[#716c63]">
+        <p className="mx-auto mt-5 max-w-xl px-1 text-[13px] leading-7 text-[#716c63] [overflow-wrap:anywhere] sm:text-sm sm:leading-8">
           {description}
         </p>
       )}
@@ -334,7 +325,7 @@ export default function OsakaPage() {
           <SectionHeading
             en="OUR CONCEPT"
             title="60分に、上質なケアを。"
-            description="短い時間だからこそ、心地よさと丁寧さを大切に。目的に合わせたヘッドスパをご用意しています。"
+            description="短い時間だからこそ、丁寧に。目的に合わせたケアをご用意しています。"
           />
 
           <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -384,7 +375,7 @@ export default function OsakaPage() {
           <SectionHeading
             en="MENU & PRICE"
             title="メニュー・料金"
-            description="リラクゼーションと育毛・頭皮ケア。目的に合わせて選べる4つのコース。"
+            description="リラクゼーションと頭皮ケア。4つのコースから選べます。"
           />
 
           <p className="mt-5 text-center text-xs text-[#817c70]">
@@ -392,7 +383,7 @@ export default function OsakaPage() {
           </p>
 
           <p className="mt-4 text-center text-xs leading-7 text-[#716c63]">
-            ※以下は大阪店専用のメニュー・料金です。福岡本店とは異なります。
+            大阪店専用のメニュー・料金です。<br />福岡本店とは異なります。
           </p>
 
           {/* RELAXATION */}
@@ -508,7 +499,7 @@ export default function OsakaPage() {
           <SectionHeading
             en="YOUR VISIT"
             title="ご来店からお帰りまで"
-            description="カウンセリングから施術後のご案内まで、約60分の予約枠でご対応します。"
+            description="カウンセリングから施術後のご案内まで。約60分の予約枠です。"
           />
 
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
@@ -838,13 +829,13 @@ export default function OsakaPage() {
           60分のリセットを予約する
         </h2>
 
-        <p className="mt-7 text-sm leading-9 text-[#f7f4e9]">
+        <p className="mx-auto mt-7 max-w-lg px-2 text-[13px] leading-8 text-[#f7f4e9] sm:text-sm sm:leading-9">
           完全予約制・前日まで受付
           <br />
           大阪・大日のプライベートヘッドスパ
         </p>
 
-        <div className="mx-auto mt-7 max-w-xl rounded-xl border border-white/50 bg-white/10 px-5 py-4 text-sm leading-8">
+        <div className="mx-auto mt-7 w-full max-w-lg space-y-3 rounded-xl border border-white/50 bg-white/10 px-4 py-6 text-[13px] leading-7 sm:px-6 sm:text-sm sm:leading-8">
           <strong>こちらは大阪店のご予約です。</strong>
           <br />
           福岡本店とはメニュー・料金・予約先が異なります。
