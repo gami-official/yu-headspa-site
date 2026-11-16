@@ -167,6 +167,14 @@ export default async function MenuDetailPage({
   const guide = menuGuides[id]
   const isScalp = id === "scalp"
 
+  // トップページのメニューカードと同じ写真を表示する
+  const detailImages: Record<string, string> = {
+    scalp: "/images/menu-scalp-care.webp",
+    color: "/images/menu-hair-color.webp",
+    relaxation: "/images/menu-relaxation.webp",
+  }
+  const detailImage = detailImages[id] ?? menu.image
+
   return (
     <main className="min-h-screen bg-background">
       {/* HERO */}
@@ -177,9 +185,9 @@ export default async function MenuDetailPage({
             : "h-[35svh] min-h-[280px] bg-zinc-900"
         }`}
       >
-        {menu.image && (
+        {detailImage && (
           <Image
-            src={menu.image}
+            src={detailImage}
             alt={menu.tab}
             fill
             priority
@@ -220,7 +228,7 @@ export default async function MenuDetailPage({
             <h2 className="mx-auto mt-6 max-w-3xl text-xl leading-[1.8] text-foreground sm:text-3xl">
               {guide.headline}
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-2xl text-[13px] leading-8 break-words text-muted-foreground sm:text-sm">
               {guide.lead}
             </p>
           </section>
@@ -228,7 +236,7 @@ export default async function MenuDetailPage({
 
         {/* DESCRIPTION */}
         <section className="mb-20">
-          <div className="mx-auto max-w-3xl space-y-5 text-center text-sm leading-9 text-muted-foreground">
+          <div className="mx-auto max-w-3xl space-y-5 text-left text-[13px] leading-8 break-words text-muted-foreground sm:text-center sm:text-sm sm:leading-9">
             {menu.descriptionParagraphs.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
@@ -445,7 +453,7 @@ export default async function MenuDetailPage({
           <h2 className="mt-5 text-xl leading-8 text-foreground sm:text-2xl">
             初めての方も、安心してお越しください。
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-2xl text-[13px] leading-8 break-words text-muted-foreground sm:text-sm">
             完全予約制・完全個室のヘッドスパ専門店ゆう。
             お悩みやご希望を伺いながら、丁寧にご案内いたします。
             自分のためだけの特別な時間をお楽しみください。
