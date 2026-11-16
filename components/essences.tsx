@@ -17,81 +17,81 @@ const essences: Essence[] = [
   {
     number: "01",
     english: "PRIVATE SPACE",
-    title: "完全個室。あなただけの特別な時間。",
+    title: "誰にも邪魔されない。完全個室という、最高の贅沢。",
     description:
-      "周囲を気にせず、ゆったりと。自分だけの時間をお楽しみください。",
+      "人目も周囲の会話も気にしない。扉を閉めた瞬間から始まる、あなただけの特別な時間。",
     image: "/images/01-private-room.webp",
   },
   {
     number: "02",
-    english: "RESERVATION",
-    title: "24時間365日、オンライン予約。",
+    english: "24/7 ONLINE RESERVATION",
+    title: "待たない贅沢。24時間365日、スマートに予約。",
     description:
-      "空き状況の確認からご予約まで、いつでもオンラインで完結します。",
+      "完全予約制だからこそ、時間まで上質に。空き状況の確認から予約まで、いつでもオンラインで完結。",
     image: "/images/02-art-interior.webp",
   },
   {
     number: "03",
-    english: "PRIVATE PARKING",
-    title: "駐車場2台完備。お車でも安心。",
+    english: "TWO PRIVATE PARKING SPACES",
+    title: "駐車場2台完備。ご来店の瞬間から、ストレスフリー。",
     description:
-      "店舗前に2台分の駐車スペースをご用意しています。",
+      "店舗前に駐車スペースを2台分ご用意。お車で気軽に訪れられる快適さも、おもてなしのひとつ。",
     image: "/images/03-parking.webp",
     imagePosition: "center 58%",
   },
   {
     number: "04",
-    english: "MASTER TECHNIQUE",
-    title: "15年以上の経験を活かした熟練の手技。",
+    english: "15+ YEARS OF EXPERTISE",
+    title: "15年以上の経験。その手技に、技術の差が現れる。",
     description:
-      "一人ひとりの状態に合わせて、力加減まで丁寧に調整します。",
+      "積み重ねた経験が生み出す繊細な力加減と熟練の技。マニュアルだけでは再現できない、一人ひとりに合わせた施術。",
     image: "/images/04-headspa-treatment.webp",
   },
   {
     number: "05",
     english: "WET HEAD SPA",
-    title: "水と温もりに包まれる、ウェットスパ。",
+    title: "ドライでは味わえない。本物志向の極上ウェットスパ。",
     description:
-      "スチームやシャンプー、トリートメントを組み合わせた本格ケアです。",
+      "水・スチーム・洗浄・トリートメント・熟練の手技を融合。頭皮を直接ケアする、本格ウェットヘッドスパの醍醐味を。",
     image: "/images/05-scalp-care.webp",
   },
   {
     number: "06",
-    english: "TRUSTED BY VIPs",
-    title: "著名人や医師にも選ばれる頭皮ケア。",
+    english: "TRUSTED BY VIPS & PROFESSIONALS",
+    title: "著名人も、セレブも、医師も。選ばれる育毛ヘッドスパ。",
     description:
-      "頭皮環境とこれからの髪を考えた、質にこだわる専門ケアです。",
+      "美と健康への意識が高い方々にもご愛顧いただく専門ケア。頭皮環境とこれからの髪を考え、質にこだわるお客様に選ばれています。",
     image: "/images/06-consultation-space.webp",
   },
   {
     number: "07",
-    english: "PREMIUM HAIR COLOR",
-    title: "髪色も頭皮も大切に。カラー＆スパ。",
+    english: "PREMIUM HAIR COLOR & SPA",
+    title: "髪色も、頭皮も、美しく。妥協なきヘアカラー＆スパ。",
     description:
-      "頭皮への配慮を大切にしながら、ヘアカラーとスパを一度に。",
+      "美しい仕上がりを追求しながら、頭皮への配慮も大切に。ヘアカラーとヘッドスパを組み合わせた、こだわりの施術。",
     image: "/images/07-glossy-hair.webp",
     imagePosition: "center 45%",
   },
   {
     number: "08",
-    english: "EXCLUSIVITY",
-    title: "1日3名限定。丁寧なおもてなし。",
+    english: "ONLY THREE GUESTS A DAY",
+    title: "1日わずか3名。数を追わない、質を極める。",
     description:
-      "お一人ずつ丁寧に向き合うため、1日3名限定でご案内します。",
+      "一人ひとりのお客様と丁寧に向き合うための人数限定。慌ただしさとは無縁の、贅沢なひとときを。",
     image: "/images/08-relaxation-bed.webp",
   },
   {
     number: "09",
-    english: "SCALP CARE",
-    title: "未来の髪を考える、頭皮ケア。",
+    english: "FUTURE-FOCUSED SCALP CARE",
+    title: "その場の癒やしで終わらせない。未来の髪まで考える。",
     description:
-      "頭皮の状態を確認し、お悩みに合わせたケアをご提案します。",
+      "頭皮の状態を確認し、一人ひとりに合うケアをご提案。美しい髪の土台となる、健やかな頭皮環境を目指します。",
     image: "/images/09-counseling.webp",
   },
   {
     number: "10",
-    english: "FIVE SENSES",
-    title: "五感で楽しむ、特別なひととき。",
+    english: "A FIVE-SENSE EXPERIENCE",
+    title: "五感すべてを満たす。日常を忘れる、非日常へ。",
     description:
       "光・音・香り・温度・肌に触れる心地よさまで。細部にこだわり抜いた空間が、上質なスパ体験を演出します。",
     image: "/images/10-floral-lighting.webp",
@@ -241,7 +241,7 @@ export function Essences() {
                 </div>
 
                 <div className="flex min-w-0 flex-1 flex-col px-5 pb-6 pt-5 sm:p-7 sm:pt-5">
-                  <p className="min-h-5 text-[10px] tracking-[0.17em] text-[#d6b36a]/85">
+                  <p className="min-h-5 break-words text-[10px] leading-5 tracking-[0.09em] text-[#d6b36a]/85 sm:tracking-[0.17em]">
                     {item.english}
                   </p>
 
