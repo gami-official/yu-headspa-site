@@ -103,6 +103,16 @@ const faqs = [
       "店舗とは別の場所に駐車場をご用意しています。アクセス欄の航空写真と駐車場写真をご確認ください。",
   },
   {
+    question: "福岡本店のギフトカード・ヘッドスパチケットは大阪店でも使えますか？",
+    answer:
+      "いいえ。ギフトカード・ヘッドスパチケットは福岡本店限定です。大阪店ではご利用いただけません。",
+  },
+  {
+    question: "福岡本店と大阪店のメニュー・料金は同じですか？",
+    answer:
+      "いいえ。店舗ごとにメニュー・料金・予約サイトが異なります。大阪店はこのページの料金をご確認のうえ、Squareからご予約ください。",
+  },
+  {
     question: "お手洗いは利用できますか？",
     answer:
       "設備の都合上、ご来店前にお手洗いをお済ませいただきますようお願いいたします。",
@@ -123,6 +133,33 @@ function BookingButton({
     >
       {children} →
     </a>
+  );
+}
+
+function StoreNotice({ compact = false }: { compact?: boolean }) {
+  return (
+    <div
+      className={`mx-auto max-w-3xl rounded-2xl border border-[#c8bfa8] bg-[#fffdf8] px-5 text-center shadow-sm ${compact ? "py-5" : "py-7"}`}
+      role="note"
+    >
+      <p className="text-xs font-semibold tracking-[0.12em] text-[#666b4e]">
+        ご予約前にご確認ください｜大阪店
+      </p>
+      <p className="mt-3 text-sm leading-8 text-[#514b42]">
+        <strong>大阪店と福岡本店では、メニュー・料金・予約先が異なります。</strong>
+        <br />
+        <strong>ギフトカード・ヘッドスパチケットは福岡本店専用です。大阪店ではご利用いただけません。</strong>
+      </p>
+      <p className="mt-3 text-xs leading-7 text-[#716c63]">
+        大阪店のご予約はSquareからお願いいたします。
+        <br />
+        福岡本店をご希望の方は
+        <a href="/" className="ml-1 font-medium text-[#646d49] underline underline-offset-4">
+          福岡本店のページ
+        </a>
+        をご確認ください。
+      </p>
+    </div>
   );
 }
 
@@ -240,6 +277,10 @@ export default function OsakaPage() {
             <BookingButton />
           </div>
 
+          <div className="mt-7">
+            <StoreNotice compact />
+          </div>
+
           <p className="mt-4 text-xs leading-6 text-[#8b857a]">
             全コース60分枠｜税込8,000円〜
             <br />
@@ -348,6 +389,10 @@ export default function OsakaPage() {
 
           <p className="mt-5 text-center text-xs text-[#817c70]">
             全コース60分枠・表示価格は税込
+          </p>
+
+          <p className="mt-4 text-center text-xs leading-7 text-[#716c63]">
+            ※以下は大阪店専用のメニュー・料金です。福岡本店とは異なります。
           </p>
 
           {/* RELAXATION */}
@@ -798,6 +843,14 @@ export default function OsakaPage() {
           <br />
           大阪・大日のプライベートヘッドスパ
         </p>
+
+        <div className="mx-auto mt-7 max-w-xl rounded-xl border border-white/50 bg-white/10 px-5 py-4 text-sm leading-8">
+          <strong>こちらは大阪店のご予約です。</strong>
+          <br />
+          福岡本店とはメニュー・料金・予約先が異なります。
+          <br />
+          福岡本店のギフトカード・ヘッドスパチケットは大阪店では利用できません。
+        </div>
 
         <div className="mx-auto mt-8 max-w-lg rounded-2xl border border-white/30 p-7">
           <p className="text-sm">
