@@ -157,7 +157,7 @@ export default function OsakaPage() {
     <main className="min-h-screen overflow-x-hidden bg-[#faf8f3] text-[#39362f]">
       {/* HEADER */}
       <header className="border-b border-[#ded9ce] bg-[#faf8f3]">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-4 sm:px-5">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-4 sm:flex-nowrap sm:px-5">
           <a
             href="/osaka"
             className="shrink-0 text-[13px] font-medium tracking-wide text-[#565440] sm:text-base"
@@ -168,7 +168,13 @@ export default function OsakaPage() {
             </span>
           </a>
 
-          <nav className="flex items-center gap-2 sm:gap-4">
+          <nav aria-label="店舗・予約メニュー" className="flex flex-wrap items-center justify-end gap-2 sm:flex-nowrap sm:gap-4">
+            <a
+              href="/"
+              className="whitespace-nowrap text-[11px] text-[#666858] underline underline-offset-4 sm:text-xs"
+            >
+              本店
+            </a>
             <a
               href="/en/osaka"
               className="text-[11px] text-[#666858] underline underline-offset-4 sm:text-xs"
@@ -836,7 +842,15 @@ export default function OsakaPage() {
             href="/"
             className="underline underline-offset-4"
           >
-            福岡本店
+            ヘッドスパ専門店ゆう本店
+          </a>
+
+          <a
+            href="/osaka"
+            aria-current="page"
+            className="underline underline-offset-4"
+          >
+            ヘッドスパ専門店ゆう大阪店
           </a>
 
           <a
