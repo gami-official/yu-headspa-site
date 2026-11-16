@@ -36,7 +36,7 @@ export function VoiceSection() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-lg text-[13px] leading-7 text-muted-foreground sm:text-sm">
-              ご来店いただいたお客様の声を、Googleの口コミでご覧いただけます。
+              お客様からいただいた声を、Googleの口コミでご紹介しています。
             </p>
 
             <a
