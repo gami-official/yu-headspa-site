@@ -10,6 +10,7 @@ const RESERVE_URL =
   "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 
 const ENGLISH_URL = "/en"
+const OSAKA_URL = "/osaka"
 
 const LINE_URL = "https://lin.ee/7hso3k1"
 
@@ -28,6 +29,7 @@ declare global {
 }
 
 const navLinks = [
+  { label: "大阪店", href: OSAKA_URL },
   { label: "メニュー", href: "#menu" },
   { label: "予約", href: "#reserve-calendar" },
   { label: "口コミ", href: "#voice" },
@@ -140,6 +142,8 @@ export function Header() {
     setIsMenuOpen(false)
 
     if (link.external) return
+
+    if (!link.href.startsWith("#")) return
 
     const target = document.querySelector(link.href)
 
@@ -294,6 +298,11 @@ export function Header() {
                   </motion.a>
                 ))}
               </nav>
+
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+                <a href="/" aria-current="page" className="rounded-full border border-[#d6b36a] px-5 py-2 text-xs text-[#d6b36a]">本店</a>
+                <a href={OSAKA_URL} onClick={() => setIsMenuOpen(false)} className="rounded-full border border-white/30 px-5 py-2 text-xs text-white transition hover:border-[#d6b36a] hover:text-[#d6b36a]">大阪店 ↗</a>
+              </div>
 
               {/* 言語切り替え */}
               <div className="mt-8 flex items-center gap-3">
