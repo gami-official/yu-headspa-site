@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "Luxury Private Head Spa in Fukuoka | Head Spa Yu",
+  title: { absolute: "Luxury Private Head Spa in Fukuoka | Head Spa Yu" },
   description:
     "Experience a luxurious private head spa in Fukuoka, Japan. Scalp care, hair color head spa, and relaxation treatments. Private rooms, 90-minute sessions, and online reservations.",
   alternates: {
@@ -20,7 +20,9 @@ export const metadata: Metadata = {
       "A peaceful, private head spa experience in Fukuoka. Explore our treatments and book your 90-minute escape.",
     url: "https://www.yuheadspa.net/en/",
     locale: "en_US",
+    images: [{ url: "/images/04-headspa-treatment.webp", alt: "Head Spa Yu Fukuoka Main Salon" }],
   },
+  robots: { index: true, follow: true },
 }
 
 const bookingUrl =
@@ -196,6 +198,30 @@ export default function EnglishHomePage() {
             >
               Explore Treatments
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Store selection and gift policy */}
+      <section aria-label="Important information before booking" className="border-y border-[#c8a66a]/30 bg-[#19150f] px-5 py-10">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-[11px] tracking-[0.25em] text-[#d4b675]">PLEASE CHECK YOUR LOCATION</p>
+          <h2 className="mt-4 text-xl font-medium text-[#f4eee5] sm:text-2xl">You are viewing our Fukuoka Main Salon</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-8 text-[#d6cbbd]">
+            Our Fukuoka and Osaka salons have different treatments, prices, and booking systems.
+            Please confirm your preferred location before making a reservation.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm font-medium leading-8 text-[#e6c990]">
+            Gift cards and head spa tickets are valid at the Fukuoka Main Salon only.
+            They cannot be used at the Osaka salon.
+          </p>
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+            <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d4b675] px-6 py-3 text-sm font-medium text-[#17120c] transition hover:bg-[#e6c990]">
+              Book Fukuoka (STORES) ↗
+            </a>
+            <Link href="/en/osaka" className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d4b675]/70 px-6 py-3 text-sm text-[#e2c58b] transition hover:bg-[#d4b675]/10">
+              View Osaka Salon →
+            </Link>
           </div>
         </div>
       </section>
@@ -459,8 +485,9 @@ export default function EnglishHomePage() {
         </h2>
 
         <p className="mx-auto mt-6 max-w-xl text-sm leading-8 text-[#c4b9ad]">
-          Choose your preferred treatment and date through our online
-          booking page. Reservations are subject to availability.
+          You are booking the Fukuoka Main Salon through STORES.
+          Please confirm the salon location, treatment, and price before completing your reservation.
+          Gift cards and head spa tickets are valid only at the Fukuoka Main Salon.
         </p>
 
         <a
@@ -509,7 +536,10 @@ export default function EnglishHomePage() {
           Fukuoka, Japan · Private Head Spa
         </p>
 
-        <div className="mt-6 flex items-center justify-center gap-3">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <Link href="/en/osaka" className="rounded-full border border-[#d4b675]/50 px-5 py-2.5 text-xs text-[#d4b675] transition hover:bg-[#d4b675]/10">
+            Osaka Salon
+          </Link>
           <Link
             href="/"
             hrefLang="ja"
