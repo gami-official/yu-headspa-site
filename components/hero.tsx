@@ -51,7 +51,7 @@ export function Hero() {
         <div className="w-full max-w-3xl">
           <FadeIn>
             <p className="text-[10px] tracking-[0.24em] text-[#d6b36a] sm:text-xs sm:tracking-[0.45em]">
-              FUKUOKA PRIVATE HEAD SPA
+              FUKUOKA MAIN SALON
             </p>
           </FadeIn>
 
@@ -65,6 +65,12 @@ export function Hero() {
               <span>Googleの口コミを見る</span>
               <span aria-hidden="true">↗</span>
             </a>
+          </FadeIn>
+
+          <FadeIn delay={0.08}>
+            <p className="mt-5 text-base font-medium tracking-[0.22em] text-white/95 sm:text-lg">
+              ヘッドスパ専門店 ゆう｜福岡本店
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.1}>
