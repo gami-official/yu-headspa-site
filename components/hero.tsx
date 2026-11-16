@@ -69,7 +69,7 @@ export function Hero() {
 
           <FadeIn delay={0.08}>
             <p className="mt-5 text-base font-medium tracking-[0.22em] text-white/95 sm:text-lg">
-              ヘッドスパ専門店 ゆう｜福岡本店
+              ヘッドスパ専門店 ゆう｜本店
             </p>
           </FadeIn>
 
