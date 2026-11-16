@@ -172,7 +172,11 @@ export default function EnglishHomePage() {
 
         <div className="relative z-10 mx-auto max-w-3xl">
           <p className="text-[10px] tracking-[0.35em] text-[#d4b675] sm:text-xs">
-            FUKUOKA PRIVATE HEAD SPA
+            FUKUOKA MAIN SALON
+          </p>
+
+          <p className="mt-5 text-sm tracking-[0.18em] text-white/90">
+            HEAD SPA YU · FUKUOKA MAIN SALON
           </p>
 
           <h1 className="mt-9 text-[clamp(2.5rem,7vw,5rem)] leading-[1.3] tracking-[0.03em]">
