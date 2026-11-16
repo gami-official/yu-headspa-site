@@ -112,7 +112,7 @@ export function AccessMap() {
         <FadeIn delay={0.35}>
           <div className="mt-4 rounded-2xl border border-border/40 bg-card/50 px-5 py-5 text-center">
             <p className="text-sm leading-8 text-muted-foreground">
-              お車の方は、店舗前の駐車場（2台）をご利用ください。
+              店舗前に駐車場を2台分ご用意しています。
             </p>
           </div>
         </FadeIn>
