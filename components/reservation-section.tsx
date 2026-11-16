@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useEffect, useRef, useState } from "react"
@@ -6,6 +5,12 @@ import { FadeIn } from "@/components/fade-in"
 
 const RESERVE_URL =
   "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
+
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[]
+  }
+}
 
 export function ReservationSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -27,16 +32,20 @@ export function ReservationSection() {
           observer.disconnect()
         }
       },
-      {
-        rootMargin: "300px 0px",
-        threshold: 0,
-      }
+      { rootMargin: "300px 0px", threshold: 0 }
     )
 
     observer.observe(section)
-
     return () => observer.disconnect()
   }, [])
+
+  const trackReserve = (location: string) => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "reserve_click",
+      reserve_location: location,
+    })
+  }
 
   return (
     <section
@@ -50,18 +59,28 @@ export function ReservationSection() {
             <p className="text-[10px] tracking-[0.28em] text-gold/70 sm:text-xs">
               RESERVATION
             </p>
-
             <h2 className="mt-4 text-[clamp(1.6rem,5vw,2.5rem)] leading-[1.5] tracking-[0.03em] text-foreground">
               ご予約・空き状況
             </h2>
-
             <p className="mx-auto mt-4 max-w-xl text-[13px] leading-8 text-muted-foreground sm:text-sm">
               あなただけの、特別な90分を。
               <br />
               ご希望のメニューと日時をお選びください。
             </p>
-
             <div className="mx-auto mt-7 h-px w-16 bg-gold/50" />
+
+            <a
+              href={RESERVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackReserve("reservation_primary")}
+              className="mt-7 inline-flex min-h-12 w-full max-w-sm items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-medium tracking-[0.06em] text-black transition hover:opacity-90"
+            >
+              空き状況を確認して予約する ↗
+            </a>
+            <p className="mt-3 text-xs leading-6 text-muted-foreground">
+              予約ページが別タブで開きます
+            </p>
           </div>
         </FadeIn>
 
@@ -80,11 +99,9 @@ export function ReservationSection() {
                 <p className="text-[10px] tracking-[0.2em] text-[#a88b54]">
                   RESERVATION
                 </p>
-
                 <p className="mt-5 text-base leading-8 text-[#3b3026]">
                   予約カレンダーを読み込んでいます
                 </p>
-
                 <p className="mt-2 text-xs leading-6 text-[#74685d]">
                   少々お待ちください。
                 </p>
@@ -99,12 +116,12 @@ export function ReservationSection() {
             <br className="sm:hidden" />
             予約操作ができない場合はこちら。
           </p>
-
           <a
             href={RESERVE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex min-h-12 items-center justify-center rounded-full border border-gold/50 px-8 py-3 text-[13px] font-medium tracking-[0.06em] text-gold transition hover:border-gold hover:bg-gold/10 sm:text-sm"
+            onClick={() => trackReserve("reservation_fallback")}
+            className="mt-4 inline-flex min-h-12 w-full max-w-sm items-center justify-center rounded-full border border-gold/50 px-6 py-3 text-[13px] font-medium tracking-[0.06em] text-gold transition hover:border-gold hover:bg-gold/10 sm:text-sm"
           >
             予約カレンダーを直接開く ↗
           </a>
