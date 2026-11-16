@@ -1,4 +1,3 @@
-
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 import { Noto_Serif_JP } from "next/font/google"
@@ -6,9 +5,6 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const SITE_URL = "https://www.yuheadspa.net"
-
-const RESERVE_URL =
-  "https://headspayu.stores.jp/reserve/yuheadspa/services#pageContent"
 
 const SITE_TITLE =
   "ヘッドスパ専門店ゆう｜福岡市西区の完全個室ヘッドスパ・育毛頭皮ケア"
@@ -25,14 +21,11 @@ const notoSerifJP = Noto_Serif_JP({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-
   title: {
     default: SITE_TITLE,
     template: "%s｜ヘッドスパ専門店ゆう",
   },
-
   description: SITE_DESCRIPTION,
-
   keywords: [
     "ヘッドスパ 福岡",
     "福岡 ヘッドスパ",
@@ -47,15 +40,11 @@ export const metadata: Metadata = {
     "リラクゼーションヘッドスパ 福岡",
     "ヒト幹細胞 頭皮ケア",
   ],
-
-  alternates: {
-    canonical: "/",
-  },
-
+  // canonical は店舗ごとの page.tsx で設定します。
+  // ルートで "/" を指定すると大阪店にも継承されるため、ここでは設定しません。
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    url: SITE_URL,
     siteName: "ヘッドスパ専門店ゆう",
     locale: "ja_JP",
     type: "website",
@@ -68,21 +57,16 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     images: ["/images/ogp.jpg"],
   },
-
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    googleBot: { index: true, follow: true },
   },
 }
 
@@ -97,138 +81,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "@id": `${SITE_URL}/#salon`,
-
-    name: "ヘッドスパ専門店ゆう 本店",
-    alternateName: "ヘッドスパ専門店 ゆう",
-
-    description: SITE_DESCRIPTION,
-
-    url: SITE_URL,
-
-    image: `${SITE_URL}/images/ogp.jpg`,
-
-    telephone: "092-284-9392",
-    email: "info@yuheadspa.net",
-
-    priceRange: "¥16,000〜¥35,000",
-
-    address: {
-      "@type": "PostalAddress",
-      postalCode: "819-0014",
-      streetAddress: "西区豊浜2丁目20-20-2",
-      addressLocality: "福岡市",
-      addressRegion: "福岡県",
-      addressCountry: "JP",
-    },
-
-    amenityFeature: [
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "完全個室",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "完全予約制",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
-        name: "駐車場2台完備",
-        value: true,
-      },
-    ],
-
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "ヘッドスパメニュー",
-      itemListElement: [
-        {
-          "@type": "OfferCatalog",
-          name: "育毛ヘッドスパ",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              price: "18000",
-              priceCurrency: "JPY",
-              itemOffered: {
-                "@type": "Service",
-                name: "育毛ヘッドスパ Light",
-              },
-            },
-            {
-              "@type": "Offer",
-              price: "21000",
-              priceCurrency: "JPY",
-              itemOffered: {
-                "@type": "Service",
-                name: "育毛ヘッドスパ Standard",
-              },
-            },
-            {
-              "@type": "Offer",
-              price: "35000",
-              priceCurrency: "JPY",
-              itemOffered: {
-                "@type": "Service",
-                name: "育毛ヘッドスパ Premium",
-              },
-            },
-          ],
-        },
-        {
-          "@type": "OfferCatalog",
-          name: "ヘアカラーヘッドスパ",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              price: "21000",
-              priceCurrency: "JPY",
-              itemOffered: {
-                "@type": "Service",
-                name: "Hair Color Head Spa",
-              },
-            },
-            {
-              "@type": "Offer",
-              price: "26000",
-              priceCurrency: "JPY",
-              itemOffered: {
-                "@type": "Service",
-                name: "Hair Color Head Spa + Scalp Care",
-              },
-            },
-          ],
-        },
-        {
-          "@type": "Offer",
-          price: "16000",
-          priceCurrency: "JPY",
-          itemOffered: {
-            "@type": "Service",
-            name: "リラクゼーションヘッドスパ",
-          },
-        },
-      ],
-    },
-
-    potentialAction: {
-      "@type": "ReserveAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: RESERVE_URL,
-      },
-      result: {
-        "@type": "Reservation",
-        name: "ヘッドスパ予約",
-      },
-    },
-  }
-
   return (
     <html lang="ja" className={notoSerifJP.variable}>
       <body className="font-serif antialiased">
@@ -241,10 +93,7 @@ export default function RootLayout({
           />
         </noscript>
 
-        <Script
-          id="google-tag-manager"
-          strategy="afterInteractive"
-        >
+        <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -253,13 +102,6 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-W9ZZDQDS');
           `}
         </Script>
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
 
         {children}
 
