@@ -150,13 +150,24 @@ export default function EnglishHomePage() {
 
       {/* Hero */}
       <section className="relative flex min-h-[650px] items-center justify-center overflow-hidden px-5 py-24 text-center sm:min-h-[740px]">
+        {/* Same background video as the Japanese Fukuoka homepage. */}
         <div
+          aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/04-headspa-treatment.webp')",
-          }}
+          style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <video
+          src="/videos/hero.mp4"
+          poster="/images/hero-bg.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full scale-[1.08] object-cover sm:scale-[1.12] lg:scale-[1.15]"
+        />
+        <div className="absolute inset-0 bg-black/65" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-[#090909]" />
 
         <div className="relative z-10 mx-auto max-w-3xl">
