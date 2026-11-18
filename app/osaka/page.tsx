@@ -41,22 +41,25 @@ const scalpCourses = [
     name: "育毛ライトコース",
     en: "SCALP CARE LIGHT",
     price: "¥11,000",
-    description:
-      "頭皮ケアを初めて受ける方にもおすすめの、基本的なスカルプケア。",
+    recommended: false,
+    description: "今のコンディションを維持したい方、これからのケアや定期的なメンテナンスに。",
+    serum: "エッセンセル美容液",
   },
   {
     name: "育毛スタンダードコース",
     en: "SCALP CARE STANDARD",
     price: "¥13,000",
-    description:
-      "頭皮の状態に合わせて、より丁寧にケアするスタンダードコース。",
+    recommended: true,
+    description: "髪のボリュームやハリ・コシ、頭皮の乾燥など、変化が気になり始めた方に。",
+    serum: "フリーズドライ美容液を水と化粧水で溶かして使用予定",
   },
   {
     name: "育毛プレミアムコース",
     en: "SCALP CARE PREMIUM",
     price: "¥20,000",
-    description:
-      "頭皮を集中的にケアする、ワンランク上のプレミアムコース。",
+    recommended: false,
+    description: "美容液の組み合わせと使用量にこだわった、より充実した集中ケアをご希望の方に。",
+    serum: "フリーズドライ美容液をメディカルセルで溶かし、スタンダードより贅沢に使用予定",
   },
 ];
 
@@ -111,6 +114,11 @@ const faqs = [
     question: "福岡本店と大阪店のメニュー・料金は同じですか？",
     answer:
       "いいえ。店舗ごとにメニュー・料金・予約サイトが異なります。大阪店はこのページの料金をご確認のうえ、Squareからご予約ください。",
+  },
+  {
+    question: "施術中に倉庫の作業音が聞こえることはありますか？",
+    answer:
+      "はい。施術室は倉庫2階の奥にあり、物流業務の状況により、フォークリフトの走行音や荷物の搬入・搬出音が聞こえる場合がございます。施術室は作業スペースと完全に区切られており、お客様が作業エリアを通ることはございません。",
   },
   {
     question: "お手洗いは利用できますか？",
@@ -346,7 +354,7 @@ export default function OsakaPage() {
                 number: "03",
                 title: "プライベート空間",
                 description:
-                  "完全予約制だからこそ、周囲を気にせず自分のための時間をお過ごしいただけます。",
+                  "物流倉庫の作業エリアと区切られた施術室で、一人ひとりに合わせた時間をご用意しています。",
               },
             ].map((item) => (
               <div
@@ -375,7 +383,7 @@ export default function OsakaPage() {
           <SectionHeading
             en="MENU & PRICE"
             title="メニュー・料金"
-            description="リラクゼーションと頭皮ケア。4つのコースから選べます。"
+            description="リラクゼーションと3つの育毛・頭皮ケアコース。ご来店時に選ぶこともできます。"
           />
 
           <p className="mt-5 text-center text-xs text-[#817c70]">
@@ -444,6 +452,7 @@ export default function OsakaPage() {
               <p className="mt-5 text-sm leading-8 text-[#716c63]">
                 頭皮の状態やお悩みに合わせて、
                 健やかな頭皮環境を目指すケアを行います。
+                ドライヘッドスパと美容液による頭皮ケアを組み合わせています。
               </p>
 
               <div className="mt-7 divide-y divide-[#e8e3d8] border-t border-[#e8e3d8]">
@@ -455,6 +464,9 @@ export default function OsakaPage() {
                     <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
                       <h4 className="text-sm font-medium">
                         {course.name}
+                        {course.recommended && (
+                          <span className="ml-2 inline-block rounded-full bg-[#777a59] px-2.5 py-1 align-middle text-[10px] font-medium text-white">当店おすすめ</span>
+                        )}
                       </h4>
                       <p className="text-xl text-[#777a59]">
                         {course.price}
@@ -463,12 +475,19 @@ export default function OsakaPage() {
                     <p className="mt-3 text-xs leading-7 text-[#777167]">
                       {course.description}
                     </p>
+                    <p className="mt-3 text-xs leading-7 text-[#716c63]">
+                      <span className="font-medium">美容液：</span>{course.serum}
+                    </p>
                     <p className="mt-2 text-xs text-[#938b7e]">
                       60分枠・税込
                     </p>
                   </div>
                 ))}
               </div>
+              <p className="mt-5 text-xs leading-7 text-[#857e72]">
+                ※スタンダード・プレミアムの美容液の調製方法は現在の予定です。実際の提供内容は確定後に更新します。
+                ※美容ケアであり、発毛などの効果を保証するものではありません。
+              </p>
             </div>
           </div>
 
@@ -616,15 +635,30 @@ export default function OsakaPage() {
                 PRIVATE SALON
               </p>
               <h3 className="mt-4 text-xl font-medium">
-                落ち着いた完全予約制の空間
+                倉庫2階の奥にある、隠れ家的な施術室
               </h3>
               <p className="mt-5 text-sm leading-8 text-[#716c63]">
-                倉庫内に設けたプライベートサロンです。
-                周囲を気にせず、頭皮ケアとリラクゼーションの時間を
-                お過ごしください。
+                物流倉庫の2階、その奥にある完全予約制のプライベートサロンです。
+                施術室は作業スペースと完全に区切られており、
+                お客様が作業エリアを通ることはございません。
               </p>
             </div>
           </div>
+
+           {/* WAREHOUSE NOTICE */}
+           <div className="mt-6 rounded-2xl border border-[#ded8cb] bg-[#fffdf8] px-6 py-7 sm:px-9" role="note" aria-label="ご来店前のご案内">
+             <h3 className="text-base font-medium text-[#565440]">ご来店前のご案内</h3>
+             <p className="mt-4 text-sm leading-8 text-[#716c63]">
+               当店は物流倉庫の2階奥にある、完全予約制の隠れ家的なプライベートサロンです。
+               施術室は倉庫の作業スペースと完全に区切られており、
+               お客様が作業エリアを通ることはございません。
+             </p>
+             <p className="mt-3 text-sm leading-8 text-[#716c63]">
+               なお、物流業務の状況により、フォークリフトの走行音や
+               荷物の搬入・搬出音などが聞こえる場合がございます。
+               あらかじめご了承のうえ、ご予約ください。
+             </p>
+           </div>
 
           {/* EXTERIOR */}
           <div className="mt-8 overflow-hidden rounded-2xl bg-white shadow-sm md:grid md:grid-cols-2">
@@ -646,7 +680,7 @@ export default function OsakaPage() {
               </h3>
               <p className="mt-5 text-sm leading-8 text-[#716c63]">
                 大阪府守口市大日町1-8-18。
-                倉庫を併設した建物内にございます。
+                倉庫を併設した建物の2階奥にございます。施術室は作業エリアと区切られています。
               </p>
               <p className="mt-4 text-xs leading-7 text-[#857e72]">
                 ※ご予約時間に合わせてお越しください。
@@ -856,6 +890,11 @@ export default function OsakaPage() {
             平日のみ（土日祝休業）
           </p>
         </div>
+
+        <p className="mx-auto mt-6 max-w-lg px-2 text-xs leading-7 text-[#f7f4e9]">
+          ※物流倉庫併設のため、施術中にフォークリフトや荷物の作業音が聞こえる場合がございます。
+          施術室は作業エリアと完全に区切られています。
+        </p>
 
         <a
           href={bookingUrl}
