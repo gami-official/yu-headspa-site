@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { BeforeAfterSection } from "@/components/before-after-section"
@@ -14,15 +15,35 @@ export default function Home() {
   return (
     <main>
       <Header />
+
+      {/* ファーストビュー */}
       <Hero />
-      <VoiceSection />
-      <Essences />
+
+      {/* 主力メニュー：育毛・カラー */}
       <MenuSection />
+
+      {/* 選ばれる10の理由 */}
+      <Essences />
+
+      {/* お客様の口コミ */}
+      <VoiceSection />
+
+      {/* 施術実績 */}
       <Evidence />
+
+      {/* ギフト案内・予約カレンダー */}
       <ReservationSection />
+
+      {/* 既存のビフォーアフター */}
       <BeforeAfterSection />
+
+      {/* よくあるご質問 */}
       <Faq />
+
+      {/* アクセス */}
       <AccessMap />
+
+      {/* フッター */}
       <SiteFooter />
     </main>
   )
