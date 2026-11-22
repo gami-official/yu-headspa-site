@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useEffect, useRef, useState } from "react"
@@ -16,64 +17,6 @@ type Essence = {
 const essences: Essence[] = [
   {
     number: "01",
-    english: "PRIVATE SPACE",
-    title: "誰にも邪魔されない。完全個室という、最高の贅沢。",
-    description:
-      "人目も周囲の会話も気にしない。扉を閉めた瞬間から始まる、あなただけの特別な時間。",
-    image: "/images/01-private-room.webp",
-  },
-  {
-    number: "02",
-    english: "24/7 ONLINE RESERVATION",
-    title: "待たない贅沢。24時間365日、スマートに予約。",
-    description:
-      "完全予約制だからこそ、時間まで上質に。空き状況の確認から予約まで、いつでもオンラインで完結。",
-    image: "/images/02-art-interior.webp",
-  },
-  {
-    number: "03",
-    english: "TWO PRIVATE PARKING SPACES",
-    title: "駐車場2台完備。ご来店の瞬間から、ストレスフリー。",
-    description:
-      "店舗前に駐車スペースを2台分ご用意。お車で気軽に訪れられる快適さも、おもてなしのひとつ。",
-    image: "/images/03-parking.webp",
-    imagePosition: "center 58%",
-  },
-  {
-    number: "04",
-    english: "15+ YEARS OF EXPERTISE",
-    title: "15年以上の経験。その手技に、技術の差が現れる。",
-    description:
-      "積み重ねた経験が生み出す繊細な力加減と熟練の技。マニュアルだけでは再現できない、一人ひとりに合わせた施術。",
-    image: "/images/04-headspa-treatment.webp",
-  },
-  {
-    number: "05",
-    english: "WET HEAD SPA",
-    title: "ドライでは味わえない。本物志向の極上ウェットスパ。",
-    description:
-      "水・スチーム・洗浄・トリートメント・熟練の手技を融合。頭皮を直接ケアする、本格ウェットヘッドスパの醍醐味を。",
-    image: "/images/05-scalp-care.webp",
-  },
-  {
-    number: "06",
-    english: "TRUSTED BY VIPS & PROFESSIONALS",
-    title: "著名人も、セレブも、医師も。選ばれる育毛ヘッドスパ。",
-    description:
-      "美と健康への意識が高い方々にもご愛顧いただく専門ケア。頭皮環境とこれからの髪を考え、質にこだわるお客様に選ばれています。",
-    image: "/images/06-consultation-space.webp",
-  },
-  {
-    number: "07",
-    english: "PREMIUM HAIR COLOR & SPA",
-    title: "髪色も、頭皮も、美しく。妥協なきヘアカラー＆スパ。",
-    description:
-      "美しい仕上がりを追求しながら、頭皮への配慮も大切に。ヘアカラーとヘッドスパを組み合わせた、こだわりの施術。",
-    image: "/images/07-glossy-hair.webp",
-    imagePosition: "center 45%",
-  },
-  {
-    number: "08",
     english: "ONLY THREE GUESTS A DAY",
     title: "1日わずか3名。数を追わない、質を極める。",
     description:
@@ -81,19 +24,77 @@ const essences: Essence[] = [
     image: "/images/08-relaxation-bed.webp",
   },
   {
-    number: "09",
-    english: "FUTURE-FOCUSED SCALP CARE",
-    title: "その場の癒やしで終わらせない。未来の髪まで考える。",
+    number: "02",
+    english: "15+ YEARS OF EXPERTISE",
+    title: "15年以上の経験。技術にこそ、価値がある。",
     description:
-      "頭皮の状態を確認し、一人ひとりに合うケアをご提案。美しい髪の土台となる、健やかな頭皮環境を目指します。",
+      "積み重ねた経験から生まれる繊細な力加減と熟練の手技。画一的な施術ではなく、一人ひとりの状態やご希望に合わせて丁寧に向き合います。",
+    image: "/images/04-headspa-treatment.webp",
+  },
+  {
+    number: "03",
+    english: "FUTURE-FOCUSED SCALP CARE",
+    title: "その場の癒やしだけではない。これからの髪を考える。",
+    description:
+      "髪や頭皮の変化に向き合い、健やかな頭皮環境を目指す本格育毛ヘッドスパ。今だけでなく、これからの髪を大切にする方へ。",
     image: "/images/09-counseling.webp",
+  },
+  {
+    number: "04",
+    english: "PREMIUM HAIR COLOR & SPA",
+    title: "髪色も、頭皮も、美しく。妥協しないカラー＆スパ。",
+    description:
+      "頭皮への配慮を大切にしたゼロテクニックカラーと、本格ウェットヘッドスパ。髪色の美しさと頭皮ケアを、ひとつの上質な時間に。",
+    image: "/images/07-glossy-hair.webp",
+    imagePosition: "center 45%",
+  },
+  {
+    number: "05",
+    english: "PRIVATE SPACE",
+    title: "誰にも邪魔されない。完全個室という贅沢。",
+    description:
+      "周囲の視線や会話を気にせず過ごせるプライベート空間。扉を閉めた瞬間から、あなただけの特別な時間が始まります。",
+    image: "/images/01-private-room.webp",
+  },
+  {
+    number: "06",
+    english: "TRUSTED BY DISCERNING GUESTS",
+    title: "本物の価値を知る方々に、選ばれる場所。",
+    description:
+      "経営者や医師、著名人をはじめ、美と健康への意識が高い方々にもご愛顧いただいています。華やかさよりも、技術と空間の質を大切にするお客様へ。",
+    image: "/images/06-consultation-space.webp",
+  },
+  {
+    number: "07",
+    english: "WET HEAD SPA",
+    title: "水と技術が生み出す、本格ウェットヘッドスパ。",
+    description:
+      "水・スチーム・洗浄・トリートメント・熟練の手技を融合。頭皮を直接ケアする、本格ウェットヘッドスパならではの施術を。",
+    image: "/images/05-scalp-care.webp",
+  },
+  {
+    number: "08",
+    english: "24/7 ONLINE RESERVATION",
+    title: "大切な時間を無駄にしない、完全予約制。",
+    description:
+      "24時間365日、オンラインで空き状況の確認と予約が可能。忙しい日々を送る方にも、スマートな予約体験を。",
+    image: "/images/02-art-interior.webp",
+  },
+  {
+    number: "09",
+    english: "TWO PRIVATE PARKING SPACES",
+    title: "駐車場2台完備。お車でのご来店も快適に。",
+    description:
+      "店舗前に2台分の駐車スペースをご用意。ご来店からお帰りまで、心地よくお過ごしいただける環境を大切にしています。",
+    image: "/images/03-parking.webp",
+    imagePosition: "center 58%",
   },
   {
     number: "10",
     english: "A FIVE-SENSE EXPERIENCE",
-    title: "五感すべてを満たす。日常を忘れる、非日常へ。",
+    title: "五感で感じる、細部までこだわった上質な空間。",
     description:
-      "光・音・香り・温度・肌に触れる心地よさまで。細部にこだわり抜いた空間が、上質なスパ体験を演出します。",
+      "光・音・香り・温度・肌に触れる心地よさまで。細部へのこだわりが、日常の中に特別なひとときを生み出します。",
     image: "/images/10-floral-lighting.webp",
   },
 ]
@@ -110,7 +111,11 @@ export function Essences() {
       "[data-essence-card]"
     )
 
-    const targetIndex = Math.max(0, Math.min(index, cards.length - 1))
+    const targetIndex = Math.max(
+      0,
+      Math.min(index, cards.length - 1)
+    )
+
     const target = cards[targetIndex]
     if (!target) return
 
@@ -123,7 +128,9 @@ export function Essences() {
   }
 
   const scroll = (direction: "left" | "right") => {
-    scrollToIndex(activeIndex + (direction === "left" ? -1 : 1))
+    scrollToIndex(
+      activeIndex + (direction === "left" ? -1 : 1)
+    )
   }
 
   useEffect(() => {
@@ -136,9 +143,10 @@ export function Essences() {
       cancelAnimationFrame(frame)
 
       frame = requestAnimationFrame(() => {
-        const cards = container.querySelectorAll<HTMLElement>(
-          "[data-essence-card]"
-        )
+        const cards =
+          container.querySelectorAll<HTMLElement>(
+            "[data-essence-card]"
+          )
 
         if (!cards.length) return
 
@@ -148,7 +156,9 @@ export function Essences() {
 
         cards.forEach((card, index) => {
           const distance = Math.abs(
-            card.offsetLeft - container.offsetLeft - scrollPosition
+            card.offsetLeft -
+              container.offsetLeft -
+              scrollPosition
           )
 
           if (distance < nearestDistance) {
@@ -161,16 +171,29 @@ export function Essences() {
       })
     }
 
-    container.addEventListener("scroll", updateActiveIndex, {
-      passive: true,
-    })
-    window.addEventListener("resize", updateActiveIndex)
+    container.addEventListener(
+      "scroll",
+      updateActiveIndex,
+      { passive: true }
+    )
+
+    window.addEventListener(
+      "resize",
+      updateActiveIndex
+    )
+
     updateActiveIndex()
 
     return () => {
       cancelAnimationFrame(frame)
-      container.removeEventListener("scroll", updateActiveIndex)
-      window.removeEventListener("resize", updateActiveIndex)
+      container.removeEventListener(
+        "scroll",
+        updateActiveIndex
+      )
+      window.removeEventListener(
+        "resize",
+        updateActiveIndex
+      )
     }
   }, [])
 
@@ -191,9 +214,11 @@ export function Essences() {
             </h2>
 
             <p className="mt-5 text-sm leading-8 text-white/65 sm:text-base">
+              贅沢を日常に。
+              <br />
               技術も、空間も、おもてなしも。
               <br />
-              すべては、特別なひとときのために。
+              すべては、上質な時間のために。
             </p>
 
             <div className="mx-auto mt-7 h-px w-16 bg-[#d6b36a]/60" />
@@ -224,7 +249,8 @@ export function Essences() {
                     sizes="(min-width: 1024px) 31vw, (min-width: 640px) 47vw, 86vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     style={{
-                      objectPosition: item.imagePosition ?? "center",
+                      objectPosition:
+                        item.imagePosition ?? "center",
                     }}
                   />
 
@@ -234,6 +260,7 @@ export function Essences() {
                     <span className="font-serif text-5xl font-light leading-none tracking-[-0.04em] text-[#e5c783] drop-shadow-lg sm:text-6xl">
                       {item.number}
                     </span>
+
                     <span className="mb-1 text-[9px] tracking-[0.16em] text-white/80">
                       / 10
                     </span>
@@ -247,11 +274,11 @@ export function Essences() {
 
                   <div className="mt-4 h-px w-full bg-[#d6b36a]/20" />
 
-                  <h3 className="mt-4 text-[16px] font-medium leading-[1.9] tracking-normal text-white sm:mt-5 sm:text-lg sm:tracking-[0.02em]">
+                  <h3 className="mt-4 text-[16px] font-medium leading-[1.9] text-white sm:mt-5 sm:text-lg">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-[13px] leading-[1.95] tracking-normal text-white/70 sm:mt-4 sm:text-sm sm:leading-8">
+                  <p className="mt-3 text-[13px] leading-[1.95] text-white/70 sm:mt-4 sm:text-sm sm:leading-8">
                     {item.description}
                   </p>
                 </div>
@@ -262,11 +289,16 @@ export function Essences() {
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <span className="text-sm tracking-[0.15em] text-[#d6b36a]">
-                {String(activeIndex + 1).padStart(2, "0")}
+                {String(activeIndex + 1).padStart(
+                  2,
+                  "0"
+                )}
               </span>
+
               <div className="h-px w-12 bg-[#d6b36a]/50" />
+
               <span className="text-sm tracking-[0.15em] text-white/50">
-                10
+                {essences.length}
               </span>
             </div>
 
@@ -282,17 +314,19 @@ export function Essences() {
                 aria-label="前のこだわりを見る"
                 className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d6b36a]/50 text-[#d6b36a] transition hover:bg-[#d6b36a] hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
               >
-                <span aria-hidden="true" className="text-lg">←</span>
+                <span aria-hidden="true">←</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => scroll("right")}
-                disabled={activeIndex === essences.length - 1}
+                disabled={
+                  activeIndex === essences.length - 1
+                }
                 aria-label="次のこだわりを見る"
                 className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d6b36a]/50 text-[#d6b36a] transition hover:bg-[#d6b36a] hover:text-black disabled:cursor-not-allowed disabled:opacity-30"
               >
-                <span aria-hidden="true" className="text-lg">→</span>
+                <span aria-hidden="true">→</span>
               </button>
             </div>
           </div>
