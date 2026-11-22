@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
 import { Noto_Serif_JP } from "next/font/google"
@@ -6,11 +7,13 @@ import "./globals.css"
 
 const SITE_URL = "https://www.yuheadspa.net"
 
+const GTM_ID = "GTM-W9ZZDQDS"
+
 const SITE_TITLE =
-  "ヘッドスパ専門店ゆう｜福岡市西区の完全個室ヘッドスパ・育毛頭皮ケア"
+  "ヘッドスパ専門店ゆう｜福岡の育毛・カラーヘッドスパ・ギフト"
 
 const SITE_DESCRIPTION =
-  "福岡市西区豊浜の完全個室ヘッドスパ専門店。育毛・頭皮ケア、ヘアカラーヘッドスパ、リラクゼーションヘッドスパをご用意。ヒト幹細胞由来成分を取り入れた頭皮ケアも。1日3名限定・完全予約制。"
+  "福岡市西区豊浜の完全個室ヘッドスパ専門店ゆう。大切な方へ贈るヘッドスパギフト、髪と頭皮をいたわるカラーヘッドスパ、これからの髪を考える育毛ヘッドスパをご用意。15年以上の経験、1日3名限定・完全予約制。"
 
 const notoSerifJP = Noto_Serif_JP({
   subsets: ["latin"],
@@ -21,27 +24,34 @@ const notoSerifJP = Noto_Serif_JP({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+
   title: {
     default: SITE_TITLE,
     template: "%s｜ヘッドスパ専門店ゆう",
   },
+
   description: SITE_DESCRIPTION,
+
   keywords: [
     "ヘッドスパ 福岡",
     "福岡 ヘッドスパ",
-    "福岡市 ヘッドスパ",
     "福岡市西区 ヘッドスパ",
     "豊浜 ヘッドスパ",
-    "ヘッドスパ専門店 福岡",
-    "完全個室 ヘッドスパ 福岡",
+    "ヘッドスパ ギフト 福岡",
+    "ヘッドスパ プレゼント 福岡",
+    "ヘッドスパ ギフトカード",
     "育毛ヘッドスパ 福岡",
-    "頭皮ケア 福岡",
+    "育毛 頭皮ケア 福岡",
+    "カラーヘッドスパ 福岡",
     "ヘアカラーヘッドスパ 福岡",
-    "リラクゼーションヘッドスパ 福岡",
-    "ヒト幹細胞 頭皮ケア",
+    "白髪染め ヘッドスパ 福岡",
+    "完全個室 ヘッドスパ 福岡",
+    "ヘッドスパ専門店ゆう",
   ],
-  // canonical は店舗ごとの page.tsx で設定します。
-  // ルートで "/" を指定すると大阪店にも継承されるため、ここでは設定しません。
+
+  // 店舗別のcanonicalは各ページで設定。
+  // ここで "/" を指定すると大阪店にも継承されるため設定しない。
+
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
@@ -53,20 +63,25 @@ export const metadata: Metadata = {
         url: "/images/ogp.jpg",
         width: 1200,
         height: 630,
-        alt: "ヘッドスパ専門店ゆう｜福岡市西区の完全個室ヘッドスパ",
+        alt: "ヘッドスパ専門店ゆう｜福岡の育毛・カラーヘッドスパ・ギフト",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     images: ["/images/ogp.jpg"],
   },
+
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 }
 
@@ -84,28 +99,54 @@ export default function RootLayout({
   return (
     <html lang="ja" className={notoSerifJP.variable}>
       <body className="font-serif antialiased">
+
+        {/* GTM：JavaScript無効時のフォールバック */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-W9ZZDQDS"
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            style={{
+              display: "none",
+              visibility: "hidden",
+            }}
+            title="Google Tag Manager"
           />
         </noscript>
 
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        {/* 既存のGoogleタグマネージャーを維持 */}
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+        >
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-W9ZZDQDS');
+            (function(w,d,s,l,i){
+              w[l]=w[l]||[];
+              w[l].push({
+                'gtm.start': new Date().getTime(),
+                event:'gtm.js'
+              });
+              var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),
+              dl=l!='dataLayer'?'&l='+l:'';
+              j.async=true;
+              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+              f.parentNode.insertBefore(j,f);
+            })(
+              window,
+              document,
+              'script',
+              'dataLayer',
+              '${GTM_ID}'
+            );
           `}
         </Script>
 
         {children}
 
+        {/* Vercel Analytics：既存機能を維持 */}
         <Analytics />
+
       </body>
     </html>
   )
