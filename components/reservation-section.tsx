@@ -92,16 +92,6 @@ export function ReservationSection() {
               公式予約システムの最新情報をご確認いただけます。
             </p>
 
-            <div className="mt-8 overflow-hidden rounded-[24px] border border-gold/20 bg-white shadow-xl sm:rounded-[28px]">
-  <iframe
-    src={RESERVE_URL}
-    title="ヘッドスパ専門店 ゆう 本店 予約カレンダー"
-    loading="lazy"
-    referrerPolicy="strict-origin-when-cross-origin"
-    className="block h-[780px] w-full border-0 sm:h-[850px] lg:h-[900px]"
-  />
-</div>
-
             <p className="mt-6 text-xs leading-6 text-white/60">
               カレンダーが表示されない場合は、
               <br />
